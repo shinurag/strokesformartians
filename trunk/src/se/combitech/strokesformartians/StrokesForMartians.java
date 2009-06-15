@@ -15,7 +15,8 @@ public class StrokesForMartians extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
-        final Intent myIntent = new Intent("se.combitech.strokesformartians.Paint");
+        //final Intent myIntent = new Intent("se.combitech.strokesformartians.Paint");
+        final Intent myIntent = new Intent(this, Paint.class);
         
         LinearLayout layout = new LinearLayout(this);
         final Button button = new Button(this);
