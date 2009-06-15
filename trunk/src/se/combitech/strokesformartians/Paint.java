@@ -2,6 +2,9 @@ package se.combitech.strokesformartians;
 
 import se.combitech.strokesformartians.drawing.MyDrawableView;
 import android.app.Activity;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Bitmap.Config;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -17,8 +20,15 @@ public class Paint extends Activity {
         button.setText("Dance!");
         layout.addView(button);
         
-        MyDrawableView mdv = new MyDrawableView(this);
-        layout.addView(mdv);
+        
+//        MyDrawableView mdv = new MyDrawableView(this);
+//        layout.addView(mdv);
+        
+        Canvas canvas = new Canvas();
+        Bitmap bitmap = Bitmap.createBitmap(150, 250, Config.ARGB_4444);
+		canvas.setBitmap(bitmap);
+		
+		
         setContentView(layout);
     }
 }
