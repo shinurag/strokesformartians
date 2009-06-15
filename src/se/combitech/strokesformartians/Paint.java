@@ -1,5 +1,6 @@
 package se.combitech.strokesformartians;
 
+import se.combitech.strokesformartians.drawing.MyDrawableView;
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.Button;
@@ -16,6 +17,8 @@ public class Paint extends Activity {
         button.setText("Dance!");
         layout.addView(button);
         
+        MyDrawableView mdv = new MyDrawableView(this);
+        layout.addView(mdv);
         setContentView(layout);
     }
 }
