@@ -1,13 +1,13 @@
 package se.combitech.strokesformartians;
 
 import android.app.Activity;
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.RemoteViews.ActionException;
 
 public class StrokesForMartians extends Activity {
     /** Called when the activity is first created. */
@@ -15,19 +15,25 @@ public class StrokesForMartians extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
-        //final Intent myIntent = new Intent("se.combitech.strokesformartians.Paint");
-        final Intent myIntent = new Intent(this, Paint.class);
+    	final Intent paintIntent = new Intent(this, Paint.class);
+        final Intent danceIntent = new Intent( this, DanceAnimator.class );
         
         LinearLayout layout = new LinearLayout(this);
         final Button button = new Button(this);
-        button.setText("Paint!");
+        button.setText( "Paint!" );
         button.setOnClickListener(new OnClickListener()
         {
         	public void onClick(View view)
         	{
-        		//view.getContext().startActivity(intent)
-        		button.setText("pooo!");
-        		startActivity(myIntent);
+        		button.setText( "pooo!" );
+        		try
+        		{
+        			startActivity( danceIntent );
+        		}
+        		catch( ActivityNotFoundException anfe )
+        		{
+        			System.out.println( anfe.getMessage() );
+        		}
         	}
         });
         
