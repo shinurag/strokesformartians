@@ -19,13 +19,30 @@ public class StrokesForMartians extends Activity {
         final Intent danceIntent = new Intent( this, DanceAnimator.class );
         
         LinearLayout layout = new LinearLayout(this);
-        final Button button = new Button(this);
-        button.setText( "Paint!" );
-        button.setOnClickListener(new OnClickListener()
+        final Button paintButton = new Button(this);
+        final Button danceButton = new Button(this);
+        paintButton.setText( "Paint!" );
+        paintButton.setOnClickListener(new OnClickListener()
         {
         	public void onClick(View view)
         	{
-        		button.setText( "pooo!" );
+        		paintButton.setText( "pooo!" );
+        		try
+        		{
+        			startActivity( paintIntent );
+        		}
+        		catch( ActivityNotFoundException anfe )
+        		{
+        			System.out.println( anfe.getMessage() );
+        		}
+        	}
+        });
+        
+        danceButton.setText( "Dance mofo!" );
+        danceButton.setOnClickListener(new OnClickListener()
+        {
+        	public void onClick(View view)
+        	{
         		try
         		{
         			startActivity( danceIntent );
@@ -36,8 +53,10 @@ public class StrokesForMartians extends Activity {
         		}
         	}
         });
+
         
-        layout.addView(button);
+        layout.addView( paintButton );
+        layout.addView( danceButton );
         
         setContentView(layout);
     }

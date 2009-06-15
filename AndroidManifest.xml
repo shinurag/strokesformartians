@@ -15,6 +15,10 @@
         <activity android:name=".Paint"
                   android:label="paintstuff">
         </activity>
-    </application>
+        <activity android:name=".DanceAnimator"
+                  android:label="DANCE!">
+        </activity>
+    
+</application>
     <uses-sdk android:minSdkVersion="3" />
 </manifest> 
