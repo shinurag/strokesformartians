@@ -1,5 +1,7 @@
 package se.combitech.strokesformartians;
 
+import se.combitech.strokesformartians.dancing.DanceAnimator;
+import se.combitech.strokesformartians.drawing.Paint;
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
@@ -15,7 +17,7 @@ public class StrokesForMartians extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
-    	final Intent paintIntent = new Intent(this, Paint.class);
+    	final Intent paintIntent = new Intent( this, Paint.class);
         final Intent danceIntent = new Intent( this, DanceAnimator.class );
         
         LinearLayout layout = new LinearLayout(this);

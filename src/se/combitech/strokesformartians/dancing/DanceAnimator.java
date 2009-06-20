@@ -1,4 +1,4 @@
-package se.combitech.strokesformartians;
+package se.combitech.strokesformartians.dancing;
 
 import android.app.Activity;
 import android.opengl.GLSurfaceView;
