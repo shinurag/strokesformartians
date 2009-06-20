@@ -82,11 +82,11 @@ class MartianModel
     {
     	gl.glScalef(60000, 60000, 60000);
         //gl.glFrontFace( gl.GL_CW );
-        gl.glVertexPointer(3, gl.GL_FIXED, 0, mVertexBuffer);
+        gl.glVertexPointer(3, GL10.GL_FIXED, 0, mVertexBuffer);
         //gl.glColorPointer(4, gl.GL_FIXED, 0, mColorBuffer);
         gl.glLineWidth( 2 );
         gl.glColor4f(0, 0, 0, 1);
-        gl.glDrawElements(gl.GL_LINES, 24, gl.GL_UNSIGNED_BYTE, mIndexBuffer);
+        gl.glDrawElements(GL10.GL_LINES, 24, GL10.GL_UNSIGNED_BYTE, mIndexBuffer);
     }
 
     private IntBuffer   mVertexBuffer;

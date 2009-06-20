@@ -12,10 +12,10 @@
             </intent-filter>
         </activity>
         
-        <activity android:name=".drawing.Paint"
+        <activity android:name=".Paint"
                   android:label="paintstuff">
         </activity>
-        <activity android:name=".dancing.DanceAnimator"
+        <activity android:name=".DanceAnimator"
                   android:label="DANCE!">
         </activity>
 

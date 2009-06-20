@@ -1,6 +1,5 @@
 package se.combitech.strokesformartians;
 
-import se.combitech.strokesformartians.drawing.MyDrawableView;
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
