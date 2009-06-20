@@ -1,0 +1,11 @@
+#summary Beskriver data-strukturen som internt representerar en Martian.
+
+= Beståndsdelar =
+
+  * Skelett
+  * Vertices
+  * ...
+
+= Skelett =
+= Vertices =
+= ... =
