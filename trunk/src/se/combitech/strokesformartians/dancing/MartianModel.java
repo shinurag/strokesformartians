@@ -1,4 +1,4 @@
-package se.combitech.strokesformartians;
+package se.combitech.strokesformartians.dancing;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;

@@ -1,4 +1,4 @@
-package se.combitech.strokesformartians;
+package se.combitech.strokesformartians.drawing;
 
 import android.app.Activity;
 import android.graphics.Bitmap;

@@ -1,4 +1,4 @@
-package se.combitech.strokesformartians;
+package se.combitech.strokesformartians.dancing;
 
 import javax.microedition.khronos.egl.EGL10;
 import javax.microedition.khronos.egl.EGLConfig;
