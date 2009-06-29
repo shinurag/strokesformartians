@@ -19,7 +19,7 @@ public class DanceAnimator extends Activity {
         // Create our Preview view and set it as the content of our
         // Activity
         mGLSurfaceView = new GLSurfaceView(this);
-        mGLSurfaceView.setRenderer( new MartianRenderer(false) );
+        mGLSurfaceView.setRenderer( new MartianRenderer( false, true ) );
         setContentView( mGLSurfaceView );
     }
 
