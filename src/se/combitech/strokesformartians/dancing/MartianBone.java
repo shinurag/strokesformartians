@@ -1,21 +1,25 @@
 package se.combitech.strokesformartians.dancing;
 
+import android.opengl.Matrix;
+
 public class MartianBone 
 {
-	
-    int vertices[] = {   0, 3, 0,
-						 0, 1, 0,
-						 1, 1, 0,
-						 2, 0, 0,
-						 3,-1, 0,
-						 3,-3, 0,
-						 3,-6, 0,
-						 0,-3, 0,
-						-1, 1, 0,
-						-2, 0, 0,
-						-3,-1, 0,
-						-3,-3, 0,
-						-3,-6, 0,
-						};
+	private float[] m_transform;
+	private float m_length;
+	private MartianBone m_parent;
 
+	MartianBone( )
+	{
+		this( null );
+	}
+	
+	MartianBone( MartianBone parent )
+	{
+		m_transform = new float[16];
+		Matrix.setIdentityM( m_transform, 0 );
+		m_length = 0.0f;
+		m_parent = parent;
+	}
+	
+	
 }
