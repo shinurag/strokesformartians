@@ -1,6 +1,6 @@
 package se.combitech.strokesformartians.dancing;
 
-public class MartianSkeleton 
+public class MartianBone 
 {
 	
     int vertices[] = {   0, 3, 0,
