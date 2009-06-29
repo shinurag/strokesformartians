@@ -12,14 +12,19 @@ import android.opengl.GLSurfaceView;
 
 class MartianRenderer implements GLSurfaceView.Renderer {
     private boolean mTranslucentBackground;
-    private MartianModel mCube;
+    private MartianModel m_martian;
     private float mAngle;
+    private Cube mCube;
 	
-	public MartianRenderer(boolean useTranslucentBackground) {
+	public MartianRenderer( boolean useTranslucentBackground, boolean debugFlag ) {
         mTranslucentBackground = useTranslucentBackground;
-        mCube = new MartianModel();
+        m_martian = new MartianModel( debugFlag );
+        
+        mCube = new Cube();
+        
     }
 
+	
     public void onDrawFrame(GL10 gl) {
         /*
          * Usually, the first thing one might want to do is to clear
@@ -33,19 +38,35 @@ class MartianRenderer implements GLSurfaceView.Renderer {
          * Now we're ready to draw some 3D objects
          */
 
-        gl.glMatrixMode(GL10.GL_MODELVIEW);
+        gl.glMatrixMode( GL10.GL_MODELVIEW );
         gl.glLoadIdentity();
-        gl.glTranslatef(0, 0, -3.0f);
-        gl.glRotatef(mAngle, 0, 1, 0);
+        gl.glTranslatef( 0, 0, -3.0f );
+        gl.glRotatef( mAngle, 0, 1, 0 );
 //        gl.glRotatef(mAngle*0.25f,  1, 0, 0);
 
-        gl.glEnableClientState(GL10.GL_VERTEX_ARRAY);
+        gl.glEnableClientState( GL10.GL_VERTEX_ARRAY );
 //        gl.glEnableClientState(GL10.GL_COLOR_ARRAY);
 
-        mCube.draw(gl);
+        m_martian.draw( gl );
 
 //        gl.glRotatef(mAngle*2.0f, 0, 1, 1);
         mAngle++;
+        
+//        gl.glMatrixMode(GL10.GL_MODELVIEW);
+//        gl.glLoadIdentity();
+//        gl.glTranslatef(0, 0, -3.0f);
+//        gl.glRotatef(mAngle,        0, 1, 0);
+//        gl.glRotatef(mAngle*0.25f,  1, 0, 0);
+//
+//        
+//        gl.glEnableClientState(GL10.GL_VERTEX_ARRAY);
+//        gl.glEnableClientState(GL10.GL_COLOR_ARRAY);
+//
+//        mCube.draw(gl);
+//
+//        
+//        mAngle += 1.2f;
+
     }
 
     public int[] getConfigSpec() {
@@ -83,7 +104,7 @@ class MartianRenderer implements GLSurfaceView.Renderer {
          float ratio = (float) width / height;
          gl.glMatrixMode(GL10.GL_PROJECTION);
          gl.glLoadIdentity();
-         gl.glFrustumf(-ratio, ratio, -1, 1, 1, 10);
+         gl.glFrustumf(-ratio, ratio, -1, 1, 1, 10 );
     }
 
     public void onSurfaceCreated(GL10 gl, EGLConfig config) {
