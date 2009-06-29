@@ -14,20 +14,24 @@ public class Paint extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
-        LinearLayout layout = new LinearLayout(this);
+        //LinearLayout layout = new LinearLayout(this);
+        MyDrawableView mdv = new MyDrawableView(this);
         Button button = new Button(this);
         button.setText("Dance!");
-        layout.addView(button);
+        //layout.addView(button);
         
         
 //        MyDrawableView mdv = new MyDrawableView(this);
 //        layout.addView(mdv);
         
+        /*
         Canvas canvas = new Canvas();
-        Bitmap bitmap = Bitmap.createBitmap(150, 250, Config.ARGB_4444);
+        Bitmap bitmap = Bitmap.createBitmap(200, 250, Config.ARGB_4444);
 		canvas.setBitmap(bitmap);
+		*/
 		
 		
-        setContentView(layout);
+        //setContentView(layout);
+		setContentView(mdv);
     }
 }
