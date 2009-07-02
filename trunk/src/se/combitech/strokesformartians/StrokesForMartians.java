@@ -17,7 +17,7 @@ public class StrokesForMartians extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
-    	final Intent paintIntent = new Intent( this, Paint.class);
+    	final Intent paintIntent = new Intent( this, Paint.class );
         final Intent danceIntent = new Intent( this, DanceAnimator.class );
         
         LinearLayout layout = new LinearLayout(this);

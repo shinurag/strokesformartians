@@ -11,23 +11,32 @@ import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.RectShape;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.WindowManager;
 
 public class MyDrawableView extends View {
-	private ShapeDrawable shapeDrawable;
-	public Bitmap bitmap;
+	static public Bitmap bitmap;
+	private int mWidth = 0;
+	private int mHeight = 0;
 	
 	public MyDrawableView(Context context) {
+		this( context, 100, 100 );
+	}
+	
+	public MyDrawableView(Context context, int width, int height ) {
 		super(context);
+	
+		mWidth = width;
+		mHeight = height;
 		
-		shapeDrawable = new ShapeDrawable(new RectShape());
-		shapeDrawable.getPaint().setColor(Color.GRAY);
-		shapeDrawable.setBounds(1, 1, 200, 250);
-		
-		bitmap = Bitmap.createBitmap(200, 250, Config.ARGB_4444);
+		bitmap = Bitmap.createBitmap( width, height, Config.ARGB_8888 );
+		this.setOnTouchListener( touchListener );
 	}
 	
 	protected void onDraw(Canvas canvas) {
-        shapeDrawable.draw(canvas);
+		canvas.drawARGB( 	255, 
+							255, 
+							255, 
+							255 );
        
         int x = 0;
         int y = 0;
@@ -36,13 +45,28 @@ public class MyDrawableView extends View {
         
         paint.setColor(Color.GREEN);
         paint.setStyle(Style.FILL);
-        //canvas.drawCircle(50, 100, 20, paint);
+        paint.setStrokeWidth( 4 );
         
-        canvas.drawBitmap(bitmap, 1, 1, paint);
+        canvas.drawBitmap( bitmap, x, y, paint );
     }
 	
-	public boolean onTouchEvent(MotionEvent me) {
-		bitmap.setPixel((int)me.getX(), (int)me.getY(), Color.BLUE);
-		return super.onTouchEvent(me); 
-	}
+    View.OnTouchListener touchListener = new View.OnTouchListener()
+    {
+		public synchronized boolean onTouch( View view, MotionEvent me )
+		{
+			if( me.getX() < mWidth
+				&&
+				me.getX() > 0
+				&& 
+				me.getY() < mHeight
+				&&
+				me.getY() > 0 
+			){
+				((MyDrawableView)view).bitmap.setPixel((int)me.getX(), (int)me.getY(), Color.BLUE);
+				view.postInvalidate();
+			}
+			return true;
+		}
+    };	
+	
 }
