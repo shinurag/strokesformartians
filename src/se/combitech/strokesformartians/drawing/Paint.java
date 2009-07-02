@@ -15,8 +15,11 @@ public class Paint extends Activity {
         super.onCreate(savedInstanceState);
         
         //LinearLayout layout = new LinearLayout(this);
-        MyDrawableView mdv = new MyDrawableView(this);
+        int width = getWindowManager().getDefaultDisplay().getWidth();
+        int height = getWindowManager().getDefaultDisplay().getHeight();
+        MyDrawableView mdv = new MyDrawableView( this, width, height );
         Button button = new Button(this);
+        
         button.setText("Dance!");
         //layout.addView(button);
         
