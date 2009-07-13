@@ -18,6 +18,9 @@
         <activity android:name=".dancing.DanceAnimator"
                   android:label="DANCE!">
         </activity>
+        <activity android:name=".credits.Credits"
+                  android:label="Credits">
+        </activity>
 
     </application>
     <uses-sdk android:minSdkVersion="3" />
