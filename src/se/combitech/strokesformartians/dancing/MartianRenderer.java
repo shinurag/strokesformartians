@@ -14,14 +14,10 @@ class MartianRenderer implements GLSurfaceView.Renderer {
     private boolean mTranslucentBackground;
     private MartianModel m_martian;
     private float mAngle;
-    private Cube mCube;
 	
 	public MartianRenderer( boolean useTranslucentBackground, boolean debugFlag ) {
         mTranslucentBackground = useTranslucentBackground;
         m_martian = new MartianModel( debugFlag );
-        
-        mCube = new Cube();
-        
     }
 
 	
@@ -105,6 +101,7 @@ class MartianRenderer implements GLSurfaceView.Renderer {
          gl.glMatrixMode(GL10.GL_PROJECTION);
          gl.glLoadIdentity();
          gl.glFrustumf(-ratio, ratio, -1, 1, 1, 10 );
+//         gl.glOrthof(-1, 1, -1, 1, 1, 10);
     }
 
     public void onSurfaceCreated(GL10 gl, EGLConfig config) {
