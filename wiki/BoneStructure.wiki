@@ -23,7 +23,11 @@ t = r_t^-1 * a_t
 === Skinning transformation ===
 Example transformation for skinning a vertex with two bones affecting it.
 {{{
-t_0: transformation from restpose to animation pose for bone 0
-t_1: transformation from restpose to animation pose for bone 1
-p_0: root position for bone 0
+p_r: the resulting position of the vertex
+t_x: transformation from restpose to animation pose for bone x
+b_x: root position for bone x
+p_x: position of vertex x
+w_x: weight of bone x for the vertex
+
+p_r = t_0 * (p_1 - b_0) * w_0 + t_1 * (p_1 - b_1) * w_1
 }}}
