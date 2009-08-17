@@ -3,8 +3,8 @@
 
 = Bone structure information =
 
-* Bone transformations are defined in global space.
-* Bone animations are defined as the transformation matrix that transforms the rest pose coordinate system into the animation pose coordinate system.
-* The animation is defined as one transformation matrix for each bone for each frame.
-* Each vertex has one or more nonzero weights corresponding to nearby bones.
-* The weights must sum to one.
+  * Bone transformations are defined in global space.
+  * Bone animations are defined as the transformation matrix that transforms the rest pose coordinate system into the animation pose coordinate system.
+  * The animation is defined as one transformation matrix for each bone for each frame.
+  * Each vertex has one or more nonzero weights corresponding to nearby bones.
+  * The weights must sum to one.
