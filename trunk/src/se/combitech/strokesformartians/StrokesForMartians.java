@@ -2,7 +2,7 @@ package se.combitech.strokesformartians;
 
 import se.combitech.strokesformartians.credits.Credits;
 import se.combitech.strokesformartians.dancing.DanceAnimator;
-import se.combitech.strokesformartians.drawing.Paint;
+import se.combitech.strokesformartians.Paint;
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
