@@ -15,9 +15,11 @@ public class Credits extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        TextView tv = new TextView(this);
-        tv.setText("Lina\nHenrik");
-        setContentView(tv);
 
+        CreditsView creditsView = new CreditsView(this);
+        setContentView(creditsView);
+        
+        Thread t = new Thread( creditsView );
+        t.start();
 	}
 }

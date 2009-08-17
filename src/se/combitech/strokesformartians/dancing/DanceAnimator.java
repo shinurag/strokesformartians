@@ -1,8 +1,15 @@
 package se.combitech.strokesformartians.dancing;
 
+import java.io.StringWriter;
+
+import javax.microedition.khronos.opengles.GL;
+
 import android.app.Activity;
+import android.opengl.GLDebugHelper;
 import android.opengl.GLSurfaceView;
+import android.opengl.GLSurfaceView.GLWrapper;
 import android.os.Bundle;
+import android.util.Log;
 
 /**
  * Wrapper activity demonstrating the use of {@link GLSurfaceView}, a view
@@ -20,6 +27,23 @@ public class DanceAnimator extends Activity {
         // Activity
         mGLSurfaceView = new GLSurfaceView(this);
         mGLSurfaceView.setRenderer( new MartianRenderer( false, true ) );
+//        mGLSurfaceView.setGLWrapper( 
+//    		new GLWrapper()
+//	        { 
+//	    		public GL wrap( GL gl )
+//	    		{
+//	    			return GLDebugHelper.wrap( 
+//    					gl, GLDebugHelper.CONFIG_CHECK_GL_ERROR, new StringWriter()
+//		    			{
+//    						public void write( String str )
+//    						{
+//    							Log.e("CUSTOMGLLogger", str );
+//    						}
+//		    			}
+//	    			); 
+//	    		}
+//	        }
+//		);
         setContentView( mGLSurfaceView );
     }
 

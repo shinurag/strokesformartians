@@ -12,7 +12,8 @@ import android.opengl.Matrix;
 
 public class MartianBone 
 {
-	public float[] m_transform;
+	public float[] m_restTransform;
+	public float[] m_danceTransform;
 	public float[] m_rotations;
 	public float[] m_color;
 	public String m_name;
@@ -28,7 +29,8 @@ public class MartianBone
 	MartianBone( MartianBone parent )
 	{
 		m_children = new ArrayList< MartianBone >();
-		m_transform = new float[16];
+		m_restTransform = new float[16];
+		m_danceTransform = new float[16];
 		m_rotations = new float[4];
 		m_rotations[0] = m_rotations[1] = m_rotations[3] = 0;
 		m_rotations[2] = 1;
@@ -36,7 +38,7 @@ public class MartianBone
 		m_color = new float[4];
 		m_color[3] = 1;
 
-		Matrix.setIdentityM( m_transform, 0 );
+		Matrix.setIdentityM( m_restTransform, 0 );
 		m_length = 0.0f;
 		m_parent = parent;
 	}
@@ -90,7 +92,7 @@ public class MartianBone
 			float[] up = { 0, 1, 0, 1 };
 			float[] transformedVec = new float[ 4 ];
 			
-			Matrix.multiplyMV( transformedVec, 0, m_transform, 0, up, 0 );
+			Matrix.multiplyMV( transformedVec, 0, m_restTransform, 0, up, 0 );
 			
 			transformedVec = normalizeVec( transformedVec );
 			transformedVec = multVec( transformedVec, m_length );
@@ -168,68 +170,68 @@ public class MartianBone
 //	        
 //		if( m_parent == null )
 //		{
-        gl.glPushMatrix();
-	        gl.glRotatef( 	m_rotations[3], // angle
-	        				m_rotations[0], // x
-	        				m_rotations[1], // y
-	        				m_rotations[2] );// z
-	        
-	        
-	        float[] up = { 0, 1, 0, 1 };
-			float[] transformedVec = new float[ 4 ];
-			
-			transformedVec = multVec( up, m_length );	        
-	        
-			float[] boneVertices = { 	0.f,
-										0.f,
-										0.f,
-										0.f,
-										transformedVec[ 0 ],
-										transformedVec[ 1 ],
-										transformedVec[ 2 ],
-										transformedVec[ 3 ]};
-			
-	        ByteBuffer vbb = ByteBuffer.allocateDirect( boneVertices.length * 4 );
-	        vbb.order( ByteOrder.nativeOrder() );
-	        FloatBuffer mVertexBuffer = vbb.asFloatBuffer();
-	        mVertexBuffer.put( boneVertices );
-	        mVertexBuffer.position( 0 );
-
-	        byte[] indices = { 0, 1 };
-	        
-	        ByteBuffer mIndexBuffer = ByteBuffer.allocateDirect( indices.length );
-	        mIndexBuffer.put( indices );
-	        mIndexBuffer.position( 0 );
-
-	       
-	        gl.glVertexPointer( 4, 
-	        					GL10.GL_FLOAT, 
-	        					0, 
-	        					mVertexBuffer );
-	        
-	        gl.glLineWidth( 2 );
-	        
-	        gl.glColor4f( 	m_color[0], 
-	        				m_color[1], 
-	        				m_color[2],
-	        				m_color[3] );
-	        
-	        gl.glDrawElements( 	GL10.GL_LINES, 
-	        					2, 
-	        					GL10.GL_UNSIGNED_BYTE, 
-	        					mIndexBuffer );
-	        
-
-	        gl.glTranslatef(0, 0.3f, 0);
-	        
-	        Iterator< MartianBone > iter = m_children.iterator();
-	        while( iter.hasNext() )
-	        {
-	        	MartianBone child = iter.next();
-	        	child.draw( gl );
-	        }
-        gl.glPopMatrix();
-	}
+//        gl.glPushMatrix();
+//	        gl.glRotatef( 	m_rotations[3], // angle
+//	        				m_rotations[0], // x
+//	        				m_rotations[1], // y
+//	        				m_rotations[2] );// z
+//	        
+//	        
+//	        float[] up = { 0, 1, 0, 1 };
+//			float[] transformedVec = up;//new float[ 4 ];
+//			
+//			transformedVec = multVec( up, m_length );	        
+//	        
+//			float[] boneVertices = { 	0.f,
+//										0.f,
+//										0.f,
+//										1.f,
+//										transformedVec[ 0 ],
+//										transformedVec[ 1 ],
+//										transformedVec[ 2 ],
+//										transformedVec[ 3 ]};
+//			
+//	        ByteBuffer vbb = ByteBuffer.allocateDirect( boneVertices.length * 4 );
+//	        vbb.order( ByteOrder.nativeOrder() );
+//	        FloatBuffer mVertexBuffer = vbb.asFloatBuffer();
+//	        mVertexBuffer.put( boneVertices );
+//	        mVertexBuffer.position( 0 );
+//
+//	        byte[] indices = { 0, 1 };
+//	        
+//	        ByteBuffer mIndexBuffer = ByteBuffer.allocateDirect( indices.length );
+//	        mIndexBuffer.put( indices );
+//	        mIndexBuffer.position( 0 );
+//
+//	       
+//	        gl.glVertexPointer( 4, 
+//	        					GL10.GL_FLOAT, 
+//	        					0, 
+//	        					mVertexBuffer );
+//	        
+//	        gl.glLineWidth( 2 );
+//	        
+//	        gl.glColor4f( 	m_color[0], 
+//	        				m_color[1], 
+//	        				m_color[2],
+//	        				m_color[3] );
+//	        
+//	        gl.glDrawElements( 	GL10.GL_LINES, 
+//	        					2, 
+//	        					GL10.GL_UNSIGNED_BYTE, 
+//	        					mIndexBuffer );
+//	        
+//
+//	        gl.glTranslatef(0.0f, m_length, 0);
+//	        
+//	        Iterator< MartianBone > iter = m_children.iterator();
+//	        while( iter.hasNext() )
+//	        {
+//	        	MartianBone child = iter.next();
+//	        	child.draw( gl );
+//	        }
+//        gl.glPopMatrix();
 //	}
+	}
 	
 }
