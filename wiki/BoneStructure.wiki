@@ -12,21 +12,18 @@
 
 == Equations ==
 === Bone animation transformation ==
+{{{
 r_t: rest transformation
-
 a_t: animation transformation (for a frame)
-
 t: transformation from r_t to a_t
-
 r_t * t = a_t
-
 t = r_t^-1 * a_t
+}}}
 
 === Skinning transformation ===
 Example transformation for skinning a vertex with two bones affecting it.
-
+{{{
 t_0: transformation from restpose to animation pose for bone 0
-
 t_1: transformation from restpose to animation pose for bone 1
-
 p_0: root position for bone 0
+}}}
