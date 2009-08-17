@@ -7,11 +7,8 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Bitmap.Config;
 import android.graphics.Paint.Style;
-import android.graphics.drawable.ShapeDrawable;
-import android.graphics.drawable.shapes.RectShape;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.WindowManager;
 
 public class MyDrawableView extends View {
 	static public Bitmap bitmap;

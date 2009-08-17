@@ -18,8 +18,8 @@ package se.combitech.strokesformartians.drawing;
 
 //package com.example.android.apis.graphics;
 
+import se.combitech.strokesformartians.drawing.BrushSizeDialog.OnBrushSizeChangeListener;
 import android.app.AlertDialog;
-import android.app.AlertDialog.Builder;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BlurMaskFilter;
@@ -35,11 +35,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.SeekBar;
-import android.widget.SeekBar.OnSeekBarChangeListener;
 
 public class FingerPaint extends GraphicsActivity
-        implements ColorPickerDialog.OnColorChangedListener, OnSeekBarChangeListener {    
+        implements ColorPickerDialog.OnColorChangedListener, OnBrushSizeChangeListener {    
 
 	private float mBrushSize = 12.0f;
 	
@@ -55,7 +53,7 @@ public class FingerPaint extends GraphicsActivity
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setStrokeJoin(Paint.Join.ROUND);
         mPaint.setStrokeCap(Paint.Cap.ROUND);
-        mPaint.setStrokeWidth(12);
+        mPaint.setStrokeWidth(mBrushSize);
         
         mEmboss = new EmbossMaskFilter(new float[] { 1, 1, 1 },
                                        0.4f, 6, 3.5f);
@@ -217,25 +215,16 @@ public class FingerPaint extends GraphicsActivity
 //                mPaint.setXfermode(new PorterDuffXfermode(
 //                                                    PorterDuff.Mode.SRC_ATOP));
 //                mPaint.setAlpha(0x80);
-            	new BrushSizeDialog(this, this, mBrushSize);
+            	
+            	new BrushSizeDialog(this, this, mBrushSize).show();
                 return true;
         }
         return super.onOptionsItemSelected(item);
     }
 
-	public void onProgressChanged(SeekBar seekBar, int progress,
-			boolean fromUser) {
-		// TODO Auto-generated method stub
-		
+	public void onBrushSizeChange(float size) {
+		mBrushSize = size;
+		mPaint.setStrokeWidth(mBrushSize);
 	}
 
-	public void onStartTrackingTouch(SeekBar seekBar) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void onStopTrackingTouch(SeekBar seekBar) {
-		// TODO Auto-generated method stub
-		
-	}
 }
