@@ -5,7 +5,16 @@
 import bpy
 import Blender
 
-def skeletonStub():
+def fileStart(out):
+    """
+    print the file header
+    """
+    
+    out.write("""
+/* evil bone representation made by funky bone exporter */
+""")
+
+def skeletonStub(out):
     """
     prints something like:
     public class Skeleton
@@ -18,7 +27,7 @@ def skeletonStub():
     """
     pass
 
-def createBones(bones):
+def createBones(out, bones):
     for bone in bones:
         """
         print something like:
@@ -26,29 +35,40 @@ def createBones(bones):
         """
         pass
 
-def boneStub():
+def boneStart(out):
     """
-    prints out to file something like:
+    output the start of the bone class
+    """
+    out.write(
+        """
     public class Bone
     {
     	public String name;
-        public Matrix restPose;
-        public [] Matrix frames;
+        public float [] restPose;
+        public float [][] frames;
+    }
+    """)
 
-        public Bone()
-        {
-    """
-    pass
-
-def printMatrix(name, frame, matrix):
+def printMatrix(out, name, frame, matrix):
     """
     prints something like:
     bones.getValue(name).frames[frame].set(0,0) = " + matrix.get(0,0)
     ...
     """
 
-def export():
+def export(filename):
+    """
+    todo: save restpose somehow
+    """
+
+    outfile = file(filename, "w")
+
     armature = Object.Get("Armature")
+
+    
+    # start printing
+    fileStart(outfile)
+    boneStub(outfile)
 
     for frame in xrange(1,30):
         armature.evaluatePose(frame)
@@ -57,3 +77,7 @@ def export():
             printMatrix(bone.name, frame, bone.poseMatrix)
             
             
+
+if __name__ == "__main__":
+    Blender.Window.FileSelector(export, "Export funky bone stuff")
+
