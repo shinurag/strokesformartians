@@ -11,6 +11,7 @@ Tooltip: 'Funky bone exporter'
 import bpy
 import Blender
 from Blender import *
+import os.path
 
 def printFile(out, content):
     """
@@ -20,10 +21,12 @@ def printFile(out, content):
     out.write("""
 /* evil bone representation made by funky bone exporter */
 package se.combitech.strokesformartians;
+
+import java.util.HashMap;
 """)
     content(out)
 
-def printSkeleton(out, numframes, content):
+def printSkeleton(out, classname, numframes, content):
     """
     print the start of the skeleton class
     
@@ -31,18 +34,18 @@ def printSkeleton(out, numframes, content):
     """
     out.write(
         """
-public class Skeleton
+public class {classname}
 {{
-public Map<String, Bone> bones;
+public HashMap<String, Bone> bones;
         public int numFrames;
 
-        public Skeleton()
+        public {classname}()
         {{
 numFrames = {numframes};
-bones = new Map<String, Bone>();
+bones = new HashMap<String, Bone>();
 
 Bone bone;
-""".format(numframes=str(numframes)))
+""".format(numframes=str(numframes), classname=classname))
     content(out)
     out.write(
         """
@@ -65,7 +68,7 @@ def printBoneClass(out):
     """
     out.write(
         """
-    public class Bone
+    class Bone
     {
     	public String name;
 	/**
@@ -98,13 +101,6 @@ def printMatrix(out, name, frame, matrix):
             framestart = frame * 16
             out.write("bone.frames[{index}] = {value};\n".format(index = framestart + x * 4 + y, value = elem))
 
-def printBones(out, names):
-    """
-    allocate the bones and name them
-    """
-    for name in names:
-        out.write("bones.put(\"{name}\", new Bone(\"{name}\"));\n".format(name = name))
-        
 
 def export(filename):
     """
@@ -122,14 +118,20 @@ def export(filename):
 
         def skeletoncontent(out):
             # allocate the bones
-            printBones(out, (bone.name for bone in armature.getPose().bones.values()))
+            for name in (bone.name for bone in armature.getPose().bones.values()):
+                out.write("bone = new Bone(\"{name}\");\n".format(name=name))
+                out.write("bones.put(\"{name}\", bone);\n".format(name = name))
+                out.write("bone.restPose = new float[3];\n")
+                out.write("bone.frames = new float[{size}];\n".format(size = 16 * numFrames))
+
 
             # output rest poses here
             for bone in armature.getData().bones.values():
-                out.write("bone = bones.getValue(\"{name}\");\n".format(name=bone.name))
+                out.write("bone = bones.get(\"{name}\");\n".format(name=bone.name))
                 # TODO: tail instead of head here?
                 out.write("bone.restPose[{index}] = {value};\n".format(index = 0, value = bone.head["ARMATURESPACE"][0]))
                 out.write("bone.restPose[{index}] = {value};\n".format(index = 0, value = bone.head["ARMATURESPACE"][1]))
+                out.write("bone.restPose[{index}] = {value};\n".format(index = 0, value = bone.head["ARMATURESPACE"][2]))
 
             for frame in xrange(1,numFrames):
                 armature.evaluatePose(frame)
@@ -137,7 +139,9 @@ def export(filename):
                 for bone in pose.bones.values():
                     printMatrix(out, bone.name, frame, bone.poseMatrix)
 
-        printSkeleton(outfile, numFrames, skeletoncontent)
+        classname = os.path.basename(filename)
+        classname = classname[:classname.rindex(".")]
+        printSkeleton(outfile, classname,numFrames, skeletoncontent)
         
 
     # start printing
