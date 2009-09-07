@@ -9,7 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.SeekBar;
 
 public class BrushSizeDialog extends Dialog{
-	final float MAX_SIZE = 32.0f;
+	final float MAX_SIZE = 132.0f;
 	final float MIN_SIZE = 6.0f;
 	private OnBrushSizeChangeListener mListener;
 	
@@ -45,15 +45,23 @@ public class BrushSizeDialog extends Dialog{
         };
 
 		SeekBar seekBar = new SeekBar(getContext());
-		seekBar.setMax((int)MAX_SIZE);
+		//seekBar.setMax((int)MAX_SIZE);
+		seekBar.setMax(100);
 		seekBar.setProgress((int)MAX_SIZE);
+		seekBar.setMinimumWidth(100);
 		
 		Button submitButton = new Button(getContext());
 		submitButton.setText("Select");
 		
-		        
-        setContentView(new SizePickerView(getContext(), l, mInitialSize));
-        setTitle("Pick a Brush Size!");
+		LinearLayout myLayout = new LinearLayout(getContext());
+		myLayout.addView(seekBar);
+		myLayout.setMinimumWidth(300);
+		
+		
+		
+		setContentView(myLayout);        
+        //setContentView(new SizePickerView(getContext(), l, mInitialSize));
+        //setTitle("Pick a Brush Size!");
     }
 
 }
