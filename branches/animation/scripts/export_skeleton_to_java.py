@@ -39,6 +39,9 @@ public Map<String, Bone> bones;
         public Skeleton()
         {{
 numFrames = {numframes};
+bones = new Map<String, Bone>();
+
+Bone bone;
 """.format(numframes=str(numframes)))
     content(out)
     out.write(
@@ -73,6 +76,11 @@ def printBoneClass(out):
 	 * Transformation matrix for the bone on the format frames[framenumber * 16 + matrixindice] where matrixindice is a value from 0 to 15 specifying which element in a column major 4x4 matrix to use.
 	 */ 
         public float [] frames;
+
+	public Bone(String name)
+	{
+		this.name = name;
+	}
     }
     """)
 
@@ -82,7 +90,21 @@ def printMatrix(out, name, frame, matrix):
     bones.getValue(name).frames[frame].set(0,0) = " + matrix.get(0,0)
     ...
     """
-    pass
+    out.write("\nbone = bones.getValue(\"{name}\");\n".format(name=name))
+    
+    tmatrix = matrix.transpose()
+    for (x,col) in enumerate(tmatrix):
+        for (y,elem) in enumerate(col):
+            framestart = frame * 16
+            out.write("bone.frames[{index}] = {value};\n".format(index = framestart + x * 4 + y, value = elem))
+
+def printBones(out, names):
+    """
+    allocate the bones and name them
+    """
+    for name in names:
+        out.write("bones.put(\"{name}\", new Bone(\"{name}\"));\n".format(name = name))
+        
 
 def export(filename):
     """
@@ -99,6 +121,16 @@ def export(filename):
         numFrames = 30
 
         def skeletoncontent(out):
+            # allocate the bones
+            printBones(out, (bone.name for bone in armature.getPose().bones.values()))
+
+            # output rest poses here
+            for bone in armature.getData().bones.values():
+                out.write("bone = bones.getValue(\"{name}\");\n".format(name=bone.name))
+                # TODO: tail instead of head here?
+                out.write("bone.restPose[{index}] = {value};\n".format(index = 0, value = bone.head["ARMATURESPACE"][0]))
+                out.write("bone.restPose[{index}] = {value};\n".format(index = 0, value = bone.head["ARMATURESPACE"][1]))
+
             for frame in xrange(1,numFrames):
                 armature.evaluatePose(frame)
                 pose = armature.getPose()
