@@ -1,31 +1,52 @@
-#!/usr/bin/env python
+#!BPY
+"""
+Name: 'Funky bone exporter'
+Blender: 249
+Group: 'Export'
+Tooltip: 'Funky bone exporter'
+"""
 
 # this is a script for exporting skeleton data from blender to a java class representation
 
 import bpy
 import Blender
+from Blender import *
 
-def fileStart(out):
+def printFile(out, content):
     """
     print the file header
     """
     
     out.write("""
 /* evil bone representation made by funky bone exporter */
+package se.combitech.strokesformartians;
 """)
+    content(out)
 
-def skeletonStub(out):
+def printSkeleton(out, numframes, content):
     """
-    prints something like:
-    public class Skeleton
-    {
-    	public Map<String, Bone> bones;
+    print the start of the skeleton class
+    
+    content: a function that prints the content of the constructor
+    """
+    out.write(
+        """
+public class Skeleton
+{{
+public Map<String, Bone> bones;
         public int numFrames;
 
         public Skeleton()
-        {
-    """
-    pass
+        {{
+numFrames = {numframes};
+""".format(numframes=str(numframes)))
+    content(out)
+    out.write(
+        """
+}
+}
+""")
+        
 
 def createBones(out, bones):
     for bone in bones:
@@ -35,7 +56,7 @@ def createBones(out, bones):
         """
         pass
 
-def boneStart(out):
+def printBoneClass(out):
     """
     output the start of the bone class
     """
@@ -44,8 +65,14 @@ def boneStart(out):
     public class Bone
     {
     	public String name;
+	/**
+	 * The coordinates in worldspace that defines the restpose for the bone. On the format restPose[index] where index is 0 for x and 1 for y. It only specify the head of the bone. 
+	 */
         public float [] restPose;
-        public float [][] frames;
+	/**
+	 * Transformation matrix for the bone on the format frames[framenumber * 16 + matrixindice] where matrixindice is a value from 0 to 15 specifying which element in a column major 4x4 matrix to use.
+	 */ 
+        public float [] frames;
     }
     """)
 
@@ -55,6 +82,7 @@ def printMatrix(out, name, frame, matrix):
     bones.getValue(name).frames[frame].set(0,0) = " + matrix.get(0,0)
     ...
     """
+    pass
 
 def export(filename):
     """
@@ -65,16 +93,23 @@ def export(filename):
 
     armature = Object.Get("Armature")
 
-    
-    # start printing
-    fileStart(outfile)
-    boneStub(outfile)
+    def filecontent(out):
+        printBoneClass(outfile)
 
-    for frame in xrange(1,30):
-        armature.evaluatePose(frame)
-        pose = armature.getPose()
-        for bone in pose.bones.values():
-            printMatrix(bone.name, frame, bone.poseMatrix)
+        numFrames = 30
+
+        def skeletoncontent(out):
+            for frame in xrange(1,numFrames):
+                armature.evaluatePose(frame)
+                pose = armature.getPose()
+                for bone in pose.bones.values():
+                    printMatrix(out, bone.name, frame, bone.poseMatrix)
+
+        printSkeleton(outfile, numFrames, skeletoncontent)
+        
+
+    # start printing
+    printFile(outfile, filecontent)
             
             
 
