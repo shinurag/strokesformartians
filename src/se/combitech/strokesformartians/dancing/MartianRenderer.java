@@ -4,6 +4,7 @@ import javax.microedition.khronos.egl.EGL10;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
+import android.content.Context;
 import android.opengl.GLSurfaceView;
 
 /**
@@ -15,9 +16,9 @@ class MartianRenderer implements GLSurfaceView.Renderer {
     private MartianModel m_martian;
     private float mAngle;
 	
-	public MartianRenderer( boolean useTranslucentBackground, boolean debugFlag ) {
+	public MartianRenderer( Context context, boolean useTranslucentBackground, boolean debugFlag ) {
         mTranslucentBackground = useTranslucentBackground;
-        m_martian = new MartianModel( debugFlag );
+        m_martian = new MartianModel( context, debugFlag );
     }
 
 	
@@ -28,6 +29,7 @@ class MartianRenderer implements GLSurfaceView.Renderer {
          * glClear().
          */
 
+    	gl.glClearColor( 0.95f, 0.95f, 0.95f, 1.0f );
         gl.glClear(GL10.GL_COLOR_BUFFER_BIT | GL10.GL_DEPTH_BUFFER_BIT);
 
         /*
@@ -37,10 +39,11 @@ class MartianRenderer implements GLSurfaceView.Renderer {
         gl.glMatrixMode( GL10.GL_MODELVIEW );
         gl.glLoadIdentity();
         gl.glTranslatef( 0, 0, -3.0f );
-        gl.glRotatef( mAngle, 0, 1, 0 );
+//        gl.glRotatef( mAngle, 0, 1, 0 );
 //        gl.glRotatef(mAngle*0.25f,  1, 0, 0);
 
         gl.glEnableClientState( GL10.GL_VERTEX_ARRAY );
+        gl.glEnableClientState( GL10.GL_TEXTURE_COORD_ARRAY );
 //        gl.glEnableClientState(GL10.GL_COLOR_ARRAY);
 
         m_martian.draw( gl );

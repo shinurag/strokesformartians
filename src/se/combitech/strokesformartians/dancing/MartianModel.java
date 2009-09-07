@@ -1,10 +1,18 @@
 package se.combitech.strokesformartians.dancing;
 
 import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
 
 import javax.microedition.khronos.opengles.GL10;
+import android.opengl.GLUtils.*;
 
+import se.combitech.strokesformartians.R;
+
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.opengl.Matrix;
 
 /**
@@ -12,22 +20,29 @@ import android.opengl.Matrix;
  */
 class MartianModel
 {
+	private MartianMesh m_mesh;
 	private MartianBone m_rootBone;
 	private boolean m_debug;
+	private int[] m_textureIds;
+	private Context m_context = null;
 	
-	public MartianModel()
+	public MartianModel( Context context )
 	{
-		this( false );
+		this( context, false );
 	}
 	
-	public MartianModel( boolean debugFlag )
+	public MartianModel( Context context, boolean debugFlag )
     {
 		m_rootBone = new MartianBone();
+		m_mesh = new MartianMesh();
 		m_debug = debugFlag;
+		m_textureIds = new int[1];
 		if( m_debug )
 		{
 			createMartian();
 		}
+		
+		m_context = context;
     }
 
 	private void createMartian()
@@ -125,16 +140,74 @@ class MartianModel
 	
     public void draw( GL10 gl )
     {
-//    	gl.glScalef(60000, 60000, 60000);
-        //gl.glFrontFace( gl.GL_CW );
-//        gl.glVertexPointer(3, GL10.GL_FIXED, 0, mVertexBuffer);
-//        gl.glLineWidth( 2 );
-//        gl.glColor4f(0, 0, 0, 1);
-//        gl.glDrawElements( 	GL10.GL_LINES, 
-//        					24, 
-//        					GL10.GL_UNSIGNED_BYTE, 
-//        					mIndexBuffer);
+    	gl.glColor4f( 0, 1, 1, 1 );
+        gl.glEnable( GL10.GL_TEXTURE_2D );
         
+    	if( m_textureIds[0] == 0 )
+    	{
+    		Bitmap bitmap = BitmapFactory.decodeResource( m_context.getResources(), R.drawable.flowers );
+    				
+    		gl.glGenTextures( 	1, 
+    							m_textureIds,
+								0 );
+    		gl.glBindTexture( 	GL10.GL_TEXTURE_2D, 
+    							m_textureIds[0] );
+    		
+    		android.opengl.GLUtils.texImage2D( 	GL10.GL_TEXTURE_2D,
+							    				0,
+							    				bitmap,
+							    				0 );
+    	}
+    	
+    	gl.glBindTexture( 	GL10.GL_TEXTURE_2D, 
+							m_textureIds[0] );
+		
+		gl.glTexEnvf( 	GL10.GL_TEXTURE_ENV, 
+						GL10.GL_TEXTURE_ENV_MODE, 
+						GL10.GL_DECAL );
+
+		try {
+			ByteBuffer vertexByteBuffer;
+			vertexByteBuffer = ByteBuffer.allocateDirect( m_mesh.getVertices().length * 4 );
+			vertexByteBuffer.order( ByteOrder.nativeOrder() );
+			FloatBuffer vertexBuffer = vertexByteBuffer.asFloatBuffer();
+			vertexBuffer.put( m_mesh.getVertices() );
+			vertexBuffer.position( 0 );
+
+			ByteBuffer texCoordByteBuffer;
+			texCoordByteBuffer = ByteBuffer.allocateDirect( m_mesh.getTextureCoordinates().length * 4 );
+			texCoordByteBuffer.order( ByteOrder.nativeOrder() );
+			FloatBuffer textureCoordinateBuffer = texCoordByteBuffer.asFloatBuffer();
+			textureCoordinateBuffer.put( m_mesh.getTextureCoordinates() );
+			textureCoordinateBuffer.position( 0 );
+
+			
+			ByteBuffer mIndexBuffer = ByteBuffer.allocateDirect( m_mesh.getIndices().length );
+			mIndexBuffer.put( m_mesh.getIndices() );
+			mIndexBuffer.position( 0 );
+			 
+			gl.glVertexPointer( 	4,
+									GL10.GL_FLOAT, 
+									0,
+									vertexBuffer );
+			
+			gl.glTexCoordPointer( 	2, 
+									GL10.GL_FLOAT, 
+									0, 
+									textureCoordinateBuffer );
+			
+			gl.glLineWidth( 2 );
+			
+			gl.glDrawElements( 	GL10.GL_TRIANGLES, 
+				  				6, 
+				  				GL10.GL_UNSIGNED_BYTE, 
+				  				mIndexBuffer );
+			
+		} catch ( Exception e ) {
+			e.printStackTrace();
+		}
+
+    	
         if( m_debug )
         {
         	m_rootBone.draw( gl );
