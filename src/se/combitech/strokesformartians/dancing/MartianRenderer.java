@@ -42,8 +42,8 @@ class MartianRenderer implements GLSurfaceView.Renderer {
 //        gl.glRotatef( mAngle, 0, 1, 0 );
 //        gl.glRotatef(mAngle*0.25f,  1, 0, 0);
 
-        gl.glEnableClientState( GL10.GL_VERTEX_ARRAY );
-        gl.glEnableClientState( GL10.GL_TEXTURE_COORD_ARRAY );
+//        gl.glEnableClientState( GL10.GL_VERTEX_ARRAY );
+//        gl.glEnableClientState( GL10.GL_TEXTURE_COORD_ARRAY );
 //        gl.glEnableClientState(GL10.GL_COLOR_ARRAY);
 
         m_martian.draw( gl );

@@ -23,6 +23,7 @@ class MartianModel
 {
 	private MartianMesh m_mesh;
 	private MartianBone m_rootBone;
+	private MartianAnimator m_animator;
 	private boolean m_debug;
 	private int[] m_textureIds;
 	private Context m_context = null;
@@ -36,6 +37,7 @@ class MartianModel
     {
 		m_rootBone = new MartianBone();
 		m_mesh = new MartianMesh();
+		m_animator = new MartianAnimator();
 		m_debug = debugFlag;
 		m_textureIds = new int[1];
 		if( m_debug )
@@ -167,51 +169,91 @@ class MartianModel
 						GL10.GL_TEXTURE_ENV_MODE, 
 						GL10.GL_DECAL );
 
+//		try {
+//			ByteBuffer vertexByteBuffer;
+//			vertexByteBuffer = ByteBuffer.allocateDirect( m_mesh.getVertices().length * 4 );
+//			vertexByteBuffer.order( ByteOrder.nativeOrder() );
+//			FloatBuffer vertexBuffer = vertexByteBuffer.asFloatBuffer();
+//			vertexBuffer.put( m_mesh.getVertices() );
+//			vertexBuffer.position( 0 );
+//
+//			ByteBuffer texCoordByteBuffer;
+//			texCoordByteBuffer = ByteBuffer.allocateDirect( m_mesh.getTextureCoordinates().length * 4 );
+//			texCoordByteBuffer.order( ByteOrder.nativeOrder() );
+//			FloatBuffer textureCoordinateBuffer = texCoordByteBuffer.asFloatBuffer();
+//			textureCoordinateBuffer.put( m_mesh.getTextureCoordinates() );
+//			textureCoordinateBuffer.position( 0 );
+//
+//			
+//			ByteBuffer mIndexBuffer = ByteBuffer.allocateDirect( m_mesh.getIndices().length );
+//			mIndexBuffer.put( m_mesh.getIndices() );
+//			mIndexBuffer.position( 0 );
+//			 
+//	        gl.glEnableClientState( GL10.GL_VERTEX_ARRAY );
+//	        gl.glEnableClientState( GL10.GL_TEXTURE_COORD_ARRAY );
+//			
+//			
+//			gl.glVertexPointer( 	4,
+//									GL10.GL_FLOAT, 
+//									0,
+//									vertexBuffer );
+//			
+//			gl.glTexCoordPointer( 	2, 
+//									GL10.GL_FLOAT, 
+//									0, 
+//									textureCoordinateBuffer );
+//			
+//			gl.glLineWidth( 2 );
+//			
+//			gl.glDrawElements( 	GL10.GL_TRIANGLES, 
+//				  				6, 
+//				  				GL10.GL_UNSIGNED_BYTE, 
+//				  				mIndexBuffer );
+//			
+//	        gl.glDisableClientState( GL10.GL_VERTEX_ARRAY );
+//	        gl.glDisableClientState( GL10.GL_TEXTURE_COORD_ARRAY );
+//
+//			
+//		} catch ( Exception e ) {
+//			e.printStackTrace();
+//		}
+
+		float[] skeletonVertexBuffer = null;
+		byte[] skeletonIndexBuffer = null;
+		m_animator.getSkeletonFrame( 0, skeletonVertexBuffer, skeletonIndexBuffer );
+		
+		gl.glDisable( GL10.GL_TEXTURE_2D );
+		gl.glColor4f( 0, 0, 0, 1 );
 		try {
 			ByteBuffer vertexByteBuffer;
-			vertexByteBuffer = ByteBuffer.allocateDirect( m_mesh.getVertices().length * 4 );
+			vertexByteBuffer = ByteBuffer.allocateDirect( skeletonVertexBuffer.length * 4 );
 			vertexByteBuffer.order( ByteOrder.nativeOrder() );
 			FloatBuffer vertexBuffer = vertexByteBuffer.asFloatBuffer();
-			vertexBuffer.put( m_mesh.getVertices() );
+			vertexBuffer.put( skeletonVertexBuffer );
 			vertexBuffer.position( 0 );
-
-			ByteBuffer texCoordByteBuffer;
-			texCoordByteBuffer = ByteBuffer.allocateDirect( m_mesh.getTextureCoordinates().length * 4 );
-			texCoordByteBuffer.order( ByteOrder.nativeOrder() );
-			FloatBuffer textureCoordinateBuffer = texCoordByteBuffer.asFloatBuffer();
-			textureCoordinateBuffer.put( m_mesh.getTextureCoordinates() );
-			textureCoordinateBuffer.position( 0 );
-
 			
-			ShortBuffer mIndexBuffer = ShortBuffer.allocate( m_mesh.getIndices().length );
-			mIndexBuffer.put( m_mesh.getIndices() );
+			ByteBuffer mIndexBuffer = ByteBuffer.allocateDirect( skeletonIndexBuffer.length );
+			mIndexBuffer.put( skeletonIndexBuffer );
 			mIndexBuffer.position( 0 );
-			 
-			gl.glVertexPointer( 	4,
+
+	        gl.glEnableClientState( GL10.GL_VERTEX_ARRAY );
+			
+			gl.glVertexPointer( 	2,
 									GL10.GL_FLOAT, 
 									0,
 									vertexBuffer );
 			
-			gl.glTexCoordPointer( 	2, 
-									GL10.GL_FLOAT, 
-									0, 
-									textureCoordinateBuffer );
-			
 			gl.glLineWidth( 2 );
 			
-			gl.glDrawElements( 	GL10.GL_TRIANGLES, 
-				  				6, 
+			gl.glDrawElements( 	GL10.GL_LINES, 
+				  				15, 
 				  				GL10.GL_UNSIGNED_BYTE, 
 				  				mIndexBuffer );
+			
+	        gl.glDisableClientState( GL10.GL_VERTEX_ARRAY );
 			
 		} catch ( Exception e ) {
 			e.printStackTrace();
 		}
-
-    	
-        if( m_debug )
-        {
-        	m_rootBone.draw( gl );
-        }
     }
 }
