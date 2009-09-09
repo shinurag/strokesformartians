@@ -3,6 +3,7 @@ package se.combitech.strokesformartians.dancing;
 import java.util.HashMap;
 import se.combitech.strokesformartians.Leroy2;
 import se.combitech.strokesformartians.Leroy2.Bone;
+import android.opengl.*;
 
 public class MartianAnimator 
 {
@@ -174,5 +175,30 @@ public class MartianAnimator
 		System.arraycopy(texCoordBuffer,0,texCoords,0,texCoordBuffer.length);
 	}
 	
-	//private void getTransformedVertex(int vertexNum, 
+	/**
+	 * Poo!
+	 * 
+	 * @param[out] output where to place the transformed vertices
+	 * @param vertexNum which vertex to transform
+	 * @param boneName the name of the bone to use for transformation
+	 * @param frame which frame to use
+	 */
+	private void getTransformedVertex(float [] output, int vertexNum, String boneName, int frame)
+	{
+		Leroy2.Bone bone = leroy.bones.get(boneName);
+		// get the vertex position relative to the bone, this can be optimized by calculating it only once
+		for(int loop0 = 0; loop0 < 3; ++loop0)
+		{
+			output[loop0] = boneVertexBuffer[vertexNum * 3 + loop0] - bone.restPose[loop0];
+		}
+		
+		// transform using bone transformation
+		Matrix.multiplyMV(output, 0, bone.frames, (frame << 4), output, 0);
+		
+		// add the bone rest pose
+		for(int loop0 = 0; loop0 < 3; ++loop0)
+		{
+			output[loop0] += bone.restPose[loop0];
+		}		
+	}
 }
