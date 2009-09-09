@@ -27,6 +27,9 @@ class MartianModel
 	private boolean m_debug;
 	private int[] m_textureIds;
 	private Context m_context = null;
+	private float[] skeletonVertexBuffer;
+	private byte[] skeletonIndexBuffer; 	
+	
 	
 	public MartianModel( Context context )
 	{
@@ -35,15 +38,17 @@ class MartianModel
 	
 	public MartianModel( Context context, boolean debugFlag )
     {
-		m_rootBone = new MartianBone();
-		m_mesh = new MartianMesh();
-		m_animator = new MartianAnimator();
+		m_animator = new MartianAnimator( skeletonVertexBuffer, skeletonIndexBuffer );
+		skeletonVertexBuffer = new float[ m_animator.leroy.bones.size() * 3 ];
+		skeletonIndexBuffer = new byte[30];
+		//m_rootBone = new MartianBone();
+		//m_mesh = new MartianMesh();
 		m_debug = debugFlag;
 		m_textureIds = new int[1];
-		if( m_debug )
-		{
-			createMartian();
-		}
+//		if( m_debug )
+//		{
+//			createMartian();
+//		}
 		
 		m_context = context;
     }
@@ -218,8 +223,6 @@ class MartianModel
 //			e.printStackTrace();
 //		}
 
-		float[] skeletonVertexBuffer = null;
-		byte[] skeletonIndexBuffer = null;
 		m_animator.getSkeletonFrame( 0, skeletonVertexBuffer, skeletonIndexBuffer );
 		
 		gl.glDisable( GL10.GL_TEXTURE_2D );
@@ -238,7 +241,7 @@ class MartianModel
 
 	        gl.glEnableClientState( GL10.GL_VERTEX_ARRAY );
 			
-			gl.glVertexPointer( 	2,
+			gl.glVertexPointer( 	3,
 									GL10.GL_FLOAT, 
 									0,
 									vertexBuffer );

@@ -1,76 +1,90 @@
 package se.combitech.strokesformartians.dancing;
 
 import java.util.HashMap;
-
 import se.combitech.strokesformartians.Leroy2;
 import se.combitech.strokesformartians.Leroy2.Bone;
 
 public class MartianAnimator 
 {
-	private Leroy2 leroy = new Leroy2();
+	public Leroy2 leroy;
 	private float[] boneVertexBuffer;
 	private byte[] boneIndexBuffer;
 	private int numVertices;
 	byte [] indexBuffer;
 	float [] texCoordBuffer;
 	
-	public MartianAnimator()
+	public MartianAnimator( float[] vertexBuffer, byte[] indexBuffer)
 	{
+		boneVertexBuffer = vertexBuffer;
+		boneIndexBuffer = indexBuffer;
+		leroy = new Leroy2();
 		generateSkeleton();
 	}
 	
 	private void generateSkeleton()
 	{
-		boneVertexBuffer = new float[ leroy.bones.size() * 2 ];
-		
 		int index = 0;
-		boneVertexBuffer[index] = leroy.bones.get( "root" ).restPose[index++];
-		boneVertexBuffer[index] = leroy.bones.get( "root" ).restPose[index++];
+		boneVertexBuffer[index++] = leroy.bones.get( "root" ).restPose[0];
+		boneVertexBuffer[index++] = leroy.bones.get( "root" ).restPose[1];
+		boneVertexBuffer[index++] = leroy.bones.get( "root" ).restPose[2];
 
-		boneVertexBuffer[index] = leroy.bones.get( "spine" ).restPose[index++];
-		boneVertexBuffer[index] = leroy.bones.get( "spine" ).restPose[index++];
+		boneVertexBuffer[index++] = leroy.bones.get( "spine" ).restPose[0];
+		boneVertexBuffer[index++] = leroy.bones.get( "spine" ).restPose[1];
+		boneVertexBuffer[index++] = leroy.bones.get( "spine" ).restPose[2];
 
-		boneVertexBuffer[index] = leroy.bones.get( "neck" ).restPose[index++];
-		boneVertexBuffer[index] = leroy.bones.get( "neck" ).restPose[index++];
+		boneVertexBuffer[index++] = leroy.bones.get( "neck" ).restPose[0];
+		boneVertexBuffer[index++] = leroy.bones.get( "neck" ).restPose[1];
+		boneVertexBuffer[index++] = leroy.bones.get( "neck" ).restPose[2];
 
-		boneVertexBuffer[index] = leroy.bones.get( "collar_left" ).restPose[index++];
-		boneVertexBuffer[index] = leroy.bones.get( "collar_left" ).restPose[index++];
+		boneVertexBuffer[index++] = leroy.bones.get( "collar_left" ).restPose[0];
+		boneVertexBuffer[index++] = leroy.bones.get( "collar_left" ).restPose[1];
+		boneVertexBuffer[index++] = leroy.bones.get( "collar_left" ).restPose[2];
 
-		boneVertexBuffer[index] = leroy.bones.get( "upper_arm_left" ).restPose[index++];
-		boneVertexBuffer[index] = leroy.bones.get( "upper_arm_left" ).restPose[index++];
+		boneVertexBuffer[index++] = leroy.bones.get( "upper_arm_left" ).restPose[0];
+		boneVertexBuffer[index++] = leroy.bones.get( "upper_arm_left" ).restPose[1];
+		boneVertexBuffer[index++] = leroy.bones.get( "upper_arm_left" ).restPose[2];
 
-		boneVertexBuffer[index] = leroy.bones.get( "lower_arm_left" ).restPose[index++];
-		boneVertexBuffer[index] = leroy.bones.get( "lower_arm_left" ).restPose[index++];
-
-		boneVertexBuffer[index] = leroy.bones.get( "collar_right" ).restPose[index++];
-		boneVertexBuffer[index] = leroy.bones.get( "collar_right" ).restPose[index++];
-
-		boneVertexBuffer[index] = leroy.bones.get( "upper_arm_right" ).restPose[index++];
-		boneVertexBuffer[index] = leroy.bones.get( "upper_arm_right" ).restPose[index++];
-
-		boneVertexBuffer[index] = leroy.bones.get( "lower_arm_right" ).restPose[index++];
-		boneVertexBuffer[index] = leroy.bones.get( "lower_arm_right" ).restPose[index++];
+		boneVertexBuffer[index++] = leroy.bones.get( "lower_arm_left" ).restPose[0];
+		boneVertexBuffer[index++] = leroy.bones.get( "lower_arm_left" ).restPose[1];
+		boneVertexBuffer[index++] = leroy.bones.get( "lower_arm_left" ).restPose[2];
 		
-		boneVertexBuffer[index] = leroy.bones.get( "pelvic_left" ).restPose[index++];
-		boneVertexBuffer[index] = leroy.bones.get( "pelvic_left" ).restPose[index++];
+		boneVertexBuffer[index++] = leroy.bones.get( "collar_right" ).restPose[0];
+		boneVertexBuffer[index++] = leroy.bones.get( "collar_right" ).restPose[1];
+		boneVertexBuffer[index++] = leroy.bones.get( "collar_right" ).restPose[2];
 
-		boneVertexBuffer[index] = leroy.bones.get( "upper_leg_left" ).restPose[index++];
-		boneVertexBuffer[index] = leroy.bones.get( "upper_leg_left" ).restPose[index++];
+		boneVertexBuffer[index++] = leroy.bones.get( "upper_arm_right" ).restPose[0];
+		boneVertexBuffer[index++] = leroy.bones.get( "upper_arm_right" ).restPose[1];
+		boneVertexBuffer[index++] = leroy.bones.get( "upper_arm_right" ).restPose[2];
 
-		boneVertexBuffer[index] = leroy.bones.get( "lower_leg_left" ).restPose[index++];
-		boneVertexBuffer[index] = leroy.bones.get( "lower_leg_left" ).restPose[index++];
+		boneVertexBuffer[index++] = leroy.bones.get( "lower_arm_right" ).restPose[0];
+		boneVertexBuffer[index++] = leroy.bones.get( "lower_arm_right" ).restPose[1];
+		boneVertexBuffer[index++] = leroy.bones.get( "lower_arm_right" ).restPose[2];
 
-		boneVertexBuffer[index] = leroy.bones.get( "pelvic_right" ).restPose[index++];
-		boneVertexBuffer[index] = leroy.bones.get( "pelvic_right" ).restPose[index++];
+		boneVertexBuffer[index++] = leroy.bones.get( "pelvic_left" ).restPose[0];
+		boneVertexBuffer[index++] = leroy.bones.get( "pelvic_left" ).restPose[1];
+		boneVertexBuffer[index++] = leroy.bones.get( "pelvic_left" ).restPose[2];
 
-		boneVertexBuffer[index] = leroy.bones.get( "upper_leg_right" ).restPose[index++];
-		boneVertexBuffer[index] = leroy.bones.get( "upper_leg_right" ).restPose[index++];
+		boneVertexBuffer[index++] = leroy.bones.get( "upper_leg_left" ).restPose[0];
+		boneVertexBuffer[index++] = leroy.bones.get( "upper_leg_left" ).restPose[1];
+		boneVertexBuffer[index++] = leroy.bones.get( "upper_leg_left" ).restPose[2];
 
-		boneVertexBuffer[index] = leroy.bones.get( "lower_leg_right" ).restPose[index++];
-		boneVertexBuffer[index] = leroy.bones.get( "lower_leg_right" ).restPose[index++];
+		boneVertexBuffer[index++] = leroy.bones.get( "lower_leg_left" ).restPose[0];
+		boneVertexBuffer[index++] = leroy.bones.get( "lower_leg_left" ).restPose[1];
+		boneVertexBuffer[index++] = leroy.bones.get( "lower_leg_left" ).restPose[2];
+
+		boneVertexBuffer[index++] = leroy.bones.get( "pelvic_right" ).restPose[0];
+		boneVertexBuffer[index++] = leroy.bones.get( "pelvic_right" ).restPose[1];
+		boneVertexBuffer[index++] = leroy.bones.get( "pelvic_right" ).restPose[2];
+
+		boneVertexBuffer[index++] = leroy.bones.get( "upper_leg_right" ).restPose[0];
+		boneVertexBuffer[index++] = leroy.bones.get( "upper_leg_right" ).restPose[1];
+		boneVertexBuffer[index++] = leroy.bones.get( "upper_leg_right" ).restPose[2];
+
+		boneVertexBuffer[index++] = leroy.bones.get( "lower_leg_right" ).restPose[0];
+		boneVertexBuffer[index++] = leroy.bones.get( "lower_leg_right" ).restPose[1];
+		boneVertexBuffer[index++] = leroy.bones.get( "lower_leg_right" ).restPose[2];
 		
 		
-		boneIndexBuffer = new byte[30];
 		index = 0;
 		boneIndexBuffer[ index++ ] = 0;
 		boneIndexBuffer[ index++ ] = 1;
