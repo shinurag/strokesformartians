@@ -1,6 +1,7 @@
 package se.combitech.strokesformartians.dancing;
 
 import java.util.HashMap;
+import java.nio.*;
 
 import se.combitech.strokesformartians.Leroy2;
 import se.combitech.strokesformartians.Leroy2.Bone;
@@ -77,10 +78,17 @@ public class MartianAnimator
 		vertexBuffer = boneVertexBuffer;
 	}
 	
+	/**
+	 * Get a mesh from the animation
+	 * @param frame Which frame to get
+	 * @param vertices[out] Where the vertices will be stored
+	 * @param texCoords[out] Where the texture coordinates will be stored
+	 * @param indices[out] Where the indices will be stored
+	 */
 	public void getFrame( 	float frame, 
-							float[] vertexBuffer, 
-							float[] textureCoordinateBuffer, 
-							short[] indexBuffer )
+							FloatBuffer vertices, 
+							FloatBuffer texCoords, 
+							ShortBuffer indices)
 	{
 	
 	}
