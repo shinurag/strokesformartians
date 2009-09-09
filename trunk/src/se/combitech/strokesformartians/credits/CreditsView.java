@@ -7,7 +7,6 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.util.AttributeSet;
-import android.view.SurfaceView;
 import android.view.View;
 
 public class CreditsView extends View implements Runnable {
@@ -43,7 +42,7 @@ public class CreditsView extends View implements Runnable {
 		{
 			mHeight = canvas.getHeight();
 		}
-		canvas.drawARGB(255, 100, 100, 100);
+		canvas.drawARGB(255, 0, 0, 0);
 		
 		Paint paint = new Paint( Paint.ANTI_ALIAS_FLAG );
 		paint.setARGB(255, 200, 200, 200);
@@ -72,7 +71,6 @@ public class CreditsView extends View implements Runnable {
 			try {
 				Thread.sleep( 10 );
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
