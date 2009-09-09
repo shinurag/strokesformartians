@@ -14,6 +14,17 @@ public class MartianAnimator
 	byte [] indexBuffer;
 	float [] texCoordBuffer;
 	
+	private class VertexWeight
+	{
+		public String bone0;
+		public String bone1;
+		
+		public float weight0;
+		public float weight1;
+	}
+	
+	VertexWeight [] vertexWeights;
+	
 	public MartianAnimator( float[] vertexBuffer, byte[] indexBuffer)
 	{
 		boneVertexBuffer = vertexBuffer;
@@ -164,8 +175,9 @@ public class MartianAnimator
 		int intframe = (int)frame;
 		
 		for(int vertex = 0; vertex < numVertices; ++vertex)
-		{			
-			
+		{		
+			// @todo weight the second bone as well
+			getTransformedVertex(vertices, vertex * 3, vertex, vertexWeights[vertex].bone0, intframe);
 		}	
 		
 		// always use indices from indexBuffer
@@ -179,11 +191,12 @@ public class MartianAnimator
 	 * Poo!
 	 * 
 	 * @param[out] output where to place the transformed vertices
+	 * @param outputOffset where in output to start storing the output 
 	 * @param vertexNum which vertex to transform
 	 * @param boneName the name of the bone to use for transformation
 	 * @param frame which frame to use
 	 */
-	private void getTransformedVertex(float [] output, int vertexNum, String boneName, int frame)
+	private void getTransformedVertex(float [] output, int outputOffset, int vertexNum, String boneName, int frame)
 	{
 		Leroy2.Bone bone = leroy.bones.get(boneName);
 		// get the vertex position relative to the bone, this can be optimized by calculating it only once
