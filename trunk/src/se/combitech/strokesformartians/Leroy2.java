@@ -154,7 +154,7 @@ bone.restPose[0] = 1.17482340336f;
 bone.restPose[0] = 0.0314182750881f;
 bone.restPose[0] = 3.38912892342f;
 
-bone = bones.getValue("lower_arm_right");
+bone = bones.get("lower_arm_right");
 bone.frames[16] = -0.143955558538f;
 bone.frames[17] = 0.147831231356f;
 bone.frames[18] = -0.978479862213f;
@@ -172,7 +172,7 @@ bone.frames[29] = 0.0f;
 bone.frames[30] = 0.0f;
 bone.frames[31] = 1.0f;
 
-bone = bones.getValue("upper_leg_left");
+bone = bones.get("upper_leg_left");
 bone.frames[16] = -0.966921329498f;
 bone.frames[17] = 0.253616124392f;
 bone.frames[18] = -0.0272382795811f;
@@ -190,7 +190,7 @@ bone.frames[29] = 0.0f;
 bone.frames[30] = 0.0f;
 bone.frames[31] = 1.0f;
 
-bone = bones.getValue("neck");
+bone = bones.get("neck");
 bone.frames[16] = -0.970643281937f;
 bone.frames[17] = -0.237348228693f;
 bone.frames[18] = -0.0389567017555f;
@@ -208,7 +208,7 @@ bone.frames[29] = 0.0f;
 bone.frames[30] = 0.0f;
 bone.frames[31] = 1.0f;
 
-bone = bones.getValue("lower_leg_right");
+bone = bones.get("lower_leg_right");
 bone.frames[16] = -0.977755606174f;
 bone.frames[17] = 0.0824872106314f;
 bone.frames[18] = -0.192847028375f;
@@ -226,7 +226,7 @@ bone.frames[29] = 0.0f;
 bone.frames[30] = 0.0f;
 bone.frames[31] = 1.0f;
 
-bone = bones.getValue("spine");
+bone = bones.get("spine");
 bone.frames[16] = -0.988760709763f;
 bone.frames[17] = -0.118250489235f;
 bone.frames[18] = -0.0914839431643f;
@@ -244,7 +244,7 @@ bone.frames[29] = 0.0f;
 bone.frames[30] = 0.0f;
 bone.frames[31] = 1.0f;
 
-bone = bones.getValue("lower_leg_left");
+bone = bones.get("lower_leg_left");
 bone.frames[16] = -0.999254882336f;
 bone.frames[17] = 0.0362158231437f;
 bone.frames[18] = 0.0133453486487f;
@@ -262,7 +262,7 @@ bone.frames[29] = 0.0f;
 bone.frames[30] = 0.0f;
 bone.frames[31] = 1.0f;
 
-bone = bones.getValue("pelvic_left");
+bone = bones.get("pelvic_left");
 bone.frames[16] = -0.20776206255f;
 bone.frames[17] = 0.947363913059f;
 bone.frames[18] = 0.243591025472f;
@@ -280,7 +280,7 @@ bone.frames[29] = 0.0f;
 bone.frames[30] = 0.0f;
 bone.frames[31] = 1.0f;
 
-bone = bones.getValue("lower_arm_left");
+bone = bones.get("lower_arm_left");
 bone.frames[16] = -0.463130325079f;
 bone.frames[17] = -0.881357133389f;
 bone.frames[18] = -0.0933803096414f;
@@ -298,7 +298,7 @@ bone.frames[29] = 0.0f;
 bone.frames[30] = 0.0f;
 bone.frames[31] = 1.0f;
 
-bone = bones.getValue("upper_leg_right");
+bone = bones.get("upper_leg_right");
 bone.frames[16] = -0.99011361599f;
 bone.frames[17] = -0.135449633002f;
 bone.frames[18] = -0.0364497825503f;
@@ -316,7 +316,7 @@ bone.frames[29] = 0.0f;
 bone.frames[30] = 0.0f;
 bone.frames[31] = 1.0f;
 
-bone = bones.getValue("pelvic_right");
+bone = bones.get("pelvic_right");
 bone.frames[16] = -0.252131223679f;
 bone.frames[17] = -0.929116010666f;
 bone.frames[18] = -0.270505785942f;
@@ -334,7 +334,7 @@ bone.frames[29] = 0.0f;
 bone.frames[30] = 0.0f;
 bone.frames[31] = 1.0f;
 
-bone = bones.getValue("collar_right");
+bone = bones.get("collar_right");
 bone.frames[16] = -0.141725718975f;
 bone.frames[17] = -0.946682751179f;
 bone.frames[18] = -0.28931966424f;
@@ -352,7 +352,7 @@ bone.frames[29] = 0.0f;
 bone.frames[30] = 0.0f;
 bone.frames[31] = 1.0f;
 
-bone = bones.getValue("collar_left");
+bone = bones.get("collar_left");
 bone.frames[16] = 0.0702984631062f;
 bone.frames[17] = 0.986162722111f;
 bone.frames[18] = 0.150137871504f;
@@ -370,7 +370,7 @@ bone.frames[29] = 0.0f;
 bone.frames[30] = 0.0f;
 bone.frames[31] = 1.0f;
 
-bone = bones.getValue("upper_arm_left");
+bone = bones.get("upper_arm_left");
 bone.frames[16] = -0.848955869675f;
 bone.frames[17] = 0.323671489954f;
 bone.frames[18] = 0.417744964361f;
@@ -388,7 +388,7 @@ bone.frames[29] = 0.0f;
 bone.frames[30] = 0.0f;
 bone.frames[31] = 1.0f;
 
-bone = bones.getValue("root");
+bone = bones.get("root");
 bone.frames[16] = 0.983764648438f;
 bone.frames[17] = -0.139764636755f;
 bone.frames[18] = 0.112575314939f;
@@ -406,7 +406,7 @@ bone.frames[29] = 0.0f;
 bone.frames[30] = 0.0f;
 bone.frames[31] = 1.0f;
 
-bone = bones.getValue("upper_arm_right");
+bone = bones.get("upper_arm_right");
 bone.frames[16] = -0.989542841911f;
 bone.frames[17] = 0.115357585251f;
 bone.frames[18] = 0.086589127779f;
@@ -424,7 +424,7 @@ bone.frames[29] = 0.0f;
 bone.frames[30] = 0.0f;
 bone.frames[31] = 1.0f;
 
-bone = bones.getValue("lower_arm_right");
+bone = bones.get("lower_arm_right");
 bone.frames[32] = -0.139407932758f;
 bone.frames[33] = 0.0825946033001f;
 bone.frames[34] = -0.98678457737f;
@@ -442,7 +442,7 @@ bone.frames[45] = 0.0f;
 bone.frames[46] = 0.0f;
 bone.frames[47] = 1.0f;
 
-bone = bones.getValue("upper_leg_left");
+bone = bones.get("upper_leg_left");
 bone.frames[32] = -0.974732160568f;
 bone.frames[33] = 0.223264664412f;
 bone.frames[34] = -0.00707801477984f;
@@ -460,7 +460,7 @@ bone.frames[45] = 0.0f;
 bone.frames[46] = 0.0f;
 bone.frames[47] = 1.0f;
 
-bone = bones.getValue("neck");
+bone = bones.get("neck");
 bone.frames[32] = -0.975527048111f;
 bone.frames[33] = -0.215766146779f;
 bone.frames[34] = -0.0423341766f;
@@ -478,7 +478,7 @@ bone.frames[45] = 0.0f;
 bone.frames[46] = 0.0f;
 bone.frames[47] = 1.0f;
 
-bone = bones.getValue("lower_leg_right");
+bone = bones.get("lower_leg_right");
 bone.frames[32] = -0.976681888103f;
 bone.frames[33] = 0.118202373385f;
 bone.frames[34] = -0.179222494364f;
@@ -496,7 +496,7 @@ bone.frames[45] = 0.0f;
 bone.frames[46] = 0.0f;
 bone.frames[47] = 1.0f;
 
-bone = bones.getValue("spine");
+bone = bones.get("spine");
 bone.frames[32] = -0.991607606411f;
 bone.frames[33] = -0.0968215093017f;
 bone.frames[34] = -0.0856754109263f;
@@ -514,7 +514,7 @@ bone.frames[45] = 0.0f;
 bone.frames[46] = 0.0f;
 bone.frames[47] = 1.0f;
 
-bone = bones.getValue("lower_leg_left");
+bone = bones.get("lower_leg_left");
 bone.frames[32] = -0.991305649281f;
 bone.frames[33] = 0.123225606978f;
 bone.frames[34] = 0.0461358502507f;
@@ -532,7 +532,7 @@ bone.frames[45] = 0.0f;
 bone.frames[46] = 0.0f;
 bone.frames[47] = 1.0f;
 
-bone = bones.getValue("pelvic_left");
+bone = bones.get("pelvic_left");
 bone.frames[32] = -0.20776206255f;
 bone.frames[33] = 0.947363913059f;
 bone.frames[34] = 0.243591025472f;
@@ -550,7 +550,7 @@ bone.frames[45] = 0.0f;
 bone.frames[46] = 0.0f;
 bone.frames[47] = 1.0f;
 
-bone = bones.getValue("lower_arm_left");
+bone = bones.get("lower_arm_left");
 bone.frames[32] = -0.484223932028f;
 bone.frames[33] = -0.872604012489f;
 bone.frames[34] = -0.0639527589083f;
@@ -568,7 +568,7 @@ bone.frames[45] = 0.0f;
 bone.frames[46] = 0.0f;
 bone.frames[47] = 1.0f;
 
-bone = bones.getValue("upper_leg_right");
+bone = bones.get("upper_leg_right");
 bone.frames[32] = -0.984338581562f;
 bone.frames[33] = -0.173676788807f;
 bone.frames[34] = -0.0302337128669f;
@@ -586,7 +586,7 @@ bone.frames[45] = 0.0f;
 bone.frames[46] = 0.0f;
 bone.frames[47] = 1.0f;
 
-bone = bones.getValue("pelvic_right");
+bone = bones.get("pelvic_right");
 bone.frames[32] = -0.252131223679f;
 bone.frames[33] = -0.929116010666f;
 bone.frames[34] = -0.270505785942f;
@@ -604,7 +604,7 @@ bone.frames[45] = 0.0f;
 bone.frames[46] = 0.0f;
 bone.frames[47] = 1.0f;
 
-bone = bones.getValue("collar_right");
+bone = bones.get("collar_right");
 bone.frames[32] = -0.127432346344f;
 bone.frames[33] = -0.953405201435f;
 bone.frames[34] = -0.273459225893f;
@@ -622,7 +622,7 @@ bone.frames[45] = 0.0f;
 bone.frames[46] = 0.0f;
 bone.frames[47] = 1.0f;
 
-bone = bones.getValue("collar_left");
+bone = bones.get("collar_left");
 bone.frames[32] = 0.0565752387047f;
 bone.frames[33] = 0.984211206436f;
 bone.frames[34] = 0.167713701725f;
@@ -640,7 +640,7 @@ bone.frames[45] = 0.0f;
 bone.frames[46] = 0.0f;
 bone.frames[47] = 1.0f;
 
-bone = bones.getValue("upper_arm_left");
+bone = bones.get("upper_arm_left");
 bone.frames[32] = -0.899097502232f;
 bone.frames[33] = 0.284449189901f;
 bone.frames[34] = 0.332735151052f;
@@ -658,7 +658,7 @@ bone.frames[45] = 0.0f;
 bone.frames[46] = 0.0f;
 bone.frames[47] = 1.0f;
 
-bone = bones.getValue("root");
+bone = bones.get("root");
 bone.frames[32] = 0.98719060421f;
 bone.frames[33] = -0.118157930672f;
 bone.frames[34] = 0.107208877802f;
@@ -676,7 +676,7 @@ bone.frames[45] = 0.0f;
 bone.frames[46] = 0.0f;
 bone.frames[47] = 1.0f;
 
-bone = bones.getValue("upper_arm_right");
+bone = bones.get("upper_arm_right");
 bone.frames[32] = -0.99996393919f;
 bone.frames[33] = 0.00486128916964f;
 bone.frames[34] = 0.00697282282636f;
@@ -694,7 +694,7 @@ bone.frames[45] = 0.0f;
 bone.frames[46] = 0.0f;
 bone.frames[47] = 1.0f;
 
-bone = bones.getValue("lower_arm_right");
+bone = bones.get("lower_arm_right");
 bone.frames[48] = -0.344514906406f;
 bone.frames[49] = -0.0403492860496f;
 bone.frames[50] = -0.937913477421f;
@@ -712,7 +712,7 @@ bone.frames[61] = 0.0f;
 bone.frames[62] = 0.0f;
 bone.frames[63] = 1.0f;
 
-bone = bones.getValue("upper_leg_left");
+bone = bones.get("upper_leg_left");
 bone.frames[48] = -0.984554052353f;
 bone.frames[49] = 0.174134045839f;
 bone.frames[50] = 0.0181848332286f;
@@ -730,7 +730,7 @@ bone.frames[61] = 0.0f;
 bone.frames[62] = 0.0f;
 bone.frames[63] = 1.0f;
 
-bone = bones.getValue("neck");
+bone = bones.get("neck");
 bone.frames[48] = -0.983641266823f;
 bone.frames[49] = -0.177154272795f;
 bone.frames[50] = -0.03265517205f;
@@ -748,7 +748,7 @@ bone.frames[61] = 0.0f;
 bone.frames[62] = 0.0f;
 bone.frames[63] = 1.0f;
 
-bone = bones.getValue("lower_leg_right");
+bone = bones.get("lower_leg_right");
 bone.frames[48] = -0.968705356121f;
 bone.frames[49] = 0.194413289428f;
 bone.frames[50] = -0.154316961765f;
@@ -766,7 +766,7 @@ bone.frames[61] = 0.0f;
 bone.frames[62] = 0.0f;
 bone.frames[63] = 1.0f;
 
-bone = bones.getValue("spine");
+bone = bones.get("spine");
 bone.frames[48] = -0.996029496193f;
 bone.frames[49] = -0.0649036616087f;
 bone.frames[50] = -0.0609347783029f;
@@ -784,7 +784,7 @@ bone.frames[61] = 0.0f;
 bone.frames[62] = 0.0f;
 bone.frames[63] = 1.0f;
 
-bone = bones.getValue("lower_leg_left");
+bone = bones.get("lower_leg_left");
 bone.frames[48] = -0.978010296822f;
 bone.frames[49] = 0.202434822917f;
 bone.frames[50] = 0.0501594170928f;
@@ -802,7 +802,7 @@ bone.frames[61] = 0.0f;
 bone.frames[62] = 0.0f;
 bone.frames[63] = 1.0f;
 
-bone = bones.getValue("pelvic_left");
+bone = bones.get("pelvic_left");
 bone.frames[48] = -0.20776206255f;
 bone.frames[49] = 0.947363913059f;
 bone.frames[50] = 0.243591025472f;
@@ -820,7 +820,7 @@ bone.frames[61] = 0.0f;
 bone.frames[62] = 0.0f;
 bone.frames[63] = 1.0f;
 
-bone = bones.getValue("lower_arm_left");
+bone = bones.get("lower_arm_left");
 bone.frames[48] = -0.543018758297f;
 bone.frames[49] = -0.839633643627f;
 bone.frames[50] = -0.012091412209f;
@@ -838,7 +838,7 @@ bone.frames[61] = 0.0f;
 bone.frames[62] = 0.0f;
 bone.frames[63] = 1.0f;
 
-bone = bones.getValue("upper_leg_right");
+bone = bones.get("upper_leg_right");
 bone.frames[48] = -0.966622531414f;
 bone.frames[49] = -0.255221188068f;
 bone.frames[50] = -0.0224339514971f;
@@ -856,7 +856,7 @@ bone.frames[61] = 0.0f;
 bone.frames[62] = 0.0f;
 bone.frames[63] = 1.0f;
 
-bone = bones.getValue("pelvic_right");
+bone = bones.get("pelvic_right");
 bone.frames[48] = -0.252131223679f;
 bone.frames[49] = -0.929116010666f;
 bone.frames[50] = -0.270505785942f;
@@ -874,7 +874,7 @@ bone.frames[61] = 0.0f;
 bone.frames[62] = 0.0f;
 bone.frames[63] = 1.0f;
 
-bone = bones.getValue("collar_right");
+bone = bones.get("collar_right");
 bone.frames[48] = -0.091562949121f;
 bone.frames[49] = -0.962189912796f;
 bone.frames[50] = -0.256529420614f;
@@ -892,7 +892,7 @@ bone.frames[61] = 0.0f;
 bone.frames[62] = 0.0f;
 bone.frames[63] = 1.0f;
 
-bone = bones.getValue("collar_left");
+bone = bones.get("collar_left");
 bone.frames[48] = 0.021289980039f;
 bone.frames[49] = 0.981991112232f;
 bone.frames[50] = 0.187724262476f;
@@ -910,7 +910,7 @@ bone.frames[61] = 0.0f;
 bone.frames[62] = 0.0f;
 bone.frames[63] = 1.0f;
 
-bone = bones.getValue("upper_arm_left");
+bone = bones.get("upper_arm_left");
 bone.frames[48] = -0.969656348228f;
 bone.frames[49] = 0.205153256655f;
 bone.frames[50] = 0.132961958647f;
@@ -928,7 +928,7 @@ bone.frames[61] = 0.0f;
 bone.frames[62] = 0.0f;
 bone.frames[63] = 1.0f;
 
-bone = bones.getValue("root");
+bone = bones.get("root");
 bone.frames[48] = 0.992180049419f;
 bone.frames[49] = -0.0791664421558f;
 bone.frames[50] = 0.0964970737696f;
@@ -946,7 +946,7 @@ bone.frames[61] = 0.0f;
 bone.frames[62] = 0.0f;
 bone.frames[63] = 1.0f;
 
-bone = bones.getValue("upper_arm_right");
+bone = bones.get("upper_arm_right");
 bone.frames[48] = -0.966026186943f;
 bone.frames[49] = -0.193241998553f;
 bone.frames[50] = -0.171613425016f;
@@ -964,7 +964,7 @@ bone.frames[61] = 0.0f;
 bone.frames[62] = 0.0f;
 bone.frames[63] = 1.0f;
 
-bone = bones.getValue("lower_arm_right");
+bone = bones.get("lower_arm_right");
 bone.frames[64] = -0.703030109406f;
 bone.frames[65] = -0.13426053524f;
 bone.frames[66] = -0.698371648788f;
@@ -982,7 +982,7 @@ bone.frames[77] = 0.0f;
 bone.frames[78] = 0.0f;
 bone.frames[79] = 1.0f;
 
-bone = bones.getValue("upper_leg_left");
+bone = bones.get("upper_leg_left");
 bone.frames[64] = -0.987981677055f;
 bone.frames[65] = 0.152544081211f;
 bone.frames[66] = 0.0249501243234f;
@@ -1000,7 +1000,7 @@ bone.frames[77] = 0.0f;
 bone.frames[78] = 0.0f;
 bone.frames[79] = 1.0f;
 
-bone = bones.getValue("neck");
+bone = bones.get("neck");
 bone.frames[64] = -0.988202989101f;
 bone.frames[65] = -0.152864456177f;
 bone.frames[66] = 0.00935119669884f;
@@ -1018,7 +1018,7 @@ bone.frames[77] = 0.0f;
 bone.frames[78] = 0.0f;
 bone.frames[79] = 1.0f;
 
-bone = bones.getValue("lower_leg_right");
+bone = bones.get("lower_leg_right");
 bone.frames[64] = -0.962881207466f;
 bone.frames[65] = 0.227729737759f;
 bone.frames[66] = -0.144910678267f;
@@ -1036,7 +1036,7 @@ bone.frames[77] = 0.0f;
 bone.frames[78] = 0.0f;
 bone.frames[79] = 1.0f;
 
-bone = bones.getValue("spine");
+bone = bones.get("spine");
 bone.frames[64] = -0.998154342175f;
 bone.frames[65] = -0.0594178624451f;
 bone.frames[66] = -0.0125536937267f;
@@ -1054,7 +1054,7 @@ bone.frames[77] = 0.0f;
 bone.frames[78] = 0.0f;
 bone.frames[79] = 1.0f;
 
-bone = bones.getValue("lower_leg_left");
+bone = bones.get("lower_leg_left");
 bone.frames[64] = -0.984605908394f;
 bone.frames[65] = 0.174601063132f;
 bone.frames[66] = -0.00810414459556f;
@@ -1072,7 +1072,7 @@ bone.frames[77] = 0.0f;
 bone.frames[78] = 0.0f;
 bone.frames[79] = 1.0f;
 
-bone = bones.getValue("pelvic_left");
+bone = bones.get("pelvic_left");
 bone.frames[64] = -0.20776206255f;
 bone.frames[65] = 0.947363913059f;
 bone.frames[66] = 0.243591025472f;
@@ -1090,7 +1090,7 @@ bone.frames[77] = 0.0f;
 bone.frames[78] = 0.0f;
 bone.frames[79] = 1.0f;
 
-bone = bones.getValue("lower_arm_left");
+bone = bones.get("lower_arm_left");
 bone.frames[64] = -0.556936979294f;
 bone.frames[65] = -0.829383850098f;
 bone.frames[66] = -0.0440898276865f;
@@ -1108,7 +1108,7 @@ bone.frames[77] = 0.0f;
 bone.frames[78] = 0.0f;
 bone.frames[79] = 1.0f;
 
-bone = bones.getValue("upper_leg_right");
+bone = bones.get("upper_leg_right");
 bone.frames[64] = -0.956046104431f;
 bone.frames[65] = -0.292371451855f;
 bone.frames[66] = -0.0222476515919f;
@@ -1126,7 +1126,7 @@ bone.frames[77] = 0.0f;
 bone.frames[78] = 0.0f;
 bone.frames[79] = 1.0f;
 
-bone = bones.getValue("pelvic_right");
+bone = bones.get("pelvic_right");
 bone.frames[64] = -0.252131223679f;
 bone.frames[65] = -0.929116010666f;
 bone.frames[66] = -0.270505785942f;
@@ -1144,7 +1144,7 @@ bone.frames[77] = 0.0f;
 bone.frames[78] = 0.0f;
 bone.frames[79] = 1.0f;
 
-bone = bones.getValue("collar_right");
+bone = bones.get("collar_right");
 bone.frames[64] = -0.0454161837697f;
 bone.frames[65] = -0.961175560951f;
 bone.frames[66] = -0.272175014019f;
@@ -1162,7 +1162,7 @@ bone.frames[77] = 0.0f;
 bone.frames[78] = 0.0f;
 bone.frames[79] = 1.0f;
 
-bone = bones.getValue("collar_left");
+bone = bones.get("collar_left");
 bone.frames[64] = -0.0519624017179f;
 bone.frames[65] = 0.979502439499f;
 bone.frames[66] = 0.194615215063f;
@@ -1180,7 +1180,7 @@ bone.frames[77] = 0.0f;
 bone.frames[78] = 0.0f;
 bone.frames[79] = 1.0f;
 
-bone = bones.getValue("upper_arm_left");
+bone = bones.get("upper_arm_left");
 bone.frames[64] = -0.986876010895f;
 bone.frames[65] = 0.160329520702f;
 bone.frames[66] = -0.0192477386445f;
@@ -1198,7 +1198,7 @@ bone.frames[77] = 0.0f;
 bone.frames[78] = 0.0f;
 bone.frames[79] = 1.0f;
 
-bone = bones.getValue("root");
+bone = bones.get("root");
 bone.frames[64] = 0.996008038521f;
 bone.frames[65] = -0.0450394153595f;
 bone.frames[66] = 0.0770692080259f;
@@ -1216,7 +1216,7 @@ bone.frames[77] = 0.0f;
 bone.frames[78] = 0.0f;
 bone.frames[79] = 1.0f;
 
-bone = bones.getValue("upper_arm_right");
+bone = bones.get("upper_arm_right");
 bone.frames[64] = -0.873825669289f;
 bone.frames[65] = -0.327431321144f;
 bone.frames[66] = -0.359468370676f;
@@ -1234,7 +1234,7 @@ bone.frames[77] = 0.0f;
 bone.frames[78] = 0.0f;
 bone.frames[79] = 1.0f;
 
-bone = bones.getValue("lower_arm_right");
+bone = bones.get("lower_arm_right");
 bone.frames[80] = -0.948438644409f;
 bone.frames[81] = -0.250758111477f;
 bone.frames[82] = -0.193867042661f;
@@ -1252,7 +1252,7 @@ bone.frames[93] = 0.0f;
 bone.frames[94] = 0.0f;
 bone.frames[95] = 1.0f;
 
-bone = bones.getValue("upper_leg_left");
+bone = bones.get("upper_leg_left");
 bone.frames[80] = -0.989099681377f;
 bone.frames[81] = 0.144498303533f;
 bone.frames[82] = 0.0283209271729f;
@@ -1270,7 +1270,7 @@ bone.frames[93] = 0.0f;
 bone.frames[94] = 0.0f;
 bone.frames[95] = 1.0f;
 
-bone = bones.getValue("neck");
+bone = bones.get("neck");
 bone.frames[80] = -0.98641037941f;
 bone.frames[81] = -0.157326459885f;
 bone.frames[82] = 0.0473608598113f;
@@ -1288,7 +1288,7 @@ bone.frames[93] = 0.0f;
 bone.frames[94] = 0.0f;
 bone.frames[95] = 1.0f;
 
-bone = bones.getValue("lower_leg_right");
+bone = bones.get("lower_leg_right");
 bone.frames[80] = -0.974379122257f;
 bone.frames[81] = 0.156432673335f;
 bone.frames[82] = -0.161599442363f;
@@ -1306,7 +1306,7 @@ bone.frames[93] = 0.0f;
 bone.frames[94] = 0.0f;
 bone.frames[95] = 1.0f;
 
-bone = bones.getValue("spine");
+bone = bones.get("spine");
 bone.frames[80] = -0.996665358543f;
 bone.frames[81] = -0.0790259838104f;
 bone.frames[82] = 0.0203273296356f;
@@ -1324,7 +1324,7 @@ bone.frames[93] = 0.0f;
 bone.frames[94] = 0.0f;
 bone.frames[95] = 1.0f;
 
-bone = bones.getValue("lower_leg_left");
+bone = bones.get("lower_leg_left");
 bone.frames[80] = -0.98940718174f;
 bone.frames[81] = 0.117222368717f;
 bone.frames[82] = -0.085629157722f;
@@ -1342,7 +1342,7 @@ bone.frames[93] = 0.0f;
 bone.frames[94] = 0.0f;
 bone.frames[95] = 1.0f;
 
-bone = bones.getValue("pelvic_left");
+bone = bones.get("pelvic_left");
 bone.frames[80] = -0.20776206255f;
 bone.frames[81] = 0.947363913059f;
 bone.frames[82] = 0.243591025472f;
@@ -1360,7 +1360,7 @@ bone.frames[93] = 0.0f;
 bone.frames[94] = 0.0f;
 bone.frames[95] = 1.0f;
 
-bone = bones.getValue("lower_arm_left");
+bone = bones.get("lower_arm_left");
 bone.frames[80] = -0.534645318985f;
 bone.frames[81] = -0.835907816887f;
 bone.frames[82] = -0.124147638679f;
@@ -1378,7 +1378,7 @@ bone.frames[93] = 0.0f;
 bone.frames[94] = 0.0f;
 bone.frames[95] = 1.0f;
 
-bone = bones.getValue("upper_leg_right");
+bone = bones.get("upper_leg_right");
 bone.frames[80] = -0.967398703098f;
 bone.frames[81] = -0.250244170427f;
 bone.frames[82] = -0.0389592200518f;
@@ -1396,7 +1396,7 @@ bone.frames[93] = 0.0f;
 bone.frames[94] = 0.0f;
 bone.frames[95] = 1.0f;
 
-bone = bones.getValue("pelvic_right");
+bone = bones.get("pelvic_right");
 bone.frames[80] = -0.252131223679f;
 bone.frames[81] = -0.929116010666f;
 bone.frames[82] = -0.270505785942f;
@@ -1414,7 +1414,7 @@ bone.frames[93] = 0.0f;
 bone.frames[94] = 0.0f;
 bone.frames[95] = 1.0f;
 
-bone = bones.getValue("collar_right");
+bone = bones.get("collar_right");
 bone.frames[80] = -0.0238879434764f;
 bone.frames[81] = -0.952775895596f;
 bone.frames[82] = -0.302733778954f;
@@ -1432,7 +1432,7 @@ bone.frames[93] = 0.0f;
 bone.frames[94] = 0.0f;
 bone.frames[95] = 1.0f;
 
-bone = bones.getValue("collar_left");
+bone = bones.get("collar_left");
 bone.frames[80] = -0.143495410681f;
 bone.frames[81] = 0.965878069401f;
 bone.frames[82] = 0.215612262487f;
@@ -1450,7 +1450,7 @@ bone.frames[93] = 0.0f;
 bone.frames[94] = 0.0f;
 bone.frames[95] = 1.0f;
 
-bone = bones.getValue("upper_arm_left");
+bone = bones.get("upper_arm_left");
 bone.frames[80] = -0.982440888882f;
 bone.frames[81] = 0.181385740638f;
 bone.frames[82] = -0.0436939932406f;
@@ -1468,7 +1468,7 @@ bone.frames[93] = 0.0f;
 bone.frames[94] = 0.0f;
 bone.frames[95] = 1.0f;
 
-bone = bones.getValue("root");
+bone = bones.get("root");
 bone.frames[80] = 0.997466742992f;
 bone.frames[81] = -0.0275405514985f;
 bone.frames[82] = 0.0655880644917f;
@@ -1486,7 +1486,7 @@ bone.frames[93] = 0.0f;
 bone.frames[94] = 0.0f;
 bone.frames[95] = 1.0f;
 
-bone = bones.getValue("upper_arm_right");
+bone = bones.get("upper_arm_right");
 bone.frames[80] = -0.802892625332f;
 bone.frames[81] = -0.339643031359f;
 bone.frames[82] = -0.489904046059f;
@@ -1504,7 +1504,7 @@ bone.frames[93] = 0.0f;
 bone.frames[94] = 0.0f;
 bone.frames[95] = 1.0f;
 
-bone = bones.getValue("lower_arm_right");
+bone = bones.get("lower_arm_right");
 bone.frames[96] = -0.747706651688f;
 bone.frames[97] = -0.587780177593f;
 bone.frames[98] = 0.308949023485f;
@@ -1522,7 +1522,7 @@ bone.frames[109] = 0.0f;
 bone.frames[110] = 0.0f;
 bone.frames[111] = 1.0f;
 
-bone = bones.getValue("upper_leg_left");
+bone = bones.get("upper_leg_left");
 bone.frames[96] = -0.990943014622f;
 bone.frames[97] = 0.130445435643f;
 bone.frames[98] = 0.0318729542196f;
@@ -1540,7 +1540,7 @@ bone.frames[109] = 0.0f;
 bone.frames[110] = 0.0f;
 bone.frames[111] = 1.0f;
 
-bone = bones.getValue("neck");
+bone = bones.get("neck");
 bone.frames[96] = -0.980445384979f;
 bone.frames[97] = -0.189899995923f;
 bone.frames[98] = 0.0516238845885f;
@@ -1558,7 +1558,7 @@ bone.frames[109] = 0.0f;
 bone.frames[110] = 0.0f;
 bone.frames[111] = 1.0f;
 
-bone = bones.getValue("lower_leg_right");
+bone = bones.get("lower_leg_right");
 bone.frames[96] = -0.979501247406f;
 bone.frames[97] = 0.00683614518493f;
 bone.frames[98] = -0.201322495937f;
@@ -1576,7 +1576,7 @@ bone.frames[109] = 0.0f;
 bone.frames[110] = 0.0f;
 bone.frames[111] = 1.0f;
 
-bone = bones.getValue("spine");
+bone = bones.get("spine");
 bone.frames[96] = -0.993771135807f;
 bone.frames[97] = -0.11091157794f;
 bone.frames[98] = 0.0108551774174f;
@@ -1594,7 +1594,7 @@ bone.frames[109] = 0.0f;
 bone.frames[110] = 0.0f;
 bone.frames[111] = 1.0f;
 
-bone = bones.getValue("lower_leg_left");
+bone = bones.get("lower_leg_left");
 bone.frames[96] = -0.985180199146f;
 bone.frames[97] = 0.0506062991917f;
 bone.frames[98] = -0.1638866961f;
@@ -1612,7 +1612,7 @@ bone.frames[109] = 0.0f;
 bone.frames[110] = 0.0f;
 bone.frames[111] = 1.0f;
 
-bone = bones.getValue("pelvic_left");
+bone = bones.get("pelvic_left");
 bone.frames[96] = -0.20776206255f;
 bone.frames[97] = 0.947363913059f;
 bone.frames[98] = 0.243591025472f;
@@ -1630,7 +1630,7 @@ bone.frames[109] = 0.0f;
 bone.frames[110] = 0.0f;
 bone.frames[111] = 1.0f;
 
-bone = bones.getValue("lower_arm_left");
+bone = bones.get("lower_arm_left");
 bone.frames[96] = -0.534544110298f;
 bone.frames[97] = -0.830041050911f;
 bone.frames[98] = -0.159043550491f;
@@ -1648,7 +1648,7 @@ bone.frames[109] = 0.0f;
 bone.frames[110] = 0.0f;
 bone.frames[111] = 1.0f;
 
-bone = bones.getValue("upper_leg_right");
+bone = bones.get("upper_leg_right");
 bone.frames[96] = -0.984505951405f;
 bone.frames[97] = -0.159414470196f;
 bone.frames[98] = -0.0730430930853f;
@@ -1666,7 +1666,7 @@ bone.frames[109] = 0.0f;
 bone.frames[110] = 0.0f;
 bone.frames[111] = 1.0f;
 
-bone = bones.getValue("pelvic_right");
+bone = bones.get("pelvic_right");
 bone.frames[96] = -0.252131223679f;
 bone.frames[97] = -0.929116010666f;
 bone.frames[98] = -0.270505785942f;
@@ -1684,7 +1684,7 @@ bone.frames[109] = 0.0f;
 bone.frames[110] = 0.0f;
 bone.frames[111] = 1.0f;
 
-bone = bones.getValue("collar_right");
+bone = bones.get("collar_right");
 bone.frames[96] = -0.0459195412695f;
 bone.frames[97] = -0.944152832031f;
 bone.frames[98] = -0.326293110847f;
@@ -1702,7 +1702,7 @@ bone.frames[109] = 0.0f;
 bone.frames[110] = 0.0f;
 bone.frames[111] = 1.0f;
 
-bone = bones.getValue("collar_left");
+bone = bones.get("collar_left");
 bone.frames[96] = -0.19087742269f;
 bone.frames[97] = 0.951510429382f;
 bone.frames[98] = 0.241234466434f;
@@ -1720,7 +1720,7 @@ bone.frames[109] = 0.0f;
 bone.frames[110] = 0.0f;
 bone.frames[111] = 1.0f;
 
-bone = bones.getValue("upper_arm_left");
+bone = bones.get("upper_arm_left");
 bone.frames[96] = -0.96387219429f;
 bone.frames[97] = 0.26160132885f;
 bone.frames[98] = 0.0501550920308f;
@@ -1738,7 +1738,7 @@ bone.frames[109] = 0.0f;
 bone.frames[110] = 0.0f;
 bone.frames[111] = 1.0f;
 
-bone = bones.getValue("root");
+bone = bones.get("root");
 bone.frames[96] = 0.995721817017f;
 bone.frames[97] = -0.0500997565687f;
 bone.frames[98] = 0.077641800046f;
@@ -1756,7 +1756,7 @@ bone.frames[109] = 0.0f;
 bone.frames[110] = 0.0f;
 bone.frames[111] = 1.0f;
 
-bone = bones.getValue("upper_arm_right");
+bone = bones.get("upper_arm_right");
 bone.frames[96] = -0.907361030579f;
 bone.frames[97] = -0.219068840146f;
 bone.frames[98] = -0.358754754066f;
@@ -1774,7 +1774,7 @@ bone.frames[109] = 0.0f;
 bone.frames[110] = 0.0f;
 bone.frames[111] = 1.0f;
 
-bone = bones.getValue("lower_arm_right");
+bone = bones.get("lower_arm_right");
 bone.frames[112] = -0.496870845556f;
 bone.frames[113] = -0.679839789867f;
 bone.frames[114] = 0.53938639164f;
@@ -1792,7 +1792,7 @@ bone.frames[125] = 0.0f;
 bone.frames[126] = 0.0f;
 bone.frames[127] = 1.0f;
 
-bone = bones.getValue("upper_leg_left");
+bone = bones.get("upper_leg_left");
 bone.frames[112] = -0.994902789593f;
 bone.frames[113] = 0.0933219641447f;
 bone.frames[114] = 0.0382020920515f;
@@ -1810,7 +1810,7 @@ bone.frames[125] = 0.0f;
 bone.frames[126] = 0.0f;
 bone.frames[127] = 1.0f;
 
-bone = bones.getValue("neck");
+bone = bones.get("neck");
 bone.frames[112] = -0.972990393639f;
 bone.frames[113] = -0.229633867741f;
 bone.frames[114] = 0.0236269328743f;
@@ -1828,7 +1828,7 @@ bone.frames[125] = 0.0f;
 bone.frames[126] = 0.0f;
 bone.frames[127] = 1.0f;
 
-bone = bones.getValue("lower_leg_right");
+bone = bones.get("lower_leg_right");
 bone.frames[112] = -0.970448732376f;
 bone.frames[113] = -0.0573447197676f;
 bone.frames[114] = -0.234395295382f;
@@ -1846,7 +1846,7 @@ bone.frames[125] = 0.0f;
 bone.frames[126] = 0.0f;
 bone.frames[127] = 1.0f;
 
-bone = bones.getValue("spine");
+bone = bones.get("spine");
 bone.frames[112] = -0.990170300007f;
 bone.frames[113] = -0.136376157403f;
 bone.frames[114] = -0.0310587435961f;
@@ -1864,7 +1864,7 @@ bone.frames[125] = 0.0f;
 bone.frames[126] = 0.0f;
 bone.frames[127] = 1.0f;
 
-bone = bones.getValue("lower_leg_left");
+bone = bones.get("lower_leg_left");
 bone.frames[112] = -0.973954498768f;
 bone.frames[113] = 0.00279891956598f;
 bone.frames[114] = -0.226726144552f;
@@ -1882,7 +1882,7 @@ bone.frames[125] = 0.0f;
 bone.frames[126] = 0.0f;
 bone.frames[127] = 1.0f;
 
-bone = bones.getValue("pelvic_left");
+bone = bones.get("pelvic_left");
 bone.frames[112] = -0.20776206255f;
 bone.frames[113] = 0.947363913059f;
 bone.frames[114] = 0.243591025472f;
@@ -1900,7 +1900,7 @@ bone.frames[125] = 0.0f;
 bone.frames[126] = 0.0f;
 bone.frames[127] = 1.0f;
 
-bone = bones.getValue("lower_arm_left");
+bone = bones.get("lower_arm_left");
 bone.frames[112] = -0.517152369022f;
 bone.frames[113] = -0.84505033493f;
 bone.frames[114] = -0.135807573795f;
@@ -1918,7 +1918,7 @@ bone.frames[125] = 0.0f;
 bone.frames[126] = 0.0f;
 bone.frames[127] = 1.0f;
 
-bone = bones.getValue("upper_leg_right");
+bone = bones.get("upper_leg_right");
 bone.frames[112] = -0.989113330841f;
 bone.frames[113] = -0.116637788713f;
 bone.frames[114] = -0.0897257551551f;
@@ -1936,7 +1936,7 @@ bone.frames[125] = 0.0f;
 bone.frames[126] = 0.0f;
 bone.frames[127] = 1.0f;
 
-bone = bones.getValue("pelvic_right");
+bone = bones.get("pelvic_right");
 bone.frames[112] = -0.252131223679f;
 bone.frames[113] = -0.929116010666f;
 bone.frames[114] = -0.270505785942f;
@@ -1954,7 +1954,7 @@ bone.frames[125] = 0.0f;
 bone.frames[126] = 0.0f;
 bone.frames[127] = 1.0f;
 
-bone = bones.getValue("collar_right");
+bone = bones.get("collar_right");
 bone.frames[112] = -0.0946336910129f;
 bone.frames[113] = -0.939009904861f;
 bone.frames[114] = -0.330613702536f;
@@ -1972,7 +1972,7 @@ bone.frames[125] = 0.0f;
 bone.frames[126] = 0.0f;
 bone.frames[127] = 1.0f;
 
-bone = bones.getValue("collar_left");
+bone = bones.get("collar_left");
 bone.frames[112] = -0.16900087893f;
 bone.frames[113] = 0.952038526535f;
 bone.frames[114] = 0.255071759224f;
@@ -1990,7 +1990,7 @@ bone.frames[125] = 0.0f;
 bone.frames[126] = 0.0f;
 bone.frames[127] = 1.0f;
 
-bone = bones.getValue("upper_arm_left");
+bone = bones.get("upper_arm_left");
 bone.frames[112] = -0.943587720394f;
 bone.frames[113] = 0.301199734211f;
 bone.frames[114] = 0.137554422021f;
@@ -2008,7 +2008,7 @@ bone.frames[125] = 0.0f;
 bone.frames[126] = 0.0f;
 bone.frames[127] = 1.0f;
 
-bone = bones.getValue("root");
+bone = bones.get("root");
 bone.frames[112] = 0.991363883018f;
 bone.frames[113] = -0.0730901509523f;
 bone.frames[114] = 0.108884185553f;
@@ -2026,7 +2026,7 @@ bone.frames[125] = 0.0f;
 bone.frames[126] = 0.0f;
 bone.frames[127] = 1.0f;
 
-bone = bones.getValue("upper_arm_right");
+bone = bones.get("upper_arm_right");
 bone.frames[112] = -0.97764891386f;
 bone.frames[113] = -0.10601106286f;
 bone.frames[114] = -0.181561142206f;
@@ -2044,7 +2044,7 @@ bone.frames[125] = 0.0f;
 bone.frames[126] = 0.0f;
 bone.frames[127] = 1.0f;
 
-bone = bones.getValue("lower_arm_right");
+bone = bones.get("lower_arm_right");
 bone.frames[128] = -0.579810261726f;
 bone.frames[129] = -0.577083647251f;
 bone.frames[130] = 0.575147628784f;
@@ -2062,7 +2062,7 @@ bone.frames[141] = 0.0f;
 bone.frames[142] = 0.0f;
 bone.frames[143] = 1.0f;
 
-bone = bones.getValue("upper_leg_left");
+bone = bones.get("upper_leg_left");
 bone.frames[128] = -0.996577441692f;
 bone.frames[129] = 0.0319485105574f;
 bone.frames[130] = 0.0762411803007f;
@@ -2080,7 +2080,7 @@ bone.frames[141] = 0.0f;
 bone.frames[142] = 0.0f;
 bone.frames[143] = 1.0f;
 
-bone = bones.getValue("neck");
+bone = bones.get("neck");
 bone.frames[128] = -0.964606881142f;
 bone.frames[129] = -0.263348698616f;
 bone.frames[130] = -0.0134640624747f;
@@ -2098,7 +2098,7 @@ bone.frames[141] = 0.0f;
 bone.frames[142] = 0.0f;
 bone.frames[143] = 1.0f;
 
-bone = bones.getValue("lower_leg_right");
+bone = bones.get("lower_leg_right");
 bone.frames[128] = -0.966515362263f;
 bone.frames[129] = -0.0332401618361f;
 bone.frames[130] = -0.254447191954f;
@@ -2116,7 +2116,7 @@ bone.frames[141] = 0.0f;
 bone.frames[142] = 0.0f;
 bone.frames[143] = 1.0f;
 
-bone = bones.getValue("spine");
+bone = bones.get("spine");
 bone.frames[128] = -0.985109448433f;
 bone.frames[129] = -0.15275631845f;
 bone.frames[130] = -0.0789000838995f;
@@ -2134,7 +2134,7 @@ bone.frames[141] = 0.0f;
 bone.frames[142] = 0.0f;
 bone.frames[143] = 1.0f;
 
-bone = bones.getValue("lower_leg_left");
+bone = bones.get("lower_leg_left");
 bone.frames[128] = -0.968004763126f;
 bone.frames[129] = -0.00177022826392f;
 bone.frames[130] = -0.25092536211f;
@@ -2152,7 +2152,7 @@ bone.frames[141] = 0.0f;
 bone.frames[142] = 0.0f;
 bone.frames[143] = 1.0f;
 
-bone = bones.getValue("pelvic_left");
+bone = bones.get("pelvic_left");
 bone.frames[128] = -0.188113197684f;
 bone.frames[129] = 0.951003491879f;
 bone.frames[130] = 0.245368763804f;
@@ -2170,7 +2170,7 @@ bone.frames[141] = 0.0f;
 bone.frames[142] = 0.0f;
 bone.frames[143] = 1.0f;
 
-bone = bones.getValue("lower_arm_left");
+bone = bones.get("lower_arm_left");
 bone.frames[128] = -0.503062486649f;
 bone.frames[129] = -0.862248659134f;
 bone.frames[130] = -0.0587867051363f;
@@ -2188,7 +2188,7 @@ bone.frames[141] = 0.0f;
 bone.frames[142] = 0.0f;
 bone.frames[143] = 1.0f;
 
-bone = bones.getValue("upper_leg_right");
+bone = bones.get("upper_leg_right");
 bone.frames[128] = -0.987089157104f;
 bone.frames[129] = -0.146075502038f;
 bone.frames[130] = -0.0657055154443f;
@@ -2206,7 +2206,7 @@ bone.frames[141] = 0.0f;
 bone.frames[142] = 0.0f;
 bone.frames[143] = 1.0f;
 
-bone = bones.getValue("pelvic_right");
+bone = bones.get("pelvic_right");
 bone.frames[128] = -0.271038979292f;
 bone.frames[129] = -0.92516720295f;
 bone.frames[130] = -0.265713304281f;
@@ -2224,7 +2224,7 @@ bone.frames[141] = 0.0f;
 bone.frames[142] = 0.0f;
 bone.frames[143] = 1.0f;
 
-bone = bones.getValue("collar_right");
+bone = bones.get("collar_right");
 bone.frames[128] = -0.255450546741f;
 bone.frames[129] = -0.895500123501f;
 bone.frames[130] = -0.364451766014f;
@@ -2242,7 +2242,7 @@ bone.frames[141] = 0.0f;
 bone.frames[142] = 0.0f;
 bone.frames[143] = 1.0f;
 
-bone = bones.getValue("collar_left");
+bone = bones.get("collar_left");
 bone.frames[128] = -0.0803209766746f;
 bone.frames[129] = 0.966667950153f;
 bone.frames[130] = 0.243108853698f;
@@ -2260,7 +2260,7 @@ bone.frames[141] = 0.0f;
 bone.frames[142] = 0.0f;
 bone.frames[143] = 1.0f;
 
-bone = bones.getValue("upper_arm_left");
+bone = bones.get("upper_arm_left");
 bone.frames[128] = -0.922490060329f;
 bone.frames[129] = 0.315217137337f;
 bone.frames[130] = 0.222824200988f;
@@ -2278,7 +2278,7 @@ bone.frames[141] = 0.0f;
 bone.frames[142] = 0.0f;
 bone.frames[143] = 1.0f;
 
-bone = bones.getValue("root");
+bone = bones.get("root");
 bone.frames[128] = 0.986574351788f;
 bone.frames[129] = -0.0566031448543f;
 bone.frames[130] = 0.153190732002f;
@@ -2296,7 +2296,7 @@ bone.frames[141] = 0.0f;
 bone.frames[142] = 0.0f;
 bone.frames[143] = 1.0f;
 
-bone = bones.getValue("upper_arm_right");
+bone = bones.get("upper_arm_right");
 bone.frames[128] = -0.990436673164f;
 bone.frames[129] = -0.0900658220053f;
 bone.frames[130] = -0.104515947402f;
@@ -2314,7 +2314,7 @@ bone.frames[141] = 0.0f;
 bone.frames[142] = 0.0f;
 bone.frames[143] = 1.0f;
 
-bone = bones.getValue("lower_arm_right");
+bone = bones.get("lower_arm_right");
 bone.frames[144] = -0.697953045368f;
 bone.frames[145] = -0.491999208927f;
 bone.frames[146] = 0.520383000374f;
@@ -2332,7 +2332,7 @@ bone.frames[157] = 0.0f;
 bone.frames[158] = 0.0f;
 bone.frames[159] = 1.0f;
 
-bone = bones.getValue("upper_leg_left");
+bone = bones.get("upper_leg_left");
 bone.frames[144] = -0.984378278255f;
 bone.frames[145] = -0.0456395149231f;
 bone.frames[146] = 0.17004814744f;
@@ -2350,7 +2350,7 @@ bone.frames[157] = 0.0f;
 bone.frames[158] = 0.0f;
 bone.frames[159] = 1.0f;
 
-bone = bones.getValue("neck");
+bone = bones.get("neck");
 bone.frames[144] = -0.956543922424f;
 bone.frames[145] = -0.286221325397f;
 bone.frames[146] = -0.0556892976165f;
@@ -2368,7 +2368,7 @@ bone.frames[157] = 0.0f;
 bone.frames[158] = 0.0f;
 bone.frames[159] = 1.0f;
 
-bone = bones.getValue("lower_leg_right");
+bone = bones.get("lower_leg_right");
 bone.frames[144] = -0.965375602245f;
 bone.frames[145] = 0.0255812034011f;
 bone.frames[146] = -0.259607106447f;
@@ -2386,7 +2386,7 @@ bone.frames[157] = 0.0f;
 bone.frames[158] = 0.0f;
 bone.frames[159] = 1.0f;
 
-bone = bones.getValue("spine");
+bone = bones.get("spine");
 bone.frames[144] = -0.9793664217f;
 bone.frames[145] = -0.157159253955f;
 bone.frames[146] = -0.127053692937f;
@@ -2404,7 +2404,7 @@ bone.frames[157] = 0.0f;
 bone.frames[158] = 0.0f;
 bone.frames[159] = 1.0f;
 
-bone = bones.getValue("lower_leg_left");
+bone = bones.get("lower_leg_left");
 bone.frames[144] = -0.975286304951f;
 bone.frames[145] = 0.0494681634009f;
 bone.frames[146] = -0.215335637331f;
@@ -2422,7 +2422,7 @@ bone.frames[157] = 0.0f;
 bone.frames[158] = 0.0f;
 bone.frames[159] = 1.0f;
 
-bone = bones.getValue("pelvic_left");
+bone = bones.get("pelvic_left");
 bone.frames[144] = -0.132274240255f;
 bone.frames[145] = 0.958517789841f;
 bone.frames[146] = 0.25248208642f;
@@ -2440,7 +2440,7 @@ bone.frames[157] = 0.0f;
 bone.frames[158] = 0.0f;
 bone.frames[159] = 1.0f;
 
-bone = bones.getValue("lower_arm_left");
+bone = bones.get("lower_arm_left");
 bone.frames[144] = -0.476351976395f;
 bone.frames[145] = -0.879110753536f;
 bone.frames[146] = 0.0159137453884f;
@@ -2458,7 +2458,7 @@ bone.frames[157] = 0.0f;
 bone.frames[158] = 0.0f;
 bone.frames[159] = 1.0f;
 
-bone = bones.getValue("upper_leg_right");
+bone = bones.get("upper_leg_right");
 bone.frames[144] = -0.974523067474f;
 bone.frames[145] = -0.224084988236f;
 bone.frames[146] = 0.00953543651849f;
@@ -2476,7 +2476,7 @@ bone.frames[157] = 0.0f;
 bone.frames[158] = 0.0f;
 bone.frames[159] = 1.0f;
 
-bone = bones.getValue("pelvic_right");
+bone = bones.get("pelvic_right");
 bone.frames[144] = -0.323747485876f;
 bone.frames[145] = -0.912674725056f;
 bone.frames[146] = -0.249424338341f;
@@ -2494,7 +2494,7 @@ bone.frames[157] = 0.0f;
 bone.frames[158] = 0.0f;
 bone.frames[159] = 1.0f;
 
-bone = bones.getValue("collar_right");
+bone = bones.get("collar_right");
 bone.frames[144] = -0.404797643423f;
 bone.frames[145] = -0.831916689873f;
 bone.frames[146] = -0.379544317722f;
@@ -2512,7 +2512,7 @@ bone.frames[157] = 0.0f;
 bone.frames[158] = 0.0f;
 bone.frames[159] = 1.0f;
 
-bone = bones.getValue("collar_left");
+bone = bones.get("collar_left");
 bone.frames[144] = 0.00530658196658f;
 bone.frames[145] = 0.972271203995f;
 bone.frames[146] = 0.233796432614f;
@@ -2530,7 +2530,7 @@ bone.frames[157] = 0.0f;
 bone.frames[158] = 0.0f;
 bone.frames[159] = 1.0f;
 
-bone = bones.getValue("upper_arm_left");
+bone = bones.get("upper_arm_left");
 bone.frames[144] = -0.900856614113f;
 bone.frames[145] = 0.313243448734f;
 bone.frames[146] = 0.300559639931f;
@@ -2548,7 +2548,7 @@ bone.frames[157] = 0.0f;
 bone.frames[158] = 0.0f;
 bone.frames[159] = 1.0f;
 
-bone = bones.getValue("root");
+bone = bones.get("root");
 bone.frames[144] = 0.97603482008f;
 bone.frames[145] = -0.00461428146809f;
 bone.frames[146] = 0.217566043139f;
@@ -2566,7 +2566,7 @@ bone.frames[157] = 0.0f;
 bone.frames[158] = 0.0f;
 bone.frames[159] = 1.0f;
 
-bone = bones.getValue("upper_arm_right");
+bone = bones.get("upper_arm_right");
 bone.frames[144] = -0.997315526009f;
 bone.frames[145] = -0.0571451336145f;
 bone.frames[146] = -0.0457851625979f;
@@ -2584,7 +2584,7 @@ bone.frames[157] = 0.0f;
 bone.frames[158] = 0.0f;
 bone.frames[159] = 1.0f;
 
-bone = bones.getValue("lower_arm_right");
+bone = bones.get("lower_arm_right");
 bone.frames[160] = -0.837306439877f;
 bone.frames[161] = -0.541873335838f;
 bone.frames[162] = 0.0727423653007f;
@@ -2602,7 +2602,7 @@ bone.frames[173] = 0.0f;
 bone.frames[174] = 0.0f;
 bone.frames[175] = 1.0f;
 
-bone = bones.getValue("upper_leg_left");
+bone = bones.get("upper_leg_left");
 bone.frames[160] = -0.949764251709f;
 bone.frames[161] = -0.11856097728f;
 bone.frames[162] = 0.289639532566f;
@@ -2620,7 +2620,7 @@ bone.frames[173] = 0.0f;
 bone.frames[174] = 0.0f;
 bone.frames[175] = 1.0f;
 
-bone = bones.getValue("neck");
+bone = bones.get("neck");
 bone.frames[160] = -0.948568403721f;
 bone.frames[161] = -0.300928652287f;
 bone.frames[162] = -0.0982857570052f;
@@ -2638,7 +2638,7 @@ bone.frames[173] = 0.0f;
 bone.frames[174] = 0.0f;
 bone.frames[175] = 1.0f;
 
-bone = bones.getValue("lower_leg_right");
+bone = bones.get("lower_leg_right");
 bone.frames[160] = -0.964876890182f;
 bone.frames[161] = 0.103551618755f;
 bone.frames[162] = -0.241432711482f;
@@ -2656,7 +2656,7 @@ bone.frames[173] = 0.0f;
 bone.frames[174] = 0.0f;
 bone.frames[175] = 1.0f;
 
-bone = bones.getValue("spine");
+bone = bones.get("spine");
 bone.frames[160] = -0.972945094109f;
 bone.frames[161] = -0.15397079289f;
 bone.frames[162] = -0.172252938151f;
@@ -2674,7 +2674,7 @@ bone.frames[173] = 0.0f;
 bone.frames[174] = 0.0f;
 bone.frames[175] = 1.0f;
 
-bone = bones.getValue("lower_leg_left");
+bone = bones.get("lower_leg_left");
 bone.frames[160] = -0.982263863087f;
 bone.frames[161] = 0.127862781286f;
 bone.frames[162] = -0.137144759297f;
@@ -2692,7 +2692,7 @@ bone.frames[173] = 0.0f;
 bone.frames[174] = 0.0f;
 bone.frames[175] = 1.0f;
 
-bone = bones.getValue("pelvic_left");
+bone = bones.get("pelvic_left");
 bone.frames[160] = -0.0597963668406f;
 bone.frames[161] = 0.961663007736f;
 bone.frames[162] = 0.267635256052f;
@@ -2710,7 +2710,7 @@ bone.frames[173] = 0.0f;
 bone.frames[174] = 0.0f;
 bone.frames[175] = 1.0f;
 
-bone = bones.getValue("lower_arm_left");
+bone = bones.get("lower_arm_left");
 bone.frames[160] = -0.421587318182f;
 bone.frames[161] = -0.905435621738f;
 bone.frames[162] = 0.0495073050261f;
@@ -2728,7 +2728,7 @@ bone.frames[173] = 0.0f;
 bone.frames[174] = 0.0f;
 bone.frames[175] = 1.0f;
 
-bone = bones.getValue("upper_leg_right");
+bone = bones.get("upper_leg_right");
 bone.frames[160] = -0.943543493748f;
 bone.frames[161] = -0.310027092695f;
 bone.frames[162] = 0.116657741368f;
@@ -2746,7 +2746,7 @@ bone.frames[173] = 0.0f;
 bone.frames[174] = 0.0f;
 bone.frames[175] = 1.0f;
 
-bone = bones.getValue("pelvic_right");
+bone = bones.get("pelvic_right");
 bone.frames[160] = -0.389878988266f;
 bone.frames[161] = -0.893820047379f;
 bone.frames[162] = -0.221540406346f;
@@ -2764,7 +2764,7 @@ bone.frames[173] = 0.0f;
 bone.frames[174] = 0.0f;
 bone.frames[175] = 1.0f;
 
-bone = bones.getValue("collar_right");
+bone = bones.get("collar_right");
 bone.frames[160] = -0.411988586187f;
 bone.frames[161] = -0.841153621674f;
 bone.frames[162] = -0.350323200226f;
@@ -2782,7 +2782,7 @@ bone.frames[173] = 0.0f;
 bone.frames[174] = 0.0f;
 bone.frames[175] = 1.0f;
 
-bone = bones.getValue("collar_left");
+bone = bones.get("collar_left");
 bone.frames[160] = 0.0469873473048f;
 bone.frames[161] = 0.968507707119f;
 bone.frames[162] = 0.244510158896f;
@@ -2800,7 +2800,7 @@ bone.frames[173] = 0.0f;
 bone.frames[174] = 0.0f;
 bone.frames[175] = 1.0f;
 
-bone = bones.getValue("upper_arm_left");
+bone = bones.get("upper_arm_left");
 bone.frames[160] = -0.899050354958f;
 bone.frames[161] = 0.285312324762f;
 bone.frames[162] = 0.332122802734f;
@@ -2818,7 +2818,7 @@ bone.frames[173] = 0.0f;
 bone.frames[174] = 0.0f;
 bone.frames[175] = 1.0f;
 
-bone = bones.getValue("root");
+bone = bones.get("root");
 bone.frames[160] = 0.956280112267f;
 bone.frames[161] = 0.0615026913583f;
 bone.frames[162] = 0.285912662745f;
@@ -2836,7 +2836,7 @@ bone.frames[173] = 0.0f;
 bone.frames[174] = 0.0f;
 bone.frames[175] = 1.0f;
 
-bone = bones.getValue("upper_arm_right");
+bone = bones.get("upper_arm_right");
 bone.frames[160] = -0.999854624271f;
 bone.frames[161] = -0.000941752688959f;
 bone.frames[162] = 0.0170257184654f;
@@ -2854,7 +2854,7 @@ bone.frames[173] = 0.0f;
 bone.frames[174] = 0.0f;
 bone.frames[175] = 1.0f;
 
-bone = bones.getValue("lower_arm_right");
+bone = bones.get("lower_arm_right");
 bone.frames[176] = -0.494258850813f;
 bone.frames[177] = -0.141166985035f;
 bone.frames[178] = -0.857776403427f;
@@ -2872,7 +2872,7 @@ bone.frames[189] = 0.0f;
 bone.frames[190] = 0.0f;
 bone.frames[191] = 1.0f;
 
-bone = bones.getValue("upper_leg_left");
+bone = bones.get("upper_leg_left");
 bone.frames[176] = -0.906046271324f;
 bone.frames[177] = -0.169956743717f;
 bone.frames[178] = 0.387549996376f;
@@ -2890,7 +2890,7 @@ bone.frames[189] = 0.0f;
 bone.frames[190] = 0.0f;
 bone.frames[191] = 1.0f;
 
-bone = bones.getValue("neck");
+bone = bones.get("neck");
 bone.frames[176] = -0.939404845238f;
 bone.frames[177] = -0.31621953845f;
 bone.frames[178] = -0.132378160954f;
@@ -2908,7 +2908,7 @@ bone.frames[189] = 0.0f;
 bone.frames[190] = 0.0f;
 bone.frames[191] = 1.0f;
 
-bone = bones.getValue("lower_leg_right");
+bone = bones.get("lower_leg_right");
 bone.frames[176] = -0.963569164276f;
 bone.frames[177] = 0.163775354624f;
 bone.frames[178] = -0.211452573538f;
@@ -2926,7 +2926,7 @@ bone.frames[189] = 0.0f;
 bone.frames[190] = 0.0f;
 bone.frames[191] = 1.0f;
 
-bone = bones.getValue("spine");
+bone = bones.get("spine");
 bone.frames[176] = -0.965368151665f;
 bone.frames[177] = -0.154858320951f;
 bone.frames[178] = -0.209960743785f;
@@ -2944,7 +2944,7 @@ bone.frames[189] = 0.0f;
 bone.frames[190] = 0.0f;
 bone.frames[191] = 1.0f;
 
-bone = bones.getValue("lower_leg_left");
+bone = bones.get("lower_leg_left");
 bone.frames[176] = -0.981876373291f;
 bone.frames[177] = 0.17832249403f;
 bone.frames[178] = -0.0641879364848f;
@@ -2962,7 +2962,7 @@ bone.frames[189] = 0.0f;
 bone.frames[190] = 0.0f;
 bone.frames[191] = 1.0f;
 
-bone = bones.getValue("pelvic_left");
+bone = bones.get("pelvic_left");
 bone.frames[176] = -0.00303763896227f;
 bone.frames[177] = 0.956179738045f;
 bone.frames[178] = 0.292764633894f;
@@ -2980,7 +2980,7 @@ bone.frames[189] = 0.0f;
 bone.frames[190] = 0.0f;
 bone.frames[191] = 1.0f;
 
-bone = bones.getValue("lower_arm_left");
+bone = bones.get("lower_arm_left");
 bone.frames[176] = -0.376460313797f;
 bone.frames[177] = -0.923808515072f;
 bone.frames[178] = 0.069684535265f;
@@ -2998,7 +2998,7 @@ bone.frames[189] = 0.0f;
 bone.frames[190] = 0.0f;
 bone.frames[191] = 1.0f;
 
-bone = bones.getValue("upper_leg_right");
+bone = bones.get("upper_leg_right");
 bone.frames[176] = -0.907300829887f;
 bone.frames[177] = -0.363574981689f;
 bone.frames[178] = 0.211231157184f;
@@ -3016,7 +3016,7 @@ bone.frames[189] = 0.0f;
 bone.frames[190] = 0.0f;
 bone.frames[191] = 1.0f;
 
-bone = bones.getValue("pelvic_right");
+bone = bones.get("pelvic_right");
 bone.frames[176] = -0.439697295427f;
 bone.frames[177] = -0.878217458725f;
 bone.frames[178] = -0.188149988651f;
@@ -3034,7 +3034,7 @@ bone.frames[189] = 0.0f;
 bone.frames[190] = 0.0f;
 bone.frames[191] = 1.0f;
 
-bone = bones.getValue("collar_right");
+bone = bones.get("collar_right");
 bone.frames[176] = -0.379545629025f;
 bone.frames[177] = -0.867003679276f;
 bone.frames[178] = -0.322877943516f;
@@ -3052,7 +3052,7 @@ bone.frames[189] = 0.0f;
 bone.frames[190] = 0.0f;
 bone.frames[191] = 1.0f;
 
-bone = bones.getValue("collar_left");
+bone = bones.get("collar_left");
 bone.frames[176] = 0.0816401988268f;
 bone.frames[177] = 0.964004993439f;
 bone.frames[178] = 0.253040641546f;
@@ -3070,7 +3070,7 @@ bone.frames[189] = 0.0f;
 bone.frames[190] = 0.0f;
 bone.frames[191] = 1.0f;
 
-bone = bones.getValue("upper_arm_left");
+bone = bones.get("upper_arm_left");
 bone.frames[176] = -0.899261593819f;
 bone.frames[177] = 0.263615638018f;
 bone.frames[178] = 0.349049836397f;
@@ -3088,7 +3088,7 @@ bone.frames[189] = 0.0f;
 bone.frames[190] = 0.0f;
 bone.frames[191] = 1.0f;
 
-bone = bones.getValue("root");
+bone = bones.get("root");
 bone.frames[176] = 0.935802340508f;
 bone.frames[177] = 0.111472636461f;
 bone.frames[178] = 0.334436953068f;
@@ -3106,7 +3106,7 @@ bone.frames[189] = 0.0f;
 bone.frames[190] = 0.0f;
 bone.frames[191] = 1.0f;
 
-bone = bones.getValue("upper_arm_right");
+bone = bones.get("upper_arm_right");
 bone.frames[176] = -0.988936185837f;
 bone.frames[177] = 0.114139810205f;
 bone.frames[178] = 0.0947494283319f;
@@ -3124,7 +3124,7 @@ bone.frames[189] = 0.0f;
 bone.frames[190] = 0.0f;
 bone.frames[191] = 1.0f;
 
-bone = bones.getValue("lower_arm_right");
+bone = bones.get("lower_arm_right");
 bone.frames[192] = -0.031462598592f;
 bone.frames[193] = 0.582750320435f;
 bone.frames[194] = -0.812042176723f;
@@ -3142,7 +3142,7 @@ bone.frames[205] = 0.0f;
 bone.frames[206] = 0.0f;
 bone.frames[207] = 1.0f;
 
-bone = bones.getValue("upper_leg_left");
+bone = bones.get("upper_leg_left");
 bone.frames[192] = -0.876129448414f;
 bone.frames[193] = -0.203737139702f;
 bone.frames[194] = 0.436907738447f;
@@ -3160,7 +3160,7 @@ bone.frames[205] = 0.0f;
 bone.frames[206] = 0.0f;
 bone.frames[207] = 1.0f;
 
-bone = bones.getValue("neck");
+bone = bones.get("neck");
 bone.frames[192] = -0.928974688053f;
 bone.frames[193] = -0.338504076004f;
 bone.frames[194] = -0.149737760425f;
@@ -3178,7 +3178,7 @@ bone.frames[205] = 0.0f;
 bone.frames[206] = 0.0f;
 bone.frames[207] = 1.0f;
 
-bone = bones.getValue("lower_leg_right");
+bone = bones.get("lower_leg_right");
 bone.frames[192] = -0.964555382729f;
 bone.frames[193] = 0.176623791456f;
 bone.frames[194] = -0.196054011583f;
@@ -3196,7 +3196,7 @@ bone.frames[205] = 0.0f;
 bone.frames[206] = 0.0f;
 bone.frames[207] = 1.0f;
 
-bone = bones.getValue("spine");
+bone = bones.get("spine");
 bone.frames[192] = -0.957132577896f;
 bone.frames[193] = -0.168996855617f;
 bone.frames[194] = -0.235239595175f;
@@ -3214,7 +3214,7 @@ bone.frames[205] = 0.0f;
 bone.frames[206] = 0.0f;
 bone.frames[207] = 1.0f;
 
-bone = bones.getValue("lower_leg_left");
+bone = bones.get("lower_leg_left");
 bone.frames[192] = -0.98476421833f;
 bone.frames[193] = 0.169376805425f;
 bone.frames[194] = -0.0393828041852f;
@@ -3232,7 +3232,7 @@ bone.frames[205] = 0.0f;
 bone.frames[206] = 0.0f;
 bone.frames[207] = 1.0f;
 
-bone = bones.getValue("pelvic_left");
+bone = bones.get("pelvic_left");
 bone.frames[192] = 0.0170882772654f;
 bone.frames[193] = 0.944704473019f;
 bone.frames[194] = 0.327477514744f;
@@ -3250,7 +3250,7 @@ bone.frames[205] = 0.0f;
 bone.frames[206] = 0.0f;
 bone.frames[207] = 1.0f;
 
-bone = bones.getValue("lower_arm_left");
+bone = bones.get("lower_arm_left");
 bone.frames[192] = -0.357773333788f;
 bone.frames[193] = -0.931090354919f;
 bone.frames[194] = 0.0712005198002f;
@@ -3268,7 +3268,7 @@ bone.frames[205] = 0.0f;
 bone.frames[206] = 0.0f;
 bone.frames[207] = 1.0f;
 
-bone = bones.getValue("upper_leg_right");
+bone = bones.get("upper_leg_right");
 bone.frames[192] = -0.885870635509f;
 bone.frames[193] = -0.383272022009f;
 bone.frames[194] = 0.261411577463f;
@@ -3286,7 +3286,7 @@ bone.frames[205] = 0.0f;
 bone.frames[206] = 0.0f;
 bone.frames[207] = 1.0f;
 
-bone = bones.getValue("pelvic_right");
+bone = bones.get("pelvic_right");
 bone.frames[192] = -0.456562072039f;
 bone.frames[193] = -0.875794887543f;
 bone.frames[194] = -0.156634867191f;
@@ -3304,7 +3304,7 @@ bone.frames[205] = 0.0f;
 bone.frames[206] = 0.0f;
 bone.frames[207] = 1.0f;
 
-bone = bones.getValue("collar_right");
+bone = bones.get("collar_right");
 bone.frames[192] = -0.376406759024f;
 bone.frames[193] = -0.870435833931f;
 bone.frames[194] = -0.317269474268f;
@@ -3322,7 +3322,7 @@ bone.frames[205] = 0.0f;
 bone.frames[206] = 0.0f;
 bone.frames[207] = 1.0f;
 
-bone = bones.getValue("collar_left");
+bone = bones.get("collar_left");
 bone.frames[192] = 0.107073366642f;
 bone.frames[193] = 0.962839782238f;
 bone.frames[194] = 0.247942015529f;
@@ -3340,7 +3340,7 @@ bone.frames[205] = 0.0f;
 bone.frames[206] = 0.0f;
 bone.frames[207] = 1.0f;
 
-bone = bones.getValue("upper_arm_left");
+bone = bones.get("upper_arm_left");
 bone.frames[192] = -0.898778915405f;
 bone.frames[193] = 0.264926046133f;
 bone.frames[194] = 0.349300712347f;
@@ -3358,7 +3358,7 @@ bone.frames[205] = 0.0f;
 bone.frames[206] = 0.0f;
 bone.frames[207] = 1.0f;
 
-bone = bones.getValue("root");
+bone = bones.get("root");
 bone.frames[192] = 0.927554666996f;
 bone.frames[193] = 0.128850996494f;
 bone.frames[194] = 0.350770652294f;
@@ -3376,7 +3376,7 @@ bone.frames[205] = 0.0f;
 bone.frames[206] = 0.0f;
 bone.frames[207] = 1.0f;
 
-bone = bones.getValue("upper_arm_right");
+bone = bones.get("upper_arm_right");
 bone.frames[192] = -0.974097549915f;
 bone.frames[193] = 0.186426341534f;
 bone.frames[194] = 0.127981692553f;
@@ -3394,7 +3394,7 @@ bone.frames[205] = 0.0f;
 bone.frames[206] = 0.0f;
 bone.frames[207] = 1.0f;
 
-bone = bones.getValue("lower_arm_right");
+bone = bones.get("lower_arm_right");
 bone.frames[208] = 0.538104951382f;
 bone.frames[209] = 0.755445301533f;
 bone.frames[210] = -0.373825579882f;
@@ -3412,7 +3412,7 @@ bone.frames[221] = 0.0f;
 bone.frames[222] = 0.0f;
 bone.frames[223] = 1.0f;
 
-bone = bones.getValue("upper_leg_left");
+bone = bones.get("upper_leg_left");
 bone.frames[208] = -0.945620000362f;
 bone.frames[209] = -0.195341974497f;
 bone.frames[210] = 0.260085165501f;
@@ -3430,7 +3430,7 @@ bone.frames[221] = 0.0f;
 bone.frames[222] = 0.0f;
 bone.frames[223] = 1.0f;
 
-bone = bones.getValue("neck");
+bone = bones.get("neck");
 bone.frames[208] = -0.964099645615f;
 bone.frames[209] = -0.265520364046f;
 bone.frames[210] = -0.00332669098862f;
@@ -3448,7 +3448,7 @@ bone.frames[221] = 0.0f;
 bone.frames[222] = 0.0f;
 bone.frames[223] = 1.0f;
 
-bone = bones.getValue("lower_leg_right");
+bone = bones.get("lower_leg_right");
 bone.frames[208] = -0.909923493862f;
 bone.frames[209] = 0.171330884099f;
 bone.frames[210] = -0.377737164497f;
@@ -3466,7 +3466,7 @@ bone.frames[221] = 0.0f;
 bone.frames[222] = 0.0f;
 bone.frames[223] = 1.0f;
 
-bone = bones.getValue("spine");
+bone = bones.get("spine");
 bone.frames[208] = -0.984775424004f;
 bone.frames[209] = -0.158882021904f;
 bone.frames[210] = -0.0705272778869f;
@@ -3484,7 +3484,7 @@ bone.frames[221] = 0.0f;
 bone.frames[222] = 0.0f;
 bone.frames[223] = 1.0f;
 
-bone = bones.getValue("lower_leg_left");
+bone = bones.get("lower_leg_left");
 bone.frames[208] = -0.972589373589f;
 bone.frames[209] = -0.0125433290377f;
 bone.frames[210] = -0.232190564275f;
@@ -3502,7 +3502,7 @@ bone.frames[221] = 0.0f;
 bone.frames[222] = 0.0f;
 bone.frames[223] = 1.0f;
 
-bone = bones.getValue("pelvic_left");
+bone = bones.get("pelvic_left");
 bone.frames[208] = -0.174915701151f;
 bone.frames[209] = 0.903906881809f;
 bone.frames[210] = 0.390329182148f;
@@ -3520,7 +3520,7 @@ bone.frames[221] = 0.0f;
 bone.frames[222] = 0.0f;
 bone.frames[223] = 1.0f;
 
-bone = bones.getValue("lower_arm_left");
+bone = bones.get("lower_arm_left");
 bone.frames[208] = -0.280743539333f;
 bone.frames[209] = -0.926153361797f;
 bone.frames[210] = -0.251840025187f;
@@ -3538,7 +3538,7 @@ bone.frames[221] = 0.0f;
 bone.frames[222] = 0.0f;
 bone.frames[223] = 1.0f;
 
-bone = bones.getValue("upper_leg_right");
+bone = bones.get("upper_leg_right");
 bone.frames[208] = -0.853634417057f;
 bone.frames[209] = -0.509021580219f;
 bone.frames[210] = 0.110479131341f;
@@ -3556,7 +3556,7 @@ bone.frames[221] = 0.0f;
 bone.frames[222] = 0.0f;
 bone.frames[223] = 1.0f;
 
-bone = bones.getValue("pelvic_right");
+bone = bones.get("pelvic_right");
 bone.frames[208] = -0.270363301039f;
 bone.frames[209] = -0.95476847887f;
 bone.frames[210] = -0.123777829111f;
@@ -3574,7 +3574,7 @@ bone.frames[221] = 0.0f;
 bone.frames[222] = 0.0f;
 bone.frames[223] = 1.0f;
 
-bone = bones.getValue("collar_right");
+bone = bones.get("collar_right");
 bone.frames[208] = -0.319788008928f;
 bone.frames[209] = -0.848115801811f;
 bone.frames[210] = -0.422416418791f;
@@ -3592,7 +3592,7 @@ bone.frames[221] = 0.0f;
 bone.frames[222] = 0.0f;
 bone.frames[223] = 1.0f;
 
-bone = bones.getValue("collar_left");
+bone = bones.get("collar_left");
 bone.frames[208] = -0.179921045899f;
 bone.frames[209] = 0.946973025799f;
 bone.frames[210] = 0.266215592623f;
@@ -3610,7 +3610,7 @@ bone.frames[221] = 0.0f;
 bone.frames[222] = 0.0f;
 bone.frames[223] = 1.0f;
 
-bone = bones.getValue("upper_arm_left");
+bone = bones.get("upper_arm_left");
 bone.frames[208] = -0.961419284344f;
 bone.frames[209] = 0.274116426706f;
 bone.frames[210] = 0.0230946056545f;
@@ -3628,7 +3628,7 @@ bone.frames[221] = 0.0f;
 bone.frames[222] = 0.0f;
 bone.frames[223] = 1.0f;
 
-bone = bones.getValue("root");
+bone = bones.get("root");
 bone.frames[208] = 0.983274579048f;
 bone.frames[209] = 0.0577715151012f;
 bone.frames[210] = 0.172724604607f;
@@ -3646,7 +3646,7 @@ bone.frames[221] = 0.0f;
 bone.frames[222] = 0.0f;
 bone.frames[223] = 1.0f;
 
-bone = bones.getValue("upper_arm_right");
+bone = bones.get("upper_arm_right");
 bone.frames[208] = -0.994162619114f;
 bone.frames[209] = 0.105277016759f;
 bone.frames[210] = -0.0236142352223f;
@@ -3664,7 +3664,7 @@ bone.frames[221] = 0.0f;
 bone.frames[222] = 0.0f;
 bone.frames[223] = 1.0f;
 
-bone = bones.getValue("lower_arm_right");
+bone = bones.get("lower_arm_right");
 bone.frames[224] = 0.766877651215f;
 bone.frames[225] = 0.613870620728f;
 bone.frames[226] = -0.187248244882f;
@@ -3682,7 +3682,7 @@ bone.frames[237] = 0.0f;
 bone.frames[238] = 0.0f;
 bone.frames[239] = 1.0f;
 
-bone = bones.getValue("upper_leg_left");
+bone = bones.get("upper_leg_left");
 bone.frames[224] = -0.929607093334f;
 bone.frames[225] = -0.202701985836f;
 bone.frames[226] = -0.307802885771f;
@@ -3700,7 +3700,7 @@ bone.frames[237] = 0.0f;
 bone.frames[238] = 0.0f;
 bone.frames[239] = 1.0f;
 
-bone = bones.getValue("neck");
+bone = bones.get("neck");
 bone.frames[224] = -0.981507778168f;
 bone.frames[225] = -0.152193233371f;
 bone.frames[226] = 0.116103090346f;
@@ -3718,7 +3718,7 @@ bone.frames[237] = 0.0f;
 bone.frames[238] = 0.0f;
 bone.frames[239] = 1.0f;
 
-bone = bones.getValue("lower_leg_right");
+bone = bones.get("lower_leg_right");
 bone.frames[224] = -0.537019312382f;
 bone.frames[225] = 0.275111049414f;
 bone.frames[226] = -0.797448694706f;
@@ -3736,7 +3736,7 @@ bone.frames[237] = 0.0f;
 bone.frames[238] = 0.0f;
 bone.frames[239] = 1.0f;
 
-bone = bones.getValue("spine");
+bone = bones.get("spine");
 bone.frames[224] = -0.990614295006f;
 bone.frames[225] = -0.113234341145f;
 bone.frames[226] = 0.0765603557229f;
@@ -3754,7 +3754,7 @@ bone.frames[237] = 0.0f;
 bone.frames[238] = 0.0f;
 bone.frames[239] = 1.0f;
 
-bone = bones.getValue("lower_leg_left");
+bone = bones.get("lower_leg_left");
 bone.frames[224] = -0.759082019329f;
 bone.frames[225] = 0.0053274850361f;
 bone.frames[226] = -0.650973200798f;
@@ -3772,7 +3772,7 @@ bone.frames[237] = 0.0f;
 bone.frames[238] = 0.0f;
 bone.frames[239] = 1.0f;
 
-bone = bones.getValue("pelvic_left");
+bone = bones.get("pelvic_left");
 bone.frames[224] = -0.664443969727f;
 bone.frames[225] = 0.719364106655f;
 bone.frames[226] = 0.202557578683f;
@@ -3790,7 +3790,7 @@ bone.frames[237] = 0.0f;
 bone.frames[238] = 0.0f;
 bone.frames[239] = 1.0f;
 
-bone = bones.getValue("lower_arm_left");
+bone = bones.get("lower_arm_left");
 bone.frames[224] = -0.271721482277f;
 bone.frames[225] = -0.84736931324f;
 bone.frames[226] = -0.456215679646f;
@@ -3808,7 +3808,7 @@ bone.frames[237] = 0.0f;
 bone.frames[238] = 0.0f;
 bone.frames[239] = 1.0f;
 
-bone = bones.getValue("upper_leg_right");
+bone = bones.get("upper_leg_right");
 bone.frames[224] = -0.525903761387f;
 bone.frames[225] = -0.803541064262f;
 bone.frames[226] = -0.278831779957f;
@@ -3826,7 +3826,7 @@ bone.frames[237] = 0.0f;
 bone.frames[238] = 0.0f;
 bone.frames[239] = 1.0f;
 
-bone = bones.getValue("pelvic_right");
+bone = bones.get("pelvic_right");
 bone.frames[224] = 0.249577641487f;
 bone.frames[225] = -0.928728163242f;
 bone.frames[226] = -0.27418076992f;
@@ -3844,7 +3844,7 @@ bone.frames[237] = 0.0f;
 bone.frames[238] = 0.0f;
 bone.frames[239] = 1.0f;
 
-bone = bones.getValue("collar_right");
+bone = bones.get("collar_right");
 bone.frames[224] = -0.15163141489f;
 bone.frames[225] = -0.87926620245f;
 bone.frames[226] = -0.451552122831f;
@@ -3862,7 +3862,7 @@ bone.frames[237] = 0.0f;
 bone.frames[238] = 0.0f;
 bone.frames[239] = 1.0f;
 
-bone = bones.getValue("collar_left");
+bone = bones.get("collar_left");
 bone.frames[224] = -0.29184153676f;
 bone.frames[225] = 0.926971256733f;
 bone.frames[226] = 0.23569688201f;
@@ -3880,7 +3880,7 @@ bone.frames[237] = 0.0f;
 bone.frames[238] = 0.0f;
 bone.frames[239] = 1.0f;
 
-bone = bones.getValue("upper_arm_left");
+bone = bones.get("upper_arm_left");
 bone.frames[224] = -0.927133202553f;
 bone.frames[225] = 0.321535021067f;
 bone.frames[226] = -0.192456275225f;
@@ -3898,7 +3898,7 @@ bone.frames[237] = 0.0f;
 bone.frames[238] = 0.0f;
 bone.frames[239] = 1.0f;
 
-bone = bones.getValue("root");
+bone = bones.get("root");
 bone.frames[224] = 0.996954679489f;
 bone.frames[225] = 0.0678798034787f;
 bone.frames[226] = 0.0383917354047f;
@@ -3916,7 +3916,7 @@ bone.frames[237] = 0.0f;
 bone.frames[238] = 0.0f;
 bone.frames[239] = 1.0f;
 
-bone = bones.getValue("upper_arm_right");
+bone = bones.get("upper_arm_right");
 bone.frames[224] = -0.994015991688f;
 bone.frames[225] = 0.026903450489f;
 bone.frames[226] = -0.105870693922f;
@@ -3934,7 +3934,7 @@ bone.frames[237] = 0.0f;
 bone.frames[238] = 0.0f;
 bone.frames[239] = 1.0f;
 
-bone = bones.getValue("lower_arm_right");
+bone = bones.get("lower_arm_right");
 bone.frames[240] = 0.831581950188f;
 bone.frames[241] = 0.507446706295f;
 bone.frames[242] = -0.225765392184f;
@@ -3952,7 +3952,7 @@ bone.frames[253] = 0.0f;
 bone.frames[254] = 0.0f;
 bone.frames[255] = 1.0f;
 
-bone = bones.getValue("upper_leg_left");
+bone = bones.get("upper_leg_left");
 bone.frames[240] = -0.737990617752f;
 bone.frames[241] = -0.0517395362258f;
 bone.frames[242] = -0.672824501991f;
@@ -3970,7 +3970,7 @@ bone.frames[253] = 0.0f;
 bone.frames[254] = 0.0f;
 bone.frames[255] = 1.0f;
 
-bone = bones.getValue("neck");
+bone = bones.get("neck");
 bone.frames[240] = -0.953329920769f;
 bone.frames[241] = -0.083669513464f;
 bone.frames[242] = 0.290106505156f;
@@ -3988,7 +3988,7 @@ bone.frames[253] = 0.0f;
 bone.frames[254] = 0.0f;
 bone.frames[255] = 1.0f;
 
-bone = bones.getValue("lower_leg_right");
+bone = bones.get("lower_leg_right");
 bone.frames[240] = -0.120903015137f;
 bone.frames[241] = 0.335251808167f;
 bone.frames[242] = -0.93433880806f;
@@ -4006,7 +4006,7 @@ bone.frames[253] = 0.0f;
 bone.frames[254] = 0.0f;
 bone.frames[255] = 1.0f;
 
-bone = bones.getValue("spine");
+bone = bones.get("spine");
 bone.frames[240] = -0.958884656429f;
 bone.frames[241] = -0.152705520391f;
 bone.frames[242] = 0.239210143685f;
@@ -4024,7 +4024,7 @@ bone.frames[253] = 0.0f;
 bone.frames[254] = 0.0f;
 bone.frames[255] = 1.0f;
 
-bone = bones.getValue("lower_leg_left");
+bone = bones.get("lower_leg_left");
 bone.frames[240] = -0.531373023987f;
 bone.frames[241] = 0.00181693490595f;
 bone.frames[242] = -0.847135961056f;
@@ -4042,7 +4042,7 @@ bone.frames[253] = 0.0f;
 bone.frames[254] = 0.0f;
 bone.frames[255] = 1.0f;
 
-bone = bones.getValue("pelvic_left");
+bone = bones.get("pelvic_left");
 bone.frames[240] = -0.885238647461f;
 bone.frames[241] = 0.465069293976f;
 bone.frames[242] = -0.00794587563723f;
@@ -4060,7 +4060,7 @@ bone.frames[253] = 0.0f;
 bone.frames[254] = 0.0f;
 bone.frames[255] = 1.0f;
 
-bone = bones.getValue("lower_arm_left");
+bone = bones.get("lower_arm_left");
 bone.frames[240] = -0.253562361002f;
 bone.frames[241] = -0.710135161877f;
 bone.frames[242] = -0.656821548939f;
@@ -4078,7 +4078,7 @@ bone.frames[253] = 0.0f;
 bone.frames[254] = 0.0f;
 bone.frames[255] = 1.0f;
 
-bone = bones.getValue("upper_leg_right");
+bone = bones.get("upper_leg_right");
 bone.frames[240] = -0.142026424408f;
 bone.frames[241] = -0.845586776733f;
 bone.frames[242] = -0.514598488808f;
@@ -4096,7 +4096,7 @@ bone.frames[253] = 0.0f;
 bone.frames[254] = 0.0f;
 bone.frames[255] = 1.0f;
 
-bone = bones.getValue("pelvic_right");
+bone = bones.get("pelvic_right");
 bone.frames[240] = 0.582967698574f;
 bone.frames[241] = -0.718050539494f;
 bone.frames[242] = -0.380200177431f;
@@ -4114,7 +4114,7 @@ bone.frames[253] = 0.0f;
 bone.frames[254] = 0.0f;
 bone.frames[255] = 1.0f;
 
-bone = bones.getValue("collar_right");
+bone = bones.get("collar_right");
 bone.frames[240] = 0.0282027386129f;
 bone.frames[241] = -0.837888479233f;
 bone.frames[242] = -0.545112907887f;
@@ -4132,7 +4132,7 @@ bone.frames[253] = 0.0f;
 bone.frames[254] = 0.0f;
 bone.frames[255] = 1.0f;
 
-bone = bones.getValue("collar_left");
+bone = bones.get("collar_left");
 bone.frames[240] = -0.382654845715f;
 bone.frames[241] = 0.916454851627f;
 bone.frames[242] = 0.116987593472f;
@@ -4150,7 +4150,7 @@ bone.frames[253] = 0.0f;
 bone.frames[254] = 0.0f;
 bone.frames[255] = 1.0f;
 
-bone = bones.getValue("upper_arm_left");
+bone = bones.get("upper_arm_left");
 bone.frames[240] = -0.834779858589f;
 bone.frames[241] = 0.356525540352f;
 bone.frames[242] = -0.419562190771f;
@@ -4168,7 +4168,7 @@ bone.frames[253] = 0.0f;
 bone.frames[254] = 0.0f;
 bone.frames[255] = 1.0f;
 
-bone = bones.getValue("root");
+bone = bones.get("root");
 bone.frames[240] = 0.98665368557f;
 bone.frames[241] = 0.099192738533f;
 bone.frames[242] = -0.129133701324f;
@@ -4186,7 +4186,7 @@ bone.frames[253] = 0.0f;
 bone.frames[254] = 0.0f;
 bone.frames[255] = 1.0f;
 
-bone = bones.getValue("upper_arm_right");
+bone = bones.get("upper_arm_right");
 bone.frames[240] = -0.9684715271f;
 bone.frames[241] = -0.024454837665f;
 bone.frames[242] = -0.247921645641f;
@@ -4204,7 +4204,7 @@ bone.frames[253] = 0.0f;
 bone.frames[254] = 0.0f;
 bone.frames[255] = 1.0f;
 
-bone = bones.getValue("lower_arm_right");
+bone = bones.get("lower_arm_right");
 bone.frames[256] = 0.536136209965f;
 bone.frames[257] = 0.406308203936f;
 bone.frames[258] = -0.739913702011f;
@@ -4222,7 +4222,7 @@ bone.frames[269] = 0.0f;
 bone.frames[270] = 0.0f;
 bone.frames[271] = 1.0f;
 
-bone = bones.getValue("upper_leg_left");
+bone = bones.get("upper_leg_left");
 bone.frames[256] = -0.717276155949f;
 bone.frames[257] = -0.00319851073436f;
 bone.frames[258] = -0.696781694889f;
@@ -4240,7 +4240,7 @@ bone.frames[269] = 0.0f;
 bone.frames[270] = 0.0f;
 bone.frames[271] = 1.0f;
 
-bone = bones.getValue("neck");
+bone = bones.get("neck");
 bone.frames[256] = -0.906411349773f;
 bone.frames[257] = -0.0328197255731f;
 bone.frames[258] = 0.421119421721f;
@@ -4258,7 +4258,7 @@ bone.frames[269] = 0.0f;
 bone.frames[270] = 0.0f;
 bone.frames[271] = 1.0f;
 
-bone = bones.getValue("lower_leg_right");
+bone = bones.get("lower_leg_right");
 bone.frames[256] = -0.089866027236f;
 bone.frames[257] = 0.277572274208f;
 bone.frames[258] = -0.956492424011f;
@@ -4276,7 +4276,7 @@ bone.frames[269] = 0.0f;
 bone.frames[270] = 0.0f;
 bone.frames[271] = 1.0f;
 
-bone = bones.getValue("spine");
+bone = bones.get("spine");
 bone.frames[256] = -0.91536962986f;
 bone.frames[257] = -0.197830468416f;
 bone.frames[258] = 0.350659191608f;
@@ -4294,7 +4294,7 @@ bone.frames[269] = 0.0f;
 bone.frames[270] = 0.0f;
 bone.frames[271] = 1.0f;
 
-bone = bones.getValue("lower_leg_left");
+bone = bones.get("lower_leg_left");
 bone.frames[256] = -0.583636581898f;
 bone.frames[257] = -0.0684981942177f;
 bone.frames[258] = -0.809120774269f;
@@ -4312,7 +4312,7 @@ bone.frames[269] = 0.0f;
 bone.frames[270] = 0.0f;
 bone.frames[271] = 1.0f;
 
-bone = bones.getValue("pelvic_left");
+bone = bones.get("pelvic_left");
 bone.frames[256] = -0.89669406414f;
 bone.frames[257] = 0.442626029253f;
 bone.frames[258] = 0.00469968188554f;
@@ -4330,7 +4330,7 @@ bone.frames[269] = 0.0f;
 bone.frames[270] = 0.0f;
 bone.frames[271] = 1.0f;
 
-bone = bones.getValue("lower_arm_left");
+bone = bones.get("lower_arm_left");
 bone.frames[256] = -0.267288982868f;
 bone.frames[257] = -0.591226875782f;
 bone.frames[258] = -0.760925531387f;
@@ -4348,7 +4348,7 @@ bone.frames[269] = 0.0f;
 bone.frames[270] = 0.0f;
 bone.frames[271] = 1.0f;
 
-bone = bones.getValue("upper_leg_right");
+bone = bones.get("upper_leg_right");
 bone.frames[256] = -0.0192794483155f;
 bone.frames[257] = -0.8926243186f;
 bone.frames[258] = -0.450389027596f;
@@ -4366,7 +4366,7 @@ bone.frames[269] = 0.0f;
 bone.frames[270] = 0.0f;
 bone.frames[271] = 1.0f;
 
-bone = bones.getValue("pelvic_right");
+bone = bones.get("pelvic_right");
 bone.frames[256] = 0.617331981659f;
 bone.frames[257] = -0.703452527523f;
 bone.frames[258] = -0.3522156775f;
@@ -4384,7 +4384,7 @@ bone.frames[269] = 0.0f;
 bone.frames[270] = 0.0f;
 bone.frames[271] = 1.0f;
 
-bone = bones.getValue("collar_right");
+bone = bones.get("collar_right");
 bone.frames[256] = 0.167050033808f;
 bone.frames[257] = -0.770617425442f;
 bone.frames[258] = -0.615015089512f;
@@ -4402,7 +4402,7 @@ bone.frames[269] = 0.0f;
 bone.frames[270] = 0.0f;
 bone.frames[271] = 1.0f;
 
-bone = bones.getValue("collar_left");
+bone = bones.get("collar_left");
 bone.frames[256] = -0.47342929244f;
 bone.frames[257] = 0.880614519119f;
 bone.frames[258] = 0.0195727739483f;
@@ -4420,7 +4420,7 @@ bone.frames[269] = 0.0f;
 bone.frames[270] = 0.0f;
 bone.frames[271] = 1.0f;
 
-bone = bones.getValue("upper_arm_left");
+bone = bones.get("upper_arm_left");
 bone.frames[256] = -0.719559550285f;
 bone.frames[257] = 0.296312868595f;
 bone.frames[258] = -0.628039062023f;
@@ -4438,7 +4438,7 @@ bone.frames[269] = 0.0f;
 bone.frames[270] = 0.0f;
 bone.frames[271] = 1.0f;
 
-bone = bones.getValue("root");
+bone = bones.get("root");
 bone.frames[256] = 0.919206976891f;
 bone.frames[257] = 0.110807657242f;
 bone.frames[258] = -0.377863019705f;
@@ -4456,7 +4456,7 @@ bone.frames[269] = 0.0f;
 bone.frames[270] = 0.0f;
 bone.frames[271] = 1.0f;
 
-bone = bones.getValue("upper_arm_right");
+bone = bones.get("upper_arm_right");
 bone.frames[256] = -0.911031007767f;
 bone.frames[257] = -0.0623057186604f;
 bone.frames[258] = -0.407603770494f;
@@ -4474,7 +4474,7 @@ bone.frames[269] = 0.0f;
 bone.frames[270] = 0.0f;
 bone.frames[271] = 1.0f;
 
-bone = bones.getValue("lower_arm_right");
+bone = bones.get("lower_arm_right");
 bone.frames[272] = -0.110686853528f;
 bone.frames[273] = 0.15290504694f;
 bone.frames[274] = -0.982022881508f;
@@ -4492,7 +4492,7 @@ bone.frames[285] = 0.0f;
 bone.frames[286] = 0.0f;
 bone.frames[287] = 1.0f;
 
-bone = bones.getValue("upper_leg_left");
+bone = bones.get("upper_leg_left");
 bone.frames[272] = -0.705597937107f;
 bone.frames[273] = -0.0161365587264f;
 bone.frames[274] = -0.708428680897f;
@@ -4510,7 +4510,7 @@ bone.frames[285] = 0.0f;
 bone.frames[286] = 0.0f;
 bone.frames[287] = 1.0f;
 
-bone = bones.getValue("neck");
+bone = bones.get("neck");
 bone.frames[272] = -0.916956365108f;
 bone.frames[273] = -0.050226829946f;
 bone.frames[274] = 0.395813822746f;
@@ -4528,7 +4528,7 @@ bone.frames[285] = 0.0f;
 bone.frames[286] = 0.0f;
 bone.frames[287] = 1.0f;
 
-bone = bones.getValue("lower_leg_right");
+bone = bones.get("lower_leg_right");
 bone.frames[272] = -0.140711724758f;
 bone.frames[273] = 0.207768931985f;
 bone.frames[274] = -0.968004465103f;
@@ -4546,7 +4546,7 @@ bone.frames[285] = 0.0f;
 bone.frames[286] = 0.0f;
 bone.frames[287] = 1.0f;
 
-bone = bones.getValue("spine");
+bone = bones.get("spine");
 bone.frames[272] = -0.926135182381f;
 bone.frames[273] = -0.231659919024f;
 bone.frames[274] = 0.297670394182f;
@@ -4564,7 +4564,7 @@ bone.frames[285] = 0.0f;
 bone.frames[286] = 0.0f;
 bone.frames[287] = 1.0f;
 
-bone = bones.getValue("lower_leg_left");
+bone = bones.get("lower_leg_left");
 bone.frames[272] = -0.6351557374f;
 bone.frames[273] = -0.0981984362006f;
 bone.frames[274] = -0.766116380692f;
@@ -4582,7 +4582,7 @@ bone.frames[285] = 0.0f;
 bone.frames[286] = 0.0f;
 bone.frames[287] = 1.0f;
 
-bone = bones.getValue("pelvic_left");
+bone = bones.get("pelvic_left");
 bone.frames[272] = -0.903446733952f;
 bone.frames[273] = 0.42484614253f;
 bone.frames[274] = 0.0573569126427f;
@@ -4600,7 +4600,7 @@ bone.frames[285] = 0.0f;
 bone.frames[286] = 0.0f;
 bone.frames[287] = 1.0f;
 
-bone = bones.getValue("lower_arm_left");
+bone = bones.get("lower_arm_left");
 bone.frames[272] = -0.413881182671f;
 bone.frames[273] = -0.592143595219f;
 bone.frames[274] = -0.691425144672f;
@@ -4618,7 +4618,7 @@ bone.frames[285] = 0.0f;
 bone.frames[286] = 0.0f;
 bone.frames[287] = 1.0f;
 
-bone = bones.getValue("upper_leg_right");
+bone = bones.get("upper_leg_right");
 bone.frames[272] = 0.0395945571363f;
 bone.frames[273] = -0.935699164867f;
 bone.frames[274] = -0.350570499897f;
@@ -4636,7 +4636,7 @@ bone.frames[285] = 0.0f;
 bone.frames[286] = 0.0f;
 bone.frames[287] = 1.0f;
 
-bone = bones.getValue("pelvic_right");
+bone = bones.get("pelvic_right");
 bone.frames[272] = 0.622135698795f;
 bone.frames[273] = -0.721339762211f;
 bone.frames[274] = -0.304329276085f;
@@ -4654,7 +4654,7 @@ bone.frames[285] = 0.0f;
 bone.frames[286] = 0.0f;
 bone.frames[287] = 1.0f;
 
-bone = bones.getValue("collar_right");
+bone = bones.get("collar_right");
 bone.frames[272] = 0.154807120562f;
 bone.frames[273] = -0.766917765141f;
 bone.frames[274] = -0.622794032097f;
@@ -4672,7 +4672,7 @@ bone.frames[285] = 0.0f;
 bone.frames[286] = 0.0f;
 bone.frames[287] = 1.0f;
 
-bone = bones.getValue("collar_left");
+bone = bones.get("collar_left");
 bone.frames[272] = -0.460547566414f;
 bone.frames[273] = 0.88740003109f;
 bone.frames[274] = 0.0204345546663f;
@@ -4690,7 +4690,7 @@ bone.frames[285] = 0.0f;
 bone.frames[286] = 0.0f;
 bone.frames[287] = 1.0f;
 
-bone = bones.getValue("upper_arm_left");
+bone = bones.get("upper_arm_left");
 bone.frames[272] = -0.669788718224f;
 bone.frames[273] = 0.209879338741f;
 bone.frames[274] = -0.712273895741f;
@@ -4708,7 +4708,7 @@ bone.frames[285] = 0.0f;
 bone.frames[286] = 0.0f;
 bone.frames[287] = 1.0f;
 
-bone = bones.getValue("root");
+bone = bones.get("root");
 bone.frames[272] = 0.786303162575f;
 bone.frames[273] = 0.055693000555f;
 bone.frames[274] = -0.615325927734f;
@@ -4726,7 +4726,7 @@ bone.frames[285] = 0.0f;
 bone.frames[286] = 0.0f;
 bone.frames[287] = 1.0f;
 
-bone = bones.getValue("upper_arm_right");
+bone = bones.get("upper_arm_right");
 bone.frames[272] = -0.900144994259f;
 bone.frames[273] = 0.0126176569611f;
 bone.frames[274] = -0.435407996178f;
@@ -4744,7 +4744,7 @@ bone.frames[285] = 0.0f;
 bone.frames[286] = 0.0f;
 bone.frames[287] = 1.0f;
 
-bone = bones.getValue("lower_arm_right");
+bone = bones.get("lower_arm_right");
 bone.frames[288] = -0.429693967104f;
 bone.frames[289] = 0.023724835366f;
 bone.frames[290] = -0.902662992477f;
@@ -4762,7 +4762,7 @@ bone.frames[301] = 0.0f;
 bone.frames[302] = 0.0f;
 bone.frames[303] = 1.0f;
 
-bone = bones.getValue("upper_leg_left");
+bone = bones.get("upper_leg_left");
 bone.frames[288] = -0.704554140568f;
 bone.frames[289] = -0.0716182664037f;
 bone.frames[290] = -0.706027090549f;
@@ -4780,7 +4780,7 @@ bone.frames[301] = 0.0f;
 bone.frames[302] = 0.0f;
 bone.frames[303] = 1.0f;
 
-bone = bones.getValue("neck");
+bone = bones.get("neck");
 bone.frames[288] = -0.982743740082f;
 bone.frames[289] = -0.0688644126058f;
 bone.frames[290] = 0.171675696969f;
@@ -4798,7 +4798,7 @@ bone.frames[301] = 0.0f;
 bone.frames[302] = 0.0f;
 bone.frames[303] = 1.0f;
 
-bone = bones.getValue("lower_leg_right");
+bone = bones.get("lower_leg_right");
 bone.frames[288] = -0.240029394627f;
 bone.frames[289] = 0.184366092086f;
 bone.frames[290] = -0.953097701073f;
@@ -4816,7 +4816,7 @@ bone.frames[301] = 0.0f;
 bone.frames[302] = 0.0f;
 bone.frames[303] = 1.0f;
 
-bone = bones.getValue("spine");
+bone = bones.get("spine");
 bone.frames[288] = -0.98290169239f;
 bone.frames[289] = -0.168406888843f;
 bone.frames[290] = 0.0744544416666f;
@@ -4834,7 +4834,7 @@ bone.frames[301] = 0.0f;
 bone.frames[302] = 0.0f;
 bone.frames[303] = 1.0f;
 
-bone = bones.getValue("lower_leg_left");
+bone = bones.get("lower_leg_left");
 bone.frames[288] = -0.657400429249f;
 bone.frames[289] = -0.0209296848625f;
 bone.frames[290] = -0.753250718117f;
@@ -4852,7 +4852,7 @@ bone.frames[301] = 0.0f;
 bone.frames[302] = 0.0f;
 bone.frames[303] = 1.0f;
 
-bone = bones.getValue("pelvic_left");
+bone = bones.get("pelvic_left");
 bone.frames[288] = -0.906851708889f;
 bone.frames[289] = 0.408263623714f;
 bone.frames[290] = 0.104598321021f;
@@ -4870,7 +4870,7 @@ bone.frames[301] = 0.0f;
 bone.frames[302] = 0.0f;
 bone.frames[303] = 1.0f;
 
-bone = bones.getValue("lower_arm_left");
+bone = bones.get("lower_arm_left");
 bone.frames[288] = -0.458799898624f;
 bone.frames[289] = -0.723557174206f;
 bone.frames[290] = -0.515720486641f;
@@ -4888,7 +4888,7 @@ bone.frames[301] = 0.0f;
 bone.frames[302] = 0.0f;
 bone.frames[303] = 1.0f;
 
-bone = bones.getValue("upper_leg_right");
+bone = bones.get("upper_leg_right");
 bone.frames[288] = 0.0107342498377f;
 bone.frames[289] = -0.961495578289f;
 bone.frames[290] = -0.274611204863f;
@@ -4906,7 +4906,7 @@ bone.frames[301] = 0.0f;
 bone.frames[302] = 0.0f;
 bone.frames[303] = 1.0f;
 
-bone = bones.getValue("pelvic_right");
+bone = bones.get("pelvic_right");
 bone.frames[288] = 0.620969295502f;
 bone.frames[289] = -0.738576173782f;
 bone.frames[290] = -0.262492805719f;
@@ -4924,7 +4924,7 @@ bone.frames[301] = 0.0f;
 bone.frames[302] = 0.0f;
 bone.frames[303] = 1.0f;
 
-bone = bones.getValue("collar_right");
+bone = bones.get("collar_right");
 bone.frames[288] = 0.0269216988236f;
 bone.frames[289] = -0.868869960308f;
 bone.frames[290] = -0.494308143854f;
@@ -4942,7 +4942,7 @@ bone.frames[301] = 0.0f;
 bone.frames[302] = 0.0f;
 bone.frames[303] = 1.0f;
 
-bone = bones.getValue("collar_left");
+bone = bones.get("collar_left");
 bone.frames[288] = -0.362414002419f;
 bone.frames[289] = 0.911264955997f;
 bone.frames[290] = 0.19558237493f;
@@ -4960,7 +4960,7 @@ bone.frames[301] = 0.0f;
 bone.frames[302] = 0.0f;
 bone.frames[303] = 1.0f;
 
-bone = bones.getValue("upper_arm_left");
+bone = bones.get("upper_arm_left");
 bone.frames[288] = -0.776334166527f;
 bone.frames[289] = 0.0953398868442f;
 bone.frames[290] = -0.623069524765f;
@@ -4978,7 +4978,7 @@ bone.frames[301] = 0.0f;
 bone.frames[302] = 0.0f;
 bone.frames[303] = 1.0f;
 
-bone = bones.getValue("root");
+bone = bones.get("root");
 bone.frames[288] = 0.654778242111f;
 bone.frames[289] = -0.0390300005674f;
 bone.frames[290] = -0.754812836647f;
@@ -4996,7 +4996,7 @@ bone.frames[301] = 0.0f;
 bone.frames[302] = 0.0f;
 bone.frames[303] = 1.0f;
 
-bone = bones.getValue("upper_arm_right");
+bone = bones.get("upper_arm_right");
 bone.frames[288] = -0.962167739868f;
 bone.frames[289] = 0.0467991568148f;
 bone.frames[290] = -0.268408626318f;
@@ -5014,7 +5014,7 @@ bone.frames[301] = 0.0f;
 bone.frames[302] = 0.0f;
 bone.frames[303] = 1.0f;
 
-bone = bones.getValue("lower_arm_right");
+bone = bones.get("lower_arm_right");
 bone.frames[304] = -0.939895629883f;
 bone.frames[305] = -0.123033896089f;
 bone.frames[306] = 0.318527072668f;
@@ -5032,7 +5032,7 @@ bone.frames[317] = 0.0f;
 bone.frames[318] = 0.0f;
 bone.frames[319] = 1.0f;
 
-bone = bones.getValue("upper_leg_left");
+bone = bones.get("upper_leg_left");
 bone.frames[304] = -0.779102861881f;
 bone.frames[305] = -0.125956356525f;
 bone.frames[306] = -0.614112138748f;
@@ -5050,7 +5050,7 @@ bone.frames[317] = 0.0f;
 bone.frames[318] = 0.0f;
 bone.frames[319] = 1.0f;
 
-bone = bones.getValue("neck");
+bone = bones.get("neck");
 bone.frames[304] = -0.997512102127f;
 bone.frames[305] = -0.0503097176552f;
 bone.frames[306] = 0.0493847317994f;
@@ -5068,7 +5068,7 @@ bone.frames[317] = 0.0f;
 bone.frames[318] = 0.0f;
 bone.frames[319] = 1.0f;
 
-bone = bones.getValue("lower_leg_right");
+bone = bones.get("lower_leg_right");
 bone.frames[304] = -0.811069607735f;
 bone.frames[305] = 0.120332308114f;
 bone.frames[306] = -0.572439134121f;
@@ -5086,7 +5086,7 @@ bone.frames[317] = 0.0f;
 bone.frames[318] = 0.0f;
 bone.frames[319] = 1.0f;
 
-bone = bones.getValue("spine");
+bone = bones.get("spine");
 bone.frames[304] = -0.995073676109f;
 bone.frames[305] = -0.0968610197306f;
 bone.frames[306] = -0.0211347267032f;
@@ -5104,7 +5104,7 @@ bone.frames[317] = 0.0f;
 bone.frames[318] = 0.0f;
 bone.frames[319] = 1.0f;
 
-bone = bones.getValue("lower_leg_left");
+bone = bones.get("lower_leg_left");
 bone.frames[304] = -0.730950653553f;
 bone.frames[305] = 0.10726185143f;
 bone.frames[306] = -0.67394810915f;
@@ -5122,7 +5122,7 @@ bone.frames[317] = 0.0f;
 bone.frames[318] = 0.0f;
 bone.frames[319] = 1.0f;
 
-bone = bones.getValue("pelvic_left");
+bone = bones.get("pelvic_left");
 bone.frames[304] = -0.854431509972f;
 bone.frames[305] = 0.491396129131f;
 bone.frames[306] = 0.168750450015f;
@@ -5140,7 +5140,7 @@ bone.frames[317] = 0.0f;
 bone.frames[318] = 0.0f;
 bone.frames[319] = 1.0f;
 
-bone = bones.getValue("lower_arm_left");
+bone = bones.get("lower_arm_left");
 bone.frames[304] = -0.48211312294f;
 bone.frames[305] = -0.800150990486f;
 bone.frames[306] = -0.356827229261f;
@@ -5158,7 +5158,7 @@ bone.frames[317] = 0.0f;
 bone.frames[318] = 0.0f;
 bone.frames[319] = 1.0f;
 
-bone = bones.getValue("upper_leg_right");
+bone = bones.get("upper_leg_right");
 bone.frames[304] = -0.469762027264f;
 bone.frames[305] = -0.864951372147f;
 bone.frames[306] = 0.176587104797f;
@@ -5176,7 +5176,7 @@ bone.frames[317] = 0.0f;
 bone.frames[318] = 0.0f;
 bone.frames[319] = 1.0f;
 
-bone = bones.getValue("pelvic_right");
+bone = bones.get("pelvic_right");
 bone.frames[304] = 0.529590725899f;
 bone.frames[305] = -0.813724219799f;
 bone.frames[306] = -0.239555060863f;
@@ -5194,7 +5194,7 @@ bone.frames[317] = 0.0f;
 bone.frames[318] = 0.0f;
 bone.frames[319] = 1.0f;
 
-bone = bones.getValue("collar_right");
+bone = bones.get("collar_right");
 bone.frames[304] = 0.0056011849083f;
 bone.frames[305] = -0.917418599129f;
 bone.frames[306] = -0.397884815931f;
@@ -5212,7 +5212,7 @@ bone.frames[317] = 0.0f;
 bone.frames[318] = 0.0f;
 bone.frames[319] = 1.0f;
 
-bone = bones.getValue("collar_left");
+bone = bones.get("collar_left");
 bone.frames[304] = -0.367175042629f;
 bone.frames[305] = 0.877037525177f;
 bone.frames[306] = 0.309819340706f;
@@ -5230,7 +5230,7 @@ bone.frames[317] = 0.0f;
 bone.frames[318] = 0.0f;
 bone.frames[319] = 1.0f;
 
-bone = bones.getValue("upper_arm_left");
+bone = bones.get("upper_arm_left");
 bone.frames[304] = -0.933587610722f;
 bone.frames[305] = 0.250505387783f;
 bone.frames[306] = -0.256245225668f;
@@ -5248,7 +5248,7 @@ bone.frames[317] = 0.0f;
 bone.frames[318] = 0.0f;
 bone.frames[319] = 1.0f;
 
-bone = bones.getValue("root");
+bone = bones.get("root");
 bone.frames[304] = 0.753699481487f;
 bone.frames[305] = 0.00368995266035f;
 bone.frames[306] = -0.657209038734f;
@@ -5266,7 +5266,7 @@ bone.frames[317] = 0.0f;
 bone.frames[318] = 0.0f;
 bone.frames[319] = 1.0f;
 
-bone = bones.getValue("upper_arm_right");
+bone = bones.get("upper_arm_right");
 bone.frames[304] = -0.989099383354f;
 bone.frames[305] = -0.00826467759907f;
 bone.frames[306] = -0.147018834949f;
@@ -5284,7 +5284,7 @@ bone.frames[317] = 0.0f;
 bone.frames[318] = 0.0f;
 bone.frames[319] = 1.0f;
 
-bone = bones.getValue("lower_arm_right");
+bone = bones.get("lower_arm_right");
 bone.frames[320] = -0.842077493668f;
 bone.frames[321] = -0.34813028574f;
 bone.frames[322] = 0.411960124969f;
@@ -5302,7 +5302,7 @@ bone.frames[333] = 0.0f;
 bone.frames[334] = 0.0f;
 bone.frames[335] = 1.0f;
 
-bone = bones.getValue("upper_leg_left");
+bone = bones.get("upper_leg_left");
 bone.frames[320] = -0.837210059166f;
 bone.frames[321] = -0.188360333443f;
 bone.frames[322] = -0.513419747353f;
@@ -5320,7 +5320,7 @@ bone.frames[333] = 0.0f;
 bone.frames[334] = 0.0f;
 bone.frames[335] = 1.0f;
 
-bone = bones.getValue("neck");
+bone = bones.get("neck");
 bone.frames[320] = -0.998360991478f;
 bone.frames[321] = -0.0338195376098f;
 bone.frames[322] = -0.0461716987193f;
@@ -5338,7 +5338,7 @@ bone.frames[333] = 0.0f;
 bone.frames[334] = 0.0f;
 bone.frames[335] = 1.0f;
 
-bone = bones.getValue("lower_leg_right");
+bone = bones.get("lower_leg_right");
 bone.frames[320] = -0.911277592182f;
 bone.frames[321] = 0.0797156766057f;
 bone.frames[322] = -0.404003471136f;
@@ -5356,7 +5356,7 @@ bone.frames[333] = 0.0f;
 bone.frames[334] = 0.0f;
 bone.frames[335] = 1.0f;
 
-bone = bones.getValue("spine");
+bone = bones.get("spine");
 bone.frames[320] = -0.996633052826f;
 bone.frames[321] = -0.0299808010459f;
 bone.frames[322] = -0.0763141736388f;
@@ -5374,7 +5374,7 @@ bone.frames[333] = 0.0f;
 bone.frames[334] = 0.0f;
 bone.frames[335] = 1.0f;
 
-bone = bones.getValue("lower_leg_left");
+bone = bones.get("lower_leg_left");
 bone.frames[320] = -0.791736185551f;
 bone.frames[321] = 0.174691334367f;
 bone.frames[322] = -0.58535194397f;
@@ -5392,7 +5392,7 @@ bone.frames[333] = 0.0f;
 bone.frames[334] = 0.0f;
 bone.frames[335] = 1.0f;
 
-bone = bones.getValue("pelvic_left");
+bone = bones.get("pelvic_left");
 bone.frames[320] = -0.791052520275f;
 bone.frames[321] = 0.57362383604f;
 bone.frames[322] = 0.212583422661f;
@@ -5410,7 +5410,7 @@ bone.frames[333] = 0.0f;
 bone.frames[334] = 0.0f;
 bone.frames[335] = 1.0f;
 
-bone = bones.getValue("lower_arm_left");
+bone = bones.get("lower_arm_left");
 bone.frames[320] = -0.502038121223f;
 bone.frames[321] = -0.838768064976f;
 bone.frames[322] = -0.21077477932f;
@@ -5428,7 +5428,7 @@ bone.frames[333] = 0.0f;
 bone.frames[334] = 0.0f;
 bone.frames[335] = 1.0f;
 
-bone = bones.getValue("upper_leg_right");
+bone = bones.get("upper_leg_right");
 bone.frames[320] = -0.617740273476f;
 bone.frames[321] = -0.745358169079f;
 bone.frames[322] = 0.250675797462f;
@@ -5446,7 +5446,7 @@ bone.frames[333] = 0.0f;
 bone.frames[334] = 0.0f;
 bone.frames[335] = 1.0f;
 
-bone = bones.getValue("pelvic_right");
+bone = bones.get("pelvic_right");
 bone.frames[320] = 0.433677792549f;
 bone.frames[321] = -0.870903849602f;
 bone.frames[322] = -0.231192931533f;
@@ -5464,7 +5464,7 @@ bone.frames[333] = 0.0f;
 bone.frames[334] = 0.0f;
 bone.frames[335] = 1.0f;
 
-bone = bones.getValue("collar_right");
+bone = bones.get("collar_right");
 bone.frames[320] = -0.00160061370116f;
 bone.frames[321] = -0.947823226452f;
 bone.frames[322] = -0.318793058395f;
@@ -5482,7 +5482,7 @@ bone.frames[333] = 0.0f;
 bone.frames[334] = 0.0f;
 bone.frames[335] = 1.0f;
 
-bone = bones.getValue("collar_left");
+bone = bones.get("collar_left");
 bone.frames[320] = -0.404887020588f;
 bone.frames[321] = 0.821984052658f;
 bone.frames[322] = 0.400510787964f;
@@ -5500,7 +5500,7 @@ bone.frames[333] = 0.0f;
 bone.frames[334] = 0.0f;
 bone.frames[335] = 1.0f;
 
-bone = bones.getValue("upper_arm_left");
+bone = bones.get("upper_arm_left");
 bone.frames[320] = -0.954866826534f;
 bone.frames[321] = 0.293164610863f;
 bone.frames[322] = -0.047791082412f;
@@ -5518,7 +5518,7 @@ bone.frames[333] = 0.0f;
 bone.frames[334] = 0.0f;
 bone.frames[335] = 1.0f;
 
-bone = bones.getValue("root");
+bone = bones.get("root");
 bone.frames[320] = 0.834250867367f;
 bone.frames[321] = 0.0625762939453f;
 bone.frames[322] = -0.547822892666f;
@@ -5536,7 +5536,7 @@ bone.frames[333] = 0.0f;
 bone.frames[334] = 0.0f;
 bone.frames[335] = 1.0f;
 
-bone = bones.getValue("upper_arm_right");
+bone = bones.get("upper_arm_right");
 bone.frames[320] = -0.994780659676f;
 bone.frames[321] = 0.00994026660919f;
 bone.frames[322] = -0.101551875472f;
@@ -5554,7 +5554,7 @@ bone.frames[333] = 0.0f;
 bone.frames[334] = 0.0f;
 bone.frames[335] = 1.0f;
 
-bone = bones.getValue("lower_arm_right");
+bone = bones.get("lower_arm_right");
 bone.frames[336] = -0.815597593784f;
 bone.frames[337] = -0.488635092974f;
 bone.frames[338] = 0.309897542f;
@@ -5572,7 +5572,7 @@ bone.frames[349] = 0.0f;
 bone.frames[350] = 0.0f;
 bone.frames[351] = 1.0f;
 
-bone = bones.getValue("upper_leg_left");
+bone = bones.get("upper_leg_left");
 bone.frames[336] = -0.818560063839f;
 bone.frames[337] = -0.238768130541f;
 bone.frames[338] = -0.522445499897f;
@@ -5590,7 +5590,7 @@ bone.frames[349] = 0.0f;
 bone.frames[350] = 0.0f;
 bone.frames[351] = 1.0f;
 
-bone = bones.getValue("neck");
+bone = bones.get("neck");
 bone.frames[336] = -0.993136584759f;
 bone.frames[337] = 0.0303725656122f;
 bone.frames[338] = 0.112948261201f;
@@ -5608,7 +5608,7 @@ bone.frames[349] = 0.0f;
 bone.frames[350] = 0.0f;
 bone.frames[351] = 1.0f;
 
-bone = bones.getValue("lower_leg_right");
+bone = bones.get("lower_leg_right");
 bone.frames[336] = -0.921673536301f;
 bone.frames[337] = 0.0946585386992f;
 bone.frames[338] = -0.376242130995f;
@@ -5626,7 +5626,7 @@ bone.frames[349] = 0.0f;
 bone.frames[350] = 0.0f;
 bone.frames[351] = 1.0f;
 
-bone = bones.getValue("spine");
+bone = bones.get("spine");
 bone.frames[336] = -0.991001546383f;
 bone.frames[337] = -0.00935464911163f;
 bone.frames[338] = 0.133523643017f;
@@ -5644,7 +5644,7 @@ bone.frames[349] = 0.0f;
 bone.frames[350] = 0.0f;
 bone.frames[351] = 1.0f;
 
-bone = bones.getValue("lower_leg_left");
+bone = bones.get("lower_leg_left");
 bone.frames[336] = -0.786270856857f;
 bone.frames[337] = 0.188038662076f;
 bone.frames[338] = -0.588574290276f;
@@ -5662,7 +5662,7 @@ bone.frames[349] = 0.0f;
 bone.frames[350] = 0.0f;
 bone.frames[351] = 1.0f;
 
-bone = bones.getValue("pelvic_left");
+bone = bones.get("pelvic_left");
 bone.frames[336] = -0.799722254276f;
 bone.frames[337] = 0.569828271866f;
 bone.frames[338] = 0.189050853252f;
@@ -5680,7 +5680,7 @@ bone.frames[349] = 0.0f;
 bone.frames[350] = 0.0f;
 bone.frames[351] = 1.0f;
 
-bone = bones.getValue("lower_arm_left");
+bone = bones.get("lower_arm_left");
 bone.frames[336] = -0.445457041264f;
 bone.frames[337] = -0.795492947102f;
 bone.frames[338] = -0.41080302f;
@@ -5698,7 +5698,7 @@ bone.frames[349] = 0.0f;
 bone.frames[350] = 0.0f;
 bone.frames[351] = 1.0f;
 
-bone = bones.getValue("upper_leg_right");
+bone = bones.get("upper_leg_right");
 bone.frames[336] = -0.721166789532f;
 bone.frames[337] = -0.67466211319f;
 bone.frames[338] = 0.157320827246f;
@@ -5716,7 +5716,7 @@ bone.frames[349] = 0.0f;
 bone.frames[350] = 0.0f;
 bone.frames[351] = 1.0f;
 
-bone = bones.getValue("pelvic_right");
+bone = bones.get("pelvic_right");
 bone.frames[336] = 0.448430299759f;
 bone.frames[337] = -0.858004808426f;
 bone.frames[338] = -0.250475794077f;
@@ -5734,7 +5734,7 @@ bone.frames[349] = 0.0f;
 bone.frames[350] = 0.0f;
 bone.frames[351] = 1.0f;
 
-bone = bones.getValue("collar_right");
+bone = bones.get("collar_right");
 bone.frames[336] = -0.0481665655971f;
 bone.frames[337] = -0.912418067455f;
 bone.frames[338] = -0.406415581703f;
@@ -5752,7 +5752,7 @@ bone.frames[349] = 0.0f;
 bone.frames[350] = 0.0f;
 bone.frames[351] = 1.0f;
 
-bone = bones.getValue("collar_left");
+bone = bones.get("collar_left");
 bone.frames[336] = -0.516877055168f;
 bone.frames[337] = 0.799631595612f;
 bone.frames[338] = 0.305659204721f;
@@ -5770,7 +5770,7 @@ bone.frames[349] = 0.0f;
 bone.frames[350] = 0.0f;
 bone.frames[351] = 1.0f;
 
-bone = bones.getValue("upper_arm_left");
+bone = bones.get("upper_arm_left");
 bone.frames[336] = -0.926279962063f;
 bone.frames[337] = 0.300289541483f;
 bone.frames[338] = -0.227665886283f;
@@ -5788,7 +5788,7 @@ bone.frames[349] = 0.0f;
 bone.frames[350] = 0.0f;
 bone.frames[351] = 1.0f;
 
-bone = bones.getValue("root");
+bone = bones.get("root");
 bone.frames[336] = 0.797511279583f;
 bone.frames[337] = 0.11987311393f;
 bone.frames[338] = -0.591275274754f;
@@ -5806,7 +5806,7 @@ bone.frames[349] = 0.0f;
 bone.frames[350] = 0.0f;
 bone.frames[351] = 1.0f;
 
-bone = bones.getValue("upper_arm_right");
+bone = bones.get("upper_arm_right");
 bone.frames[336] = -0.971923291683f;
 bone.frames[337] = -0.0946520790458f;
 bone.frames[338] = -0.215420752764f;
@@ -5824,7 +5824,7 @@ bone.frames[349] = 0.0f;
 bone.frames[350] = 0.0f;
 bone.frames[351] = 1.0f;
 
-bone = bones.getValue("lower_arm_right");
+bone = bones.get("lower_arm_right");
 bone.frames[352] = -0.769271492958f;
 bone.frames[353] = -0.620125830173f;
 bone.frames[354] = 0.153836116195f;
@@ -5842,7 +5842,7 @@ bone.frames[365] = 0.0f;
 bone.frames[366] = 0.0f;
 bone.frames[367] = 1.0f;
 
-bone = bones.getValue("upper_leg_left");
+bone = bones.get("upper_leg_left");
 bone.frames[352] = -0.782446503639f;
 bone.frames[353] = -0.272998869419f;
 bone.frames[354] = -0.559686481953f;
@@ -5860,7 +5860,7 @@ bone.frames[365] = 0.0f;
 bone.frames[366] = 0.0f;
 bone.frames[367] = 1.0f;
 
-bone = bones.getValue("neck");
+bone = bones.get("neck");
 bone.frames[352] = -0.952949225903f;
 bone.frames[353] = 0.0509958714247f;
 bone.frames[354] = 0.2988101542f;
@@ -5878,7 +5878,7 @@ bone.frames[365] = 0.0f;
 bone.frames[366] = 0.0f;
 bone.frames[367] = 1.0f;
 
-bone = bones.getValue("lower_leg_right");
+bone = bones.get("lower_leg_right");
 bone.frames[352] = -0.89982688427f;
 bone.frames[353] = 0.129770770669f;
 bone.frames[354] = -0.416498959064f;
@@ -5896,7 +5896,7 @@ bone.frames[365] = 0.0f;
 bone.frames[366] = 0.0f;
 bone.frames[367] = 1.0f;
 
-bone = bones.getValue("spine");
+bone = bones.get("spine");
 bone.frames[352] = -0.934574127197f;
 bone.frames[353] = -0.0276423469186f;
 bone.frames[354] = 0.354693263769f;
@@ -5914,7 +5914,7 @@ bone.frames[365] = 0.0f;
 bone.frames[366] = 0.0f;
 bone.frames[367] = 1.0f;
 
-bone = bones.getValue("lower_leg_left");
+bone = bones.get("lower_leg_left");
 bone.frames[352] = -0.773598790169f;
 bone.frames[353] = 0.237973585725f;
 bone.frames[354] = -0.587293207645f;
@@ -5932,7 +5932,7 @@ bone.frames[365] = 0.0f;
 bone.frames[366] = 0.0f;
 bone.frames[367] = 1.0f;
 
-bone = bones.getValue("pelvic_left");
+bone = bones.get("pelvic_left");
 bone.frames[352] = -0.82058018446f;
 bone.frames[353] = 0.554922699928f;
 bone.frames[354] = 0.136780843139f;
@@ -5950,7 +5950,7 @@ bone.frames[365] = 0.0f;
 bone.frames[366] = 0.0f;
 bone.frames[367] = 1.0f;
 
-bone = bones.getValue("lower_arm_left");
+bone = bones.get("lower_arm_left");
 bone.frames[352] = -0.357609182596f;
 bone.frames[353] = -0.692128479481f;
 bone.frames[354] = -0.626956105232f;
@@ -5968,7 +5968,7 @@ bone.frames[365] = 0.0f;
 bone.frames[366] = 0.0f;
 bone.frames[367] = 1.0f;
 
-bone = bones.getValue("upper_leg_right");
+bone = bones.get("upper_leg_right");
 bone.frames[352] = -0.765000104904f;
 bone.frames[353] = -0.642671048641f;
 bone.frames[354] = 0.0418209917843f;
@@ -5986,7 +5986,7 @@ bone.frames[365] = 0.0f;
 bone.frames[366] = 0.0f;
 bone.frames[367] = 1.0f;
 
-bone = bones.getValue("pelvic_right");
+bone = bones.get("pelvic_right");
 bone.frames[352] = 0.482932895422f;
 bone.frames[353] = -0.825959444046f;
 bone.frames[354] = -0.290803879499f;
@@ -6004,7 +6004,7 @@ bone.frames[365] = 0.0f;
 bone.frames[366] = 0.0f;
 bone.frames[367] = 1.0f;
 
-bone = bones.getValue("collar_right");
+bone = bones.get("collar_right");
 bone.frames[352] = -0.0910336896777f;
 bone.frames[353] = -0.836477637291f;
 bone.frames[354] = -0.540387332439f;
@@ -6022,7 +6022,7 @@ bone.frames[365] = 0.0f;
 bone.frames[366] = 0.0f;
 bone.frames[367] = 1.0f;
 
-bone = bones.getValue("collar_left");
+bone = bones.get("collar_left");
 bone.frames[352] = -0.581700623035f;
 bone.frames[353] = 0.796728849411f;
 bone.frames[354] = 0.163852825761f;
@@ -6040,7 +6040,7 @@ bone.frames[365] = 0.0f;
 bone.frames[366] = 0.0f;
 bone.frames[367] = 1.0f;
 
-bone = bones.getValue("upper_arm_left");
+bone = bones.get("upper_arm_left");
 bone.frames[352] = -0.845538675785f;
 bone.frames[353] = 0.291244417429f;
 bone.frames[354] = -0.447483152151f;
@@ -6058,7 +6058,7 @@ bone.frames[365] = 0.0f;
 bone.frames[366] = 0.0f;
 bone.frames[367] = 1.0f;
 
-bone = bones.getValue("root");
+bone = bones.get("root");
 bone.frames[352] = 0.720364272594f;
 bone.frames[353] = 0.198117077351f;
 bone.frames[354] = -0.664699375629f;
@@ -6076,7 +6076,7 @@ bone.frames[365] = 0.0f;
 bone.frames[366] = 0.0f;
 bone.frames[367] = 1.0f;
 
-bone = bones.getValue("upper_arm_right");
+bone = bones.get("upper_arm_right");
 bone.frames[352] = -0.915610432625f;
 bone.frames[353] = -0.159219861031f;
 bone.frames[354] = -0.369197428226f;
@@ -6094,7 +6094,7 @@ bone.frames[365] = 0.0f;
 bone.frames[366] = 0.0f;
 bone.frames[367] = 1.0f;
 
-bone = bones.getValue("lower_arm_right");
+bone = bones.get("lower_arm_right");
 bone.frames[368] = -0.339987158775f;
 bone.frames[369] = -0.928335666656f;
 bone.frames[370] = 0.150339633226f;
@@ -6112,7 +6112,7 @@ bone.frames[381] = 0.0f;
 bone.frames[382] = 0.0f;
 bone.frames[383] = 1.0f;
 
-bone = bones.getValue("upper_leg_left");
+bone = bones.get("upper_leg_left");
 bone.frames[368] = -0.733159065247f;
 bone.frames[369] = -0.30876865983f;
 bone.frames[370] = -0.605920433998f;
@@ -6130,7 +6130,7 @@ bone.frames[381] = 0.0f;
 bone.frames[382] = 0.0f;
 bone.frames[383] = 1.0f;
 
-bone = bones.getValue("neck");
+bone = bones.get("neck");
 bone.frames[368] = -0.913617432117f;
 bone.frames[369] = 0.0451663210988f;
 bone.frames[370] = 0.404058665037f;
@@ -6148,7 +6148,7 @@ bone.frames[381] = 0.0f;
 bone.frames[382] = 0.0f;
 bone.frames[383] = 1.0f;
 
-bone = bones.getValue("lower_leg_right");
+bone = bones.get("lower_leg_right");
 bone.frames[368] = -0.870135188103f;
 bone.frames[369] = 0.238783031702f;
 bone.frames[370] = -0.43110075593f;
@@ -6166,7 +6166,7 @@ bone.frames[381] = 0.0f;
 bone.frames[382] = 0.0f;
 bone.frames[383] = 1.0f;
 
-bone = bones.getValue("spine");
+bone = bones.get("spine");
 bone.frames[368] = -0.874299705029f;
 bone.frames[369] = -0.0410035550594f;
 bone.frames[370] = 0.483651608229f;
@@ -6184,7 +6184,7 @@ bone.frames[381] = 0.0f;
 bone.frames[382] = 0.0f;
 bone.frames[383] = 1.0f;
 
-bone = bones.getValue("lower_leg_left");
+bone = bones.get("lower_leg_left");
 bone.frames[368] = -0.760019421577f;
 bone.frames[369] = 0.286911606789f;
 bone.frames[370] = -0.583139777184f;
@@ -6202,7 +6202,7 @@ bone.frames[381] = 0.0f;
 bone.frames[382] = 0.0f;
 bone.frames[383] = 1.0f;
 
-bone = bones.getValue("pelvic_left");
+bone = bones.get("pelvic_left");
 bone.frames[368] = -0.846924185753f;
 bone.frames[369] = 0.526100933552f;
 bone.frames[370] = 0.0770533457398f;
@@ -6220,7 +6220,7 @@ bone.frames[381] = 0.0f;
 bone.frames[382] = 0.0f;
 bone.frames[383] = 1.0f;
 
-bone = bones.getValue("lower_arm_left");
+bone = bones.get("lower_arm_left");
 bone.frames[368] = -0.200163900852f;
 bone.frames[369] = -0.589988768101f;
 bone.frames[370] = -0.782207012177f;
@@ -6238,7 +6238,7 @@ bone.frames[381] = 0.0f;
 bone.frames[382] = 0.0f;
 bone.frames[383] = 1.0f;
 
-bone = bones.getValue("upper_leg_right");
+bone = bones.get("upper_leg_right");
 bone.frames[368] = -0.733318865299f;
 bone.frames[369] = -0.679877758026f;
 bone.frames[370] = 0.00315996375866f;
@@ -6256,7 +6256,7 @@ bone.frames[381] = 0.0f;
 bone.frames[382] = 0.0f;
 bone.frames[383] = 1.0f;
 
-bone = bones.getValue("pelvic_right");
+bone = bones.get("pelvic_right");
 bone.frames[368] = 0.525879859924f;
 bone.frames[369] = -0.782998144627f;
 bone.frames[370] = -0.332211434841f;
@@ -6274,7 +6274,7 @@ bone.frames[381] = 0.0f;
 bone.frames[382] = 0.0f;
 bone.frames[383] = 1.0f;
 
-bone = bones.getValue("collar_right");
+bone = bones.get("collar_right");
 bone.frames[368] = 0.082102291286f;
 bone.frames[369] = -0.789766073227f;
 bone.frames[370] = -0.60788911581f;
@@ -6292,7 +6292,7 @@ bone.frames[381] = 0.0f;
 bone.frames[382] = 0.0f;
 bone.frames[383] = 1.0f;
 
-bone = bones.getValue("collar_left");
+bone = bones.get("collar_left");
 bone.frames[368] = -0.611398637295f;
 bone.frames[369] = 0.788023889065f;
 bone.frames[370] = 0.0721821859479f;
@@ -6310,7 +6310,7 @@ bone.frames[381] = 0.0f;
 bone.frames[382] = 0.0f;
 bone.frames[383] = 1.0f;
 
-bone = bones.getValue("upper_arm_left");
+bone = bones.get("upper_arm_left");
 bone.frames[368] = -0.749883055687f;
 bone.frames[369] = 0.203844383359f;
 bone.frames[370] = -0.629383087158f;
@@ -6328,7 +6328,7 @@ bone.frames[381] = 0.0f;
 bone.frames[382] = 0.0f;
 bone.frames[383] = 1.0f;
 
-bone = bones.getValue("root");
+bone = bones.get("root");
 bone.frames[368] = 0.621015608311f;
 bone.frames[369] = 0.265411257744f;
 bone.frames[370] = -0.737493515015f;
@@ -6346,7 +6346,7 @@ bone.frames[381] = 0.0f;
 bone.frames[382] = 0.0f;
 bone.frames[383] = 1.0f;
 
-bone = bones.getValue("upper_arm_right");
+bone = bones.get("upper_arm_right");
 bone.frames[368] = -0.864897549152f;
 bone.frames[369] = -0.127508282661f;
 bone.frames[370] = -0.485483318567f;
@@ -6364,7 +6364,7 @@ bone.frames[381] = 0.0f;
 bone.frames[382] = 0.0f;
 bone.frames[383] = 1.0f;
 
-bone = bones.getValue("lower_arm_right");
+bone = bones.get("lower_arm_right");
 bone.frames[384] = -0.040464553982f;
 bone.frames[385] = -0.9990426898f;
 bone.frames[386] = -0.0166256316006f;
@@ -6382,7 +6382,7 @@ bone.frames[397] = 0.0f;
 bone.frames[398] = 0.0f;
 bone.frames[399] = 1.0f;
 
-bone = bones.getValue("upper_leg_left");
+bone = bones.get("upper_leg_left");
 bone.frames[384] = -0.673951148987f;
 bone.frames[385] = -0.341302484274f;
 bone.frames[386] = -0.655211746693f;
@@ -6400,7 +6400,7 @@ bone.frames[397] = 0.0f;
 bone.frames[398] = 0.0f;
 bone.frames[399] = 1.0f;
 
-bone = bones.getValue("neck");
+bone = bones.get("neck");
 bone.frames[384] = -0.852827370167f;
 bone.frames[385] = 0.0517382510006f;
 bone.frames[386] = 0.519623756409f;
@@ -6418,7 +6418,7 @@ bone.frames[397] = 0.0f;
 bone.frames[398] = 0.0f;
 bone.frames[399] = 1.0f;
 
-bone = bones.getValue("lower_leg_right");
+bone = bones.get("lower_leg_right");
 bone.frames[384] = -0.815820097923f;
 bone.frames[385] = 0.454537600279f;
 bone.frames[386] = -0.357537746429f;
@@ -6436,7 +6436,7 @@ bone.frames[397] = 0.0f;
 bone.frames[398] = 0.0f;
 bone.frames[399] = 1.0f;
 
-bone = bones.getValue("spine");
+bone = bones.get("spine");
 bone.frames[384] = -0.790797114372f;
 bone.frames[385] = -0.0555590838194f;
 bone.frames[386] = 0.609551727772f;
@@ -6454,7 +6454,7 @@ bone.frames[397] = 0.0f;
 bone.frames[398] = 0.0f;
 bone.frames[399] = 1.0f;
 
-bone = bones.getValue("lower_leg_left");
+bone = bones.get("lower_leg_left");
 bone.frames[384] = -0.737355113029f;
 bone.frames[385] = 0.317728370428f;
 bone.frames[386] = -0.59611749649f;
@@ -6472,7 +6472,7 @@ bone.frames[397] = 0.0f;
 bone.frames[398] = 0.0f;
 bone.frames[399] = 1.0f;
 
-bone = bones.getValue("pelvic_left");
+bone = bones.get("pelvic_left");
 bone.frames[384] = -0.874381840229f;
 bone.frames[385] = 0.484979271889f;
 bone.frames[386] = 0.0158592425287f;
@@ -6490,7 +6490,7 @@ bone.frames[397] = 0.0f;
 bone.frames[398] = 0.0f;
 bone.frames[399] = 1.0f;
 
-bone = bones.getValue("lower_arm_left");
+bone = bones.get("lower_arm_left");
 bone.frames[384] = -0.0552762784064f;
 bone.frames[385] = -0.453010320663f;
 bone.frames[386] = -0.889790117741f;
@@ -6508,7 +6508,7 @@ bone.frames[397] = 0.0f;
 bone.frames[398] = 0.0f;
 bone.frames[399] = 1.0f;
 
-bone = bones.getValue("upper_leg_right");
+bone = bones.get("upper_leg_right");
 bone.frames[384] = -0.679925680161f;
 bone.frames[385] = -0.733022034168f;
 bone.frames[386] = -0.0194909702986f;
@@ -6526,7 +6526,7 @@ bone.frames[397] = 0.0f;
 bone.frames[398] = 0.0f;
 bone.frames[399] = 1.0f;
 
-bone = bones.getValue("pelvic_right");
+bone = bones.get("pelvic_right");
 bone.frames[384] = 0.570396482944f;
 bone.frames[385] = -0.733327269554f;
 bone.frames[386] = -0.369971632957f;
@@ -6544,7 +6544,7 @@ bone.frames[397] = 0.0f;
 bone.frames[398] = 0.0f;
 bone.frames[399] = 1.0f;
 
-bone = bones.getValue("collar_right");
+bone = bones.get("collar_right");
 bone.frames[384] = 0.319401890039f;
 bone.frames[385] = -0.715048968792f;
 bone.frames[386] = -0.621842265129f;
@@ -6562,7 +6562,7 @@ bone.frames[397] = 0.0f;
 bone.frames[398] = 0.0f;
 bone.frames[399] = 1.0f;
 
-bone = bones.getValue("collar_left");
+bone = bones.get("collar_left");
 bone.frames[384] = -0.649670243263f;
 bone.frames[385] = 0.759499132633f;
 bone.frames[386] = -0.0330133549869f;
@@ -6580,7 +6580,7 @@ bone.frames[397] = 0.0f;
 bone.frames[398] = 0.0f;
 bone.frames[399] = 1.0f;
 
-bone = bones.getValue("upper_arm_left");
+bone = bones.get("upper_arm_left");
 bone.frames[384] = -0.619301021099f;
 bone.frames[385] = 0.125282466412f;
 bone.frames[386] = -0.775094091892f;
@@ -6598,7 +6598,7 @@ bone.frames[397] = 0.0f;
 bone.frames[398] = 0.0f;
 bone.frames[399] = 1.0f;
 
-bone = bones.getValue("root");
+bone = bones.get("root");
 bone.frames[384] = 0.500785112381f;
 bone.frames[385] = 0.324936151505f;
 bone.frames[386] = -0.802266180515f;
@@ -6616,7 +6616,7 @@ bone.frames[397] = 0.0f;
 bone.frames[398] = 0.0f;
 bone.frames[399] = 1.0f;
 
-bone = bones.getValue("upper_arm_right");
+bone = bones.get("upper_arm_right");
 bone.frames[384] = -0.720247983932f;
 bone.frames[385] = -0.178741887212f;
 bone.frames[386] = -0.670294284821f;
@@ -6634,7 +6634,7 @@ bone.frames[397] = 0.0f;
 bone.frames[398] = 0.0f;
 bone.frames[399] = 1.0f;
 
-bone = bones.getValue("lower_arm_right");
+bone = bones.get("lower_arm_right");
 bone.frames[400] = 0.152025341988f;
 bone.frames[401] = -0.975933611393f;
 bone.frames[402] = -0.15633918345f;
@@ -6652,7 +6652,7 @@ bone.frames[413] = 0.0f;
 bone.frames[414] = 0.0f;
 bone.frames[415] = 1.0f;
 
-bone = bones.getValue("upper_leg_left");
+bone = bones.get("upper_leg_left");
 bone.frames[400] = -0.620306074619f;
 bone.frames[401] = -0.375463098288f;
 bone.frames[402] = -0.688656628132f;
@@ -6670,7 +6670,7 @@ bone.frames[413] = 0.0f;
 bone.frames[414] = 0.0f;
 bone.frames[415] = 1.0f;
 
-bone = bones.getValue("neck");
+bone = bones.get("neck");
 bone.frames[400] = -0.814168274403f;
 bone.frames[401] = 0.0664780512452f;
 bone.frames[402] = 0.576810777187f;
@@ -6688,7 +6688,7 @@ bone.frames[413] = 0.0f;
 bone.frames[414] = 0.0f;
 bone.frames[415] = 1.0f;
 
-bone = bones.getValue("lower_leg_right");
+bone = bones.get("lower_leg_right");
 bone.frames[400] = -0.774038553238f;
 bone.frames[401] = 0.559610426426f;
 bone.frames[402] = -0.296143174171f;
@@ -6706,7 +6706,7 @@ bone.frames[413] = 0.0f;
 bone.frames[414] = 0.0f;
 bone.frames[415] = 1.0f;
 
-bone = bones.getValue("spine");
+bone = bones.get("spine");
 bone.frames[400] = -0.740345239639f;
 bone.frames[401] = -0.0553372353315f;
 bone.frames[402] = 0.66994535923f;
@@ -6724,7 +6724,7 @@ bone.frames[413] = 0.0f;
 bone.frames[414] = 0.0f;
 bone.frames[415] = 1.0f;
 
-bone = bones.getValue("lower_leg_left");
+bone = bones.get("lower_leg_left");
 bone.frames[400] = -0.711469709873f;
 bone.frames[401] = 0.308084219694f;
 bone.frames[402] = -0.631581485271f;
@@ -6742,7 +6742,7 @@ bone.frames[413] = 0.0f;
 bone.frames[414] = 0.0f;
 bone.frames[415] = 1.0f;
 
-bone = bones.getValue("pelvic_left");
+bone = bones.get("pelvic_left");
 bone.frames[400] = -0.90149474144f;
 bone.frames[401] = 0.43242174387f;
 bone.frames[402] = -0.0178556218743f;
@@ -6760,7 +6760,7 @@ bone.frames[413] = 0.0f;
 bone.frames[414] = 0.0f;
 bone.frames[415] = 1.0f;
 
-bone = bones.getValue("lower_arm_left");
+bone = bones.get("lower_arm_left");
 bone.frames[400] = 0.0226340610534f;
 bone.frames[401] = -0.376866817474f;
 bone.frames[402] = -0.925990879536f;
@@ -6778,7 +6778,7 @@ bone.frames[413] = 0.0f;
 bone.frames[414] = 0.0f;
 bone.frames[415] = 1.0f;
 
-bone = bones.getValue("upper_leg_right");
+bone = bones.get("upper_leg_right");
 bone.frames[400] = -0.63184183836f;
 bone.frames[401] = -0.774259805679f;
 bone.frames[402] = -0.0360285118222f;
@@ -6796,7 +6796,7 @@ bone.frames[413] = 0.0f;
 bone.frames[414] = 0.0f;
 bone.frames[415] = 1.0f;
 
-bone = bones.getValue("pelvic_right");
+bone = bones.get("pelvic_right");
 bone.frames[400] = 0.612544059753f;
 bone.frames[401] = -0.693757712841f;
 bone.frames[402] = -0.378800988197f;
@@ -6814,7 +6814,7 @@ bone.frames[413] = 0.0f;
 bone.frames[414] = 0.0f;
 bone.frames[415] = 1.0f;
 
-bone = bones.getValue("collar_right");
+bone = bones.get("collar_right");
 bone.frames[400] = 0.439090371132f;
 bone.frames[401] = -0.640205144882f;
 bone.frames[402] = -0.630346894264f;
@@ -6832,7 +6832,7 @@ bone.frames[413] = 0.0f;
 bone.frames[414] = 0.0f;
 bone.frames[415] = 1.0f;
 
-bone = bones.getValue("collar_left");
+bone = bones.get("collar_left");
 bone.frames[400] = -0.678452908993f;
 bone.frames[401] = 0.730021178722f;
 bone.frames[402] = -0.0822848454118f;
@@ -6850,7 +6850,7 @@ bone.frames[413] = 0.0f;
 bone.frames[414] = 0.0f;
 bone.frames[415] = 1.0f;
 
-bone = bones.getValue("upper_arm_left");
+bone = bones.get("upper_arm_left");
 bone.frames[400] = -0.546717464924f;
 bone.frames[401] = 0.0844546630979f;
 bone.frames[402] = -0.833047151566f;
@@ -6868,7 +6868,7 @@ bone.frames[413] = 0.0f;
 bone.frames[414] = 0.0f;
 bone.frames[415] = 1.0f;
 
-bone = bones.getValue("root");
+bone = bones.get("root");
 bone.frames[400] = 0.435058295727f;
 bone.frames[401] = 0.350144565105f;
 bone.frames[402] = -0.82953196764f;
@@ -6886,7 +6886,7 @@ bone.frames[413] = 0.0f;
 bone.frames[414] = 0.0f;
 bone.frames[415] = 1.0f;
 
-bone = bones.getValue("upper_arm_right");
+bone = bones.get("upper_arm_right");
 bone.frames[400] = -0.557797014713f;
 bone.frames[401] = -0.231270641088f;
 bone.frames[402] = -0.797105073929f;
@@ -6904,7 +6904,7 @@ bone.frames[413] = 0.0f;
 bone.frames[414] = 0.0f;
 bone.frames[415] = 1.0f;
 
-bone = bones.getValue("lower_arm_right");
+bone = bones.get("lower_arm_right");
 bone.frames[416] = 0.100950166583f;
 bone.frames[417] = -0.934288620949f;
 bone.frames[418] = -0.34192737937f;
@@ -6922,7 +6922,7 @@ bone.frames[429] = 0.0f;
 bone.frames[430] = 0.0f;
 bone.frames[431] = 1.0f;
 
-bone = bones.getValue("upper_leg_left");
+bone = bones.get("upper_leg_left");
 bone.frames[416] = -0.66437214613f;
 bone.frames[417] = -0.262802988291f;
 bone.frames[418] = -0.6996743083f;
@@ -6940,7 +6940,7 @@ bone.frames[429] = 0.0f;
 bone.frames[430] = 0.0f;
 bone.frames[431] = 1.0f;
 
-bone = bones.getValue("neck");
+bone = bones.get("neck");
 bone.frames[416] = -0.865929245949f;
 bone.frames[417] = 0.0587140545249f;
 bone.frames[418] = 0.496708631516f;
@@ -6958,7 +6958,7 @@ bone.frames[429] = 0.0f;
 bone.frames[430] = 0.0f;
 bone.frames[431] = 1.0f;
 
-bone = bones.getValue("lower_leg_right");
+bone = bones.get("lower_leg_right");
 bone.frames[416] = -0.833224713802f;
 bone.frames[417] = 0.487032234669f;
 bone.frames[418] = -0.26179459691f;
@@ -6976,7 +6976,7 @@ bone.frames[429] = 0.0f;
 bone.frames[430] = 0.0f;
 bone.frames[431] = 1.0f;
 
-bone = bones.getValue("spine");
+bone = bones.get("spine");
 bone.frames[416] = -0.801575124264f;
 bone.frames[417] = -0.0354906357825f;
 bone.frames[418] = 0.596840023994f;
@@ -6994,7 +6994,7 @@ bone.frames[429] = 0.0f;
 bone.frames[430] = 0.0f;
 bone.frames[431] = 1.0f;
 
-bone = bones.getValue("lower_leg_left");
+bone = bones.get("lower_leg_left");
 bone.frames[416] = -0.75328373909f;
 bone.frames[417] = 0.246760010719f;
 bone.frames[418] = -0.609649956226f;
@@ -7012,7 +7012,7 @@ bone.frames[429] = 0.0f;
 bone.frames[430] = 0.0f;
 bone.frames[431] = 1.0f;
 
-bone = bones.getValue("pelvic_left");
+bone = bones.get("pelvic_left");
 bone.frames[416] = -0.92101842165f;
 bone.frames[417] = 0.350141704082f;
 bone.frames[418] = 0.170663058758f;
@@ -7030,7 +7030,7 @@ bone.frames[429] = 0.0f;
 bone.frames[430] = 0.0f;
 bone.frames[431] = 1.0f;
 
-bone = bones.getValue("lower_arm_left");
+bone = bones.get("lower_arm_left");
 bone.frames[416] = -0.0883493795991f;
 bone.frames[417] = -0.490425258875f;
 bone.frames[418] = -0.866993486881f;
@@ -7048,7 +7048,7 @@ bone.frames[429] = 0.0f;
 bone.frames[430] = 0.0f;
 bone.frames[431] = 1.0f;
 
-bone = bones.getValue("upper_leg_right");
+bone = bones.get("upper_leg_right");
 bone.frames[416] = -0.613336801529f;
 bone.frames[417] = -0.789290904999f;
 bone.frames[418] = 0.0289471168071f;
@@ -7066,7 +7066,7 @@ bone.frames[429] = 0.0f;
 bone.frames[430] = 0.0f;
 bone.frames[431] = 1.0f;
 
-bone = bones.getValue("pelvic_right");
+bone = bones.get("pelvic_right");
 bone.frames[416] = 0.651850759983f;
 bone.frames[417] = -0.741777837276f;
 bone.frames[418] = -0.157658815384f;
@@ -7084,7 +7084,7 @@ bone.frames[429] = 0.0f;
 bone.frames[430] = 0.0f;
 bone.frames[431] = 1.0f;
 
-bone = bones.getValue("collar_right");
+bone = bones.get("collar_right");
 bone.frames[416] = 0.316952466965f;
 bone.frames[417] = -0.592506587505f;
 bone.frames[418] = -0.740592718124f;
@@ -7102,7 +7102,7 @@ bone.frames[429] = 0.0f;
 bone.frames[430] = 0.0f;
 bone.frames[431] = 1.0f;
 
-bone = bones.getValue("collar_left");
+bone = bones.get("collar_left");
 bone.frames[416] = -0.716136515141f;
 bone.frames[417] = 0.697939395905f;
 bone.frames[418] = -0.00542419729754f;
@@ -7120,7 +7120,7 @@ bone.frames[429] = 0.0f;
 bone.frames[430] = 0.0f;
 bone.frames[431] = 1.0f;
 
-bone = bones.getValue("upper_arm_left");
+bone = bones.get("upper_arm_left");
 bone.frames[416] = -0.664290726185f;
 bone.frames[417] = 0.172337219119f;
 bone.frames[418] = -0.727336227894f;
@@ -7138,7 +7138,7 @@ bone.frames[429] = 0.0f;
 bone.frames[430] = 0.0f;
 bone.frames[431] = 1.0f;
 
-bone = bones.getValue("root");
+bone = bones.get("root");
 bone.frames[416] = 0.519236385822f;
 bone.frames[417] = 0.307786285877f;
 bone.frames[418] = -0.797283828259f;
@@ -7156,7 +7156,7 @@ bone.frames[429] = 0.0f;
 bone.frames[430] = 0.0f;
 bone.frames[431] = 1.0f;
 
-bone = bones.getValue("upper_arm_right");
+bone = bones.get("upper_arm_right");
 bone.frames[416] = -0.244410738349f;
 bone.frames[417] = -0.53991985321f;
 bone.frames[418] = -0.805450439453f;
@@ -7174,7 +7174,7 @@ bone.frames[429] = 0.0f;
 bone.frames[430] = 0.0f;
 bone.frames[431] = 1.0f;
 
-bone = bones.getValue("lower_arm_right");
+bone = bones.get("lower_arm_right");
 bone.frames[432] = -0.127191960812f;
 bone.frames[433] = -0.905325770378f;
 bone.frames[434] = -0.405225425959f;
@@ -7192,7 +7192,7 @@ bone.frames[445] = 0.0f;
 bone.frames[446] = 0.0f;
 bone.frames[447] = 1.0f;
 
-bone = bones.getValue("upper_leg_left");
+bone = bones.get("upper_leg_left");
 bone.frames[432] = -0.736549675465f;
 bone.frames[433] = -0.159975290298f;
 bone.frames[434] = -0.657192885876f;
@@ -7210,7 +7210,7 @@ bone.frames[445] = 0.0f;
 bone.frames[446] = 0.0f;
 bone.frames[447] = 1.0f;
 
-bone = bones.getValue("neck");
+bone = bones.get("neck");
 bone.frames[432] = -0.943009197712f;
 bone.frames[433] = 0.0242507141083f;
 bone.frames[434] = 0.331882208586f;
@@ -7228,7 +7228,7 @@ bone.frames[445] = 0.0f;
 bone.frames[446] = 0.0f;
 bone.frames[447] = 1.0f;
 
-bone = bones.getValue("lower_leg_right");
+bone = bones.get("lower_leg_right");
 bone.frames[432] = -0.887111127377f;
 bone.frames[433] = 0.397435218096f;
 bone.frames[434] = -0.234690025449f;
@@ -7246,7 +7246,7 @@ bone.frames[445] = 0.0f;
 bone.frames[446] = 0.0f;
 bone.frames[447] = 1.0f;
 
-bone = bones.getValue("spine");
+bone = bones.get("spine");
 bone.frames[432] = -0.900252997875f;
 bone.frames[433] = -0.0160281360149f;
 bone.frames[434] = 0.435072243214f;
@@ -7264,7 +7264,7 @@ bone.frames[445] = 0.0f;
 bone.frames[446] = 0.0f;
 bone.frames[447] = 1.0f;
 
-bone = bones.getValue("lower_leg_left");
+bone = bones.get("lower_leg_left");
 bone.frames[432] = -0.815640687943f;
 bone.frames[433] = 0.176224380732f;
 bone.frames[434] = -0.5510674119f;
@@ -7282,7 +7282,7 @@ bone.frames[445] = 0.0f;
 bone.frames[446] = 0.0f;
 bone.frames[447] = 1.0f;
 
-bone = bones.getValue("pelvic_left");
+bone = bones.get("pelvic_left");
 bone.frames[432] = -0.878258705139f;
 bone.frames[433] = 0.260127782822f;
 bone.frames[434] = 0.401242166758f;
@@ -7300,7 +7300,7 @@ bone.frames[445] = 0.0f;
 bone.frames[446] = 0.0f;
 bone.frames[447] = 1.0f;
 
-bone = bones.getValue("lower_arm_left");
+bone = bones.get("lower_arm_left");
 bone.frames[432] = -0.194629609585f;
 bone.frames[433] = -0.638070881367f;
 bone.frames[434] = -0.744973123074f;
@@ -7318,7 +7318,7 @@ bone.frames[445] = 0.0f;
 bone.frames[446] = 0.0f;
 bone.frames[447] = 1.0f;
 
-bone = bones.getValue("upper_leg_right");
+bone = bones.get("upper_leg_right");
 bone.frames[432] = -0.59723931551f;
 bone.frames[433] = -0.797114491463f;
 bone.frames[434] = 0.0889599397779f;
@@ -7336,7 +7336,7 @@ bone.frames[445] = 0.0f;
 bone.frames[446] = 0.0f;
 bone.frames[447] = 1.0f;
 
-bone = bones.getValue("pelvic_right");
+bone = bones.get("pelvic_right");
 bone.frames[432] = 0.644317448139f;
 bone.frames[433] = -0.76166677475f;
 bone.frames[434] = 0.0686941891909f;
@@ -7354,7 +7354,7 @@ bone.frames[445] = 0.0f;
 bone.frames[446] = 0.0f;
 bone.frames[447] = 1.0f;
 
-bone = bones.getValue("collar_right");
+bone = bones.get("collar_right");
 bone.frames[432] = 0.0964727029204f;
 bone.frames[433] = -0.596284031868f;
 bone.frames[434] = -0.796955943108f;
@@ -7372,7 +7372,7 @@ bone.frames[445] = 0.0f;
 bone.frames[446] = 0.0f;
 bone.frames[447] = 1.0f;
 
-bone = bones.getValue("collar_left");
+bone = bones.get("collar_left");
 bone.frames[432] = -0.731210112572f;
 bone.frames[433] = 0.669716656208f;
 bone.frames[434] = 0.129659444094f;
@@ -7390,7 +7390,7 @@ bone.frames[445] = 0.0f;
 bone.frames[446] = 0.0f;
 bone.frames[447] = 1.0f;
 
-bone = bones.getValue("upper_arm_left");
+bone = bones.get("upper_arm_left");
 bone.frames[432] = -0.797590732574f;
 bone.frames[433] = 0.236638456583f;
 bone.frames[434] = -0.554843604565f;
@@ -7408,7 +7408,7 @@ bone.frames[445] = 0.0f;
 bone.frames[446] = 0.0f;
 bone.frames[447] = 1.0f;
 
-bone = bones.getValue("root");
+bone = bones.get("root");
 bone.frames[432] = 0.667073428631f;
 bone.frames[433] = 0.216852113605f;
 bone.frames[434] = -0.712733089924f;
@@ -7426,7 +7426,7 @@ bone.frames[445] = 0.0f;
 bone.frames[446] = 0.0f;
 bone.frames[447] = 1.0f;
 
-bone = bones.getValue("upper_arm_right");
+bone = bones.get("upper_arm_right");
 bone.frames[432] = -0.489926874638f;
 bone.frames[433] = -0.303720444441f;
 bone.frames[434] = -0.817144811153f;
@@ -7444,7 +7444,7 @@ bone.frames[445] = 0.0f;
 bone.frames[446] = 0.0f;
 bone.frames[447] = 1.0f;
 
-bone = bones.getValue("lower_arm_right");
+bone = bones.get("lower_arm_right");
 bone.frames[448] = -0.428156733513f;
 bone.frames[449] = -0.9007178545f;
 bone.frames[450] = 0.0734107196331f;
@@ -7462,7 +7462,7 @@ bone.frames[461] = 0.0f;
 bone.frames[462] = 0.0f;
 bone.frames[463] = 1.0f;
 
-bone = bones.getValue("upper_leg_left");
+bone = bones.get("upper_leg_left");
 bone.frames[448] = -0.836172938347f;
 bone.frames[449] = -0.238823339343f;
 bone.frames[450] = -0.493738949299f;
@@ -7480,7 +7480,7 @@ bone.frames[461] = 0.0f;
 bone.frames[462] = 0.0f;
 bone.frames[463] = 1.0f;
 
-bone = bones.getValue("neck");
+bone = bones.get("neck");
 bone.frames[448] = -0.992318212986f;
 bone.frames[449] = -0.0121534122154f;
 bone.frames[450] = 0.123113937676f;
@@ -7498,7 +7498,7 @@ bone.frames[461] = 0.0f;
 bone.frames[462] = 0.0f;
 bone.frames[463] = 1.0f;
 
-bone = bones.getValue("lower_leg_right");
+bone = bones.get("lower_leg_right");
 bone.frames[448] = -0.942984163761f;
 bone.frames[449] = 0.282800137997f;
 bone.frames[450] = -0.175514176488f;
@@ -7516,7 +7516,7 @@ bone.frames[461] = 0.0f;
 bone.frames[462] = 0.0f;
 bone.frames[463] = 1.0f;
 
-bone = bones.getValue("spine");
+bone = bones.get("spine");
 bone.frames[448] = -0.974600315094f;
 bone.frames[449] = 0.0100782494992f;
 bone.frames[450] = 0.223724931479f;
@@ -7534,7 +7534,7 @@ bone.frames[461] = 0.0f;
 bone.frames[462] = 0.0f;
 bone.frames[463] = 1.0f;
 
-bone = bones.getValue("lower_leg_left");
+bone = bones.get("lower_leg_left");
 bone.frames[448] = -0.889770448208f;
 bone.frames[449] = 0.157848000526f;
 bone.frames[450] = -0.428243488073f;
@@ -7552,7 +7552,7 @@ bone.frames[461] = 0.0f;
 bone.frames[462] = 0.0f;
 bone.frames[463] = 1.0f;
 
-bone = bones.getValue("pelvic_left");
+bone = bones.get("pelvic_left");
 bone.frames[448] = -0.815745651722f;
 bone.frames[449] = 0.370493203402f;
 bone.frames[450] = 0.444177687168f;
@@ -7570,7 +7570,7 @@ bone.frames[461] = 0.0f;
 bone.frames[462] = 0.0f;
 bone.frames[463] = 1.0f;
 
-bone = bones.getValue("lower_arm_left");
+bone = bones.get("lower_arm_left");
 bone.frames[448] = -0.150365114212f;
 bone.frames[449] = -0.751797020435f;
 bone.frames[450] = -0.642021536827f;
@@ -7588,7 +7588,7 @@ bone.frames[461] = 0.0f;
 bone.frames[462] = 0.0f;
 bone.frames[463] = 1.0f;
 
-bone = bones.getValue("upper_leg_right");
+bone = bones.get("upper_leg_right");
 bone.frames[448] = -0.559264242649f;
 bone.frames[449] = -0.798968613148f;
 bone.frames[450] = 0.221072152257f;
@@ -7606,7 +7606,7 @@ bone.frames[461] = 0.0f;
 bone.frames[462] = 0.0f;
 bone.frames[463] = 1.0f;
 
-bone = bones.getValue("pelvic_right");
+bone = bones.get("pelvic_right");
 bone.frames[448] = 0.533433377743f;
 bone.frames[449] = -0.844981729984f;
 bone.frames[450] = 0.0381420515478f;
@@ -7624,7 +7624,7 @@ bone.frames[461] = 0.0f;
 bone.frames[462] = 0.0f;
 bone.frames[463] = 1.0f;
 
-bone = bones.getValue("collar_right");
+bone = bones.get("collar_right");
 bone.frames[448] = 0.0346806831658f;
 bone.frames[449] = -0.726894855499f;
 bone.frames[450] = -0.685872852802f;
@@ -7642,7 +7642,7 @@ bone.frames[461] = 0.0f;
 bone.frames[462] = 0.0f;
 bone.frames[463] = 1.0f;
 
-bone = bones.getValue("collar_left");
+bone = bones.get("collar_left");
 bone.frames[448] = -0.645594120026f;
 bone.frames[449] = 0.71105581522f;
 bone.frames[450] = 0.278582066298f;
@@ -7660,7 +7660,7 @@ bone.frames[461] = 0.0f;
 bone.frames[462] = 0.0f;
 bone.frames[463] = 1.0f;
 
-bone = bones.getValue("upper_arm_left");
+bone = bones.get("upper_arm_left");
 bone.frames[448] = -0.881983935833f;
 bone.frames[449] = 0.164304032922f;
 bone.frames[450] = -0.441710978746f;
@@ -7678,7 +7678,7 @@ bone.frames[461] = 0.0f;
 bone.frames[462] = 0.0f;
 bone.frames[463] = 1.0f;
 
-bone = bones.getValue("root");
+bone = bones.get("root");
 bone.frames[448] = 0.812105000019f;
 bone.frames[449] = 0.112596429884f;
 bone.frames[450] = -0.57254499197f;
@@ -7696,7 +7696,7 @@ bone.frames[461] = 0.0f;
 bone.frames[462] = 0.0f;
 bone.frames[463] = 1.0f;
 
-bone = bones.getValue("upper_arm_right");
+bone = bones.get("upper_arm_right");
 bone.frames[448] = -0.221571743488f;
 bone.frames[449] = -0.187343150377f;
 bone.frames[450] = -0.956978917122f;
@@ -7714,7 +7714,7 @@ bone.frames[461] = 0.0f;
 bone.frames[462] = 0.0f;
 bone.frames[463] = 1.0f;
 
-bone = bones.getValue("lower_arm_right");
+bone = bones.get("lower_arm_right");
 bone.frames[464] = -0.258859366179f;
 bone.frames[465] = -0.338268578053f;
 bone.frames[466] = 0.904746711254f;
@@ -7732,7 +7732,7 @@ bone.frames[477] = 0.0f;
 bone.frames[478] = 0.0f;
 bone.frames[479] = 1.0f;
 
-bone = bones.getValue("upper_leg_left");
+bone = bones.get("upper_leg_left");
 bone.frames[464] = -0.90105599165f;
 bone.frames[465] = -0.281164556742f;
 bone.frames[466] = -0.330218911171f;
@@ -7750,7 +7750,7 @@ bone.frames[477] = 0.0f;
 bone.frames[478] = 0.0f;
 bone.frames[479] = 1.0f;
 
-bone = bones.getValue("neck");
+bone = bones.get("neck");
 bone.frames[464] = -0.999464452267f;
 bone.frames[465] = -0.0327247828245f;
 bone.frames[466] = -0.000324683496729f;
@@ -7768,7 +7768,7 @@ bone.frames[477] = 0.0f;
 bone.frames[478] = 0.0f;
 bone.frames[479] = 1.0f;
 
-bone = bones.getValue("lower_leg_right");
+bone = bones.get("lower_leg_right");
 bone.frames[464] = -0.980316579342f;
 bone.frames[465] = 0.161457717419f;
 bone.frames[466] = -0.113626204431f;
@@ -7786,7 +7786,7 @@ bone.frames[477] = 0.0f;
 bone.frames[478] = 0.0f;
 bone.frames[479] = 1.0f;
 
-bone = bones.getValue("spine");
+bone = bones.get("spine");
 bone.frames[464] = -0.995778441429f;
 bone.frames[465] = 0.0194110032171f;
 bone.frames[466] = 0.0897142887115f;
@@ -7804,7 +7804,7 @@ bone.frames[477] = 0.0f;
 bone.frames[478] = 0.0f;
 bone.frames[479] = 1.0f;
 
-bone = bones.getValue("lower_leg_left");
+bone = bones.get("lower_leg_left");
 bone.frames[464] = -0.931937158108f;
 bone.frames[465] = 0.171467110515f;
 bone.frames[466] = -0.319518566132f;
@@ -7822,7 +7822,7 @@ bone.frames[477] = 0.0f;
 bone.frames[478] = 0.0f;
 bone.frames[479] = 1.0f;
 
-bone = bones.getValue("pelvic_left");
+bone = bones.get("pelvic_left");
 bone.frames[464] = -0.740083277225f;
 bone.frames[465] = 0.501893162727f;
 bone.frames[466] = 0.447638303041f;
@@ -7840,7 +7840,7 @@ bone.frames[477] = 0.0f;
 bone.frames[478] = 0.0f;
 bone.frames[479] = 1.0f;
 
-bone = bones.getValue("lower_arm_left");
+bone = bones.get("lower_arm_left");
 bone.frames[464] = -0.0525749996305f;
 bone.frames[465] = -0.793856441975f;
 bone.frames[466] = -0.605828404427f;
@@ -7858,7 +7858,7 @@ bone.frames[477] = 0.0f;
 bone.frames[478] = 0.0f;
 bone.frames[479] = 1.0f;
 
-bone = bones.getValue("upper_leg_right");
+bone = bones.get("upper_leg_right");
 bone.frames[464] = -0.506505250931f;
 bone.frames[465] = -0.786328077316f;
 bone.frames[466] = 0.353752315044f;
@@ -7876,7 +7876,7 @@ bone.frames[477] = 0.0f;
 bone.frames[478] = 0.0f;
 bone.frames[479] = 1.0f;
 
-bone = bones.getValue("pelvic_right");
+bone = bones.get("pelvic_right");
 bone.frames[464] = 0.410218954086f;
 bone.frames[465] = -0.911766111851f;
 bone.frames[466] = 0.0200740043074f;
@@ -7894,7 +7894,7 @@ bone.frames[477] = 0.0f;
 bone.frames[478] = 0.0f;
 bone.frames[479] = 1.0f;
 
-bone = bones.getValue("collar_right");
+bone = bones.get("collar_right");
 bone.frames[464] = 0.056053429842f;
 bone.frames[465] = -0.809937298298f;
 bone.frames[466] = -0.583832144737f;
@@ -7912,7 +7912,7 @@ bone.frames[477] = 0.0f;
 bone.frames[478] = 0.0f;
 bone.frames[479] = 1.0f;
 
-bone = bones.getValue("collar_left");
+bone = bones.get("collar_left");
 bone.frames[464] = -0.563907384872f;
 bone.frames[465] = 0.744474828243f;
 bone.frames[466] = 0.357443541288f;
@@ -7930,7 +7930,7 @@ bone.frames[477] = 0.0f;
 bone.frames[478] = 0.0f;
 bone.frames[479] = 1.0f;
 
-bone = bones.getValue("upper_arm_left");
+bone = bones.get("upper_arm_left");
 bone.frames[464] = -0.905452728271f;
 bone.frames[465] = 0.0650920569897f;
 bone.frames[466] = -0.419426470995f;
@@ -7948,7 +7948,7 @@ bone.frames[477] = 0.0f;
 bone.frames[478] = 0.0f;
 bone.frames[479] = 1.0f;
 
-bone = bones.getValue("root");
+bone = bones.get("root");
 bone.frames[464] = 0.879401087761f;
 bone.frames[465] = 0.0453104227781f;
 bone.frames[466] = -0.473920851946f;
@@ -7966,7 +7966,7 @@ bone.frames[477] = 0.0f;
 bone.frames[478] = 0.0f;
 bone.frames[479] = 1.0f;
 
-bone = bones.getValue("upper_arm_right");
+bone = bones.get("upper_arm_right");
 bone.frames[464] = -0.952074348927f;
 bone.frames[465] = -0.228218302131f;
 bone.frames[466] = -0.203644305468f;
