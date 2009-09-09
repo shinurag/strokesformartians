@@ -109,7 +109,6 @@ public class Dancer extends Activity {
     	switch (item.getItemId()) 
     	{
     	case StrokesForMartians.MENU_LOAD_ID:
-    		//startActivity( loadIntent );
     		result = true;
     		break;
 
