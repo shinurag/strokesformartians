@@ -14,13 +14,13 @@ public class CreditsView extends View implements Runnable {
 
 	private int mScrollPosition = -30;
 	private int mHeight = 0; 
-	private final String[] mCreditsText = {"Henrik \"saftblandarn\"" ,
+	private final String[] mCreditsText = {"Henrik \"freebase\"" ,
 											"Joel \"hash-map\"",
-											"Richard \"polly\"",
-											"Mike \"matadoren\"",
+											"Richard \"svampen\"",
+											"Mike \"silen\"",
 											"Hong \"fimpen\"",
-											"Lina \"ryttarn\"",
-											"Jimmy \"såsen\"" };
+											"Lina \"the supplier\"",
+											"Jimmy \"speedy\"" };
 	
 	public CreditsView(Context context) {
 		super(context);
