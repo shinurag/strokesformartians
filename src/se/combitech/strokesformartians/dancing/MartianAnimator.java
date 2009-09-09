@@ -11,6 +11,7 @@ public class MartianAnimator
 	private Leroy2 leroy = new Leroy2();
 	private float[] boneVertexBuffer;
 	private int numVertices;
+	ByteBuffer indexBuffer;
 	
 	public MartianAnimator()
 	{
@@ -94,6 +95,9 @@ public class MartianAnimator
 		assert frame>=0;
 		assert frame<=leroy.numFrames;
 		
-		
+		for(int vertex = 0; vertex < numVertices; ++vertex)
+		{			
+			
+		}	
 	}
 }
