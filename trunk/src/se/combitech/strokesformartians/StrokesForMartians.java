@@ -32,7 +32,7 @@ public class StrokesForMartians extends Activity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
-    	if(requestCode == DANCE_REQUEST) {
+    	if( requestCode == DANCE_REQUEST ) {
     		if ( resultCode == EXIT_RESULT_CODE ) {
     			
     			finish();
@@ -43,11 +43,11 @@ public class StrokesForMartians extends Activity {
     
     /** Called when the activity is first created. */
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate( Bundle savedInstanceState ) {
         super.onCreate(savedInstanceState);
 
         init();
         
-        startActivityForResult(danceIntent, DANCE_REQUEST);
+        startActivityForResult( danceIntent, DANCE_REQUEST );
     }
 }
