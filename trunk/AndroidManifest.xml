@@ -11,10 +11,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+        <activity android:name=".drawing.FingerPaint" />
         
         <activity android:name=".Paint"
                   android:label="paintstuff">
         </activity>
+         
         <activity android:name=".dancing.Dancer"
                   android:label="DANCE!">
         </activity>
