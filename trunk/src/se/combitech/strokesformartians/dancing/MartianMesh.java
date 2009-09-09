@@ -11,7 +11,7 @@ public class MartianMesh implements IMartianMesh
 												1, 0,
 												1, 1,
 												0, 1 };
-	private byte[] m_indices = {	0, 1, 2,
+	private short[] m_indices = {	0, 1, 2,
 									0, 2, 3 };
 
 	
@@ -43,7 +43,7 @@ public class MartianMesh implements IMartianMesh
 		}
 	}
 	
-	public byte[] getIndices() throws Exception
+	public short[] getIndices() throws Exception
 	{
 		if( m_indices.length > 0 )
 		{
