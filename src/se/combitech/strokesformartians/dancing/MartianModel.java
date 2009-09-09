@@ -4,6 +4,7 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
+import java.nio.ShortBuffer;
 
 import javax.microedition.khronos.opengles.GL10;
 import android.opengl.GLUtils.*;
@@ -182,7 +183,7 @@ class MartianModel
 			textureCoordinateBuffer.position( 0 );
 
 			
-			ByteBuffer mIndexBuffer = ByteBuffer.allocateDirect( m_mesh.getIndices().length );
+			ShortBuffer mIndexBuffer = ShortBuffer.allocate( m_mesh.getIndices().length );
 			mIndexBuffer.put( m_mesh.getIndices() );
 			mIndexBuffer.position( 0 );
 			 
