@@ -1,7 +1,6 @@
 package se.combitech.strokesformartians.dancing;
 
 import java.util.HashMap;
-import java.nio.*;
 
 import se.combitech.strokesformartians.Leroy2;
 import se.combitech.strokesformartians.Leroy2.Bone;
@@ -11,7 +10,7 @@ public class MartianAnimator
 	private Leroy2 leroy = new Leroy2();
 	private float[] boneVertexBuffer;
 	private int numVertices;
-	ByteBuffer indexBuffer;
+	byte [] indexBuffer;
 	
 	public MartianAnimator()
 	{
@@ -88,16 +87,21 @@ public class MartianAnimator
 	 * @param indices[out] Where the indices will be stored
 	 */
 	public void getFrame( 	float frame, 
-							FloatBuffer vertices, 
-							FloatBuffer texCoords, 
-							ShortBuffer indices)
+							float [] vertices, 
+							float [] texCoords, 
+							byte [] indices)
 	{
 		assert frame>=0;
 		assert frame<=leroy.numFrames;
+		
+		int intframe = (int)frame;
 		
 		for(int vertex = 0; vertex < numVertices; ++vertex)
 		{			
 			
 		}	
+		
+		// always use indices from indexBuffer
+		System.arraycopy(indexBuffer,0,indices,0,indexBuffer.length);
 	}
 }
