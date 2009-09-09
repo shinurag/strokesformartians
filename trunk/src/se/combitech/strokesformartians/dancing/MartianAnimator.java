@@ -8,8 +8,9 @@ import se.combitech.strokesformartians.Leroy2.Bone;
 
 public class MartianAnimator 
 {
-	private Leroy2 leroy;
+	private Leroy2 leroy = new Leroy2();
 	private float[] boneVertexBuffer;
+	private int numVertices;
 	
 	public MartianAnimator()
 	{
@@ -90,6 +91,9 @@ public class MartianAnimator
 							FloatBuffer texCoords, 
 							ShortBuffer indices)
 	{
-	
+		assert frame>=0;
+		assert frame<=leroy.numFrames;
+		
+		
 	}
 }
