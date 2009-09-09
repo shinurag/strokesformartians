@@ -1,7 +1,7 @@
 package se.combitech.strokesformartians;
 
 import se.combitech.strokesformartians.credits.Credits;
-import se.combitech.strokesformartians.dancing.DanceAnimator;
+import se.combitech.strokesformartians.dancing.Dancer;
 import se.combitech.strokesformartians.drawing.FingerPaint;
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
@@ -23,7 +23,7 @@ public class StrokesForMartians extends Activity {
         
     	//final Intent paintIntent = new Intent( this, Paint.class );
         final Intent paintIntent = new Intent( this, FingerPaint.class );
-        final Intent danceIntent = new Intent( this, DanceAnimator.class );
+        final Intent danceIntent = new Intent( this, Dancer.class );
         final Intent creditIntent = new Intent( this, Credits.class );
         
         LinearLayout layout = new LinearLayout(this);

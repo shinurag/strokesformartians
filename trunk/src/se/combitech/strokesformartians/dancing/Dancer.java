@@ -15,7 +15,7 @@ import android.util.Log;
  * Wrapper activity demonstrating the use of {@link GLSurfaceView}, a view
  * that uses OpenGL drawing into a dedicated surface.
  */
-public class DanceAnimator extends Activity {
+public class Dancer extends Activity {
 
     private GLSurfaceView mGLSurfaceView;
     
