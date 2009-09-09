@@ -15,7 +15,7 @@
         <activity android:name=".Paint"
                   android:label="paintstuff">
         </activity>
-        <activity android:name=".dancing.DanceAnimator"
+        <activity android:name=".dancing.Dancer"
                   android:label="DANCE!">
         </activity>
         <activity android:name=".credits.Credits"
