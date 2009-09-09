@@ -35,7 +35,6 @@ public class StrokesForMartians extends Activity {
         {
         	public void onClick(View view)
         	{
-        		paintButton.setText( "pooo!" );
         		try
         		{
         			startActivity( paintIntent );
