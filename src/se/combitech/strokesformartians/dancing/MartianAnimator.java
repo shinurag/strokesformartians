@@ -11,6 +11,7 @@ public class MartianAnimator
 	private float[] boneVertexBuffer;
 	private int numVertices;
 	byte [] indexBuffer;
+	float [] texCoordBuffer;
 	
 	public MartianAnimator()
 	{
@@ -103,5 +104,10 @@ public class MartianAnimator
 		
 		// always use indices from indexBuffer
 		System.arraycopy(indexBuffer,0,indices,0,indexBuffer.length);
+		
+		// always use texture coordinates from texCoordBuffer
+		System.arraycopy(texCoordBuffer,0,texCoords,0,texCoordBuffer.length);
 	}
+	
+	//private void getTransformedVertex(int vertexNum, 
 }
