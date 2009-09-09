@@ -6,5 +6,5 @@ public interface IMartianMesh
 	
 	public float[] getTextureCoordinates() throws Exception;
 	
-	public short[] getIndices() throws Exception;
+	public byte[] getIndices() throws Exception;
 }

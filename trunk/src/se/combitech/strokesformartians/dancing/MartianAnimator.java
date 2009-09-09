@@ -9,6 +9,7 @@ public class MartianAnimator
 {
 	private Leroy2 leroy = new Leroy2();
 	private float[] boneVertexBuffer;
+	private byte[] boneIndexBuffer;
 	private int numVertices;
 	byte [] indexBuffer;
 	float [] texCoordBuffer;
@@ -67,6 +68,54 @@ public class MartianAnimator
 
 		boneVertexBuffer[index] = leroy.bones.get( "lower_leg_right" ).restPose[index++];
 		boneVertexBuffer[index] = leroy.bones.get( "lower_leg_right" ).restPose[index++];
+		
+		
+		boneIndexBuffer = new byte[30];
+		index = 0;
+		boneIndexBuffer[ index++ ] = 0;
+		boneIndexBuffer[ index++ ] = 1;
+		
+		boneIndexBuffer[ index++ ] = 1;
+		boneIndexBuffer[ index++ ] = 2;
+		
+		boneIndexBuffer[ index++ ] = 2;
+		boneIndexBuffer[ index++ ] = 3;
+		
+		boneIndexBuffer[ index++ ] = 2;
+		boneIndexBuffer[ index++ ] = 4;
+		
+		boneIndexBuffer[ index++ ] = 4;
+		boneIndexBuffer[ index++ ] = 5;
+		
+		boneIndexBuffer[ index++ ] = 5;
+		boneIndexBuffer[ index++ ] = 6;
+		
+		boneIndexBuffer[ index++ ] = 2;
+		boneIndexBuffer[ index++ ] = 7;
+		
+		boneIndexBuffer[ index++ ] = 7;
+		boneIndexBuffer[ index++ ] = 8;
+
+		boneIndexBuffer[ index++ ] = 8;
+		boneIndexBuffer[ index++ ] = 9;
+		
+		boneIndexBuffer[ index++ ] = 0;
+		boneIndexBuffer[ index++ ] = 10;
+		
+		boneIndexBuffer[ index++ ] = 10;
+		boneIndexBuffer[ index++ ] = 11;
+		
+		boneIndexBuffer[ index++ ] = 11;
+		boneIndexBuffer[ index++ ] = 12;
+		
+		boneIndexBuffer[ index++ ] = 0;
+		boneIndexBuffer[ index++ ] = 13;
+		
+		boneIndexBuffer[ index++ ] = 13;
+		boneIndexBuffer[ index++ ] = 14;
+		
+		boneIndexBuffer[ index++ ] = 14;
+		boneIndexBuffer[ index++ ] = 15;
 	}
 	
 	public void something()
@@ -75,9 +124,11 @@ public class MartianAnimator
 	}
 	
 	public void getSkeletonFrame( 	float frame, 
-									float[] vertexBuffer )
+									float[] vertexBuffer,
+									byte[] indexBuffer )
 	{
 		vertexBuffer = boneVertexBuffer;
+		indexBuffer = boneIndexBuffer;
 	}
 	
 	/**
