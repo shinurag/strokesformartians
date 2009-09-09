@@ -72,22 +72,13 @@ Bone bone;
 """)
         
 
-def createBones(out, bones):
-    for bone in bones:
-        """
-        print something like:
-        bones.put(" + bone.name + ", new Bone())
-        """
-        pass
-
-
 def printMatrix(out, name, frame, matrix):
     """
     prints something like:
     bones.getValue(name).frames[frame].set(0,0) = " + matrix.get(0,0)
     ...
     """
-    out.write("\nbone = bones.getValue(\"{name}\");\n".format(name=name))
+    out.write("\nbone = bones.get(\"{name}\");\n".format(name=name))
     
     tmatrix = matrix.transpose()
     for (x,col) in enumerate(tmatrix):
@@ -97,6 +88,23 @@ def printMatrix(out, name, frame, matrix):
 
 def getJavaFloat(value):
     return str(value) + "f"
+
+def getBoneVertices(armature,name,numframes):
+    """
+    print a whole bunch of data
+    """
+    out = ''
+
+    for frame in xrange(numframes):
+        armature.evaluatePose(frame)
+        pose = armature.getPose()
+        
+        tmatrix = pose.bones[name].poseMatrix.transpose()
+        for col in tmatrix:
+            for elem in col:
+                out += getJavaFloat(elem) + ","
+                
+    return out[:-1] # remove last ,
 
 def export(filename):
     """
@@ -116,7 +124,7 @@ def export(filename):
                 out.write("bone = new Bone(\"{name}\");\n".format(name=name))
                 out.write("bones.put(\"{name}\", bone);\n".format(name = name))
                 out.write("bone.restPose = new float[3];\n")
-                out.write("bone.frames = new float[{size}];\n".format(size = 16 * numFrames))
+                out.write("bone.frames = new float[]{{{vertices}}};\n".format(vertices = getBoneVertices(armature,name,numFrames)))
 
 
             # output rest poses here
@@ -127,11 +135,11 @@ def export(filename):
                 out.write("bone.restPose[{index}] = {value};\n".format(index = 0, value = getJavaFloat(bone.head["ARMATURESPACE"][1])))
                 out.write("bone.restPose[{index}] = {value};\n".format(index = 0, value = getJavaFloat(bone.head["ARMATURESPACE"][2])))
 
-            for frame in xrange(1,numFrames):
-                armature.evaluatePose(frame)
-                pose = armature.getPose()
-                for bone in pose.bones.values():
-                    printMatrix(out, bone.name, frame, bone.poseMatrix)
+            # for frame in xrange(1,numFrames):
+            #     armature.evaluatePose(frame)
+            #     pose = armature.getPose()
+            #     for bone in pose.bones.values():
+            #         printMatrix(out, bone.name, frame, bone.poseMatrix)
 
         classname = os.path.basename(filename)
         classname = classname[:classname.rindex(".")]
