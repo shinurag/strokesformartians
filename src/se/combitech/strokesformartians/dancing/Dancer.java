@@ -22,14 +22,6 @@ public class Dancer extends Activity {
 	private Intent paintIntent = null;
     private Intent creditIntent = null;
 	
- 
-	private void init()
-	{
-		paintIntent = new Intent( this, FingerPaint.class );
-		creditIntent = new Intent( this, Credits.class );
-	}
-    
-    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -135,4 +127,11 @@ public class Dancer extends Activity {
     	}
     	return result;
     }
+    
+	private void init()
+	{
+		paintIntent = new Intent( this, FingerPaint.class );
+		creditIntent = new Intent( this, Credits.class );
+	}
+    
 }
