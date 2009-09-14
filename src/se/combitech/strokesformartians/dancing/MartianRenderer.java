@@ -38,7 +38,7 @@ class MartianRenderer implements GLSurfaceView.Renderer {
 
         gl.glMatrixMode( GL10.GL_MODELVIEW );
         gl.glLoadIdentity();
-        gl.glTranslatef( 0, 0, -3.0f );
+        gl.glTranslatef( 0, 0, -10.0f );
 //        gl.glRotatef( mAngle, 0, 1, 0 );
 //        gl.glRotatef(mAngle*0.25f,  1, 0, 0);
 
@@ -103,7 +103,7 @@ class MartianRenderer implements GLSurfaceView.Renderer {
          float ratio = (float) width / height;
          gl.glMatrixMode(GL10.GL_PROJECTION);
          gl.glLoadIdentity();
-         gl.glFrustumf(-ratio, ratio, -1, 1, 1, 10 );
+         gl.glFrustumf(-ratio, ratio, -1, 1, 1, 100 );
 //         gl.glOrthof(-1, 1, -1, 1, 1, 10);
     }
 
