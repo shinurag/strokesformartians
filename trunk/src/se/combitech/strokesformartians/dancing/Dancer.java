@@ -22,6 +22,11 @@ public class Dancer extends Activity {
     
 	private Intent paintIntent = null;
     private Intent creditIntent = null;
+    
+    private MenuItem loadMenuItem;
+	private MenuItem drawMenuItem;
+	private MenuItem creditsMenuItem;
+	private MenuItem exitMenuItem;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,11 +85,13 @@ public class Dancer extends Activity {
     
     /* Creates the menu items */
     @Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-        menu.add(0, StrokesForMartians.MENU_LOAD_ID, 0, "Load").setEnabled(false);
-        menu.add(0, StrokesForMartians.MENU_DRAW_ID, 0, "Draw");
-        menu.add(0, StrokesForMartians.MENU_CREDITS_ID, 0, "Credits");
-        menu.add(0, StrokesForMartians.MENU_EXIT_ID, 0, "Exit");
+	public boolean onCreateOptionsMenu(Menu menu) 
+    {    	
+        loadMenuItem = menu.add(0, StrokesForMartians.MENU_LOAD_ID, 0, "Load");
+        loadMenuItem.setEnabled(false);        
+        drawMenuItem = menu.add(0, StrokesForMartians.MENU_DRAW_ID, 0, "Draw");        
+        creditsMenuItem = menu.add(0, StrokesForMartians.MENU_CREDITS_ID, 0, "Credits");
+        exitMenuItem = menu.add(0, StrokesForMartians.MENU_EXIT_ID, 0, "Exit");
 
         return true;
     }
@@ -112,7 +119,11 @@ public class Dancer extends Activity {
 
     	case StrokesForMartians.MENU_EXIT_ID:
     		
-    		setResult( StrokesForMartians.EXIT_RESULT_CODE );
+    		/* 
+    		 * End activity and return back to object that 
+    		 * called onActivityResult() with a result code.
+    		 */
+    		setResult( StrokesForMartians.EXIT_RESULT_CODE );    		
     		finish();
     
     		result = true;
