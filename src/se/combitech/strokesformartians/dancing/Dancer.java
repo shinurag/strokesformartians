@@ -68,9 +68,6 @@ public class Dancer extends Activity {
         mGLSurfaceView.onPause();
     }
     
-    
-    
-    
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
@@ -79,8 +76,6 @@ public class Dancer extends Activity {
     		startActivity( data);
     	}
     }
-    
-    
     
     /* Creates the menu items */
     @Override

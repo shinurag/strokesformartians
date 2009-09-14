@@ -38,9 +38,9 @@ class MartianModel
 	
 	public MartianModel( Context context, boolean debugFlag )
     {
-		m_animator = new MartianAnimator( skeletonVertexBuffer, skeletonIndexBuffer );
-		skeletonVertexBuffer = new float[ m_animator.leroy.bones.size() * 3 ];
+		skeletonVertexBuffer = new float[ /*m_animator.leroy.bones.size() * 3*/45 ];
 		skeletonIndexBuffer = new byte[30];
+		m_animator = new MartianAnimator( skeletonVertexBuffer, skeletonIndexBuffer );
 		//m_rootBone = new MartianBone();
 		//m_mesh = new MartianMesh();
 		m_debug = debugFlag;
