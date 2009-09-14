@@ -11,6 +11,7 @@ public class MartianAnimator
 	public float[] boneVertexBuffer;
 	public byte[] boneIndexBuffer;
 	public int numVertices;
+	public int numIndices;
 	public float [] texCoordBuffer;
 	
 	public static float fatness = 1;
@@ -30,16 +31,21 @@ public class MartianAnimator
 	{
 		leroy = new Leroy2();
 		generateSkeleton();
+
+		numVertices = 29;
+		numIndices = 100; // change
 		
-		boneVertexBuffer = new float[numVertices];
-		boneIndexBuffer = new byte[numVertices];
-		texCoordBuffer= new float[numVertices];
+		boneVertexBuffer = new float[numVertices * 3];
+		boneIndexBuffer = new byte[numIndices];
+		texCoordBuffer= new float[numVertices * 2];
+		
+		/** @todo add genereateOutline here */
 	}
 	
 	private void generateOutline()
 	{
 		int index = 0;
-		
+	
 		// 0
 		boneVertexBuffer[index++] = leroy.bones.get("root").restPose[0];
 		boneVertexBuffer[index++] = leroy.bones.get("root").restPose[1] - 0.1f * fatness;
@@ -184,7 +190,14 @@ public class MartianAnimator
 		boneVertexBuffer[index++] = leroy.bones.get("lower_leg_left").restPose[0] - 0.1f * fatness;
 		boneVertexBuffer[index++] = leroy.bones.get("lower_leg_left").restPose[1];
 		boneVertexBuffer[index++] = leroy.bones.get("lower_leg_left").restPose[2];		
-		
+	}
+	
+	private void generateTextureCoordinates()
+	{
+		for(int loop0 = 0; loop0 < numVertices; ++loop0)
+		{
+			
+		}
 	}
 	
 	private void generateSkeleton()
