@@ -16,8 +16,8 @@ public class MartianAnimator
 	
 	private class VertexWeight
 	{
-		public String bone0;
-		public String bone1;
+		public Leroy2.Bone bone0;
+		public Leroy2.Bone bone1;
 		
 		public float weight0;
 		public float weight1;
@@ -193,12 +193,11 @@ public class MartianAnimator
 	 * @param[out] output where to place the transformed vertices
 	 * @param outputOffset where in output to start storing the output 
 	 * @param vertexNum which vertex to transform
-	 * @param boneName the name of the bone to use for transformation
+	 * @param bone the bone to use for the transform
 	 * @param frame which frame to use
 	 */
-	private void getTransformedVertex(float [] output, int outputOffset, int vertexNum, String boneName, int frame)
+	private void getTransformedVertex(float [] output, int outputOffset, int vertexNum, Leroy2.Bone bone, int frame)
 	{
-		Leroy2.Bone bone = leroy.bones.get(boneName);
 		// get the vertex position relative to the bone, this can be optimized by calculating it only once
 		for(int loop0 = 0; loop0 < 3; ++loop0)
 		{
