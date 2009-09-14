@@ -27,7 +27,8 @@ class MartianRenderer implements GLSurfaceView.Renderer {
     private int[] m_textureIds;
     private Context m_context;
 	private float[] mVertexBuffer;
-	private byte[] mIndexBuffer; 
+	private float[] mTexCoordBuffer;
+	private byte[] mIndexBuffer;
     
 	public MartianRenderer( Context context, boolean useTranslucentBackground, boolean debugFlag ) {
         mTranslucentBackground = useTranslucentBackground;
@@ -99,7 +100,7 @@ class MartianRenderer implements GLSurfaceView.Renderer {
 		 */
 
 		mVertexBuffer = new float[ m_animator.boneVertexBuffer.length * 3 ];
-		mIndexBuffer = new byte[ m_animator.boneIndexBuffer.length * 2 ];
+		mIndexBuffer = new byte[ m_animator.boneIndexBuffer.length ];
 		m_animator.getSkeletonFrame( 0, mVertexBuffer, mIndexBuffer );
 		
 		gl.glDisable( GL10.GL_TEXTURE_2D );
@@ -139,12 +140,13 @@ class MartianRenderer implements GLSurfaceView.Renderer {
 		/**
 		 *  Render the outline! 
 		 */
-		gl.glEnable( GL10.GL_TEXTURE_2D );
+		gl.glDisable( GL10.GL_TEXTURE_2D );
 		gl.glColor4f( 1, 0, 0, 1 );
 		
-		mVertexBuffer = new float[ m_animator.boneVertexBuffer.length * 3 ];
-		mIndexBuffer = new byte[ m_animator.boneIndexBuffer.length * 2 ];
-		m_animator.getSkeletonFrame( 0, mVertexBuffer, mIndexBuffer );
+		mVertexBuffer = new float[ m_animator.numVertices * 3 ];
+		mTexCoordBuffer = new float[ m_animator.numVertices * 3 ];
+		mIndexBuffer = new byte[ m_animator.numIndices ];
+		m_animator.getFrame( 0, mVertexBuffer, mTexCoordBuffer, mIndexBuffer );
 	
 		try {
 			ByteBuffer vertexByteBuffer;
@@ -166,7 +168,7 @@ class MartianRenderer implements GLSurfaceView.Renderer {
 									vertexBuffer );
 			
 			gl.glDrawElements( 	GL10.GL_LINES, 
-				  				30, 
+				  				mIndexBuffer.length, 
 				  				GL10.GL_UNSIGNED_BYTE, 
 				  				indexBuffer );
 			
