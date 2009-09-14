@@ -55,9 +55,14 @@ public class MartianAnimator
 		vertexBuffer = new float[numVertices * 3];
 		indexBuffer = new byte[numIndices];
 		
-		/** @TODO add genereateOutline here */
+		generateOutline();
+		generateTextureCoordinates();
+		generateIndices();
 	}
 	
+	/**
+	 * Generate the vertices for the outline.
+	 */
 	private void generateOutline()
 	{
 		int index = 0;
@@ -208,6 +213,9 @@ public class MartianAnimator
 		vertexBuffer[index++] = leroy.bones.get("lower_leg_left").restPose[2];		
 	}
 	
+	/**
+	 * Genereate texture coordinates using values from the outline.
+	 */
 	private void generateTextureCoordinates()
 	{
 		float width = textureRight - textureLeft;
@@ -222,6 +230,14 @@ public class MartianAnimator
 			texCoordBuffer[loop0 * 2] = (vertexBuffer[loop0 * 3] - textureLeft) / width;
 			texCoordBuffer[loop0 * 2 + 1] = (vertexBuffer[loop0 * 3 + 1] - textureBottom) / height;
 		}
+	}
+	
+	/**
+	 * Generate indices for the outline
+	 */
+	private void generateIndices()
+	{
+		
 	}
 	
 	private void generateSkeleton()
