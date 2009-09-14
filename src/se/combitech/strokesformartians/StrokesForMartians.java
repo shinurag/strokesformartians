@@ -25,7 +25,7 @@ public class StrokesForMartians extends Activity {
 	
 	private void init()
 	{
-		danceIntent = new Intent( this, Dancer.class );
+		danceIntent = SFMIntentFactory.createDancerIntent(this);
 	}
 	
 	
