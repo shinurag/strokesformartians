@@ -43,8 +43,8 @@ public class MartianAnimator
 	{
 		leroy = new Leroy2();
 
-		boneVertexBuffer = new float[numVertices * 3];
-		boneIndexBuffer = new byte[numIndices];
+		boneVertexBuffer = new float[500];
+		boneIndexBuffer = new byte[500];
 		
 		generateSkeleton();
 
