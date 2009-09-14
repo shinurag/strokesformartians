@@ -26,15 +26,14 @@ class MartianRenderer implements GLSurfaceView.Renderer {
     private MartianAnimator m_animator;
     private int[] m_textureIds;
     private Context m_context;
-	private float[] skeletonVertexBuffer;
-	private byte[] skeletonIndexBuffer; 
+	private float[] mVertexBuffer;
+	private byte[] mIndexBuffer; 
     
 	public MartianRenderer( Context context, boolean useTranslucentBackground, boolean debugFlag ) {
         mTranslucentBackground = useTranslucentBackground;
-        m_martian = new MartianModel( context, debugFlag );
 		m_animator = new MartianAnimator( );
 		m_textureIds = new int[1];
-		
+		m_context = context;
     }
 	
     public void onDrawFrame(GL10 gl) {
@@ -57,30 +56,8 @@ class MartianRenderer implements GLSurfaceView.Renderer {
         gl.glRotatef( -90, 1, 0, 0 );
 //        gl.glRotatef(mAngle*0.25f,  1, 0, 0);
 
-//        gl.glEnableClientState( GL10.GL_VERTEX_ARRAY );
-//        gl.glEnableClientState( GL10.GL_TEXTURE_COORD_ARRAY );
-//        gl.glEnableClientState(GL10.GL_COLOR_ARRAY);
-
-        m_martian.draw( gl );
-
-//        gl.glRotatef(mAngle*2.0f, 0, 1, 1);
+        renderMartianAnimator( gl );
         mAngle++;
-        
-//        gl.glMatrixMode(GL10.GL_MODELVIEW);
-//        gl.glLoadIdentity();
-//        gl.glTranslatef(0, 0, -3.0f);
-//        gl.glRotatef(mAngle,        0, 1, 0);
-//        gl.glRotatef(mAngle*0.25f,  1, 0, 0);
-//
-//        
-//        gl.glEnableClientState(GL10.GL_VERTEX_ARRAY);
-//        gl.glEnableClientState(GL10.GL_COLOR_ARRAY);
-//
-//        mCube.draw(gl);
-//
-//        
-//        mAngle += 1.2f;
-
     }
 
 	private void initTextures( GL10 gl )
@@ -116,21 +93,28 @@ class MartianRenderer implements GLSurfaceView.Renderer {
 						GL10.GL_TEXTURE_ENV_MODE, 
 						GL10.GL_DECAL );
 
-		m_animator.getSkeletonFrame( 0, skeletonVertexBuffer, skeletonIndexBuffer );
+		
+		/**
+		 *  Render the skeleton! 
+		 */
+
+		mVertexBuffer = new float[ m_animator.boneVertexBuffer.length * 3 ];
+		mIndexBuffer = new byte[ m_animator.boneIndexBuffer.length * 2 ];
+		m_animator.getSkeletonFrame( 0, mVertexBuffer, mIndexBuffer );
 		
 		gl.glDisable( GL10.GL_TEXTURE_2D );
 		gl.glColor4f( 0, 0, 0, 1 );
 		try {
 			ByteBuffer vertexByteBuffer;
-			vertexByteBuffer = ByteBuffer.allocateDirect( skeletonVertexBuffer.length * 4 );
+			vertexByteBuffer = ByteBuffer.allocateDirect( mVertexBuffer.length * 4 );
 			vertexByteBuffer.order( ByteOrder.nativeOrder() );
 			FloatBuffer vertexBuffer = vertexByteBuffer.asFloatBuffer();
-			vertexBuffer.put( skeletonVertexBuffer );
+			vertexBuffer.put( vertexBuffer );
 			vertexBuffer.position( 0 );
 			
-			ByteBuffer mIndexBuffer = ByteBuffer.allocateDirect( skeletonIndexBuffer.length );
-			mIndexBuffer.put( skeletonIndexBuffer );
-			mIndexBuffer.position( 0 );
+			ByteBuffer indexBuffer = ByteBuffer.allocateDirect( mIndexBuffer.length );
+			indexBuffer.put( indexBuffer );
+			indexBuffer.position( 0 );
 
 	        gl.glEnableClientState( GL10.GL_VERTEX_ARRAY );
 			
@@ -142,15 +126,55 @@ class MartianRenderer implements GLSurfaceView.Renderer {
 			gl.glLineWidth( 2 );
 			
 			gl.glDrawElements( 	GL10.GL_LINES, 
-				  				30, 
+								mIndexBuffer.length, 
 				  				GL10.GL_UNSIGNED_BYTE, 
-				  				mIndexBuffer );
+				  				indexBuffer );
 			
 	        gl.glDisableClientState( GL10.GL_VERTEX_ARRAY );
 			
 		} catch ( Exception e ) {
 			e.printStackTrace();
 		}
+		
+		/**
+		 *  Render the outline! 
+		 */
+		gl.glEnable( GL10.GL_TEXTURE_2D );
+		gl.glColor4f( 1, 0, 0, 1 );
+		
+		mVertexBuffer = new float[ m_animator.boneVertexBuffer.length * 3 ];
+		mIndexBuffer = new byte[ m_animator.boneIndexBuffer.length * 2 ];
+		m_animator.getSkeletonFrame( 0, mVertexBuffer, mIndexBuffer );
+	
+		try {
+			ByteBuffer vertexByteBuffer;
+			vertexByteBuffer = ByteBuffer.allocateDirect( mVertexBuffer.length * 4 );
+			vertexByteBuffer.order( ByteOrder.nativeOrder() );
+			FloatBuffer vertexBuffer = vertexByteBuffer.asFloatBuffer();
+			vertexBuffer.put( vertexBuffer );
+			vertexBuffer.position( 0 );
+			
+			ByteBuffer indexBuffer = ByteBuffer.allocateDirect( mIndexBuffer.length );
+			indexBuffer.put( mIndexBuffer );
+			indexBuffer.position( 0 );
+
+	        gl.glEnableClientState( GL10.GL_VERTEX_ARRAY );
+			
+			gl.glVertexPointer( 	3,
+									GL10.GL_FLOAT, 
+									0,
+									vertexBuffer );
+			
+			gl.glDrawElements( 	GL10.GL_LINES, 
+				  				30, 
+				  				GL10.GL_UNSIGNED_BYTE, 
+				  				indexBuffer );
+			
+	        gl.glDisableClientState( GL10.GL_VERTEX_ARRAY );
+			
+		} catch ( Exception e ) {
+			e.printStackTrace();
+		}		
     }    	
     
     public int[] getConfigSpec() {
