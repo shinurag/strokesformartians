@@ -25,7 +25,7 @@ class MartianModel
 	private MartianBone m_rootBone;
 	private MartianAnimator m_animator;
 	private boolean m_debug;
-	private int[] m_textureIds;
+	private MartianProperty property;
 	private Context m_context = null;
 	private float[] skeletonVertexBuffer;
 	private byte[] skeletonIndexBuffer; 	
@@ -42,7 +42,9 @@ class MartianModel
 		skeletonIndexBuffer = new byte[30];
 		m_context = context;
 		m_debug = debugFlag;
-		m_textureIds = new int[1];
+		
+		property = new MartianProperty();
+		property.addTexture(0);
 
     }
 
@@ -56,15 +58,15 @@ class MartianModel
     	gl.glColor4f( 0, 1, 1, 1 );
         gl.glEnable( GL10.GL_TEXTURE_2D );
         
-    	if( m_textureIds[0] == 0 )
+    	if( property.getTexture(0) == 0 )
     	{
     		Bitmap bitmap = BitmapFactory.decodeResource( m_context.getResources(), R.drawable.flowers );
     				
     		gl.glGenTextures( 	1, 
-    							m_textureIds,
+    							property.getTextures(),
 								0 );
     		gl.glBindTexture( 	GL10.GL_TEXTURE_2D, 
-    							m_textureIds[0] );
+    							property.getTextureByIndex(0) );
     		
     		android.opengl.GLUtils.texImage2D( 	GL10.GL_TEXTURE_2D,
 							    				0,
@@ -73,7 +75,7 @@ class MartianModel
     	}
     	
     	gl.glBindTexture( 	GL10.GL_TEXTURE_2D, 
-							m_textureIds[0] );
+    			            property.getTextureByIndex(0) );
 		
 		gl.glTexEnvf( 	GL10.GL_TEXTURE_ENV, 
 						GL10.GL_TEXTURE_ENV_MODE, 
