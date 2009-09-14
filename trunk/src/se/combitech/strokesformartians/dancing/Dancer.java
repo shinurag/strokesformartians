@@ -1,5 +1,6 @@
 package se.combitech.strokesformartians.dancing;
 
+import se.combitech.strokesformartians.SFMIntentFactory;
 import se.combitech.strokesformartians.StrokesForMartians;
 import se.combitech.strokesformartians.credits.Credits;
 import se.combitech.strokesformartians.drawing.FingerPaint;
@@ -125,8 +126,8 @@ public class Dancer extends Activity {
     
 	private void init()
 	{
-		paintIntent = new Intent( this, FingerPaint.class );
-		creditIntent = new Intent( this, Credits.class );
+		paintIntent = SFMIntentFactory.createPaintIntent(this);
+		creditIntent = SFMIntentFactory.createCreditsIntent(this);
 	}
     
 }
