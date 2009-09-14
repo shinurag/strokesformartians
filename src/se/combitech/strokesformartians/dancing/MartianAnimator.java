@@ -22,10 +22,8 @@ public class MartianAnimator
 	
 	VertexWeight [] vertexWeights;
 	
-	public MartianAnimator( float[] vertexBuffer, byte[] indexBuffer)
+	public MartianAnimator( )
 	{
-		boneVertexBuffer = vertexBuffer;
-		boneIndexBuffer = indexBuffer;
 		leroy = new Leroy2();
 		generateSkeleton();
 	}

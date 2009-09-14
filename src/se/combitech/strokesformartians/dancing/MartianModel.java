@@ -40,7 +40,7 @@ class MartianModel
     {
 		skeletonVertexBuffer = new float[ /*m_animator.leroy.bones.size() * 3*/45 ];
 		skeletonIndexBuffer = new byte[30];
-		m_animator = new MartianAnimator( skeletonVertexBuffer, skeletonIndexBuffer );
+//		m_animator = new MartianAnimator( skeletonVertexBuffer, skeletonIndexBuffer );
 		//m_rootBone = new MartianBone();
 		//m_mesh = new MartianMesh();
 		m_debug = debugFlag;
@@ -174,55 +174,6 @@ class MartianModel
 						GL10.GL_TEXTURE_ENV_MODE, 
 						GL10.GL_DECAL );
 
-//		try {
-//			ByteBuffer vertexByteBuffer;
-//			vertexByteBuffer = ByteBuffer.allocateDirect( m_mesh.getVertices().length * 4 );
-//			vertexByteBuffer.order( ByteOrder.nativeOrder() );
-//			FloatBuffer vertexBuffer = vertexByteBuffer.asFloatBuffer();
-//			vertexBuffer.put( m_mesh.getVertices() );
-//			vertexBuffer.position( 0 );
-//
-//			ByteBuffer texCoordByteBuffer;
-//			texCoordByteBuffer = ByteBuffer.allocateDirect( m_mesh.getTextureCoordinates().length * 4 );
-//			texCoordByteBuffer.order( ByteOrder.nativeOrder() );
-//			FloatBuffer textureCoordinateBuffer = texCoordByteBuffer.asFloatBuffer();
-//			textureCoordinateBuffer.put( m_mesh.getTextureCoordinates() );
-//			textureCoordinateBuffer.position( 0 );
-//
-//			
-//			ByteBuffer mIndexBuffer = ByteBuffer.allocateDirect( m_mesh.getIndices().length );
-//			mIndexBuffer.put( m_mesh.getIndices() );
-//			mIndexBuffer.position( 0 );
-//			 
-//	        gl.glEnableClientState( GL10.GL_VERTEX_ARRAY );
-//	        gl.glEnableClientState( GL10.GL_TEXTURE_COORD_ARRAY );
-//			
-//			
-//			gl.glVertexPointer( 	4,
-//									GL10.GL_FLOAT, 
-//									0,
-//									vertexBuffer );
-//			
-//			gl.glTexCoordPointer( 	2, 
-//									GL10.GL_FLOAT, 
-//									0, 
-//									textureCoordinateBuffer );
-//			
-//			gl.glLineWidth( 2 );
-//			
-//			gl.glDrawElements( 	GL10.GL_TRIANGLES, 
-//				  				6, 
-//				  				GL10.GL_UNSIGNED_BYTE, 
-//				  				mIndexBuffer );
-//			
-//	        gl.glDisableClientState( GL10.GL_VERTEX_ARRAY );
-//	        gl.glDisableClientState( GL10.GL_TEXTURE_COORD_ARRAY );
-//
-//			
-//		} catch ( Exception e ) {
-//			e.printStackTrace();
-//		}
-
 		m_animator.getSkeletonFrame( 0, skeletonVertexBuffer, skeletonIndexBuffer );
 		
 		gl.glDisable( GL10.GL_TEXTURE_2D );
@@ -249,7 +200,7 @@ class MartianModel
 			gl.glLineWidth( 2 );
 			
 			gl.glDrawElements( 	GL10.GL_LINES, 
-				  				15, 
+				  				30, 
 				  				GL10.GL_UNSIGNED_BYTE, 
 				  				mIndexBuffer );
 			
