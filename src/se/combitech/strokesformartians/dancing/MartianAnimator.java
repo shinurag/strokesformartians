@@ -210,9 +210,17 @@ public class MartianAnimator
 	
 	private void generateTextureCoordinates()
 	{
+		float width = textureRight - textureLeft;
+		float height = textureTop - textureBottom;
+		
+		assert width > 0;
+		assert height > 0;
+		
 		for(int loop0 = 0; loop0 < numVertices; ++loop0)
 		{
-			texCoordBuffer[loop0 * 2] = boneVertexBuffer[loop0 * 3];
+			// do some normalization on the x and y coordinates from the outline
+			texCoordBuffer[loop0 * 2] = (vertexBuffer[loop0 * 3] - textureLeft) / width;
+			texCoordBuffer[loop0 * 2 + 1] = (vertexBuffer[loop0 * 3 + 1] - textureBottom) / height;
 		}
 	}
 	
