@@ -7,6 +7,12 @@ import android.opengl.*;
 
 public class MartianAnimator 
 {
+	private class VertexWeight
+	{
+		public Leroy2.Bone [] bone;
+		public float [] weight;
+	}
+	
 	public Leroy2 leroy;
 	
 	// stupid bone stuff
@@ -17,8 +23,10 @@ public class MartianAnimator
 	public float [] texCoordBuffer;
 	public float [] vertexBuffer;
 	public byte [] indexBuffer;
+	VertexWeight [] vertexWeights;	
 	public int numVertices;
 	public int numIndices;
+	public int numTriangles;
 	
 	public static float fatness = 1;
 	public static float leglength = 1;
@@ -31,14 +39,7 @@ public class MartianAnimator
 	public static float textureTop = 1;
 	public static float textureRight = 1;
 	
-	private class VertexWeight
-	{
-		public Leroy2.Bone [] bone;
-		public float [] weight;
-	}
-	
-	VertexWeight [] vertexWeights;
-	
+
 	public MartianAnimator()
 	{
 		leroy = new Leroy2();
@@ -49,11 +50,11 @@ public class MartianAnimator
 		generateSkeleton();
 
 		numVertices = 29;
-		numIndices = 100; // change
+		numTriangles = 27;
+		numIndices = numTriangles * 3;  
 		
 		texCoordBuffer= new float[numVertices * 2];
 		vertexBuffer = new float[numVertices * 3];
-		indexBuffer = new byte[numIndices];
 		
 		generateOutline();
 		generateTextureCoordinates();
@@ -263,7 +264,7 @@ public class MartianAnimator
 	}
 	
 	/**
-	 * Genereate texture coordinates using values from the outline.
+	 * Generate texture coordinates using values from the outline.
 	 */
 	private void generateTextureCoordinates()
 	{
@@ -286,7 +287,11 @@ public class MartianAnimator
 	 */
 	private void generateIndices()
 	{
+		int index = 0;
 		
+		indexBuffer = new byte[] {}; /** @TODO add lots of values here. */
+	
+		assert indexBuffer.length == numIndices;
 	}
 	
 	private void generateSkeleton()
