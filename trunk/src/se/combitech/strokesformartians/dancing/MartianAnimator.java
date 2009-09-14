@@ -169,12 +169,24 @@ public class MartianAnimator
 		assert frame>=0;
 		assert frame<=leroy.numFrames;
 		
+		/** @todo could quite easily support a variable number of bones here */
+		float [] tmpVertex0 = new float[3];
+		float [] tmpVertex1 = new float[3];
+		
 		int intframe = (int)frame;
 		
 		for(int vertex = 0; vertex < numVertices; ++vertex)
 		{		
 			// @todo weight the second bone as well
-			getTransformedVertex(vertices, vertex * 3, vertex, vertexWeights[vertex].bone[0], intframe);
+			getTransformedVertex(tmpVertex0, 0, vertex, vertexWeights[vertex].bone[0], intframe);
+			getTransformedVertex(tmpVertex1, 0, vertex, vertexWeights[vertex].bone[0], intframe);
+			
+			for(int loop0 = 0; loop0 < 3; ++loop0)
+			{
+				int vertexStart = 3 * vertex;
+				vertices[vertexStart + loop0] = tmpVertex0[loop0] * vertexWeights[vertex].weight[0];
+				vertices[vertexStart + loop0] += tmpVertex1[loop0] * vertexWeights[vertex].weight[1];
+			}
 		}	
 		
 		// always use indices from indexBuffer
@@ -188,7 +200,7 @@ public class MartianAnimator
 	 * Poo!
 	 * 
 	 * @param[out] output where to place the transformed vertices
-	 * @param outputOffset where in output to start storing the output 
+	 * @param outputOffset where in output to start storing the output, not currently used 
 	 * @param vertexNum which vertex to transform
 	 * @param bone the bone to use for the transform
 	 * @param frame which frame to use
