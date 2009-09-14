@@ -110,11 +110,11 @@ class MartianRenderer implements GLSurfaceView.Renderer {
 			vertexByteBuffer = ByteBuffer.allocateDirect( mVertexBuffer.length * 4 );
 			vertexByteBuffer.order( ByteOrder.nativeOrder() );
 			FloatBuffer vertexBuffer = vertexByteBuffer.asFloatBuffer();
-			vertexBuffer.put( vertexBuffer );
+			vertexBuffer.put( mVertexBuffer );
 			vertexBuffer.position( 0 );
 			
 			ByteBuffer indexBuffer = ByteBuffer.allocateDirect( mIndexBuffer.length );
-			indexBuffer.put( indexBuffer );
+			indexBuffer.put( mIndexBuffer );
 			indexBuffer.position( 0 );
 
 	        gl.glEnableClientState( GL10.GL_VERTEX_ARRAY );
@@ -153,7 +153,7 @@ class MartianRenderer implements GLSurfaceView.Renderer {
 			vertexByteBuffer = ByteBuffer.allocateDirect( mVertexBuffer.length * 4 );
 			vertexByteBuffer.order( ByteOrder.nativeOrder() );
 			FloatBuffer vertexBuffer = vertexByteBuffer.asFloatBuffer();
-			vertexBuffer.put( vertexBuffer );
+			vertexBuffer.put( mVertexBuffer );
 			vertexBuffer.position( 0 );
 			
 			ByteBuffer indexBuffer = ByteBuffer.allocateDirect( mIndexBuffer.length );

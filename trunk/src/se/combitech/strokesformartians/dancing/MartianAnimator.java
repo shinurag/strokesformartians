@@ -58,8 +58,57 @@ public class MartianAnimator
 		generateOutline();
 		generateTextureCoordinates();
 		generateIndices();
+		generateVertexWeight();
 	}
 	
+	/**
+	 * Generate the vertex weights for the outline.
+	 */
+	private void generateVertexWeight()
+	{
+		vertexWeights = new VertexWeight[ numVertices ];
+		
+		// ROOT
+		vertexWeights[ 0 ].bone = new Leroy2.Bone[ 1 ];
+		vertexWeights[ 0 ].bone[ 0 ] = leroy.bones.get( "root" );
+		
+		vertexWeights[ 0 ].weight = new float[ 1 ];
+		vertexWeights[ 0 ].weight[ 0 ] = 1.0f;
+		
+		// LOWER LEG RIGHT INNER
+		vertexWeights[ 1 ].bone = new Leroy2.Bone[ 2 ];
+		vertexWeights[ 1 ].bone[ 0 ] = leroy.bones.get( "upper_leg_right" );
+		vertexWeights[ 1 ].bone[ 1 ] = leroy.bones.get( "lower_leg_right" );
+		
+		vertexWeights[ 1 ].weight = new float[ 2 ];
+		vertexWeights[ 1 ].weight[ 0 ] = 0.9f;		
+		vertexWeights[ 1 ].weight[ 1 ] = 0.1f;
+
+		// FOOT RIGHT INNER
+		vertexWeights[ 2 ].bone = new Leroy2.Bone[ 1 ];
+		vertexWeights[ 2 ].bone[ 0 ] = leroy.bones.get( "lower_leg_right" );
+		
+		vertexWeights[ 2 ].weight = new float[ 1 ];
+		vertexWeights[ 2 ].weight[ 0 ] = 1.0f;		
+		
+		// FOOT RIGHT OUTERS
+		vertexWeights[ 3 ].bone = new Leroy2.Bone[ 1 ];
+		vertexWeights[ 3 ].bone[ 0 ] = leroy.bones.get( "lower_leg_right" );
+		
+		vertexWeights[ 3 ].weight = new float[ 1 ];
+		vertexWeights[ 3 ].weight[ 0 ] = 1.0f;		
+
+		// LOWER LEG RIGHT OUTER
+		vertexWeights[ 4 ].bone = new Leroy2.Bone[ 2 ];
+		vertexWeights[ 4 ].bone[ 0 ] = leroy.bones.get( "upper_leg_right" );
+		vertexWeights[ 4 ].bone[ 1 ] = leroy.bones.get( "lower_leg_right" );
+		
+		vertexWeights[ 4 ].weight = new float[ 2 ];
+		vertexWeights[ 4 ].weight[ 0 ] = 0.9f;
+		vertexWeights[ 4 ].weight[ 1 ] = 0.1f;
+		
+	}
+
 	/**
 	 * Generate the vertices for the outline.
 	 */
