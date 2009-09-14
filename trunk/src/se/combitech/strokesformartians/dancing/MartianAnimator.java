@@ -16,11 +16,8 @@ public class MartianAnimator
 	
 	private class VertexWeight
 	{
-		public Leroy2.Bone bone0;
-		public Leroy2.Bone bone1;
-		
-		public float weight0;
-		public float weight1;
+		public Leroy2.Bone [] bone;
+		public float [] weight;
 	}
 	
 	VertexWeight [] vertexWeights;
@@ -177,7 +174,7 @@ public class MartianAnimator
 		for(int vertex = 0; vertex < numVertices; ++vertex)
 		{		
 			// @todo weight the second bone as well
-			getTransformedVertex(vertices, vertex * 3, vertex, vertexWeights[vertex].bone0, intframe);
+			getTransformedVertex(vertices, vertex * 3, vertex, vertexWeights[vertex].bone[0], intframe);
 		}	
 		
 		// always use indices from indexBuffer
