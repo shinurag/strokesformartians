@@ -11,6 +11,26 @@ public class MartianAnimator
 	{
 		public Leroy2.Bone [] bone;
 		public float [] weight;
+		
+		public VertexWeight(String bone0, String bone1, float weight0, float weight1)
+		{
+			assert bone0.length() > 0;
+			
+			if(bone1.length() > 0)
+			{
+				assert weight1 != 0;
+				
+				bone = new Leroy2.Bone[2];
+				
+				bone[1] = leroy.bones.get(bone1);
+			}
+			
+			bone[0] = leroy.bones.get(bone0);
+			
+			weight = new float[ 2 ];
+			weight[0] = weight0;		
+			weight[1] = weight1;		
+		}
 	}
 	
 	public Leroy2 leroy;
@@ -69,50 +89,11 @@ public class MartianAnimator
 	{
 		vertexWeights = new VertexWeight[ numVertices ];
 
-		for(int loop0 = 0; loop0 < numVertices; ++loop0)
-		{
-			vertexWeights[loop0] = new VertexWeight();
-		}
-		
-		// ROOT
-		vertexWeights[ 0 ].bone = new Leroy2.Bone[ 1 ];
-		vertexWeights[ 0 ].bone[ 0 ] = leroy.bones.get( "root" );
-		
-		vertexWeights[ 0 ].weight = new float[ 1 ];
-		vertexWeights[ 0 ].weight[ 0 ] = 1.0f;
-		
-		// LOWER LEG RIGHT INNER
-		vertexWeights[ 1 ].bone = new Leroy2.Bone[ 2 ];
-		vertexWeights[ 1 ].bone[ 0 ] = leroy.bones.get( "upper_leg_right" );
-		vertexWeights[ 1 ].bone[ 1 ] = leroy.bones.get( "lower_leg_right" );
-		
-		vertexWeights[ 1 ].weight = new float[ 2 ];
-		vertexWeights[ 1 ].weight[ 0 ] = 0.9f;		
-		vertexWeights[ 1 ].weight[ 1 ] = 0.1f;
-
-		// FOOT RIGHT INNER
-		vertexWeights[ 2 ].bone = new Leroy2.Bone[ 1 ];
-		vertexWeights[ 2 ].bone[ 0 ] = leroy.bones.get( "lower_leg_right" );
-		
-		vertexWeights[ 2 ].weight = new float[ 1 ];
-		vertexWeights[ 2 ].weight[ 0 ] = 1.0f;		
-		
-		// FOOT RIGHT OUTERS
-		vertexWeights[ 3 ].bone = new Leroy2.Bone[ 1 ];
-		vertexWeights[ 3 ].bone[ 0 ] = leroy.bones.get( "lower_leg_right" );
-		
-		vertexWeights[ 3 ].weight = new float[ 1 ];
-		vertexWeights[ 3 ].weight[ 0 ] = 1.0f;		
-
-		// LOWER LEG RIGHT OUTER
-		vertexWeights[ 4 ].bone = new Leroy2.Bone[ 2 ];
-		vertexWeights[ 4 ].bone[ 0 ] = leroy.bones.get( "upper_leg_right" );
-		vertexWeights[ 4 ].bone[ 1 ] = leroy.bones.get( "lower_leg_right" );
-		
-		vertexWeights[ 4 ].weight = new float[ 2 ];
-		vertexWeights[ 4 ].weight[ 0 ] = 0.9f;
-		vertexWeights[ 4 ].weight[ 1 ] = 0.1f;
-		
+		vertexWeights[0] = new VertexWeight("root", "", 1, 0);
+		vertexWeights[1] = new VertexWeight("upper_leg_right", "lower_leg_right", 0.9f, 0.1f);
+		vertexWeights[2] = new VertexWeight("lower_leg_right", "", 1, 0);
+		vertexWeights[3] = new VertexWeight("lower_leg_right", "", 1, 0); 
+		vertexWeights[4] = new VertexWeight("upper_leg_right", "lower_leg_right", 0.9f, 0.1f);
 	}
 
 	/**
@@ -293,7 +274,7 @@ public class MartianAnimator
 	 */
 	private void generateIndices()
 	{
-		//indexBuffer = new byte[] {2,4,3, 2,1,4, 4,1,0, 0,5,4, }; 
+		indexBuffer = new byte[] {2,4,3, 2,1,4, 4,1,0, 0,5,4, 0,6,5, 0,23,6, 0, 24,23, 0,25,24, 0,28,25, 28,27,25, 27,26,25, 6,23,7, 7,23,22, 7,22,16, 7,16,13, 7,13,12, 7,12,8, 8,12,11, 8,11,10, 8,10,9, 13,16,14, 16,15,14, 16,22,17, 22,21,17, 21,18,17, 21,20,19, 21,19,18}; 
 	
 		assert indexBuffer.length == numIndices;
 	}
@@ -436,9 +417,9 @@ public class MartianAnimator
 							byte [] indices)
 	{
 		assert frame>=0;
-		assert frame<=leroy.numFrames;
+		assert frame<leroy.numFrames;
 		
-		/** @todo could quite easily support a variable number of bones here */
+		/** @TODO could quite easily support a variable number of bones here */
 		float [] tmpVertex0 = new float[3];
 		float [] tmpVertex1 = new float[3];
 		
@@ -446,9 +427,11 @@ public class MartianAnimator
 		
 		for(int vertex = 0; vertex < numVertices; ++vertex)
 		{		
-			// @todo weight the second bone as well
-			getTransformedVertex(tmpVertex0, 0, vertex, vertexWeights[vertex].bone[0], intframe);
-			getTransformedVertex(tmpVertex1, 0, vertex, vertexWeights[vertex].bone[0], intframe);
+			if(vertexWeights[vertex].bone[0] != null)
+				getTransformedVertex(tmpVertex0, 0, vertex, vertexWeights[vertex].bone[0], intframe);
+			/** @TODO array out of bounds exception here, why? */
+			if(vertexWeights[vertex].bone[1] != null)
+				getTransformedVertex(tmpVertex1, 0, vertex, vertexWeights[vertex].bone[1], intframe);
 			
 			for(int loop0 = 0; loop0 < 3; ++loop0)
 			{
@@ -476,19 +459,24 @@ public class MartianAnimator
 	 */
 	private void getTransformedVertex(float [] output, int outputOffset, int vertexNum, Leroy2.Bone bone, int frame)
 	{
+		float [] tmpdata = new float[4];
+		float [] tmpdata2 = new float[4];
 		// get the vertex position relative to the bone, this can be optimized by calculating it only once
 		for(int loop0 = 0; loop0 < 3; ++loop0)
 		{
-			output[loop0] = boneVertexBuffer[vertexNum * 3 + loop0] - bone.restPose[loop0];
+			tmpdata[loop0] = boneVertexBuffer[vertexNum * 3 + loop0] - bone.restPose[loop0];
 		}
 		
 		// transform using bone transformation
-		Matrix.multiplyMV(output, 0, bone.frames, (frame << 4), output, 0);
+		Matrix.multiplyMV(tmpdata2, 0, bone.frames, (frame << 4), tmpdata, 0);
 		
 		// add the bone rest pose
 		for(int loop0 = 0; loop0 < 3; ++loop0)
 		{
-			output[loop0] += bone.restPose[loop0];
+			tmpdata2[loop0] += bone.restPose[loop0];
 		}		
+		
+		// copy the first three values
+		System.arraycopy(tmpdata2, 0, output, outputOffset, 3);
 	}
 }
