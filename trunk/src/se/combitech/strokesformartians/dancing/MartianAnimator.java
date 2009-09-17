@@ -289,12 +289,11 @@ public class MartianAnimator
 	
 	/**
 	 * Generate indices for the outline
+	 * Not using triangle strips currently.
 	 */
 	private void generateIndices()
 	{
-		int index = 0;
-		
-		indexBuffer = new byte[] {}; /** @TODO add lots of values here. */
+		//indexBuffer = new byte[] {2,4,3, 2,1,4, 4,1,0, 0,5,4, }; 
 	
 		assert indexBuffer.length == numIndices;
 	}
