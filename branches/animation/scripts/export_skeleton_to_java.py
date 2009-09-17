@@ -40,7 +40,7 @@ public class Bone
     {{
     	public String name;
 	/**
-	 * The coordinates in worldspace that defines the restpose for the bone. On the format restPose[index] where index is 0 for x and 1 for y. It only specify the head of the bone. 
+	 * The coordinates in worldspace that defines the restpose for the bone. On the format restPose[index] where index is 0 for x, 1 for y and 2 for z. It only specify the head of the bone. 
 	 */
         public float [] restPose;
 	/**
@@ -120,26 +120,14 @@ def export(filename):
 
         def skeletoncontent(out):
             # allocate the bones
-            for name in (bone.name for bone in armature.getPose().bones.values()):
+            for bone in armature.getData().bones.values():
+                name = bone.name
                 out.write("bone = new Bone(\"{name}\");\n".format(name=name))
                 out.write("bones.put(\"{name}\", bone);\n".format(name = name))
-                out.write("bone.restPose = new float[3];\n")
+                out.write("bone.restPose = new float[]{{{vertex}}};\n".format(vertex = getJavaFloat(bone.head["ARMATURESPACE"][0]) + "," + \
+                                                                                  getJavaFloat(bone.head["ARMATURESPACE"][1]) + "," + \
+                                                                                  getJavaFloat(bone.head["ARMATURESPACE"][2])))
                 out.write("bone.frames = new float[]{{{vertices}}};\n".format(vertices = getBoneVertices(armature,name,numFrames)))
-
-
-            # output rest poses here
-            for bone in armature.getData().bones.values():
-                out.write("bone = bones.get(\"{name}\");\n".format(name=bone.name))
-                # TODO: tail instead of head here?
-                out.write("bone.restPose[{index}] = {value};\n".format(index = 0, value = getJavaFloat(bone.head["ARMATURESPACE"][0])))
-                out.write("bone.restPose[{index}] = {value};\n".format(index = 0, value = getJavaFloat(bone.head["ARMATURESPACE"][1])))
-                out.write("bone.restPose[{index}] = {value};\n".format(index = 0, value = getJavaFloat(bone.head["ARMATURESPACE"][2])))
-
-            # for frame in xrange(1,numFrames):
-            #     armature.evaluatePose(frame)
-            #     pose = armature.getPose()
-            #     for bone in pose.bones.values():
-            #         printMatrix(out, bone.name, frame, bone.poseMatrix)
 
         classname = os.path.basename(filename)
         classname = classname[:classname.rindex(".")]
