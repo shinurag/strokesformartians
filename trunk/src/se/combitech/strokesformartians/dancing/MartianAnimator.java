@@ -68,6 +68,11 @@ public class MartianAnimator
 	private void generateVertexWeight()
 	{
 		vertexWeights = new VertexWeight[ numVertices ];
+
+		for(int loop0 = 0; loop0 < numVertices; ++loop0)
+		{
+			vertexWeights[loop0] = new VertexWeight();
+		}
 		
 		// ROOT
 		vertexWeights[ 0 ].bone = new Leroy2.Bone[ 1 ];
