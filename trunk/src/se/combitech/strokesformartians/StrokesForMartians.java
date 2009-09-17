@@ -1,6 +1,5 @@
 package se.combitech.strokesformartians;
 
-import se.combitech.strokesformartians.dancing.Dancer;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
