@@ -15,13 +15,12 @@ public class MartianAnimator
 		public VertexWeight(String bone0, String bone1, float weight0, float weight1)
 		{
 			assert bone0.length() > 0;
-			
+
+			bone = new Leroy2.Bone[2];
+		
 			if(bone1.length() > 0)
 			{
 				assert weight1 != 0;
-				
-				bone = new Leroy2.Bone[2];
-				
 				bone[1] = leroy.bones.get(bone1);
 			}
 			
@@ -90,10 +89,39 @@ public class MartianAnimator
 		vertexWeights = new VertexWeight[ numVertices ];
 
 		vertexWeights[0] = new VertexWeight("root", "", 1, 0);
+		
+		// right
 		vertexWeights[1] = new VertexWeight("upper_leg_right", "lower_leg_right", 0.9f, 0.1f);
 		vertexWeights[2] = new VertexWeight("lower_leg_right", "", 1, 0);
 		vertexWeights[3] = new VertexWeight("lower_leg_right", "", 1, 0); 
 		vertexWeights[4] = new VertexWeight("upper_leg_right", "lower_leg_right", 0.9f, 0.1f);
+		vertexWeights[5] = new VertexWeight("upper_leg_right", "root", 0.9f, 0.1f);
+		vertexWeights[6] = new VertexWeight("root", "spine", 0.5f, 0.5f);
+		vertexWeights[7] = new VertexWeight("collar_right", "upper_arm_right", 0.7f, 0.3f);
+		vertexWeights[8] = new VertexWeight("lower_arm_right", "upper_arm_right", 0.5f, 0.5f);
+		vertexWeights[9] = new VertexWeight("lower_arm_right", "", 1.0f, 0.0f);
+		vertexWeights[10] = new VertexWeight("lower_arm_right", "", 1.0f, 0.0f);
+		vertexWeights[11] = new VertexWeight("lower_arm_right", "upper_arm_right", 0.5f, 0.5f);
+		vertexWeights[12] = new VertexWeight("collar_right", "upper_arm_right", 0.5f, 0.5f);
+		vertexWeights[13] = new VertexWeight("collar_right", "spine", 0.7f, 0.3f);
+		vertexWeights[14] = new VertexWeight("neck", "", 1.0f, 0.0f);
+
+		// left
+		vertexWeights[28] = new VertexWeight("upper_leg_left", "lower_leg_left", 0.9f, 0.1f);
+		vertexWeights[27] = new VertexWeight("lower_leg_left", "", 1, 0);
+		vertexWeights[26] = new VertexWeight("lower_leg_left", "", 1, 0); 
+		vertexWeights[25] = new VertexWeight("upper_leg_left", "lower_leg_left", 0.9f, 0.1f);
+		vertexWeights[24] = new VertexWeight("upper_leg_left", "root", 0.9f, 0.1f);
+		vertexWeights[23] = new VertexWeight("root", "spine", 0.5f, 0.5f);
+		vertexWeights[22] = new VertexWeight("collar_left", "upper_arm_left", 0.7f, 0.3f);
+		vertexWeights[21] = new VertexWeight("lower_arm_left", "upper_arm_left", 0.5f, 0.5f);
+		vertexWeights[20] = new VertexWeight("lower_arm_left", "", 1.0f, 0.0f);
+		vertexWeights[19] = new VertexWeight("lower_arm_left", "", 1.0f, 0.0f);
+		vertexWeights[18] = new VertexWeight("lower_arm_left", "upper_arm_left", 0.5f, 0.5f);
+		vertexWeights[17] = new VertexWeight("collar_left", "upper_arm_left", 0.5f, 0.5f);
+		vertexWeights[16] = new VertexWeight("collar_left", "spine", 0.7f, 0.3f);
+		vertexWeights[15] = new VertexWeight("neck", "", 1.0f, 0.0f);
+	
 	}
 
 	/**
