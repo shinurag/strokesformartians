@@ -22,7 +22,9 @@ import android.widget.LinearLayout.LayoutParams;
 public class BrushSizeDialog extends Dialog{
 	final float MAX_SIZE = 132.0f;
 	final float MIN_SIZE = 6.0f;
-//	private OnBrushSizeChangeListener mListener;
+	float currentSize = 20.0f;
+	private OnBrushSizeChangeListener mListener;
+	private View mySizePickerView;
 	
 	private float mInitialSize = 12.0f;
 	
@@ -38,10 +40,10 @@ public class BrushSizeDialog extends Dialog{
     	private OnBrushSizeChangeListener mListener;
     	private Paint mPaint;
     	
-//    	SizePickerView(Context c, OnBrushSizeChangeListener l, float s) {
-    	SizePickerView(Context c) {	
+    	SizePickerView(Context c, OnBrushSizeChangeListener l, float s) {
+//    	SizePickerView(Context c) {	
     		super(c);
-//    		mListener = l;
+    		mListener = l;
 
         	mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         	mPaint.setStyle(Paint.Style.STROKE);
@@ -61,20 +63,22 @@ public class BrushSizeDialog extends Dialog{
 //	
 	public BrushSizeDialog(Context context, OnBrushSizeChangeListener bsListener, float size) {
 		super(context);
-		//mListener = bsListener;
+		mListener = bsListener;
 		mInitialSize = size;
 	}
 
 	protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
                       
-//        OnBrushSizeChangeListener l = new OnBrushSizeChangeListener() {
-//			public void onBrushSizeChange(float size) {
-//				mListener.onBrushSizeChange(size);
-//				dismiss();
-//			}
-//        };
+        OnBrushSizeChangeListener l = new OnBrushSizeChangeListener() {
+			public void onBrushSizeChange(float size) {
+				mListener.onBrushSizeChange(size);
+				dismiss();
+			}
+        };
        
+        mySizePickerView = new SizePickerView(getContext(), mListener, currentSize);
+        
 		LinearLayout myLayout = new LinearLayout(getContext());
 		myLayout.setMinimumWidth(200);      
 		
@@ -97,11 +101,10 @@ public class BrushSizeDialog extends Dialog{
 		
 		Button helloButton = new Button(getContext());
 		helloButton.setText("Ok");
-		myLayout.addView(helloButton);
-		
-		myLayout.addView(new SizePickerView(getContext()));
-		//setContentView(myLayout);
-		setContentView(new SizePickerView(getContext()));
+		myLayout.addView(helloButton);		
+		  
+		myLayout.addView(mySizePickerView);
+		setContentView(mySizePickerView);
 		
 		setTitle("Pick a brush size, fool!");        
     }
