@@ -459,8 +459,8 @@ public class MartianAnimator
 		assert frame<leroy.numFrames;*7
 		
 		/** @TODO could quite easily support a variable number of bones here */
-		float [] tmpVertex0 = new float[3];
-		float [] tmpVertex1 = new float[3];
+		float [] tmpVertex0 = new float[] {0,0,0};
+		float [] tmpVertex1 = new float[] {0,0,0};
 		
 		int intframe = (int)frame;
 		
@@ -471,7 +471,7 @@ public class MartianAnimator
 		{		
 			if(vertexWeights[vertex].bone[0] != null)
 				getTransformedVertex(tmpVertex0, 0, vertex, vertexWeights[vertex].bone[0], intframe);
-			/** @TODO array out of bounds exception here, why? */
+			
 			if(vertexWeights[vertex].bone[1] != null)
 				getTransformedVertex(tmpVertex1, 0, vertex, vertexWeights[vertex].bone[1], intframe);
 			
