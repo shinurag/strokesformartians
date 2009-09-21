@@ -18,9 +18,12 @@ package se.combitech.strokesformartians.drawing;
 
 //package com.example.android.apis.graphics;
 
+import se.combitech.strokesformartians.SFMIntentFactory;
+import se.combitech.strokesformartians.dancing.Dancer;
 import se.combitech.strokesformartians.drawing.BrushSizeDialog.OnBrushSizeChangeListener;
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BlurMaskFilter;
 import android.graphics.Canvas;
@@ -40,33 +43,37 @@ public class FingerPaint extends GraphicsActivity
         implements ColorPickerDialog.OnColorChangedListener, OnBrushSizeChangeListener {    
 
 	private float mBrushSize = 12.0f;
-	
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(new MyView(this));
-
-        mPaint = new Paint();
-        mPaint.setAntiAlias(true);
-        mPaint.setDither(true);
-        mPaint.setColor(0xFFFF0000);
-        mPaint.setStyle(Paint.Style.STROKE);
-        mPaint.setStrokeJoin(Paint.Join.ROUND);
-        mPaint.setStrokeCap(Paint.Cap.ROUND);
-        mPaint.setStrokeWidth(mBrushSize);
-        
-        mEmboss = new EmbossMaskFilter(new float[] { 1, 1, 1 },
-                                       0.4f, 6, 3.5f);
-
-        mBlur = new BlurMaskFilter(8, BlurMaskFilter.Blur.NORMAL);
-    }
-    
     private Paint       mPaint;
     private MaskFilter  mEmboss;
     private MaskFilter  mBlur;
+    public MyView myView;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        myView = new MyView( this );
+        setContentView( myView );
+
+        mPaint = new Paint();
+        mPaint.setAntiAlias( true );
+        mPaint.setDither( true );
+        mPaint.setColor( 0xFFFF0000);
+        mPaint.setStyle( Paint.Style.STROKE );
+        mPaint.setStrokeJoin( Paint.Join.ROUND );
+        mPaint.setStrokeCap( Paint.Cap.ROUND );
+        mPaint.setStrokeWidth( mBrushSize );
+        
+        mEmboss = new EmbossMaskFilter(	new float[] { 1, 1, 1 },
+                                       	0.4f,
+                                       	6,
+                                       	3.5f );
+
+        mBlur = new BlurMaskFilter(	8, 
+        							BlurMaskFilter.Blur.NORMAL );
+    }
     
-    public void colorChanged(int color) {
-        mPaint.setColor(color);
+    public void colorChanged( int color ) {
+        mPaint.setColor( color );
     }
 
     public class MyView extends View {
@@ -82,10 +89,13 @@ public class FingerPaint extends GraphicsActivity
         public MyView(Context c) {
             super(c);
             
-            mBitmap = Bitmap.createBitmap(320, 480, Bitmap.Config.ARGB_8888);
-            mCanvas = new Canvas(mBitmap);
+            mBitmap = Bitmap.createBitmap(	320, 
+            								480, 
+            								Bitmap.Config.ARGB_8888 );
+            
+            mCanvas = new Canvas( mBitmap );
             mPath = new Path();
-            mBitmapPaint = new Paint(Paint.DITHER_FLAG);
+            mBitmapPaint = new Paint( Paint.DITHER_FLAG );
         }
 
         @Override
@@ -123,7 +133,7 @@ public class FingerPaint extends GraphicsActivity
         private void touch_up() {
             mPath.lineTo(mX, mY);
             // commit the path to our offscreen
-            mCanvas.drawPath(mPath, mPaint);
+            mCanvas.drawPath( mPath, mPaint );
             // kill this so we don't double draw
             mPath.reset();
         }
@@ -153,15 +163,17 @@ public class FingerPaint extends GraphicsActivity
     
     private static final int COLOR_MENU_ID = Menu.FIRST;
     private static final int EMBOSS_MENU_ID = Menu.FIRST + 1;
-    private static final int BLUR_MENU_ID = Menu.FIRST + 2;
-    private static final int ERASE_MENU_ID = Menu.FIRST + 3;
-    private static final int SIZE_MENU_ID = Menu.FIRST + 4;
+    private static final int SAVE_MENU_ID = Menu.FIRST + 2;
+    private static final int BLUR_MENU_ID = Menu.FIRST + 3;
+    private static final int ERASE_MENU_ID = Menu.FIRST + 4;
+    private static final int SIZE_MENU_ID = Menu.FIRST + 5;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
         
         menu.add(0, COLOR_MENU_ID, 0, "Color").setShortcut('3', 'c');
+        menu.add(0, SAVE_MENU_ID, 0, "Save").setShortcut('3', 's');
         menu.add(0, EMBOSS_MENU_ID, 0, "Emboss").setShortcut('4', 's');
         menu.add(0, BLUR_MENU_ID, 0, "Blur").setShortcut('5', 'z');
         menu.add(0, ERASE_MENU_ID, 0, "Erase").setShortcut('5', 'z');
@@ -191,7 +203,16 @@ public class FingerPaint extends GraphicsActivity
 
         switch (item.getItemId()) {
             case COLOR_MENU_ID:
-                new ColorPickerDialog(this, this, mPaint.getColor()).show();
+                new ColorPickerDialog( 	this, 
+                						this, 
+            							mPaint.getColor() ).show();
+                return true;
+            case SAVE_MENU_ID:
+        		Intent intent = new Intent( this, Dancer.class );
+        		Bitmap b = Bitmap.createScaledBitmap( myView.mBitmap, 100, 150, false );
+        		intent.putExtra( "newBitmap", b );
+        		
+            	startActivity( intent );
                 return true;
             case EMBOSS_MENU_ID:
                 if (mPaint.getMaskFilter() != mEmboss) {

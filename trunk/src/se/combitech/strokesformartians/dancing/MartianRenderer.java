@@ -32,12 +32,14 @@ class MartianRenderer implements GLSurfaceView.Renderer {
 	private float[] mTexCoordBuffer;
 	private byte[] mIndexBuffer;
 	private long startTime;
+	private Bitmap m_textureBitmap;
     
-	public MartianRenderer( Context context, boolean useTranslucentBackground, boolean debugFlag ) {
+	public MartianRenderer( Context context, boolean useTranslucentBackground, boolean debugFlag, Bitmap textureBitmap ) {
         mTranslucentBackground = useTranslucentBackground;
 		m_animator = new MartianAnimator( );
 		m_textureIds = new int[1];
 		m_context = context;
+		m_textureBitmap = textureBitmap;
 		
 		startTime = Calendar.getInstance().getTimeInMillis();
 		
@@ -75,7 +77,16 @@ class MartianRenderer implements GLSurfaceView.Renderer {
 
 	private void initTextures( GL10 gl )
 	{
-    		Bitmap bitmap = BitmapFactory.decodeResource( m_context.getResources(), R.drawable.flowers );
+			Bitmap bitmap;
+			if( m_textureBitmap == null )
+			{
+				bitmap = BitmapFactory.decodeResource( m_context.getResources(), R.drawable.flowers );
+			}
+			else
+			{
+				bitmap = m_textureBitmap;
+				m_textureBitmap = null;
+			}
     				
     		gl.glGenTextures( 	1, 
     							m_textureIds,
@@ -91,7 +102,6 @@ class MartianRenderer implements GLSurfaceView.Renderer {
     
     private void renderMartianAnimator( GL10 gl , long time)
     {
-
 		gl.glColor4f( 0, 1, 1, 1 );
         gl.glEnable( GL10.GL_TEXTURE_2D );
         
@@ -107,7 +117,9 @@ class MartianRenderer implements GLSurfaceView.Renderer {
 						GL10.GL_TEXTURE_ENV_MODE, 
 						GL10.GL_DECAL );
 
-		gl.glNormal3f(0,0, 1);
+		gl.glNormal3f( 	0,
+						0,
+						1 );
 		
 		// divide time by 33 to get a fps of 30
 		m_animator.getFrame( time / 33f, mVertexBuffer, mTexCoordBuffer, mIndexBuffer );
