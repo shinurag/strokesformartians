@@ -7,6 +7,7 @@ import se.combitech.strokesformartians.drawing.FingerPaint;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.view.Menu;
@@ -28,16 +29,24 @@ public class Dancer extends Activity {
 	private MenuItem creditsMenuItem;
 	private MenuItem exitMenuItem;
 	
+	private Bitmap mTextureBitmap = null;
+	
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected void onCreate( Bundle savedInstanceState )
+    {
+        super.onCreate( savedInstanceState );
 
+        if( this.getIntent().getParcelableExtra( "newBitmap" ) != null )
+        {
+        	mTextureBitmap = (Bitmap) this.getIntent().getParcelableExtra( "newBitmap" );
+        }
+        
         init();
         
         // Create our Preview view and set it as the content of our
         // Activity
         mGLSurfaceView = new GLSurfaceView(this);
-        mGLSurfaceView.setRenderer( new MartianRenderer( this, false, true ) );
+        mGLSurfaceView.setRenderer( new MartianRenderer( this, false, true, mTextureBitmap ) );
 //        mGLSurfaceView.setGLWrapper( 
 //    		new GLWrapper()
 //	        { 
@@ -110,6 +119,7 @@ public class Dancer extends Activity {
     	case StrokesForMartians.MENU_DRAW_ID:
     		startActivity( paintIntent );
     		result = true;
+    		finish();
     		break;
 
     	case StrokesForMartians.MENU_CREDITS_ID:
