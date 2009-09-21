@@ -11,18 +11,18 @@ public class MartianAnimator
 	{
 		public Leroy2.Bone [] bone;
 		public float [] weight;
-		
+
 		public VertexWeight(String bone0, String bone1, float weight0, float weight1)
 		{
 			assert bone0.length() > 0;
 
 			bone = new Leroy2.Bone[2];
-		
+			
 			if(bone1.length() > 0)
 			{
 				assert weight1 != 0;
 				bone[1] = leroy.bones.get(bone1);
-			}
+        	}
 			
 			bone[0] = leroy.bones.get(bone0);
 			
@@ -49,10 +49,10 @@ public class MartianAnimator
 	public int numIndices;
 	public int numTriangles;
 	
-	public static float fatness = 1;
-	public static float leglength = 1;
-	public static float armlength = 1;
-	public static float headlength = 0.5f;
+	public static float fatness = 5;
+	public static float leglength = 2;
+	public static float armlength = 2;
+	public static float headlength = -1f;
 	
 	/** @TODO change these values */
 //	public static float textureBottom = 0;
@@ -83,6 +83,7 @@ public class MartianAnimator
 		generateVertexWeight();
 	}
 	
+
 	/**
 	 * Generate the vertex weights for the outline.
 	 */
@@ -134,149 +135,149 @@ public class MartianAnimator
 		int index = 0;
 	
 		// 0
-		vertexBuffer[index++] = leroy.bones.get("root").restPose[0];
-		vertexBuffer[index++] = leroy.bones.get("root").restPose[1] - 0.1f * fatness;
-		vertexBuffer[index++] = leroy.bones.get("root").restPose[2];
+		vertexBuffer[index++] = leroy.bones.get("root").restPose[12];
+		vertexBuffer[index++] = leroy.bones.get("root").restPose[13] - 0.1f * fatness;
+		vertexBuffer[index++] = leroy.bones.get("root").restPose[14];
 		
 		// 1
-		vertexBuffer[index++] = leroy.bones.get("lower_leg_right").restPose[0] + 0.1f * fatness;
-		vertexBuffer[index++] = leroy.bones.get("lower_leg_right").restPose[1];
-		vertexBuffer[index++] = leroy.bones.get("lower_leg_right").restPose[2];
+		vertexBuffer[index++] = leroy.bones.get("lower_leg_right").restPose[12] + 0.1f * fatness;
+		vertexBuffer[index++] = leroy.bones.get("lower_leg_right").restPose[13];
+		vertexBuffer[index++] = leroy.bones.get("lower_leg_right").restPose[14];
 	
 		// 2
-		vertexBuffer[index++] = leroy.bones.get("lower_leg_right").restPose[0] + 0.1f * fatness;
-		vertexBuffer[index++] = leroy.bones.get("lower_leg_right").restPose[1] - leglength;
-		vertexBuffer[index++] = leroy.bones.get("lower_leg_right").restPose[2];
+		vertexBuffer[index++] = leroy.bones.get("lower_leg_right").restPose[12] + 0.1f * fatness;
+		vertexBuffer[index++] = leroy.bones.get("lower_leg_right").restPose[13] - leglength;
+		vertexBuffer[index++] = leroy.bones.get("lower_leg_right").restPose[14];
 
 		// 3
-		vertexBuffer[index++] = leroy.bones.get("lower_leg_right").restPose[0] - 0.1f * fatness;
-		vertexBuffer[index++] = leroy.bones.get("lower_leg_right").restPose[1] - leglength;
-		vertexBuffer[index++] = leroy.bones.get("lower_leg_right").restPose[2];
+		vertexBuffer[index++] = leroy.bones.get("lower_leg_right").restPose[12] - 0.1f * fatness;
+		vertexBuffer[index++] = leroy.bones.get("lower_leg_right").restPose[13] - leglength;
+		vertexBuffer[index++] = leroy.bones.get("lower_leg_right").restPose[14];
 		
 		// 4
-		vertexBuffer[index++] = leroy.bones.get("lower_leg_right").restPose[0] - 0.1f * fatness;
-		vertexBuffer[index++] = leroy.bones.get("lower_leg_right").restPose[1];
-		vertexBuffer[index++] = leroy.bones.get("lower_leg_right").restPose[2];
+		vertexBuffer[index++] = leroy.bones.get("lower_leg_right").restPose[12] - 0.1f * fatness;
+		vertexBuffer[index++] = leroy.bones.get("lower_leg_right").restPose[13];
+		vertexBuffer[index++] = leroy.bones.get("lower_leg_right").restPose[14];
 		
 		// 5
-		vertexBuffer[index++] = leroy.bones.get("upper_leg_right").restPose[0] - 0.1f * fatness;
-		vertexBuffer[index++] = leroy.bones.get("upper_leg_right").restPose[1];
-		vertexBuffer[index++] = leroy.bones.get("upper_leg_right").restPose[2];
+		vertexBuffer[index++] = leroy.bones.get("upper_leg_right").restPose[12] - 0.1f * fatness;
+		vertexBuffer[index++] = leroy.bones.get("upper_leg_right").restPose[13];
+		vertexBuffer[index++] = leroy.bones.get("upper_leg_right").restPose[14];
 		
 		// 6
-		vertexBuffer[index++] = leroy.bones.get("spine").restPose[0] - 0.4f * fatness;
-		vertexBuffer[index++] = leroy.bones.get("spine").restPose[1];
-		vertexBuffer[index++] = leroy.bones.get("spine").restPose[2];		
+		vertexBuffer[index++] = leroy.bones.get("spine").restPose[12] - 0.4f * fatness;
+		vertexBuffer[index++] = leroy.bones.get("spine").restPose[13];
+		vertexBuffer[index++] = leroy.bones.get("spine").restPose[14];		
 
 		// 7
-		vertexBuffer[index++] = leroy.bones.get("upper_arm_right").restPose[0] + 0.05f;
-		vertexBuffer[index++] = leroy.bones.get("upper_arm_right").restPose[1] - 0.1f * fatness;
-		vertexBuffer[index++] = leroy.bones.get("upper_arm_right").restPose[2];				
+		vertexBuffer[index++] = leroy.bones.get("upper_arm_right").restPose[12] + 0.05f;
+		vertexBuffer[index++] = leroy.bones.get("upper_arm_right").restPose[13] - 0.1f * fatness;
+		vertexBuffer[index++] = leroy.bones.get("upper_arm_right").restPose[14];				
 
 		// 8
-		vertexBuffer[index++] = leroy.bones.get("lower_arm_right").restPose[0] + 0.1f * fatness;
-		vertexBuffer[index++] = leroy.bones.get("lower_arm_right").restPose[1];
-		vertexBuffer[index++] = leroy.bones.get("lower_arm_right").restPose[2];						
+		vertexBuffer[index++] = leroy.bones.get("lower_arm_right").restPose[12] + 0.1f * fatness;
+		vertexBuffer[index++] = leroy.bones.get("lower_arm_right").restPose[13];
+		vertexBuffer[index++] = leroy.bones.get("lower_arm_right").restPose[14];						
 
 		// 9
-		vertexBuffer[index++] = leroy.bones.get("lower_arm_right").restPose[0] + 0.1f * fatness;
-		vertexBuffer[index++] = leroy.bones.get("lower_arm_right").restPose[1] - armlength;
-		vertexBuffer[index++] = leroy.bones.get("lower_arm_right").restPose[2];	
+		vertexBuffer[index++] = leroy.bones.get("lower_arm_right").restPose[12] + 0.1f * fatness;
+		vertexBuffer[index++] = leroy.bones.get("lower_arm_right").restPose[13] - armlength;
+		vertexBuffer[index++] = leroy.bones.get("lower_arm_right").restPose[14];	
 		
 		// 10
-		vertexBuffer[index++] = leroy.bones.get("lower_arm_right").restPose[0] - 0.1f * fatness;
-		vertexBuffer[index++] = leroy.bones.get("lower_arm_right").restPose[1] - armlength;
-		vertexBuffer[index++] = leroy.bones.get("lower_arm_right").restPose[2];		
+		vertexBuffer[index++] = leroy.bones.get("lower_arm_right").restPose[12] - 0.1f * fatness;
+		vertexBuffer[index++] = leroy.bones.get("lower_arm_right").restPose[13] - armlength;
+		vertexBuffer[index++] = leroy.bones.get("lower_arm_right").restPose[14];		
 		
 		// 11
-		vertexBuffer[index++] = leroy.bones.get("lower_arm_right").restPose[0] - 0.1f * fatness;
-		vertexBuffer[index++] = leroy.bones.get("lower_arm_right").restPose[1];
-		vertexBuffer[index++] = leroy.bones.get("lower_arm_right").restPose[2];				
+		vertexBuffer[index++] = leroy.bones.get("lower_arm_right").restPose[12] - 0.1f * fatness;
+		vertexBuffer[index++] = leroy.bones.get("lower_arm_right").restPose[13];
+		vertexBuffer[index++] = leroy.bones.get("lower_arm_right").restPose[14];				
 
 		// 12
-		vertexBuffer[index++] = leroy.bones.get("upper_arm_right").restPose[0] - 0.05f;
-		vertexBuffer[index++] = leroy.bones.get("upper_arm_right").restPose[1] + 0.1f * fatness;
-		vertexBuffer[index++] = leroy.bones.get("upper_arm_right").restPose[2];		
+		vertexBuffer[index++] = leroy.bones.get("upper_arm_right").restPose[12] - 0.05f;
+		vertexBuffer[index++] = leroy.bones.get("upper_arm_right").restPose[13] + 0.1f * fatness;
+		vertexBuffer[index++] = leroy.bones.get("upper_arm_right").restPose[14];		
 
 		// 13
-		vertexBuffer[index++] = leroy.bones.get("neck").restPose[0] - 0.1f * fatness;
-		vertexBuffer[index++] = leroy.bones.get("neck").restPose[1] + 0.05f;
-		vertexBuffer[index++] = leroy.bones.get("neck").restPose[2];				
+		vertexBuffer[index++] = leroy.bones.get("neck").restPose[12] - 0.1f * fatness;
+		vertexBuffer[index++] = leroy.bones.get("neck").restPose[13] + 0.05f;
+		vertexBuffer[index++] = leroy.bones.get("neck").restPose[14];				
 
 		// 14
-		vertexBuffer[index++] = leroy.bones.get("neck").restPose[0] - 0.1f * fatness + 0.05f;
-		vertexBuffer[index++] = leroy.bones.get("neck").restPose[1] + headlength;
-		vertexBuffer[index++] = leroy.bones.get("neck").restPose[2];	
+		vertexBuffer[index++] = leroy.bones.get("neck").restPose[12] - 0.1f * fatness + 0.05f;
+		vertexBuffer[index++] = leroy.bones.get("neck").restPose[13] + headlength;
+		vertexBuffer[index++] = leroy.bones.get("neck").restPose[14];	
 
 		// 15
-		vertexBuffer[index++] = leroy.bones.get("neck").restPose[0] + 0.1f * fatness - 0.05f;
-		vertexBuffer[index++] = leroy.bones.get("neck").restPose[1] + headlength;
-		vertexBuffer[index++] = leroy.bones.get("neck").restPose[2];		
+		vertexBuffer[index++] = leroy.bones.get("neck").restPose[12] + 0.1f * fatness - 0.05f;
+		vertexBuffer[index++] = leroy.bones.get("neck").restPose[13] + headlength;
+		vertexBuffer[index++] = leroy.bones.get("neck").restPose[14];		
 		
 		// 16
-		vertexBuffer[index++] = leroy.bones.get("neck").restPose[0] + 0.1f * fatness;
-		vertexBuffer[index++] = leroy.bones.get("neck").restPose[1] + 0.05f;
-		vertexBuffer[index++] = leroy.bones.get("neck").restPose[2];
+		vertexBuffer[index++] = leroy.bones.get("neck").restPose[12] + 0.1f * fatness;
+		vertexBuffer[index++] = leroy.bones.get("neck").restPose[13] + 0.05f;
+		vertexBuffer[index++] = leroy.bones.get("neck").restPose[14];
 		
 		// 17
-		vertexBuffer[index++] = leroy.bones.get("upper_arm_left").restPose[0] + 0.05f;
-		vertexBuffer[index++] = leroy.bones.get("upper_arm_left").restPose[1] + 0.1f * fatness;
-		vertexBuffer[index++] = leroy.bones.get("upper_arm_left").restPose[2];		
+		vertexBuffer[index++] = leroy.bones.get("upper_arm_left").restPose[12] + 0.05f;
+		vertexBuffer[index++] = leroy.bones.get("upper_arm_left").restPose[13] + 0.1f * fatness;
+		vertexBuffer[index++] = leroy.bones.get("upper_arm_left").restPose[14];		
 		
 		// 18
-		vertexBuffer[index++] = leroy.bones.get("lower_arm_left").restPose[0] + 0.1f * fatness;
-		vertexBuffer[index++] = leroy.bones.get("lower_arm_left").restPose[1];
-		vertexBuffer[index++] = leroy.bones.get("lower_arm_left").restPose[2];			
+		vertexBuffer[index++] = leroy.bones.get("lower_arm_left").restPose[12] + 0.1f * fatness;
+		vertexBuffer[index++] = leroy.bones.get("lower_arm_left").restPose[13];
+		vertexBuffer[index++] = leroy.bones.get("lower_arm_left").restPose[14];			
 		
 		// 19
-		vertexBuffer[index++] = leroy.bones.get("lower_arm_left").restPose[0] + 0.1f * fatness;
-		vertexBuffer[index++] = leroy.bones.get("lower_arm_left").restPose[1] - armlength;
-		vertexBuffer[index++] = leroy.bones.get("lower_arm_left").restPose[2];			
+		vertexBuffer[index++] = leroy.bones.get("lower_arm_left").restPose[12] + 0.1f * fatness;
+		vertexBuffer[index++] = leroy.bones.get("lower_arm_left").restPose[13] - armlength;
+		vertexBuffer[index++] = leroy.bones.get("lower_arm_left").restPose[14];			
 		
 		// 20
-		vertexBuffer[index++] = leroy.bones.get("lower_arm_left").restPose[0] - 0.1f * fatness;
-		vertexBuffer[index++] = leroy.bones.get("lower_arm_left").restPose[1] - armlength;
-		vertexBuffer[index++] = leroy.bones.get("lower_arm_left").restPose[2];	
+		vertexBuffer[index++] = leroy.bones.get("lower_arm_left").restPose[12] - 0.1f * fatness;
+		vertexBuffer[index++] = leroy.bones.get("lower_arm_left").restPose[13] - armlength;
+		vertexBuffer[index++] = leroy.bones.get("lower_arm_left").restPose[14];	
 		
 		// 21
-		vertexBuffer[index++] = leroy.bones.get("lower_arm_left").restPose[0] - 0.1f * fatness;
-		vertexBuffer[index++] = leroy.bones.get("lower_arm_left").restPose[1];
-		vertexBuffer[index++] = leroy.bones.get("lower_arm_left").restPose[2];
+		vertexBuffer[index++] = leroy.bones.get("lower_arm_left").restPose[12] - 0.1f * fatness;
+		vertexBuffer[index++] = leroy.bones.get("lower_arm_left").restPose[13];
+		vertexBuffer[index++] = leroy.bones.get("lower_arm_left").restPose[14];
 		
 		// 22
-		vertexBuffer[index++] = leroy.bones.get("lower_arm_left").restPose[0] - 0.05f;
-		vertexBuffer[index++] = leroy.bones.get("lower_arm_left").restPose[1] - 0.1f * fatness;
-		vertexBuffer[index++] = leroy.bones.get("lower_arm_left").restPose[2];
+		vertexBuffer[index++] = leroy.bones.get("lower_arm_left").restPose[12] - 0.05f;
+		vertexBuffer[index++] = leroy.bones.get("lower_arm_left").restPose[13] - 0.1f * fatness;
+		vertexBuffer[index++] = leroy.bones.get("lower_arm_left").restPose[14];
 		
 		// 23
-		vertexBuffer[index++] = leroy.bones.get("spine").restPose[0] + 0.4f * fatness;
-		vertexBuffer[index++] = leroy.bones.get("spine").restPose[1];
-		vertexBuffer[index++] = leroy.bones.get("spine").restPose[2];		
+		vertexBuffer[index++] = leroy.bones.get("spine").restPose[12] + 0.4f * fatness;
+		vertexBuffer[index++] = leroy.bones.get("spine").restPose[13];
+		vertexBuffer[index++] = leroy.bones.get("spine").restPose[14];		
 		
 		// 24
-		vertexBuffer[index++] = leroy.bones.get("upper_leg_left").restPose[0] + 0.1f * fatness;
-		vertexBuffer[index++] = leroy.bones.get("upper_leg_left").restPose[1];
-		vertexBuffer[index++] = leroy.bones.get("upper_leg_left").restPose[2];		
+		vertexBuffer[index++] = leroy.bones.get("upper_leg_left").restPose[12] + 0.1f * fatness;
+		vertexBuffer[index++] = leroy.bones.get("upper_leg_left").restPose[13];
+		vertexBuffer[index++] = leroy.bones.get("upper_leg_left").restPose[14];		
 		
 		// 25
-		vertexBuffer[index++] = leroy.bones.get("lower_leg_left").restPose[0] + 0.1f * fatness;
-		vertexBuffer[index++] = leroy.bones.get("lower_leg_left").restPose[1];
-		vertexBuffer[index++] = leroy.bones.get("lower_leg_left").restPose[2];		
+		vertexBuffer[index++] = leroy.bones.get("lower_leg_left").restPose[12] + 0.1f * fatness;
+		vertexBuffer[index++] = leroy.bones.get("lower_leg_left").restPose[13];
+		vertexBuffer[index++] = leroy.bones.get("lower_leg_left").restPose[14];		
 		
 		// 26
-		vertexBuffer[index++] = leroy.bones.get("lower_leg_left").restPose[0] + 0.1f * fatness;
-		vertexBuffer[index++] = leroy.bones.get("lower_leg_left").restPose[1] - leglength;
-		vertexBuffer[index++] = leroy.bones.get("lower_leg_left").restPose[2];		
+		vertexBuffer[index++] = leroy.bones.get("lower_leg_left").restPose[12] + 0.1f * fatness;
+		vertexBuffer[index++] = leroy.bones.get("lower_leg_left").restPose[13] - leglength;
+		vertexBuffer[index++] = leroy.bones.get("lower_leg_left").restPose[14];		
 		
 		// 27
-		vertexBuffer[index++] = leroy.bones.get("lower_leg_left").restPose[0] - 0.1f * fatness;
-		vertexBuffer[index++] = leroy.bones.get("lower_leg_left").restPose[1] - leglength;
-		vertexBuffer[index++] = leroy.bones.get("lower_leg_left").restPose[2];		
+		vertexBuffer[index++] = leroy.bones.get("lower_leg_left").restPose[12] - 0.1f * fatness;
+		vertexBuffer[index++] = leroy.bones.get("lower_leg_left").restPose[13] - leglength;
+		vertexBuffer[index++] = leroy.bones.get("lower_leg_left").restPose[14];		
 		
 		// 28
-		vertexBuffer[index++] = leroy.bones.get("lower_leg_left").restPose[0] - 0.1f * fatness;
-		vertexBuffer[index++] = leroy.bones.get("lower_leg_left").restPose[1];
-		vertexBuffer[index++] = leroy.bones.get("lower_leg_left").restPose[2];		
+		vertexBuffer[index++] = leroy.bones.get("lower_leg_left").restPose[12] - 0.1f * fatness;
+		vertexBuffer[index++] = leroy.bones.get("lower_leg_left").restPose[13];
+		vertexBuffer[index++] = leroy.bones.get("lower_leg_left").restPose[14];		
 	}
 	
 	/**
@@ -326,65 +327,65 @@ public class MartianAnimator
 	private void generateSkeleton()
 	{
 		int index = 0;
-		boneVertexBuffer[index++] = leroy.bones.get( "root" ).restPose[0];
-		boneVertexBuffer[index++] = leroy.bones.get( "root" ).restPose[1];
-		boneVertexBuffer[index++] = leroy.bones.get( "root" ).restPose[2];
+		boneVertexBuffer[index++] = leroy.bones.get( "root" ).restPose[12];
+		boneVertexBuffer[index++] = leroy.bones.get( "root" ).restPose[13];
+		boneVertexBuffer[index++] = leroy.bones.get( "root" ).restPose[14];
 
-		boneVertexBuffer[index++] = leroy.bones.get( "spine" ).restPose[0];
-		boneVertexBuffer[index++] = leroy.bones.get( "spine" ).restPose[1];
-		boneVertexBuffer[index++] = leroy.bones.get( "spine" ).restPose[2];
+		boneVertexBuffer[index++] = leroy.bones.get( "spine" ).restPose[12];
+		boneVertexBuffer[index++] = leroy.bones.get( "spine" ).restPose[13];
+		boneVertexBuffer[index++] = leroy.bones.get( "spine" ).restPose[14];
 
-		boneVertexBuffer[index++] = leroy.bones.get( "neck" ).restPose[0];
-		boneVertexBuffer[index++] = leroy.bones.get( "neck" ).restPose[1];
-		boneVertexBuffer[index++] = leroy.bones.get( "neck" ).restPose[2];
+		boneVertexBuffer[index++] = leroy.bones.get( "neck" ).restPose[12];
+		boneVertexBuffer[index++] = leroy.bones.get( "neck" ).restPose[13];
+		boneVertexBuffer[index++] = leroy.bones.get( "neck" ).restPose[14];
 
-		boneVertexBuffer[index++] = leroy.bones.get( "collar_left" ).restPose[0];
-		boneVertexBuffer[index++] = leroy.bones.get( "collar_left" ).restPose[1];
-		boneVertexBuffer[index++] = leroy.bones.get( "collar_left" ).restPose[2];
+		boneVertexBuffer[index++] = leroy.bones.get( "collar_left" ).restPose[12];
+		boneVertexBuffer[index++] = leroy.bones.get( "collar_left" ).restPose[13];
+		boneVertexBuffer[index++] = leroy.bones.get( "collar_left" ).restPose[14];
 
-		boneVertexBuffer[index++] = leroy.bones.get( "upper_arm_left" ).restPose[0];
-		boneVertexBuffer[index++] = leroy.bones.get( "upper_arm_left" ).restPose[1];
-		boneVertexBuffer[index++] = leroy.bones.get( "upper_arm_left" ).restPose[2];
+		boneVertexBuffer[index++] = leroy.bones.get( "upper_arm_left" ).restPose[12];
+		boneVertexBuffer[index++] = leroy.bones.get( "upper_arm_left" ).restPose[13];
+		boneVertexBuffer[index++] = leroy.bones.get( "upper_arm_left" ).restPose[14];
 
-		boneVertexBuffer[index++] = leroy.bones.get( "lower_arm_left" ).restPose[0];
-		boneVertexBuffer[index++] = leroy.bones.get( "lower_arm_left" ).restPose[1];
-		boneVertexBuffer[index++] = leroy.bones.get( "lower_arm_left" ).restPose[2];
+		boneVertexBuffer[index++] = leroy.bones.get( "lower_arm_left" ).restPose[12];
+		boneVertexBuffer[index++] = leroy.bones.get( "lower_arm_left" ).restPose[13];
+		boneVertexBuffer[index++] = leroy.bones.get( "lower_arm_left" ).restPose[14];
 		
-		boneVertexBuffer[index++] = leroy.bones.get( "collar_right" ).restPose[0];
-		boneVertexBuffer[index++] = leroy.bones.get( "collar_right" ).restPose[1];
-		boneVertexBuffer[index++] = leroy.bones.get( "collar_right" ).restPose[2];
+		boneVertexBuffer[index++] = leroy.bones.get( "collar_right" ).restPose[12];
+		boneVertexBuffer[index++] = leroy.bones.get( "collar_right" ).restPose[13];
+		boneVertexBuffer[index++] = leroy.bones.get( "collar_right" ).restPose[14];
 
-		boneVertexBuffer[index++] = leroy.bones.get( "upper_arm_right" ).restPose[0];
-		boneVertexBuffer[index++] = leroy.bones.get( "upper_arm_right" ).restPose[1];
-		boneVertexBuffer[index++] = leroy.bones.get( "upper_arm_right" ).restPose[2];
+		boneVertexBuffer[index++] = leroy.bones.get( "upper_arm_right" ).restPose[12];
+		boneVertexBuffer[index++] = leroy.bones.get( "upper_arm_right" ).restPose[13];
+		boneVertexBuffer[index++] = leroy.bones.get( "upper_arm_right" ).restPose[14];
 
-		boneVertexBuffer[index++] = leroy.bones.get( "lower_arm_right" ).restPose[0];
-		boneVertexBuffer[index++] = leroy.bones.get( "lower_arm_right" ).restPose[1];
-		boneVertexBuffer[index++] = leroy.bones.get( "lower_arm_right" ).restPose[2];
+		boneVertexBuffer[index++] = leroy.bones.get( "lower_arm_right" ).restPose[12];
+		boneVertexBuffer[index++] = leroy.bones.get( "lower_arm_right" ).restPose[13];
+		boneVertexBuffer[index++] = leroy.bones.get( "lower_arm_right" ).restPose[14];
 
-		boneVertexBuffer[index++] = leroy.bones.get( "pelvic_left" ).restPose[0];
-		boneVertexBuffer[index++] = leroy.bones.get( "pelvic_left" ).restPose[1];
-		boneVertexBuffer[index++] = leroy.bones.get( "pelvic_left" ).restPose[2];
+		boneVertexBuffer[index++] = leroy.bones.get( "pelvic_left" ).restPose[12];
+		boneVertexBuffer[index++] = leroy.bones.get( "pelvic_left" ).restPose[13];
+		boneVertexBuffer[index++] = leroy.bones.get( "pelvic_left" ).restPose[14];
 
-		boneVertexBuffer[index++] = leroy.bones.get( "upper_leg_left" ).restPose[0];
-		boneVertexBuffer[index++] = leroy.bones.get( "upper_leg_left" ).restPose[1];
-		boneVertexBuffer[index++] = leroy.bones.get( "upper_leg_left" ).restPose[2];
+		boneVertexBuffer[index++] = leroy.bones.get( "upper_leg_left" ).restPose[12];
+		boneVertexBuffer[index++] = leroy.bones.get( "upper_leg_left" ).restPose[13];
+		boneVertexBuffer[index++] = leroy.bones.get( "upper_leg_left" ).restPose[14];
 
-		boneVertexBuffer[index++] = leroy.bones.get( "lower_leg_left" ).restPose[0];
-		boneVertexBuffer[index++] = leroy.bones.get( "lower_leg_left" ).restPose[1];
-		boneVertexBuffer[index++] = leroy.bones.get( "lower_leg_left" ).restPose[2];
+		boneVertexBuffer[index++] = leroy.bones.get( "lower_leg_left" ).restPose[12];
+		boneVertexBuffer[index++] = leroy.bones.get( "lower_leg_left" ).restPose[13];
+		boneVertexBuffer[index++] = leroy.bones.get( "lower_leg_left" ).restPose[14];
 
-		boneVertexBuffer[index++] = leroy.bones.get( "pelvic_right" ).restPose[0];
-		boneVertexBuffer[index++] = leroy.bones.get( "pelvic_right" ).restPose[1];
-		boneVertexBuffer[index++] = leroy.bones.get( "pelvic_right" ).restPose[2];
+		boneVertexBuffer[index++] = leroy.bones.get( "pelvic_right" ).restPose[12];
+		boneVertexBuffer[index++] = leroy.bones.get( "pelvic_right" ).restPose[13];
+		boneVertexBuffer[index++] = leroy.bones.get( "pelvic_right" ).restPose[14];
 
-		boneVertexBuffer[index++] = leroy.bones.get( "upper_leg_right" ).restPose[0];
-		boneVertexBuffer[index++] = leroy.bones.get( "upper_leg_right" ).restPose[1];
-		boneVertexBuffer[index++] = leroy.bones.get( "upper_leg_right" ).restPose[2];
+		boneVertexBuffer[index++] = leroy.bones.get( "upper_leg_right" ).restPose[12];
+		boneVertexBuffer[index++] = leroy.bones.get( "upper_leg_right" ).restPose[13];
+		boneVertexBuffer[index++] = leroy.bones.get( "upper_leg_right" ).restPose[14];
 
-		boneVertexBuffer[index++] = leroy.bones.get( "lower_leg_right" ).restPose[0];
-		boneVertexBuffer[index++] = leroy.bones.get( "lower_leg_right" ).restPose[1];
-		boneVertexBuffer[index++] = leroy.bones.get( "lower_leg_right" ).restPose[2];
+		boneVertexBuffer[index++] = leroy.bones.get( "lower_leg_right" ).restPose[12];
+		boneVertexBuffer[index++] = leroy.bones.get( "lower_leg_right" ).restPose[13];
+		boneVertexBuffer[index++] = leroy.bones.get( "lower_leg_right" ).restPose[14];
 		
 		
 		index = 0;
@@ -462,10 +463,16 @@ public class MartianAnimator
 		float [] tmpVertex0 = new float[] {0,0,0};
 		float [] tmpVertex1 = new float[] {0,0,0};
 		
-		int intframe = (int)frame;
+		int intframe;
 		
 		// pingpong frame
+		intframe = (int)frame;
 		intframe = (intframe / leroy.numFrames) % 2 == 0 ? intframe % leroy.numFrames : (leroy.numFrames - 1) - (intframe % leroy.numFrames);
+		
+		//// sin frame
+		//intframe = (int)((Math.sin(frame / 5) + 1) / 2 * 30);
+		//// clamp
+		//intframe = intframe > 29 ? 29 : intframe < 0 ? 0 : intframe;		
 		
 		for(int vertex = 0; vertex < numVertices; ++vertex)
 		{		
@@ -503,20 +510,21 @@ public class MartianAnimator
 	{
 		float [] tmpdata = new float[4];
 		float [] tmpdata2 = new float[4];
+		float [] tmpdata3 = new float[4];
 		// get the vertex position relative to the bone, this can be optimized by calculating it only once
-		for(int loop0 = 0; loop0 < 3; ++loop0)
-		{
-			tmpdata[loop0] = vertexBuffer[vertexNum * 3 + loop0] - bone.restPose[loop0];
-		}
+        /** @TODO optimize */
+		System.arraycopy(vertexBuffer, vertexNum * 3, tmpdata3, 0, 3);
+		tmpdata3[3] = 1;
+		Matrix.multiplyMV(tmpdata, 0, bone.restPoseInverse, 0, tmpdata3, 0);
 		
 		// transform using bone transformation
 		Matrix.multiplyMV(tmpdata2, 0, bone.frames, (frame << 4), tmpdata, 0);
 		
 		// add the bone rest pose
-		for(int loop0 = 0; loop0 < 3; ++loop0)
-		{
-			tmpdata2[loop0] += bone.restPose[loop0];
-		}		
+//		for(int loop0 = 0; loop0 < 3; ++loop0)
+//		{
+//			tmpdata2[loop0] += bone.restPose[loop0];
+//		}		
 		
 		// copy the first three values
 		System.arraycopy(tmpdata2, 0, output, outputOffset, 3);
