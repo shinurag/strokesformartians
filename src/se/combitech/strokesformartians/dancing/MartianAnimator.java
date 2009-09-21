@@ -421,11 +421,6 @@ public class MartianAnimator
 
 	}
 	
-	public void something()
-	{
-		
-	}
-	
 	public void getSkeletonFrame( 	float frame, 
 									float[] vertexBuffer,
 									byte[] indexBuffer )
@@ -455,8 +450,8 @@ public class MartianAnimator
 		
 		int intframe = (int)frame;
 		
-		// mod frame
-		intframe = (intframe / leroy.numFrames) % 2 == 0 ? intframe % 30 : 29 - (intframe % 30);
+		// pingpong frame
+		intframe = (intframe / leroy.numFrames) % 2 == 0 ? intframe % leroy.numFrames : (leroy.numFrames - 1) - (intframe % leroy.numFrames);
 		
 		for(int vertex = 0; vertex < numVertices; ++vertex)
 		{		
