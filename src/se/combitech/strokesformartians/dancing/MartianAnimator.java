@@ -43,6 +43,8 @@ public class MartianAnimator
 	public float [] vertexBuffer;
 	public byte [] indexBuffer;
 	VertexWeight [] vertexWeights;	
+	
+	/** @TODO these are redundant, remove!! */
 	public int numVertices;
 	public int numIndices;
 	public int numTriangles;
@@ -444,14 +446,17 @@ public class MartianAnimator
 							float [] texCoords, 
 							byte [] indices)
 	{
-		assert frame>=0;
-		assert frame<leroy.numFrames;
+		/*assert frame>=0;
+		assert frame<leroy.numFrames;*7
 		
 		/** @TODO could quite easily support a variable number of bones here */
 		float [] tmpVertex0 = new float[3];
 		float [] tmpVertex1 = new float[3];
 		
 		int intframe = (int)frame;
+		
+		// mod frame
+		intframe = intframe % 30;
 		
 		for(int vertex = 0; vertex < numVertices; ++vertex)
 		{		
@@ -506,5 +511,20 @@ public class MartianAnimator
 		
 		// copy the first three values
 		System.arraycopy(tmpdata2, 0, output, outputOffset, 3);
+	}
+	
+	public int getVertexBufferLength()
+	{
+		return vertexBuffer.length;
+	}
+	
+	public int getIndexBufferLength()
+	{
+		return indexBuffer.length;
+	}
+	
+	public int getTexCoordBufferLength()
+	{
+		return texCoordBuffer.length;
 	}
 }

@@ -15,6 +15,8 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.opengl.GLSurfaceView;
 
+import java.util.*;
+
 /**
  * Render a pair of tumbling cubes.
  */
@@ -29,12 +31,15 @@ class MartianRenderer implements GLSurfaceView.Renderer {
 	private float[] mVertexBuffer;
 	private float[] mTexCoordBuffer;
 	private byte[] mIndexBuffer;
+	private long startTime;
     
 	public MartianRenderer( Context context, boolean useTranslucentBackground, boolean debugFlag ) {
         mTranslucentBackground = useTranslucentBackground;
 		m_animator = new MartianAnimator( );
 		m_textureIds = new int[1];
 		m_context = context;
+		
+		startTime = Calendar.getInstance().getTimeInMillis();
     }
 	
     public void onDrawFrame(GL10 gl) {
@@ -58,7 +63,7 @@ class MartianRenderer implements GLSurfaceView.Renderer {
 //        gl.glRotatef(mAngle*0.25f,  1, 0, 0);
 
         renderMartianAnimator( gl );
-        mAngle++;
+        //mAngle++;
     }
 
 	private void initTextures( GL10 gl )
@@ -99,9 +104,13 @@ class MartianRenderer implements GLSurfaceView.Renderer {
 		 *  Render the skeleton! 
 		 */
 
-		mVertexBuffer = new float[ m_animator.boneVertexBuffer.length * 3 ];
-		mIndexBuffer = new byte[ m_animator.boneIndexBuffer.length ];
-		m_animator.getSkeletonFrame( 0, mVertexBuffer, mIndexBuffer );
+		long time = Calendar.getInstance().getTimeInMillis() - startTime;
+		
+		/** @TODO allocate these somewhere else, to optimize. */
+		mVertexBuffer = new float[ m_animator.getVertexBufferLength() ];
+		mIndexBuffer = new byte[ m_animator.getIndexBufferLength() ];
+		float [] texCoordBuffer = new float[m_animator.getTexCoordBufferLength()];
+		m_animator.getFrame(time / 33f, mVertexBuffer, texCoordBuffer, mIndexBuffer);
 		
 		gl.glDisable( GL10.GL_TEXTURE_2D );
 		gl.glColor4f( 0, 0, 0, 1 );
