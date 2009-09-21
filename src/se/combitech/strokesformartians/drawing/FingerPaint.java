@@ -21,12 +21,14 @@ package se.combitech.strokesformartians.drawing;
 import se.combitech.strokesformartians.SFMIntentFactory;
 import se.combitech.strokesformartians.dancing.Dancer;
 import se.combitech.strokesformartians.drawing.BrushSizeDialog.OnBrushSizeChangeListener;
+import se.combitech.strokesformartians.dancing.*;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BlurMaskFilter;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.EmbossMaskFilter;
 import android.graphics.MaskFilter;
 import android.graphics.Paint;
@@ -84,7 +86,11 @@ public class FingerPaint extends GraphicsActivity
         private Bitmap  mBitmap;
         private Canvas  mCanvas;
         private Path    mPath;
+        private Path    mBorderPath;
         private Paint   mBitmapPaint;
+        private MartianAnimator mMartianAnimator;
+        
+        
         
         public MyView(Context c) {
             super(c);
@@ -95,7 +101,9 @@ public class FingerPaint extends GraphicsActivity
             
             mCanvas = new Canvas( mBitmap );
             mPath = new Path();
-            mBitmapPaint = new Paint( Paint.DITHER_FLAG );
+            mBorderPath = new Path();
+            mBitmapPaint = new Paint(Paint.DITHER_FLAG);
+
         }
 
         @Override
@@ -105,10 +113,23 @@ public class FingerPaint extends GraphicsActivity
         
         @Override
         protected void onDraw(Canvas canvas) {
-            canvas.drawColor(0xFFFFFFFF);
+        	
+        	mMartianAnimator = new MartianAnimator();
+        	float[] outline = mMartianAnimator.texCoordBuffer;
             
+            
+            canvas.drawColor(Color.WHITE);
+            
+            
+            mBitmapPaint.setColor(Color.GREEN);
             canvas.drawBitmap(mBitmap, 0, 0, mBitmapPaint);
-            
+            mBitmapPaint.setColor(Color.RED);
+            int canvasHeight = canvas.getHeight();
+            int canvasWidth = canvas.getWidth();
+
+            for (int i=0;i<(mMartianAnimator.texCoordBuffer.length)-3;i=i+2) {
+            	canvas.drawLine((float)outline[i]*canvasWidth, (float)outline[i+1]*canvasHeight, (float)outline[i+2]*canvasWidth, (float)outline[i+3]*canvasHeight, mBitmapPaint);
+            }            
             canvas.drawPath(mPath, mPaint);
         }
         
