@@ -33,13 +33,15 @@ class MartianRenderer implements GLSurfaceView.Renderer {
 	private byte[] mIndexBuffer;
 	private long startTime;
 	private Bitmap m_textureBitmap;
+	private Cube m_cube;
     
 	public MartianRenderer( Context context, boolean useTranslucentBackground, boolean debugFlag, Bitmap textureBitmap ) {
         mTranslucentBackground = useTranslucentBackground;
 		m_animator = new MartianAnimator( );
-		m_textureIds = new int[1];
+		m_textureIds = new int[2];
 		m_context = context;
 		m_textureBitmap = textureBitmap;
+		m_cube = new Cube();
 		
 		startTime = Calendar.getInstance().getTimeInMillis();
 		
@@ -72,37 +74,64 @@ class MartianRenderer implements GLSurfaceView.Renderer {
 //        gl.glRotatef(mAngle*0.25f,  1, 0, 0);
 
         renderMartianAnimator( gl , time);
+        
+        renderCubeMap( gl, time  );
         //mAngle++;
     }
 
 	private void initTextures( GL10 gl )
 	{
-			Bitmap bitmap;
+			Bitmap martianMap;
+			Bitmap cubeMap;
 			if( m_textureBitmap == null )
 			{
-				bitmap = BitmapFactory.decodeResource( m_context.getResources(), R.drawable.flowers );
+				martianMap = BitmapFactory.decodeResource( m_context.getResources(), R.drawable.flowers );
 			}
 			else
 			{
-				bitmap = m_textureBitmap;
+				martianMap = m_textureBitmap;
 				m_textureBitmap = null;
 			}
+			
+			cubeMap = BitmapFactory.decodeResource( m_context.getResources(), R.drawable.sky );
     				
-    		gl.glGenTextures( 	1, 
+    		gl.glGenTextures( 	2, 
     							m_textureIds,
 								0 );
+    		
+    		// Martian
     		gl.glBindTexture( 	GL10.GL_TEXTURE_2D, 
     							m_textureIds[0] );
     		
     		android.opengl.GLUtils.texImage2D( 	GL10.GL_TEXTURE_2D,
 							    				0,
-							    				bitmap,
+							    				martianMap,
 							    				0 );
+    		
+    		// Cube map
+    		gl.glBindTexture( 	GL10.GL_TEXTURE_2D, 
+								m_textureIds[1] );
+
+    		android.opengl.GLUtils.texImage2D( 	GL10.GL_TEXTURE_2D,
+												0,
+												cubeMap,
+												0 );
+	}
+
+	private void renderCubeMap( GL10 gl, float time )
+	{
+		gl.glPushMatrix();
+			gl.glRotatef( 0.1f*time, 1, 1, 0 );
+			gl.glEnable( GL10.GL_TEXTURE_2D );
+		
+			gl.glBindTexture( GL10.GL_TEXTURE_2D, m_textureIds[ 1 ] );
+			m_cube.draw( gl );
+		gl.glPopMatrix();
 	}
     
     private void renderMartianAnimator( GL10 gl , long time)
     {
-		gl.glColor4f( 0, 1, 1, 1 );
+		gl.glColor4f( 1, 1, 1, 1 );
         gl.glEnable( GL10.GL_TEXTURE_2D );
         
     	if( m_textureIds[0] == 0 )
@@ -125,11 +154,11 @@ class MartianRenderer implements GLSurfaceView.Renderer {
 		m_animator.getFrame( time / 33f, mVertexBuffer, mTexCoordBuffer, mIndexBuffer );
 	
 		gl.glEnableClientState( GL10.GL_VERTEX_ARRAY );
-		gl.glEnableClientState(GL10.GL_TEXTURE_COORD_ARRAY);
-		gl.glVertexPointer(3, GL10.GL_FLOAT, 0, FloatBuffer.wrap(mVertexBuffer));
-		gl.glTexCoordPointer(2, GL10.GL_FLOAT, 0, FloatBuffer.wrap(mTexCoordBuffer));
+		gl.glEnableClientState( GL10.GL_TEXTURE_COORD_ARRAY );
+		gl.glVertexPointer( 3, GL10.GL_FLOAT, 0, FloatBuffer.wrap(mVertexBuffer) );
+		gl.glTexCoordPointer( 2, GL10.GL_FLOAT, 0, FloatBuffer.wrap(mTexCoordBuffer) );
 		
-		gl.glDrawElements(GL10.GL_TRIANGLES, mIndexBuffer.length, GL10.GL_UNSIGNED_BYTE, ByteBuffer.wrap(mIndexBuffer));
+		gl.glDrawElements( GL10.GL_TRIANGLES, mIndexBuffer.length, GL10.GL_UNSIGNED_BYTE, ByteBuffer.wrap(mIndexBuffer) );
 		
     }    	
     
