@@ -146,7 +146,7 @@ class MartianRenderer implements GLSurfaceView.Renderer {
 		mVertexBuffer = new float[ m_animator.numVertices * 3 ];
 		mTexCoordBuffer = new float[ m_animator.numVertices * 3 ];
 		mIndexBuffer = new byte[ m_animator.numIndices ];
-		//m_animator.getFrame( 0, mVertexBuffer, mTexCoordBuffer, mIndexBuffer );
+		m_animator.getFrame( 0, mVertexBuffer, mTexCoordBuffer, mIndexBuffer );
 	
 		try {
 			ByteBuffer vertexByteBuffer;
