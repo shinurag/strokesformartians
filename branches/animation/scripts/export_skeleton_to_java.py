@@ -89,7 +89,17 @@ Bone bone;
 def getJavaFloat(value):
     return str(value) + "f"
 
-def getBoneVertices(armature,name,numframes):
+def shuffleMatrix(matrix):
+    newmatrix = Blender.Mathutils.Matrix()
+
+    newmatrix[0] = matrix[0]
+    newmatrix[1] = matrix[2]
+    newmatrix[2] = matrix[1]
+    newmatrix[3] = matrix[3]
+
+    return newmatrix
+
+def getBoneTransformFrames(armature,name,numframes):
     """
     print a whole bunch of data
     """
@@ -99,7 +109,7 @@ def getBoneVertices(armature,name,numframes):
         armature.evaluatePose(frame)
         pose = armature.getPose()
         
-        tmatrix = pose.bones[name].poseMatrix * armature.matrixWorld
+        tmatrix = shuffleMatrix(pose.bones[name].poseMatrix)
         
         for col in tmatrix:
             for elem in col:
@@ -128,7 +138,7 @@ def export(filename):
                 out.write("bone.restPose = new float[]{{{vertex}}};\n".format(vertex = getJavaFloat(bone.head["ARMATURESPACE"][0]) + "," + \
                                                                                   getJavaFloat(bone.head["ARMATURESPACE"][2]) + "," + \
                                                                                   getJavaFloat(bone.head["ARMATURESPACE"][1])))
-                out.write("bone.frames = new float[]{{{vertices}}};\n".format(vertices = getBoneVertices(armature,name,numFrames)))
+                out.write("bone.frames = new float[]{{{vertices}}};\n".format(vertices = getBoneTransformFrames(armature,name,numFrames)))
 
         classname = os.path.basename(filename)
         classname = classname[:classname.rindex(".")]
