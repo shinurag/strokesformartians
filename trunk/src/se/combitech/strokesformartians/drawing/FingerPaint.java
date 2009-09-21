@@ -35,6 +35,8 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
+import android.graphics.RectF;
+import android.graphics.drawable.shapes.OvalShape;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -123,14 +125,32 @@ public class FingerPaint extends GraphicsActivity
             
             mBitmapPaint.setColor(Color.GREEN);
             canvas.drawBitmap(mBitmap, 0, 0, mBitmapPaint);
-            mBitmapPaint.setColor(Color.RED);
             int canvasHeight = canvas.getHeight();
             int canvasWidth = canvas.getWidth();
-
+            /*
             for (int i=0;i<(mMartianAnimator.texCoordBuffer.length)-3;i=i+2) {
-            	canvas.drawLine((float)outline[i]*canvasWidth, (float)outline[i+1]*canvasHeight, (float)outline[i+2]*canvasWidth, (float)outline[i+3]*canvasHeight, mBitmapPaint);
-            }            
+            	canvas.drawLine(outline[i]*canvasWidth, (1.0f - outline[i+1])*canvasHeight,
+            					outline[i+2]*canvasWidth, (1.0f - outline[i+3])*canvasHeight, 
+            					mBitmapPaint);
+            }
+            */
+            drawHardcodedOutline(canvas);
+            
             canvas.drawPath(mPath, mPaint);
+        }
+        
+        private void drawHardcodedOutline(Canvas canvas) {
+        	canvas.drawLine(150, 250, 150, 400, mBitmapPaint);	//Crotch
+        	canvas.drawLine(150, 400, 100, 400, mBitmapPaint);
+        	canvas.drawLine(100, 400, 100, 100, mBitmapPaint);	//Left leg
+        	canvas.drawLine(100, 100, 90, 200, mBitmapPaint);
+        	canvas.drawLine(90, 200, 95, 250, mBitmapPaint);	//Arm pit
+        	canvas.drawLine(95, 250, 40, 250, mBitmapPaint);	//Elbow
+        	canvas.drawLine(40, 250, 40, 200, mBitmapPaint);
+        	canvas.drawLine(40, 200, 40, 60, mBitmapPaint);		//Shoulder
+        	canvas.drawLine(40, 60, 220, 60, mBitmapPaint);
+        	
+        	canvas.drawCircle(150, 40, 30, mBitmapPaint);
         }
         
         private float mX, mY;
