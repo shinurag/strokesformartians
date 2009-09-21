@@ -72,19 +72,19 @@ Bone bone;
 """)
         
 
-def printMatrix(out, name, frame, matrix):
-    """
-    prints something like:
-    bones.getValue(name).frames[frame].set(0,0) = " + matrix.get(0,0)
-    ...
-    """
-    out.write("\nbone = bones.get(\"{name}\");\n".format(name=name))
+# def printMatrix(out, name, frame, matrix):
+#     """
+#     prints something like:
+#     bones.getValue(name).frames[frame].set(0,0) = " + matrix.get(0,0)
+#     ...
+#     """
+#     out.write("\nbone = bones.get(\"{name}\");\n".format(name=name))
     
-    tmatrix = matrix.transpose()
-    for (x,col) in enumerate(tmatrix):
-        for (y,elem) in enumerate(col):
-            framestart = frame * 16
-            out.write("bone.frames[{index}] = {value};\n".format(index = framestart + x * 4 + y, value = getJavaFloat(elem)))
+#     tmatrix = matrix.transpose()
+#     for (x,col) in enumerate(tmatrix):
+#         for (y,elem) in enumerate(col):
+#             framestart = frame * 16
+#             out.write("bone.frames[{index}] = {value};\n".format(index = framestart + x * 4 + y, value = getJavaFloat(elem)))
 
 def getJavaFloat(value):
     return str(value) + "f"
@@ -99,7 +99,7 @@ def getBoneVertices(armature,name,numframes):
         armature.evaluatePose(frame)
         pose = armature.getPose()
         
-        tmatrix = pose.bones[name].poseMatrix.transpose()
+        tmatrix = pose.bones[name].poseMatrix
         for col in tmatrix:
             for elem in col:
                 out += getJavaFloat(elem) + ","
@@ -125,8 +125,8 @@ def export(filename):
                 out.write("bone = new Bone(\"{name}\");\n".format(name=name))
                 out.write("bones.put(\"{name}\", bone);\n".format(name = name))
                 out.write("bone.restPose = new float[]{{{vertex}}};\n".format(vertex = getJavaFloat(bone.head["ARMATURESPACE"][0]) + "," + \
-                                                                                  getJavaFloat(bone.head["ARMATURESPACE"][1]) + "," + \
-                                                                                  getJavaFloat(bone.head["ARMATURESPACE"][2])))
+                                                                                  getJavaFloat(bone.head["ARMATURESPACE"][2]) + "," + \
+                                                                                  getJavaFloat(bone.head["ARMATURESPACE"][1])))
                 out.write("bone.frames = new float[]{{{vertices}}};\n".format(vertices = getBoneVertices(armature,name,numFrames)))
 
         classname = os.path.basename(filename)
