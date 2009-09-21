@@ -456,7 +456,7 @@ public class MartianAnimator
 		int intframe = (int)frame;
 		
 		// mod frame
-		intframe = intframe % 30;
+		intframe = (intframe / leroy.numFrames) % 2 == 0 ? intframe % 30 : 29 - (intframe % 30);
 		
 		for(int vertex = 0; vertex < numVertices; ++vertex)
 		{		
