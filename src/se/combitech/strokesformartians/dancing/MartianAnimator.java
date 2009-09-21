@@ -470,7 +470,7 @@ public class MartianAnimator
 		}	
 		
 		// always use indices from indexBuffer
-		System.arraycopy(boneIndexBuffer,0,indices,0,boneIndexBuffer.length);
+		System.arraycopy(indexBuffer,0,indices,0,indexBuffer.length);
 		
 		// always use texture coordinates from texCoordBuffer
 		System.arraycopy(texCoordBuffer,0,texCoords,0,texCoordBuffer.length);
@@ -492,7 +492,7 @@ public class MartianAnimator
 		// get the vertex position relative to the bone, this can be optimized by calculating it only once
 		for(int loop0 = 0; loop0 < 3; ++loop0)
 		{
-			tmpdata[loop0] = boneVertexBuffer[vertexNum * 3 + loop0] - bone.restPose[loop0];
+			tmpdata[loop0] = vertexBuffer[vertexNum * 3 + loop0] - bone.restPose[loop0];
 		}
 		
 		// transform using bone transformation
