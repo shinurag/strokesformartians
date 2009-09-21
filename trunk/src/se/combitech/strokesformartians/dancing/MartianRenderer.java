@@ -40,16 +40,23 @@ class MartianRenderer implements GLSurfaceView.Renderer {
 		m_context = context;
 		
 		startTime = Calendar.getInstance().getTimeInMillis();
+		
+		mVertexBuffer = new float[ m_animator.getVertexBufferLength() ];
+		mIndexBuffer = new byte[ m_animator.getIndexBufferLength() ];
+		mTexCoordBuffer = new float[m_animator.getTexCoordBufferLength()];
     }
 	
-    public void onDrawFrame(GL10 gl) {
+    public void onDrawFrame(GL10 gl) 
+    {
+		long time = Calendar.getInstance().getTimeInMillis() - startTime;
+
         /*
          * Usually, the first thing one might want to do is to clear
          * the screen. The most efficient way of doing this is to use
          * glClear().
          */
 
-    	gl.glClearColor( 0.95f, 0.95f, 0.95f, 1.0f );
+    	gl.glClearColor( (time % 200) / 200f, 0, 1, 1);
         gl.glClear(GL10.GL_COLOR_BUFFER_BIT | GL10.GL_DEPTH_BUFFER_BIT);
 
         /*
@@ -62,7 +69,7 @@ class MartianRenderer implements GLSurfaceView.Renderer {
         gl.glRotatef( -90, 1, 0, 0 );
 //        gl.glRotatef(mAngle*0.25f,  1, 0, 0);
 
-        renderMartianAnimator( gl );
+        renderMartianAnimator( gl , time);
         //mAngle++;
     }
 
@@ -82,9 +89,10 @@ class MartianRenderer implements GLSurfaceView.Renderer {
 							    				0 );
 	}
     
-    private void renderMartianAnimator( GL10 gl )
+    private void renderMartianAnimator( GL10 gl , long time)
     {
-    	gl.glColor4f( 0, 1, 1, 1 );
+
+		gl.glColor4f( 0, 1, 1, 1 );
         gl.glEnable( GL10.GL_TEXTURE_2D );
         
     	if( m_textureIds[0] == 0 )
@@ -99,93 +107,18 @@ class MartianRenderer implements GLSurfaceView.Renderer {
 						GL10.GL_TEXTURE_ENV_MODE, 
 						GL10.GL_DECAL );
 
+		gl.glNormal3f(0,0, 1);
 		
-		/**
-		 *  Render the skeleton! 
-		 */
-
-		long time = Calendar.getInstance().getTimeInMillis() - startTime;
-		
-		/** @TODO allocate these somewhere else, to optimize. */
-		mVertexBuffer = new float[ m_animator.getVertexBufferLength() ];
-		mIndexBuffer = new byte[ m_animator.getIndexBufferLength() ];
-		float [] texCoordBuffer = new float[m_animator.getTexCoordBufferLength()];
-		m_animator.getFrame(time / 33f, mVertexBuffer, texCoordBuffer, mIndexBuffer);
-		
-		gl.glDisable( GL10.GL_TEXTURE_2D );
-		gl.glColor4f( 0, 0, 0, 1 );
-		try {
-			ByteBuffer vertexByteBuffer;
-			vertexByteBuffer = ByteBuffer.allocateDirect( mVertexBuffer.length * 4 );
-			vertexByteBuffer.order( ByteOrder.nativeOrder() );
-			FloatBuffer vertexBuffer = vertexByteBuffer.asFloatBuffer();
-			vertexBuffer.put( mVertexBuffer );
-			vertexBuffer.position( 0 );
-			
-			ByteBuffer indexBuffer = ByteBuffer.allocateDirect( mIndexBuffer.length );
-			indexBuffer.put( mIndexBuffer );
-			indexBuffer.position( 0 );
-
-	        gl.glEnableClientState( GL10.GL_VERTEX_ARRAY );
-			
-			gl.glVertexPointer( 	3,
-									GL10.GL_FLOAT, 
-									0,
-									vertexBuffer );
-			
-			gl.glLineWidth( 2 );
-			
-			gl.glDrawElements( 	GL10.GL_LINES, 
-								mIndexBuffer.length, 
-				  				GL10.GL_UNSIGNED_BYTE, 
-				  				indexBuffer );
-			
-	        gl.glDisableClientState( GL10.GL_VERTEX_ARRAY );
-			
-		} catch ( Exception e ) {
-			e.printStackTrace();
-		}
-		
-		/**
-		 *  Render the outline! 
-		 */
-		gl.glDisable( GL10.GL_TEXTURE_2D );
-		gl.glColor4f( 1, 0, 0, 1 );
-		
-		mVertexBuffer = new float[ m_animator.numVertices * 3 ];
-		mTexCoordBuffer = new float[ m_animator.numVertices * 3 ];
-		mIndexBuffer = new byte[ m_animator.numIndices ];
-		m_animator.getFrame( 0, mVertexBuffer, mTexCoordBuffer, mIndexBuffer );
+		// divide time by 33 to get a fps of 30
+		m_animator.getFrame( time / 33f, mVertexBuffer, mTexCoordBuffer, mIndexBuffer );
 	
-		try {
-			ByteBuffer vertexByteBuffer;
-			vertexByteBuffer = ByteBuffer.allocateDirect( mVertexBuffer.length * 4 );
-			vertexByteBuffer.order( ByteOrder.nativeOrder() );
-			FloatBuffer vertexBuffer = vertexByteBuffer.asFloatBuffer();
-			vertexBuffer.put( mVertexBuffer );
-			vertexBuffer.position( 0 );
-			
-			ByteBuffer indexBuffer = ByteBuffer.allocateDirect( mIndexBuffer.length );
-			indexBuffer.put( mIndexBuffer );
-			indexBuffer.position( 0 );
-
-	        gl.glEnableClientState( GL10.GL_VERTEX_ARRAY );
-			
-			gl.glVertexPointer( 	3,
-									GL10.GL_FLOAT, 
-									0,
-									vertexBuffer );
-			
-			gl.glDrawElements( 	GL10.GL_LINES, 
-				  				mIndexBuffer.length, 
-				  				GL10.GL_UNSIGNED_BYTE, 
-				  				indexBuffer );
-			
-	        gl.glDisableClientState( GL10.GL_VERTEX_ARRAY );
-			
-		} catch ( Exception e ) {
-			e.printStackTrace();
-		}		
+		gl.glEnableClientState( GL10.GL_VERTEX_ARRAY );
+		gl.glEnableClientState(GL10.GL_TEXTURE_COORD_ARRAY);
+		gl.glVertexPointer(3, GL10.GL_FLOAT, 0, FloatBuffer.wrap(mVertexBuffer));
+		gl.glTexCoordPointer(2, GL10.GL_FLOAT, 0, FloatBuffer.wrap(mTexCoordBuffer));
+		
+		gl.glDrawElements(GL10.GL_TRIANGLES, mIndexBuffer.length, GL10.GL_UNSIGNED_BYTE, ByteBuffer.wrap(mIndexBuffer));
+		
     }    	
     
     public int[] getConfigSpec() {
