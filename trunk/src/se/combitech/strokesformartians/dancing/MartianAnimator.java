@@ -49,9 +49,9 @@ public class MartianAnimator
 	public int numIndices;
 	public int numTriangles;
 	
-	public static float fatness = 1;
-	public static float leglength = 1;
-	public static float armlength = 1;
+	public static float fatness = -5;
+	public static float leglength = -5;
+	public static float armlength = -3;
 	public static float headlength = 0.5f;
 	
 	/** @TODO change these values */
