@@ -99,7 +99,8 @@ def getBoneVertices(armature,name,numframes):
         armature.evaluatePose(frame)
         pose = armature.getPose()
         
-        tmatrix = pose.bones[name].poseMatrix
+        tmatrix = pose.bones[name].poseMatrix * armature.matrixWorld
+        
         for col in tmatrix:
             for elem in col:
                 out += getJavaFloat(elem) + ","
