@@ -40,9 +40,14 @@ public class Bone
     {{
     	public String name;
 	/**
-	 * The coordinates in worldspace that defines the restpose for the bone. On the format restPose[index] where index is 0 for x, 1 for y and 2 for z. It only specify the head of the bone. 
+	 * The coordinates in armaturespace that defines the restpose for the bone. A 4x4 matrix.
 	 */
         public float [] restPose;
+
+        /**
+         * The inverse of the restpose transform
+         */
+        public float [] restPoseInverse;
 	/**
 	 * Transformation matrix for the bone on the format frames[framenumber * 16 + matrixindice] where matrixindice is a value from 0 to 15 specifying which element in a column major 4x4 matrix to use.
 	 */ 
@@ -90,14 +95,26 @@ def getJavaFloat(value):
     return str(value) + "f"
 
 def shuffleMatrix(matrix):
-    newmatrix = Blender.Mathutils.Matrix()
+    # newmatrix = Blender.Mathutils.Matrix()
 
-    newmatrix[0] = matrix[0]
-    newmatrix[1] = matrix[2]
-    newmatrix[2] = matrix[1]
-    newmatrix[3] = matrix[3]
+    # newmatrix[0] = matrix[0]
+    # newmatrix[1] = matrix[2]
+    # newmatrix[2] = matrix[1]
+    # newmatrix[3] = matrix[3]
 
-    return newmatrix
+    # return newmatrix
+
+    ## identity shuffle
+    return matrix
+
+def printMatrix(matrix):
+    out = ''
+    for col in matrix:
+        for elem in col:
+            out += getJavaFloat(elem) + ","
+
+    return out[:-1] # remove last ,
+    
 
 def getBoneTransformFrames(armature,name,numframes):
     """
@@ -109,13 +126,12 @@ def getBoneTransformFrames(armature,name,numframes):
         armature.evaluatePose(frame)
         pose = armature.getPose()
         
-        tmatrix = shuffleMatrix(pose.bones[name].poseMatrix)
+        matrix = shuffleMatrix(pose.bones[name].poseMatrix)
         
-        for col in tmatrix:
-            for elem in col:
-                out += getJavaFloat(elem) + ","
-                
+        out += printMatrix(matrix) + ","
+        
     return out[:-1] # remove last ,
+
 
 def export(filename):
     """
@@ -135,9 +151,11 @@ def export(filename):
                 name = bone.name
                 out.write("bone = new Bone(\"{name}\");\n".format(name=name))
                 out.write("bones.put(\"{name}\", bone);\n".format(name = name))
-                out.write("bone.restPose = new float[]{{{vertex}}};\n".format(vertex = getJavaFloat(bone.head["ARMATURESPACE"][0]) + "," + \
-                                                                                  getJavaFloat(bone.head["ARMATURESPACE"][2]) + "," + \
-                                                                                  getJavaFloat(bone.head["ARMATURESPACE"][1])))
+                # out.write("bone.restPose = new float[]{{{vertex}}};\n".format(vertex = getJavaFloat(bone.head["ARMATURESPACE"][0]) + "," + \
+                #                                                                   getJavaFloat(bone.head["ARMATURESPACE"][2]) + "," + \
+                #                                                                   getJavaFloat(bone.head["ARMATURESPACE"][1])))
+                out.write("bone.restPose = new float[]{{{restpose}}};\n".format(restpose = printMatrix(bone.matrix["ARMATURESPACE"])))
+                out.write("bone.restPoseInverse = new float[]{{{restpose}}};\n".format(restpose = printMatrix(bone.matrix["ARMATURESPACE"].copy().invert())))
                 out.write("bone.frames = new float[]{{{vertices}}};\n".format(vertices = getBoneTransformFrames(armature,name,numFrames)))
 
         classname = os.path.basename(filename)
