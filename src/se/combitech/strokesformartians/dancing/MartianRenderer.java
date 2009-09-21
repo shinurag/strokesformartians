@@ -69,12 +69,13 @@ class MartianRenderer implements GLSurfaceView.Renderer {
 
         gl.glMatrixMode( GL10.GL_MODELVIEW );
         gl.glLoadIdentity();
-        gl.glTranslatef( -2f, -0.5f, -10.0f );
+        gl.glTranslatef( -2f, -1f, -25.0f );
         //gl.glRotatef( -90, 1, 0, 0 );
 //        gl.glRotatef(mAngle*0.25f,  1, 0, 0);
 
         renderMartianAnimator( gl , time);
         
+        gl.glTranslatef(0, 10,0);
         renderCubeMap( gl, time  );
         //mAngle++;
     }
