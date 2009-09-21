@@ -156,7 +156,8 @@ class MartianRenderer implements GLSurfaceView.Renderer {
          float ratio = (float) width / height;
          gl.glMatrixMode(GL10.GL_PROJECTION);
          gl.glLoadIdentity();
-         gl.glFrustumf(-ratio, ratio, -1, 1, 1, 100 );
+         android.opengl.GLU.gluPerspective(gl, 50, ratio, 0.1f, 50);
+//         gl.glFrustumf(-ratio, ratio, -1, 1, 0.1f, 100 );
 //         gl.glOrthof(-1, 1, -1, 1, 1, 10);
     }
 
@@ -180,7 +181,8 @@ class MartianRenderer implements GLSurfaceView.Renderer {
          } else {
              gl.glClearColor(1,1,1,1);
          }
-         gl.glEnable(GL10.GL_CULL_FACE);
+         // needs to disable culling since the guy is 2d
+         gl.glDisable(GL10.GL_CULL_FACE);
          gl.glShadeModel(GL10.GL_SMOOTH);
          gl.glEnable(GL10.GL_DEPTH_TEST);
     }

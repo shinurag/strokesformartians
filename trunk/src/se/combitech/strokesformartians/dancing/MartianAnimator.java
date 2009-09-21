@@ -55,10 +55,10 @@ public class MartianAnimator
 	public static float headlength = 0.5f;
 	
 	/** @TODO change these values */
-	public static float textureBottom = 0;
-	public static float textureLeft = 0;
-	public static float textureTop = 1;
-	public static float textureRight = 1;
+//	public static float textureBottom = 0;
+//	public static float textureLeft = 0;
+//	public static float textureTop = 1;
+//	public static float textureRight = 1;
 	
 
 	public MartianAnimator()
@@ -284,12 +284,26 @@ public class MartianAnimator
 	 */
 	private void generateTextureCoordinates()
 	{
+		float textureLeft = Float.MAX_VALUE;
+		float textureRight = Float.MIN_VALUE;
+		float textureBottom = Float.MAX_VALUE;
+		float textureTop = Float.MIN_VALUE;
+
+		// calculate minmax values
+		for(int loop0 = 0; loop0 < numVertices; ++loop0)
+		{
+			if(vertexBuffer[loop0 * 3] < textureLeft) textureLeft = vertexBuffer[loop0 * 3];
+			if(vertexBuffer[loop0 * 3] > textureRight) textureRight = vertexBuffer[loop0 * 3];
+			if(vertexBuffer[loop0 * 3 + 1] < textureBottom) textureBottom = vertexBuffer[loop0 * 3 + 1];
+			if(vertexBuffer[loop0 * 3 + 1] > textureTop) textureTop = vertexBuffer[loop0 * 3 + 1];
+		}
+		
 		float width = textureRight - textureLeft;
 		float height = textureTop - textureBottom;
 		
 		assert width > 0;
 		assert height > 0;
-		
+
 		for(int loop0 = 0; loop0 < numVertices; ++loop0)
 		{
 			// do some normalization on the x and y coordinates from the outline
