@@ -31,11 +31,13 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.EmbossMaskFilter;
 import android.graphics.MaskFilter;
+import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.RectF;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.shapes.OvalShape;
 import android.os.Bundle;
 import android.view.Menu;
@@ -127,14 +129,19 @@ public class FingerPaint extends GraphicsActivity
             canvas.drawBitmap(mBitmap, 0, 0, mBitmapPaint);
             int canvasHeight = canvas.getHeight();
             int canvasWidth = canvas.getWidth();
-            /*
+            
             for (int i=0;i<(mMartianAnimator.texCoordBuffer.length)-3;i=i+2) {
             	canvas.drawLine(outline[i]*canvasWidth, (1.0f - outline[i+1])*canvasHeight,
             					outline[i+2]*canvasWidth, (1.0f - outline[i+3])*canvasHeight, 
             					mBitmapPaint);
             }
-            */
-            drawHardcodedOutline(canvas);
+            
+            
+            
+        	canvas.drawLine(outline[0]*canvasWidth, (1.0f - outline[1])*canvasHeight,
+					outline[outline.length-2]*canvasWidth, (1.0f - outline[outline.length-1])*canvasHeight, 
+					mBitmapPaint);
+//            drawHardcodedOutline(canvas);
             
             canvas.drawPath(mPath, mPaint);
         }
@@ -250,8 +257,16 @@ public class FingerPaint extends GraphicsActivity
                 return true;
             case SAVE_MENU_ID:
         		Intent intent = new Intent( this, Dancer.class );
-        		Bitmap b = Bitmap.createScaledBitmap( myView.mBitmap, 100, 150, false );
-        		intent.putExtra( "newBitmap", b );
+        		Matrix myMatrix = new Matrix();
+        		myMatrix.setScale(1, -1);
+        		Bitmap b = Bitmap.createBitmap( myView.mBitmap,
+        				0, 0, 
+        				myView.mBitmap.getWidth(), 
+        				myView.mBitmap.getHeight(), 
+        				myMatrix, 
+        				false);
+        		Bitmap flippedBitmap = Bitmap.createScaledBitmap(b, 100, 150, false);
+        		intent.putExtra( "newBitmap", flippedBitmap );
         		
             	startActivity( intent );
                 return true;
