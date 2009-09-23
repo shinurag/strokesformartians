@@ -1,20 +1,26 @@
 package se.combitech.strokesformartians.dancing;
 
 import java.util.Vector;
+
+import android.content.Intent;
+import android.graphics.Bitmap;
 /**
  * This class represents a figure and contains the necessary properties
- * to present it. 
+ * to present it and extends an Intent in order to be able to pass it 
+ * between the different activities.
  *  
  * @author Combitech
  *
  */
-public class MartianProperty 
+public class MartianProperty extends Intent
 {
 	public static final int INVALID_TEXTURE_ID = -1;
 	
 	private String name;
 	
 	private Vector<Integer> m_textureIds = new Vector<Integer>();
+	
+	private Bitmap bitmap;
 	
 	/**
 	 * 
@@ -159,6 +165,16 @@ public class MartianProperty
 	public int textures() 
 	{
 		return m_textureIds.size();
+	}
+	
+	public void setBitmap(Bitmap bitmap)
+	{
+		this.bitmap = bitmap;		
+	}
+
+	public Bitmap getBitmap() 
+	{
+		return bitmap;
 	}
 	
 }
