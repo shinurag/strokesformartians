@@ -19,6 +19,7 @@ package se.combitech.strokesformartians.drawing;
 //package com.example.android.apis.graphics;
 
 import se.combitech.strokesformartians.SFMIntentFactory;
+import se.combitech.strokesformartians.StrokesForMartians;
 import se.combitech.strokesformartians.dancing.Dancer;
 import se.combitech.strokesformartians.drawing.BrushSizeDialog.OnBrushSizeChangeListener;
 import se.combitech.strokesformartians.dancing.*;
@@ -256,7 +257,7 @@ public class FingerPaint extends GraphicsActivity
             							mPaint.getColor() ).show();
                 return true;
             case SAVE_MENU_ID:
-        		Intent intent = new Intent( this, Dancer.class );
+        		Intent intent = SFMIntentFactory.createDancerIntent(this);
         		Matrix myMatrix = new Matrix();
         		myMatrix.setScale(1, -1);
         		Bitmap b = Bitmap.createBitmap( myView.mBitmap,
@@ -269,6 +270,10 @@ public class FingerPaint extends GraphicsActivity
         		intent.putExtra( "newBitmap", flippedBitmap );
         		
             	startActivity( intent );
+            	
+//            	MartianProperty property = new MartianProperty();
+//            	property.setBitmap(flippedBitmap);            	
+//            	setResult(StrokesForMartians.RESULT_OK, property);
                 return true;
             case EMBOSS_MENU_ID:
                 if (mPaint.getMaskFilter() != mEmboss) {
@@ -303,5 +308,5 @@ public class FingerPaint extends GraphicsActivity
 		mBrushSize = size;
 		mPaint.setStrokeWidth(mBrushSize);
 	}
-
+	
 }

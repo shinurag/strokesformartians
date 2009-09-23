@@ -244,4 +244,9 @@ class MartianRenderer implements GLSurfaceView.Renderer {
          gl.glEnable(GL10.GL_DEPTH_TEST);
     }
 
+	public void setTextureBitmap(Bitmap textureBitmap) 
+	{
+		m_textureBitmap = textureBitmap;
+	}
+
 }

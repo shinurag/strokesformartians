@@ -16,6 +16,7 @@ public class StrokesForMartians extends Activity {
     
     
     public static final int DANCE_REQUEST = 0;
+    public static final int PAINT_REQUEST = 1;
     
     
     public static final int EXIT_RESULT_CODE = 0;

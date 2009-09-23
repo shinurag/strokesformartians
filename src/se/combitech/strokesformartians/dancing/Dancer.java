@@ -30,6 +30,7 @@ public class Dancer extends Activity {
 	private MenuItem exitMenuItem;
 	
 	private Bitmap mTextureBitmap = null;
+	private MartianRenderer renderer;
 	
     @Override
     protected void onCreate( Bundle savedInstanceState )
@@ -46,7 +47,8 @@ public class Dancer extends Activity {
         // Create our Preview view and set it as the content of our
         // Activity
         mGLSurfaceView = new GLSurfaceView(this);
-        mGLSurfaceView.setRenderer( new MartianRenderer( this, false, true, mTextureBitmap ) );
+        renderer = new MartianRenderer( this, false, true, mTextureBitmap );
+        mGLSurfaceView.setRenderer( renderer );
 //        mGLSurfaceView.setGLWrapper( 
 //    		new GLWrapper()
 //	        { 
@@ -86,9 +88,18 @@ public class Dancer extends Activity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
-    	if(requestCode == 1) {
-    		System.out.print("df");
-    		startActivity( data);
+    	if(requestCode == StrokesForMartians.DANCE_REQUEST) 
+    	{
+    		if (requestCode == StrokesForMartians.RESULT_OK)
+    		{
+    			/* TODO: Draw property */
+    			if (data instanceof MartianProperty)
+    			{    		
+    				MartianProperty propery = (MartianProperty) data;
+    				mTextureBitmap = propery.getBitmap();
+    				renderer.setTextureBitmap(mTextureBitmap);    				
+    			}
+    		}
     	}
     }
     
@@ -117,7 +128,7 @@ public class Dancer extends Activity {
     		break;
 
     	case StrokesForMartians.MENU_DRAW_ID:
-    		startActivity( paintIntent );
+    		startActivityForResult(paintIntent, StrokesForMartians.PAINT_REQUEST);
     		result = true;
     		finish();
     		break;
