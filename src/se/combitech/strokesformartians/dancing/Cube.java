@@ -12,57 +12,146 @@ import javax.microedition.khronos.opengles.GL10;
  */
 class Cube
 {
+    private FloatBuffer   mVertexBuffer;
+    private FloatBuffer   mTexCoordBuffer;
+    private IntBuffer   mColorBuffer;
+    private ByteBuffer  mIndexBuffer;
+    private int one = 1;
+    private float vertices[] = {
+    		// Bottom
+            -one, -one, -one,
+             one, -one, -one,
+             one, -one,  one,
+             
+            -one, -one, -one,
+             one, -one,  one,
+            -one, -one,  one,
+
+    		 // Right
+             one, -one,  one,
+             one, -one, -one,
+             one,  one, -one,
+            
+             one, -one,  one,
+             one,  one, -one,
+             one,  one,  one,
+            
+             // Back
+             one, -one, -one,
+            -one, -one, -one,
+            -one,  one, -one,
+            
+             one, -one, -one,
+            -one,  one, -one,
+             one,  one, -one,
+
+             // Left
+             one, -one, -one,
+            -one, -one, -one,
+            -one,  one, -one,
+            
+             one, -one, -one,
+            -one,  one, -one,
+             one,  one, -one,
+
+             // Front
+             one, -one, -one,
+            -one, -one, -one,
+            -one,  one, -one,
+            
+             one, -one, -one,
+            -one,  one, -one,
+             one,  one, -one,
+             
+             // Top
+             one, -one, -one,
+            -one, -one, -one,
+            -one,  one, -one,
+            
+             one, -one, -one,
+            -one,  one, -one,
+             one,  one, -one,
+             
+
+             
+    };
+    
+    private float normals[] = {
+            0, -1,  0,
+            0, -1,  0,
+            0, -1,  0,
+            0, -1,  0,
+            0, -1,  0,
+            0, -1,  0,
+            1,  0,  0,
+            1,  0,  0,
+            1,  0,  0,
+            1,  0,  0,
+            1,  0,  0,
+            1,  0,  0,
+            0,  1,  0,
+            0,  1,  0,
+            0,  1,  0,
+            0,  1,  0,
+            0,  1,  0,
+            0,  1,  0,
+            -1,  0,  0,
+            -1,  0,  0,
+            -1,  0,  0,
+            -1,  0,  0,
+            -1,  0,  0,
+            -1,  0,  0,
+            0,  0,  1,
+            0,  0,  1,
+            0,  0,  1,
+            0,  0,  1,
+            0,  0,  1,
+            0,  0,  1,
+            0,  0, -1,
+            0,  0, -1,
+            0,  0, -1,
+            0,  0, -1,
+            0,  0, -1,
+            0,  0, -1,
+    };
+    
+    private float texCoords[] = {
+    		0.25f, 0.33f,  0.50f, 0.00f,  0.25f, 0.00f,    0.25f, 0.33f,  0.50f, 0.33f,  0.50f, 0.00f,
+//    		0.75f, 0.33f,  0.50f, 0.33f,  0.50f,0.66f,    0.75f, 0.33f,  0.50f, 0.66f,  0.75f, 0.66f,
+//    		0.50f, 1.00f,  0.50f, 0.66f,  0.25f,0.66f,    0.50f, 1.00f,  0.25f, 0.66f,  0.25f, 1.00f,
+//    		
+//    		0.00f, 0.66f,  0.25f, 0.66f,  0.25f,0.33f,    0.00f, 0.66f,  0.25f, 0.33f,  0.00f, 0.33f,
+//    		0.25f, 0.33f,  0.25f, 0.66f,  0.50f,0.66f,    0.25f, 0.33f,  0.50f, 0.66f,  0.50f, 0.33f,
+//    		1.00f, 0.66f,  1.00f, 0.33f,  0.75f,0.33f,    1.00f, 0.66f,  0.75f, 0.33f,  0.75f, 0.66f
+
+//    		0.50f,0.33f, 0.75f,0.33f, 0.75f,0.66f,  0.50f,0.33f, 0.75f,0.66f, 0.50f,0.66f,
+//    		0f,0f, 0f,0f, 0f,0f,  0f,0f, 0f,0f, 0f,0f
+//
+//    		0f,0f, 0f,0f, 0f,0f,  0f,0f, 0f,0f, 0f,0f,
+//    		0f,0f, 0f,0f, 0f,0f,  0f,0f, 0f,0f, 0f,0f,
+//
+//    		0f,0f, 0f,0f, 0f,0f,  0f,0f, 0f,0f, 0f,0f
+//    		0f,0f, 0f,0f, 0f,0f,  0f,0f, 0f,0f, 0f,0f
+
+    };
+    
+    private int colors[] = {
+            0,    0,    0,  one,
+            one,    0,    0,  one,
+            one,  one,    0,  one,
+            0,  one,    0,  one,
+            0,    0,  one,  one,
+            one,    0,  one,  one,
+            one,  one,  one,  one,
+            0,  one,  one,  one,
+    };
+
+    private byte indices[] = {
+            1,2,3, 4,5,6,
+    };
+    
     public Cube()
     {
-        int one = 1;
-        float vertices[] = {
-                -one, -one, -one,
-                one, -one, -one,
-                one,  one, -one,
-                -one,  one, -one,
-                -one, -one,  one,
-                one, -one,  one,
-                one,  one,  one,
-                -one,  one,  one,
-        };
-
-        float texCoords[] = {
-        		0.25f, 0.00f,  0.50f, 0.33f,  0.25f,0.33f,    0.25f, 0.00f,  0.50f, 0.33f,  0.50f, 0.00f,
-        		0f,0f, 0f,0f, 0f,0f,  0f,0f, 0f,0f, 0f,0f,
-
-        		0f,0f, 0f,0f, 0f,0f,  0f,0f, 0f,0f, 0f,0f,
-        		0f,0f, 0f,0f, 0f,0f,  0f,0f, 0f,0f, 0f,0f,
-
-        		0f,0f, 0f,0f, 0f,0f,  0f,0f, 0f,0f, 0f,0f,
-        		0f,0f, 0f,0f, 0f,0f,  0f,0f, 0f,0f, 0f,0f
-
-//        		0.75f, 0.33f,  0.50f, 0.33f,  0.50f,0.66f,    0.75f, 0.33f,  0.50f, 0.66f,  0.75f, 0.66f,
-//        		0.50f, 1.00f,  0.50f, 0.66f,  0.25f,0.66f,    0.50f, 1.00f,  0.25f, 0.66f,  0.25f, 1.00f,
-//        		
-//        		0.00f, 0.66f,  0.25f, 0.66f,  0.25f,0.33f,    0.00f, 0.66f,  0.25f, 0.33f,  0.00f, 0.33f,
-//        		0.25f, 0.33f,  0.25f, 0.66f,  0.50f,0.66f,    0.25f, 0.33f,  0.50f, 0.66f,  0.50f, 0.33f,
-//        		1.00f, 0.66f,  1.00f, 0.33f,  0.75f,0.33f,    1.00f, 0.66f,  0.75f, 0.33f,  0.75f, 0.66f
-        };
-        
-        int colors[] = {
-                0,    0,    0,  one,
-                one,    0,    0,  one,
-                one,  one,    0,  one,
-                0,  one,    0,  one,
-                0,    0,  one,  one,
-                one,    0,  one,  one,
-                one,  one,  one,  one,
-                0,  one,  one,  one,
-        };
-
-        byte indices[] = {
-                0, 4, 5,    0, 5, 1,
-                1, 5, 6,    1, 6, 2,
-                2, 6, 7,    2, 7, 3,
-                3, 7, 4,    3, 4, 0,
-                4, 7, 6,    4, 6, 5,
-                3, 0, 1,    3, 1, 2
-        };
 
         // Buffers to be passed to gl*Pointer() functions
         // must be direct, i.e., they must be placed on the
@@ -72,15 +161,17 @@ class Cube
         // Buffers with multi-byte datatypes (e.g., short, int, float)
         // must have their byte order set to native order
 
-        ByteBuffer vbb = ByteBuffer.allocateDirect(vertices.length*4);
-        vbb.order(ByteOrder.nativeOrder());
-        mVertexBuffer = vbb.asFloatBuffer();
+//        ByteBuffer vbb = ByteBuffer.allocateDirect(vertices.length*4);
+//        vbb.order(ByteOrder.nativeOrder());
+//        mVertexBuffer = vbb.asFloatBuffer();
+    	mVertexBuffer = FloatBuffer.allocate( vertices.length * 4 );
         mVertexBuffer.put(vertices);
         mVertexBuffer.position(0);
         
-        ByteBuffer tbb = ByteBuffer.allocateDirect(texCoords.length*4);
-        tbb.order(ByteOrder.nativeOrder());
-        mTexCoordBuffer = tbb.asFloatBuffer();
+        FloatBuffer tbb = FloatBuffer.allocate( texCoords.length*4 );
+//        tbb.order(ByteOrder.nativeOrder());
+//        mTexCoordBuffer = tbb.asFloatBuffer();
+        mTexCoordBuffer = tbb;
         mTexCoordBuffer.put(texCoords);
         mTexCoordBuffer.position(0);
 
@@ -97,23 +188,20 @@ class Cube
 
     public void draw( GL10 gl )
     {
-        gl.glFrontFace( gl.GL_CW );
-        gl.glVertexPointer( 3, gl.GL_FLOAT, 0, mVertexBuffer );
-        gl.glColorPointer( 4, gl.GL_FIXED, 0, mColorBuffer );
-        gl.glTexCoordPointer( 36, gl.GL_FLOAT, 0, mTexCoordBuffer );
+//    	gl.glFrontFace( gl.GL_CW );
         
 		gl.glEnableClientState( GL10.GL_VERTEX_ARRAY );
+		gl.glEnableClientState( GL10.GL_NORMAL_ARRAY );
 		gl.glEnableClientState( GL10.GL_TEXTURE_COORD_ARRAY );
-        
-        gl.glDrawElements( gl.GL_TRIANGLES, 36, gl.GL_UNSIGNED_BYTE, mIndexBuffer );
-        
-		gl.glDisableClientState( GL10.GL_VERTEX_ARRAY );
-		gl.glDisableClientState( GL10.GL_TEXTURE_COORD_ARRAY );
-        
-    }
 
-    private FloatBuffer   mVertexBuffer;
-    private FloatBuffer   mTexCoordBuffer;
-    private IntBuffer   mColorBuffer;
-    private ByteBuffer  mIndexBuffer;
+    	gl.glVertexPointer( 3, gl.GL_FLOAT, 0, FloatBuffer.wrap( vertices ) );
+        gl.glTexCoordPointer( 2, gl.GL_FLOAT, 0,  FloatBuffer.wrap( texCoords ) );
+        gl.glNormalPointer( gl.GL_FLOAT, 0, FloatBuffer.wrap( normals ) );
+        
+        gl.glDrawElements( gl.GL_TRIANGLES, 6, gl.GL_UNSIGNED_BYTE, ByteBuffer.wrap( indices ) );
+        
+		gl.glDisableClientState( GL10.GL_TEXTURE_COORD_ARRAY );
+		gl.glDisableClientState( GL10.GL_NORMAL_ARRAY );
+		gl.glDisableClientState( GL10.GL_VERTEX_ARRAY );
+    }
 }
