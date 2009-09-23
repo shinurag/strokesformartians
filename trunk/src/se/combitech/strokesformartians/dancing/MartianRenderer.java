@@ -60,23 +60,27 @@ class MartianRenderer implements GLSurfaceView.Renderer {
          * glClear().
          */
 
-    	gl.glClearColor( (time % 200) / 200f, 0, 1, 1);
+//    	gl.glClearColor( (time % 200) / 200f, 0, 1, 1);
+		gl.glClearColor( 1, 1, 1, 1);
         gl.glClear(GL10.GL_COLOR_BUFFER_BIT | GL10.GL_DEPTH_BUFFER_BIT);
 
         /*
          * Now we're ready to draw some 3D objects
          */
 
+        gl.glMatrixMode( GL10.GL_TEXTURE );
+    	gl.glLoadIdentity();
+    	
         gl.glMatrixMode( GL10.GL_MODELVIEW );
         gl.glLoadIdentity();
-        gl.glTranslatef( -2f, -1f, -25.0f );
+        gl.glTranslatef( 0, 0, -5.0f );
+//        gl.glTranslatef( -2f, -1f, -25.0f );
         //gl.glRotatef( -90, 1, 0, 0 );
 //        gl.glRotatef(mAngle*0.25f,  1, 0, 0);
 
         renderMartianAnimator( gl , time);
         
-        gl.glTranslatef(0, 10,0);
-        renderCubeMap( gl, time  );
+        renderCubeMap( gl, time );
         //mAngle++;
     }
 
@@ -113,6 +117,9 @@ class MartianRenderer implements GLSurfaceView.Renderer {
     		gl.glBindTexture( 	GL10.GL_TEXTURE_2D, 
 								m_textureIds[1] );
 
+    		gl.glTexParameterx( GL10.GL_TEXTURE_2D, GL10.GL_TEXTURE_WRAP_S, GL10.GL_CLAMP_TO_EDGE );
+    		gl.glTexParameterx( GL10.GL_TEXTURE_2D, GL10.GL_TEXTURE_WRAP_T, GL10.GL_CLAMP_TO_EDGE );
+    		
     		android.opengl.GLUtils.texImage2D( 	GL10.GL_TEXTURE_2D,
 												0,
 												cubeMap,
@@ -122,10 +129,18 @@ class MartianRenderer implements GLSurfaceView.Renderer {
 	private void renderCubeMap( GL10 gl, float time )
 	{
 		gl.glPushMatrix();
-			gl.glRotatef( 0.1f*time, 1, 1, 0 );
+//        	gl.glTranslatef(0, 0, 10);
+			gl.glRotatef( 0.05f*time, 0, 1, 0 );
+			gl.glColor4f( 1, 1, 1, 1 );
 			gl.glEnable( GL10.GL_TEXTURE_2D );
+//			gl.glEnable( GL10.GL_CULL_FACE );
+//			gl.glCullFace( GL10.GL_BACK );
 		
 			gl.glBindTexture( GL10.GL_TEXTURE_2D, m_textureIds[ 1 ] );
+			gl.glTexEnvf( 	GL10.GL_TEXTURE_ENV, 
+							GL10.GL_TEXTURE_ENV_MODE, 
+							GL10.GL_DECAL );
+			
 			m_cube.draw( gl );
 		gl.glPopMatrix();
 	}
@@ -159,7 +174,7 @@ class MartianRenderer implements GLSurfaceView.Renderer {
 		gl.glVertexPointer( 3, GL10.GL_FLOAT, 0, FloatBuffer.wrap(mVertexBuffer) );
 		gl.glTexCoordPointer( 2, GL10.GL_FLOAT, 0, FloatBuffer.wrap(mTexCoordBuffer) );
 		
-		gl.glDrawElements( GL10.GL_TRIANGLES, mIndexBuffer.length, GL10.GL_UNSIGNED_BYTE, ByteBuffer.wrap(mIndexBuffer) );
+//		gl.glDrawElements( GL10.GL_TRIANGLES, mIndexBuffer.length, GL10.GL_UNSIGNED_BYTE, ByteBuffer.wrap(mIndexBuffer) );
 		
     }    	
     
@@ -198,8 +213,8 @@ class MartianRenderer implements GLSurfaceView.Renderer {
          float ratio = (float) width / height;
          gl.glMatrixMode(GL10.GL_PROJECTION);
          gl.glLoadIdentity();
-         android.opengl.GLU.gluPerspective(gl, 50, ratio, 0.1f, 50);
-//         gl.glFrustumf(-ratio, ratio, -1, 1, 0.1f, 100 );
+         android.opengl.GLU.gluPerspective( gl, 50, ratio, 0.1f, 50 );
+//         gl.glFrustumf(-ratio, ratio, -1, 1, 0.1f, 50 );
 //         gl.glOrthof(-1, 1, -1, 1, 1, 10);
     }
 
@@ -215,8 +230,8 @@ class MartianRenderer implements GLSurfaceView.Renderer {
          * Some one-time OpenGL initialization can be made here
          * probably based on features of this particular context
          */
-         gl.glHint(GL10.GL_PERSPECTIVE_CORRECTION_HINT,
-                 GL10.GL_FASTEST);
+         gl.glHint( GL10.GL_PERSPECTIVE_CORRECTION_HINT,
+                 	GL10.GL_NICEST);
 
          if (mTranslucentBackground) {
              gl.glClearColor(0,0,0,0);
