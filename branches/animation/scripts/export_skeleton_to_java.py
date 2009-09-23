@@ -100,7 +100,7 @@ def shuffleMatrix(matrix):
 
     newmatrix[0] = tmatrix[0]
     newmatrix[1] = tmatrix[2]
-    newmatrix[2] = -tmatrix[1] # flip the z axis
+    newmatrix[2] = -tmatrix[1] 
     newmatrix[3] = tmatrix[3]
 
     return newmatrix.transpose()
@@ -133,6 +133,14 @@ def getBoneTransformFrames(armature,name,numframes):
         
     return out[:-1] # remove last ,
 
+def getWorldMatrix(bone):
+    """
+    Return the world matrix for a bone
+    """
+    
+    return bone.matrix["ARMATURESPACE"]
+    #return Object.Get(bone.name).getMatrix('WORLDMATRIX')
+
 
 def export(filename):
     """
@@ -155,8 +163,8 @@ def export(filename):
                 # out.write("bone.restPose = new float[]{{{vertex}}};\n".format(vertex = getJavaFloat(bone.head["ARMATURESPACE"][0]) + "," + \
                 #                                                                   getJavaFloat(bone.head["ARMATURESPACE"][2]) + "," + \
                 #                                                                   getJavaFloat(bone.head["ARMATURESPACE"][1])))
-                out.write("bone.restPose = new float[]{{{restpose}}};\n".format(restpose = printMatrix(shuffleMatrix(bone.matrix["ARMATURESPACE"]))))
-                out.write("bone.restPoseInverse = new float[]{{{restpose}}};\n".format(restpose = printMatrix(shuffleMatrix(bone.matrix["ARMATURESPACE"].copy().invert()))))
+                out.write("bone.restPose = new float[]{{{restpose}}};\n".format(restpose = printMatrix(shuffleMatrix(getWorldMatrix(bone)))))
+                out.write("bone.restPoseInverse = new float[]{{{restpose}}};\n".format(restpose = printMatrix(shuffleMatrix(getWorldMatrix(bone).copy().invert()))))
                 out.write("bone.frames = new float[]{{{vertices}}};\n".format(vertices = getBoneTransformFrames(armature,name,numFrames)))
 
         classname = os.path.basename(filename)
