@@ -155,8 +155,8 @@ def export(filename):
                 # out.write("bone.restPose = new float[]{{{vertex}}};\n".format(vertex = getJavaFloat(bone.head["ARMATURESPACE"][0]) + "," + \
                 #                                                                   getJavaFloat(bone.head["ARMATURESPACE"][2]) + "," + \
                 #                                                                   getJavaFloat(bone.head["ARMATURESPACE"][1])))
-                out.write("bone.restPose = new float[]{{{restpose}}};\n".format(restpose = printMatrix(shuffleMatrix(bone.matrix["OBJECTSPACE"]))))
-                out.write("bone.restPoseInverse = new float[]{{{restpose}}};\n".format(restpose = printMatrix(shuffleMatrix(bone.matrix["OBJECTSPACE"].copy().invert()))))
+                out.write("bone.restPose = new float[]{{{restpose}}};\n".format(restpose = printMatrix(shuffleMatrix(bone.matrix["ARMATURESPACE"]))))
+                out.write("bone.restPoseInverse = new float[]{{{restpose}}};\n".format(restpose = printMatrix(shuffleMatrix(bone.matrix["ARMATURESPACE"].copy().invert()))))
                 out.write("bone.frames = new float[]{{{vertices}}};\n".format(vertices = getBoneTransformFrames(armature,name,numFrames)))
 
         classname = os.path.basename(filename)
