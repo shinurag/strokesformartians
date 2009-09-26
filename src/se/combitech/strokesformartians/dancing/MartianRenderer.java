@@ -13,6 +13,7 @@ import se.combitech.strokesformartians.R;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
 import android.opengl.GLSurfaceView;
 
 import java.util.*;
@@ -110,7 +111,7 @@ class MartianRenderer implements GLSurfaceView.Renderer {
     		// Martian
     		gl.glBindTexture( 	GL10.GL_TEXTURE_2D, 
     							m_textureIds[0] );
-    		
+    		 
     		android.opengl.GLUtils.texImage2D( 	GL10.GL_TEXTURE_2D,
 							    				0,
 							    				martianMap,
