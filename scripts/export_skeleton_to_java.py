@@ -103,7 +103,8 @@ def shuffleMatrix(matrix):
     newmatrix[2] = -tmatrix[1] 
     newmatrix[3] = tmatrix[3]
 
-    return newmatrix.transpose()
+    newmatrix.transpose()
+    return newmatrix
 
     ## identity shuffle
     #return matrix
