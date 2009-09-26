@@ -17,7 +17,7 @@ def printFile(out, content):
     """
     print the file header
     """
-    
+
     out.write("""
 /* evil bone representation made by funky bone exporter */
 package se.combitech.strokesformartians;
@@ -29,7 +29,7 @@ import java.util.HashMap;
 def printSkeleton(out, classname, numframes, content, methods):
     """
     print the start of the skeleton class
-    
+
     content: a function that prints the content of the constructor
     """
     out.write(
@@ -50,7 +50,7 @@ public class Bone
         public float [] restPoseInverse;
 	/**
 	 * Transformation matrix for the bone on the format frames[framenumber * 16 + matrixindice] where matrixindice is a value from 0 to 15 specifying which element in a column major 4x4 matrix to use.
-	 */ 
+	 */
         public float [] frames;
 
 	public Bone(String name)
@@ -77,7 +77,7 @@ bones = new HashMap<String, Bone>();
     out.write("""
 }
 """)
-        
+
 
 
 # def printMatrix(out, name, frame, matrix):
@@ -87,7 +87,7 @@ bones = new HashMap<String, Bone>();
 #     ...
 #     """
 #     out.write("\nbone = bones.get(\"{name}\");\n".format(name=name))
-    
+
 #     tmatrix = matrix.transpose()
 #     for (x,col) in enumerate(tmatrix):
 #         for (y,elem) in enumerate(col):
@@ -103,7 +103,7 @@ def shuffleMatrix(matrix):
 
     newmatrix[0] = tmatrix[0]
     newmatrix[1] = tmatrix[2]
-    newmatrix[2] = -tmatrix[1] 
+    newmatrix[2] = -tmatrix[1]
     newmatrix[3] = tmatrix[3]
 
     newmatrix.transpose()
@@ -120,7 +120,7 @@ def printMatrix(matrix):
     #         out += getJavaFloat(elem) + ","
 
     # return out[:-1] # remove last ,
-    
+
 
 def getBoneTransformFrames(armature,name,numframes):
     """
@@ -131,18 +131,18 @@ def getBoneTransformFrames(armature,name,numframes):
     for frame in xrange(numframes):
         armature.evaluatePose(frame)
         pose = armature.getPose()
-        
+
         matrix = shuffleMatrix(pose.bones[name].poseMatrix)
-        
+
         out += printMatrix(matrix) + ","
-        
+
     return out[:-1] # remove last ,
 
 def getWorldMatrix(bone):
     """
     Return the world matrix for a bone
     """
-    
+
     return bone.matrix["ARMATURESPACE"]
     #return Object.Get(bone.name).getMatrix('WORLDMATRIX')
 
@@ -163,7 +163,7 @@ def export(filename):
             # allocate the bones
             for index,bone in enumerate(armature.getData().bones.values()):
                 name = bone.name
-                
+
                 # split method into chunks to avoid stupid java limit
                 out.write("""
 private void chain{index}()
@@ -189,12 +189,12 @@ Bone bone;
         classname = os.path.basename(filename)
         classname = classname[:classname.rindex(".")]
         printSkeleton(outfile, classname,numFrames, startMethod, skeletoncontent)
-        
+
 
     # start printing
     printFile(outfile, filecontent)
-            
-            
+
+
 
 if __name__ == "__main__":
     Blender.Window.FileSelector(export, "Export funky bone stuff")
