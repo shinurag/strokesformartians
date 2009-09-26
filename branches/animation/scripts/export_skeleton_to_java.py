@@ -26,7 +26,7 @@ import java.util.HashMap;
 """)
     content(out)
 
-def printSkeleton(out, classname, numframes, content):
+def printSkeleton(out, classname, numframes, content, methods):
     """
     print the start of the skeleton class
     
@@ -67,15 +67,18 @@ public HashMap<String, Bone> bones;
 numFrames = {numframes};
 bones = new HashMap<String, Bone>();
 
-Bone bone;
 """.format(numframes=str(numframes), classname=classname))
     content(out)
     out.write(
         """
 }
+""")
+    methods(out)
+    out.write("""
 }
 """)
         
+
 
 # def printMatrix(out, name, frame, matrix):
 #     """
@@ -110,12 +113,13 @@ def shuffleMatrix(matrix):
     #return matrix
 
 def printMatrix(matrix):
-    out = ''
-    for col in matrix:
-        for elem in col:
-            out += getJavaFloat(elem) + ","
+    return ",".join(( getJavaFloat(elem) for col in matrix for elem in col))
+    # out = ''
+    # for col in matrix:
+    #     for elem in col:
+    #         out += getJavaFloat(elem) + ","
 
-    return out[:-1] # remove last ,
+    # return out[:-1] # remove last ,
     
 
 def getBoneTransformFrames(armature,name,numframes):
@@ -157,8 +161,16 @@ def export(filename):
 
         def skeletoncontent(out):
             # allocate the bones
-            for bone in armature.getData().bones.values():
+            for index,bone in enumerate(armature.getData().bones.values()):
                 name = bone.name
+                
+                # split method into chunks to avoid stupid java limit
+                out.write("""
+private void chain{index}()
+{{
+Bone bone;
+""".format(index=index))
+
                 out.write("bone = new Bone(\"{name}\");\n".format(name=name))
                 out.write("bones.put(\"{name}\", bone);\n".format(name = name))
                 # out.write("bone.restPose = new float[]{{{vertex}}};\n".format(vertex = getJavaFloat(bone.head["ARMATURESPACE"][0]) + "," + \
@@ -167,10 +179,16 @@ def export(filename):
                 out.write("bone.restPose = new float[]{{{restpose}}};\n".format(restpose = printMatrix(shuffleMatrix(getWorldMatrix(bone)))))
                 out.write("bone.restPoseInverse = new float[]{{{restpose}}};\n".format(restpose = printMatrix(shuffleMatrix(getWorldMatrix(bone).copy().invert()))))
                 out.write("bone.frames = new float[]{{{vertices}}};\n".format(vertices = getBoneTransformFrames(armature,name,numFrames)))
+                if index < len(armature.getData().bones.values()) - 1:
+                    out.write("chain{nextindex}();\n".format(nextindex = index + 1))
+                out.write("}")
+
+        def startMethod(out):
+            out.write("chain0();")
 
         classname = os.path.basename(filename)
         classname = classname[:classname.rindex(".")]
-        printSkeleton(outfile, classname,numFrames, skeletoncontent)
+        printSkeleton(outfile, classname,numFrames, startMethod, skeletoncontent)
         
 
     # start printing
