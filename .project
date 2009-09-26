@@ -30,4 +30,11 @@
 		<nature>com.android.ide.eclipse.adt.AndroidNature</nature>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>src/se/combitech/strokesformartians/Leroy3.java</name>
+			<type>1</type>
+			<location>/home/moushkka/misc/dev/strokesformartians/src/se/combitech/strokesformartians/Leroy3.java</location>
+		</link>
+	</linkedResources>
 </projectDescription>
