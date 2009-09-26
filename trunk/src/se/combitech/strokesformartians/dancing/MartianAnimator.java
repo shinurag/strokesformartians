@@ -99,13 +99,13 @@ public class MartianAnimator
 		vertexWeights[4] = new VertexWeight("upper_leg_right", "lower_leg_right", 0.5f, 0.5f);
 		vertexWeights[5] = new VertexWeight("upper_leg_right", "pelvic_right", 0.5f, 0.5f);
 		vertexWeights[6] = new VertexWeight("root", "spine", 0.5f, 0.5f);
-		vertexWeights[7] = new VertexWeight("collar_right", "upper_arm_right", 0.5f, 0.5f);
+		vertexWeights[7] = new VertexWeight("collar_right", "upper_arm_right", 0.1f, 0.9f);
 		vertexWeights[8] = new VertexWeight("lower_arm_right", "upper_arm_right", 0.5f, 0.5f);
 		vertexWeights[9] = new VertexWeight("lower_arm_right", "", 1.0f, 0.0f);
 		vertexWeights[10] = new VertexWeight("lower_arm_right", "", 1.0f, 0.0f);
 		vertexWeights[11] = new VertexWeight("lower_arm_right", "upper_arm_right", 0.5f, 0.5f);
 		vertexWeights[12] = new VertexWeight("collar_right", "upper_arm_right", 0.5f, 0.5f);
-		vertexWeights[13] = new VertexWeight("collar_right", "spine", 0.5f, 0.5f);
+		vertexWeights[13] = new VertexWeight("collar_right", "spine", 0.2f, 0.8f);
 		vertexWeights[14] = new VertexWeight("neck", "", 1.0f, 0.0f);
 
 		// left
@@ -115,13 +115,13 @@ public class MartianAnimator
 		vertexWeights[25] = new VertexWeight("upper_leg_left", "lower_leg_left", 0.5f, 0.5f);
 		vertexWeights[24] = new VertexWeight("upper_leg_left", "pelvic_left", 0.5f, 0.5f);
 		vertexWeights[23] = new VertexWeight("root", "spine", 0.5f, 0.5f);
-		vertexWeights[22] = new VertexWeight("collar_left", "upper_arm_left", 0.5f, 0.5f);
+		vertexWeights[22] = new VertexWeight("collar_left", "upper_arm_left", 0.1f, 0.9f);
 		vertexWeights[21] = new VertexWeight("lower_arm_left", "upper_arm_left", 0.5f, 0.5f);
 		vertexWeights[20] = new VertexWeight("lower_arm_left", "", 1.0f, 0.0f);
 		vertexWeights[19] = new VertexWeight("lower_arm_left", "", 1.0f, 0.0f);
 		vertexWeights[18] = new VertexWeight("lower_arm_left", "upper_arm_left", 0.5f, 0.5f);
 		vertexWeights[17] = new VertexWeight("collar_left", "upper_arm_left", 0.5f, 0.5f);
-		vertexWeights[16] = new VertexWeight("collar_left", "spine", 0.5f, 0.5f);
+		vertexWeights[16] = new VertexWeight("collar_left", "spine", 0.2f, 0.8f);
 		vertexWeights[15] = new VertexWeight("neck", "", 1.0f, 0.0f);
 	
 	}
