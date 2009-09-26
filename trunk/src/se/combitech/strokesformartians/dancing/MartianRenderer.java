@@ -71,16 +71,19 @@ class MartianRenderer implements GLSurfaceView.Renderer {
         gl.glMatrixMode( GL10.GL_TEXTURE );
     	gl.glLoadIdentity();
     	
+    	renderCubeMap( gl, time );
+    	gl.glClear(GL10.GL_DEPTH_BUFFER_BIT);
+    	
         gl.glMatrixMode( GL10.GL_MODELVIEW );
         gl.glLoadIdentity();
-        gl.glTranslatef( 0, 0, -5.0f );
-//        gl.glTranslatef( -2f, -1f, -25.0f );
+        //gl.glTranslatef( 0, 0, -5.0f );
+        gl.glTranslatef( 0, -1f, -25.0f );
         //gl.glRotatef( -90, 1, 0, 0 );
 //        gl.glRotatef(mAngle*0.25f,  1, 0, 0);
 
         renderMartianAnimator( gl , time);
         
-        renderCubeMap( gl, time );
+        
         //mAngle++;
     }
 
@@ -90,7 +93,7 @@ class MartianRenderer implements GLSurfaceView.Renderer {
 			Bitmap cubeMap;
 			if( m_textureBitmap == null )
 			{
-				martianMap = BitmapFactory.decodeResource( m_context.getResources(), R.drawable.flowers );
+				martianMap = BitmapFactory.decodeResource( m_context.getResources(), R.drawable.elvis );
 			}
 			else
 			{
@@ -103,7 +106,7 @@ class MartianRenderer implements GLSurfaceView.Renderer {
     		gl.glGenTextures( 	2, 
     							m_textureIds,
 								0 );
-    		
+    		 
     		// Martian
     		gl.glBindTexture( 	GL10.GL_TEXTURE_2D, 
     							m_textureIds[0] );
@@ -174,7 +177,7 @@ class MartianRenderer implements GLSurfaceView.Renderer {
 		gl.glVertexPointer( 3, GL10.GL_FLOAT, 0, FloatBuffer.wrap(mVertexBuffer) );
 		gl.glTexCoordPointer( 2, GL10.GL_FLOAT, 0, FloatBuffer.wrap(mTexCoordBuffer) );
 		
-//		gl.glDrawElements( GL10.GL_TRIANGLES, mIndexBuffer.length, GL10.GL_UNSIGNED_BYTE, ByteBuffer.wrap(mIndexBuffer) );
+		gl.glDrawElements( GL10.GL_TRIANGLES, mIndexBuffer.length, GL10.GL_UNSIGNED_BYTE, ByteBuffer.wrap(mIndexBuffer) );
 		
     }    	
     
