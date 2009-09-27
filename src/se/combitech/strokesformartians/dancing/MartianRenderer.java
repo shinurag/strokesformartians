@@ -63,7 +63,7 @@ class MartianRenderer implements GLSurfaceView.Renderer {
 
 //    	gl.glClearColor( (time % 200) / 200f, 0, 1, 1);
 		gl.glClearColor( 1, 1, 1, 1);
-        gl.glClear(GL10.GL_COLOR_BUFFER_BIT | GL10.GL_DEPTH_BUFFER_BIT);
+        gl.glClear( GL10.GL_COLOR_BUFFER_BIT | GL10.GL_DEPTH_BUFFER_BIT );
 
         /*
          * Now we're ready to draw some 3D objects
@@ -72,18 +72,18 @@ class MartianRenderer implements GLSurfaceView.Renderer {
         gl.glMatrixMode( GL10.GL_TEXTURE );
     	gl.glLoadIdentity();
     	
-    	renderCubeMap( gl, time );
-    	gl.glClear(GL10.GL_DEPTH_BUFFER_BIT);
-    	
         gl.glMatrixMode( GL10.GL_MODELVIEW );
         gl.glLoadIdentity();
+        renderCubeMap( gl, time );
+    	gl.glClear(GL10.GL_DEPTH_BUFFER_BIT);
+
         //gl.glTranslatef( 0, 0, -5.0f );
-        gl.glTranslatef( 0, -1f, -25.0f );
+        gl.glTranslatef( 0, -1f, -35.0f );
         //gl.glRotatef( -90, 1, 0, 0 );
 //        gl.glRotatef(mAngle*0.25f,  1, 0, 0);
 
+//        renderCubeMap( gl, time );
         renderMartianAnimator( gl , time);
-        
         
         //mAngle++;
     }
@@ -134,7 +134,8 @@ class MartianRenderer implements GLSurfaceView.Renderer {
 	{
 		gl.glPushMatrix();
 //        	gl.glTranslatef(0, 0, 10);
-			gl.glRotatef( 0.05f*time, 0, 1, 0 );
+			gl.glLoadIdentity();
+			gl.glRotatef( 0.01f*time, 0, 1, 0 );
 			gl.glColor4f( 1, 1, 1, 1 );
 			gl.glEnable( GL10.GL_TEXTURE_2D );
 //			gl.glEnable( GL10.GL_CULL_FACE );
@@ -170,7 +171,7 @@ class MartianRenderer implements GLSurfaceView.Renderer {
 						0,
 						1 );
 		
-		// divide time by 33 to get a fps of 30
+		// divide time by 33 to get an fps of 30
 		m_animator.getFrame( time / 33f, mVertexBuffer, mTexCoordBuffer, mIndexBuffer );
 	
 		gl.glEnableClientState( GL10.GL_VERTEX_ARRAY );
@@ -179,6 +180,9 @@ class MartianRenderer implements GLSurfaceView.Renderer {
 		gl.glTexCoordPointer( 2, GL10.GL_FLOAT, 0, FloatBuffer.wrap(mTexCoordBuffer) );
 		
 		gl.glDrawElements( GL10.GL_TRIANGLES, mIndexBuffer.length, GL10.GL_UNSIGNED_BYTE, ByteBuffer.wrap(mIndexBuffer) );
+		
+		gl.glDisableClientState( GL10.GL_TEXTURE_COORD_ARRAY );
+		gl.glDisableClientState( GL10.GL_VERTEX_ARRAY );
 		
     }    	
     
@@ -217,7 +221,7 @@ class MartianRenderer implements GLSurfaceView.Renderer {
          float ratio = (float) width / height;
          gl.glMatrixMode(GL10.GL_PROJECTION);
          gl.glLoadIdentity();
-         android.opengl.GLU.gluPerspective( gl, 50, ratio, 0.1f, 50 );
+         android.opengl.GLU.gluPerspective( gl, 50, ratio, 0.1f, 150 );
 //         gl.glFrustumf(-ratio, ratio, -1, 1, 0.1f, 50 );
 //         gl.glOrthof(-1, 1, -1, 1, 1, 10);
     }
@@ -228,7 +232,7 @@ class MartianRenderer implements GLSurfaceView.Renderer {
          * but reduce performance. One might want to tweak that
          * especially on software renderer.
          */
-        gl.glDisable(GL10.GL_DITHER);
+//        gl.glDisable(GL10.GL_DITHER);
 
         /*
          * Some one-time OpenGL initialization can be made here
