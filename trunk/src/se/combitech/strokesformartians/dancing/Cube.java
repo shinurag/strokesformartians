@@ -16,7 +16,7 @@ class Cube
     private FloatBuffer   mTexCoordBuffer;
     private IntBuffer   mColorBuffer;
     private ByteBuffer  mIndexBuffer;
-    private int one = 1;
+    private int one = 90;
     private float vertices[] = {
     		// Bottom
             -one, -one, -one,
@@ -45,32 +45,32 @@ class Cube
             -one,  one, -one,
              one,  one, -one,
 
-             // Left
-             one, -one, -one,
+             // Left 
+            -one,  one,  one,
+            -one,  one, -one,
             -one, -one, -one,
-            -one,  one, -one,
             
-             one, -one, -one,
-            -one,  one, -one,
-             one,  one, -one,
+            -one,  one,  one,
+            -one, -one, -one,
+            -one, -one,  one,
 
              // Front
-             one, -one, -one,
-            -one, -one, -one,
-            -one,  one, -one,
+             one,  one,  one,
+            -one, -one,  one,
+             one, -one,  one,
             
-             one, -one, -one,
-            -one,  one, -one,
-             one,  one, -one,
+             one,  one,  one,
+            -one,  one,  one,
+            -one, -one,  one,
              
              // Top
-             one, -one, -one,
-            -one, -one, -one,
+             one,  one,  one,
+             one,  one, -one,
             -one,  one, -one,
             
-             one, -one, -one,
+             one,  one,  one,
             -one,  one, -one,
-             one,  one, -one,
+            -one,  one,  one,
              
 
              
@@ -116,23 +116,12 @@ class Cube
     };
     
     private float texCoords[] = {
-    		0.25f, 0.33f,  0.50f, 0.00f,  0.25f, 0.00f,    0.25f, 0.33f,  0.50f, 0.33f,  0.50f, 0.00f,
-//    		0.75f, 0.33f,  0.50f, 0.33f,  0.50f,0.66f,    0.75f, 0.33f,  0.50f, 0.66f,  0.75f, 0.66f,
-//    		0.50f, 1.00f,  0.50f, 0.66f,  0.25f,0.66f,    0.50f, 1.00f,  0.25f, 0.66f,  0.25f, 1.00f,
-//    		
-//    		0.00f, 0.66f,  0.25f, 0.66f,  0.25f,0.33f,    0.00f, 0.66f,  0.25f, 0.33f,  0.00f, 0.33f,
-//    		0.25f, 0.33f,  0.25f, 0.66f,  0.50f,0.66f,    0.25f, 0.33f,  0.50f, 0.66f,  0.50f, 0.33f,
-//    		1.00f, 0.66f,  1.00f, 0.33f,  0.75f,0.33f,    1.00f, 0.66f,  0.75f, 0.33f,  0.75f, 0.66f
-
-//    		0.50f,0.33f, 0.75f,0.33f, 0.75f,0.66f,  0.50f,0.33f, 0.75f,0.66f, 0.50f,0.66f,
-//    		0f,0f, 0f,0f, 0f,0f,  0f,0f, 0f,0f, 0f,0f
-//
-//    		0f,0f, 0f,0f, 0f,0f,  0f,0f, 0f,0f, 0f,0f,
-//    		0f,0f, 0f,0f, 0f,0f,  0f,0f, 0f,0f, 0f,0f,
-//
-//    		0f,0f, 0f,0f, 0f,0f,  0f,0f, 0f,0f, 0f,0f
-//    		0f,0f, 0f,0f, 0f,0f,  0f,0f, 0f,0f, 0f,0f
-
+    		0.25f, 0.34f,  0.50f, 0.34f,  0.50f, 0.00f,    0.25f, 0.34f,  0.50f, 0.00f,  0.25f, 0.00f, // bottom
+    		0.75f, 0.34f,  0.50f, 0.34f,  0.50f, 0.66f,    0.75f, 0.34f,  0.50f, 0.66f,  0.75f, 0.66f, // right
+    		0.50f, 0.34f,  0.25f, 0.34f,  0.25f, 0.66f,    0.50f, 0.34f,  0.25f, 0.66f,  0.50f, 0.66f, // back
+    		0.00f, 0.66f,  0.25f, 0.66f,  0.25f, 0.34f,    0.00f, 0.66f,  0.25f, 0.34f,  0.00f, 0.34f, // left
+    		0.75f, 0.66f,  1.00f, 0.34f,  0.75f, 0.34f,    0.75f, 0.66f,  1.00f, 0.66f,  1.00f, 0.34f, // front 
+    		0.50f, 1.00f,  0.50f, 0.66f,  0.25f, 0.66f,    0.50f, 1.00f,  0.25f, 0.66f,  0.25f, 1.00f, // top
     };
     
     private int colors[] = {
@@ -147,7 +136,12 @@ class Cube
     };
 
     private byte indices[] = {
-            1,2,3, 4,5,6,
+            0,1,2, 3,4,5,
+            6,7,8, 9,10,11,
+            12,13,14, 15,16,17,
+            18,19,20, 21,22,23,
+            24,25,26, 27,28,29,
+            30,31,32, 33,34,35,
     };
     
     public Cube()
@@ -188,20 +182,20 @@ class Cube
 
     public void draw( GL10 gl )
     {
-//    	gl.glFrontFace( gl.GL_CW );
+    	gl.glFrontFace( gl.GL_CW );
         
 		gl.glEnableClientState( GL10.GL_VERTEX_ARRAY );
-		gl.glEnableClientState( GL10.GL_NORMAL_ARRAY );
+//		gl.glEnableClientState( GL10.GL_NORMAL_ARRAY );
 		gl.glEnableClientState( GL10.GL_TEXTURE_COORD_ARRAY );
 
     	gl.glVertexPointer( 3, gl.GL_FLOAT, 0, FloatBuffer.wrap( vertices ) );
         gl.glTexCoordPointer( 2, gl.GL_FLOAT, 0,  FloatBuffer.wrap( texCoords ) );
-        gl.glNormalPointer( gl.GL_FLOAT, 0, FloatBuffer.wrap( normals ) );
+//        gl.glNormalPointer( gl.GL_FLOAT, 0, FloatBuffer.wrap( normals ) );
         
-        gl.glDrawElements( gl.GL_TRIANGLES, 6, gl.GL_UNSIGNED_BYTE, ByteBuffer.wrap( indices ) );
+        gl.glDrawElements( gl.GL_TRIANGLES, 36, gl.GL_UNSIGNED_BYTE, ByteBuffer.wrap( indices ) );
         
 		gl.glDisableClientState( GL10.GL_TEXTURE_COORD_ARRAY );
-		gl.glDisableClientState( GL10.GL_NORMAL_ARRAY );
+//		gl.glDisableClientState( GL10.GL_NORMAL_ARRAY );
 		gl.glDisableClientState( GL10.GL_VERTEX_ARRAY );
     }
 }
