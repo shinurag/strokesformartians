@@ -74,18 +74,16 @@ class MartianRenderer implements GLSurfaceView.Renderer {
     	
         gl.glMatrixMode( GL10.GL_MODELVIEW );
         gl.glLoadIdentity();
+        //gl.glTranslatef( 0, 0, -5.0f );
+        gl.glTranslatef( 0, -1f, -35.0f );
+//        gl.glRotatef( 30, 1, 0, 0 );
+//        gl.glRotatef( time*0.025f,  0, 1, 0);
+
         renderCubeMap( gl, time );
     	gl.glClear(GL10.GL_DEPTH_BUFFER_BIT);
 
-        //gl.glTranslatef( 0, 0, -5.0f );
-        gl.glTranslatef( 0, -1f, -35.0f );
-        //gl.glRotatef( -90, 1, 0, 0 );
-//        gl.glRotatef(mAngle*0.25f,  1, 0, 0);
-
-//        renderCubeMap( gl, time );
         renderMartianAnimator( gl , time);
         
-        //mAngle++;
     }
 
 	private void initTextures( GL10 gl )
@@ -130,17 +128,35 @@ class MartianRenderer implements GLSurfaceView.Renderer {
 												0 );
 	}
 
+//	private void renderPlatform( GL10 gl )
+//	{
+//		float step = 0.33f;
+//		float vertices[];
+//		
+//		for( int x = 0; x < 1.0; x += step )
+//		{
+//			for( int y = 0; y < 1.0; y += step )
+//			{
+//				vertices[ ]
+//			}
+//		}
+//		
+//		gl.glDisable( GL10.GL_TEXTURE_2D );
+//		
+//		gl.glEnableClientState( GL10.GL_VERTEX_ARRAY );
+//		gl.glVertexPointer( 3, GL10.GL_FLOAT, 0, FloatBuffer.wrap( vertices ) );
+//		
+//		gl.glDrawElements( GL10.GL_LINES, mIndexBuffer.length, GL10.GL_UNSIGNED_BYTE, ByteBuffer.wrap( indices ) );
+//
+//		gl.glDisableClientState( GL10.GL_VERTEX_ARRAY );
+//	}
+	
 	private void renderCubeMap( GL10 gl, float time )
 	{
 		gl.glPushMatrix();
-//        	gl.glTranslatef(0, 0, 10);
-			gl.glLoadIdentity();
-			gl.glRotatef( 0.01f*time, 0, 1, 0 );
-			gl.glColor4f( 1, 1, 1, 1 );
-			gl.glEnable( GL10.GL_TEXTURE_2D );
-//			gl.glEnable( GL10.GL_CULL_FACE );
-//			gl.glCullFace( GL10.GL_BACK );
-		
+//			gl.glLoadIdentity();
+//			gl.glRotatef( 0.01f*time, 0, 1, 0 );
+
 			gl.glBindTexture( GL10.GL_TEXTURE_2D, m_textureIds[ 1 ] );
 			gl.glTexEnvf( 	GL10.GL_TEXTURE_ENV, 
 							GL10.GL_TEXTURE_ENV_MODE, 
@@ -221,7 +237,7 @@ class MartianRenderer implements GLSurfaceView.Renderer {
          float ratio = (float) width / height;
          gl.glMatrixMode(GL10.GL_PROJECTION);
          gl.glLoadIdentity();
-         android.opengl.GLU.gluPerspective( gl, 50, ratio, 0.1f, 150 );
+         android.opengl.GLU.gluPerspective( gl, 50, ratio, 0.1f, 200 );
 //         gl.glFrustumf(-ratio, ratio, -1, 1, 0.1f, 50 );
 //         gl.glOrthof(-1, 1, -1, 1, 1, 10);
     }
