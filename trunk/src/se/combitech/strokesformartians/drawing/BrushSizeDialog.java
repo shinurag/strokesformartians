@@ -156,7 +156,7 @@ public class BrushSizeDialog extends Dialog{
 		LinearLayout myLayout = new LinearLayout(getContext());
 		myLayout.setMinimumWidth(200);      
 		
-		myLayout.setPadding(20, 0, 20, 20);
+		myLayout.setPadding(10, 0, 10, 10);
 		myLayout.setOrientation(LinearLayout.VERTICAL);
 		myLayout.setLayoutParams(new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT));
 		
