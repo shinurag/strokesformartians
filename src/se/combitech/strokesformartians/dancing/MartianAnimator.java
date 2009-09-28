@@ -8,14 +8,14 @@ public class MartianAnimator
 {
 	private class VertexWeight
 	{
-		public Leroy3.Bone [] bone;
+		public Leroy4.Bone [] bone;
 		public float [] weight;
 
 		public VertexWeight(String bone0, String bone1, float weight0, float weight1)
 		{
 			assert bone0.length() > 0;
 
-			bone = new Leroy3.Bone[2];
+			bone = new Leroy4.Bone[2];
 			
 			if(bone1.length() > 0)
 			{
@@ -31,7 +31,7 @@ public class MartianAnimator
 		}
 	}
 	
-	public Leroy3 leroy;
+	public Leroy4 leroy;
 	
 	// stupid bone stuff
 	public float[] boneVertexBuffer;
@@ -62,7 +62,7 @@ public class MartianAnimator
 
 	public MartianAnimator()
 	{
-		leroy = new Leroy3();
+		leroy = new Leroy4();
 
 		boneVertexBuffer = new float[ 16 * 3 ];
 		boneIndexBuffer = new byte[ 30 ];
@@ -659,7 +659,7 @@ public class MartianAnimator
 	 * @param bone the bone to use for the transform
 	 * @param frame which frame to use
 	 */
-	private void getTransformedVertex(float [] output, int outputOffset, int vertexNum, Leroy3.Bone bone, int frame)
+	private void getTransformedVertex(float [] output, int outputOffset, int vertexNum, Leroy4.Bone bone, int frame)
 	{
 		float [] tmpdata = new float[4];
 		float [] tmpdata2 = new float[4];
