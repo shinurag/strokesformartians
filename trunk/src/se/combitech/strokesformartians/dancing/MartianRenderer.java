@@ -77,13 +77,16 @@ class MartianRenderer implements GLSurfaceView.Renderer {
         //gl.glTranslatef( 0, 0, -5.0f );
         gl.glTranslatef( 0, -1f, -30.0f );
 //        gl.glRotatef( 30, 1, 0, 0 );
-        //gl.glRotatef( time*0.025f,  0, 1, 0);
+        gl.glRotatef( time*0.025f,  0, 1, 0);
 
         renderCubeMap( gl, time );
     	gl.glClear(GL10.GL_DEPTH_BUFFER_BIT);
 
-    	gl.glRotatef( time * 0.025f,  0, 1, 0);
-        renderMartianAnimator( gl , time);
+    	renderPlatform( gl );
+    	
+    	gl.glRotatef( 30, 1, 0, 0);
+
+    	renderMartianAnimator( gl , time);
     }
 
 	private void initTextures( GL10 gl )
@@ -128,28 +131,41 @@ class MartianRenderer implements GLSurfaceView.Renderer {
 												0 );
 	}
 
-//	private void renderPlatform( GL10 gl )
-//	{
-//		float step = 0.33f;
-//		float vertices[];
-//		
-//		for( int x = 0; x < 1.0; x += step )
-//		{
-//			for( int y = 0; y < 1.0; y += step )
-//			{
-//				vertices[ ]
-//			}
-//		}
-//		
-//		gl.glDisable( GL10.GL_TEXTURE_2D );
-//		
-//		gl.glEnableClientState( GL10.GL_VERTEX_ARRAY );
-//		gl.glVertexPointer( 3, GL10.GL_FLOAT, 0, FloatBuffer.wrap( vertices ) );
-//		
-//		gl.glDrawElements( GL10.GL_LINES, mIndexBuffer.length, GL10.GL_UNSIGNED_BYTE, ByteBuffer.wrap( indices ) );
-//
-//		gl.glDisableClientState( GL10.GL_VERTEX_ARRAY );
-//	}
+	private void renderPlatform( GL10 gl )
+	{
+		float step = 0.33f;
+		float y = -7.0f;
+		float size = 7.0f;
+		float vertices[] = { 
+				-size, y, -size,
+				 size, y, -size,
+				 size, y,  size,
+				-size, y,  size,
+		};
+		
+		byte indices[] = {
+				0,1,2,
+				0,2,3,
+		};
+		
+		
+		gl.glDisable( GL10.GL_TEXTURE_2D );
+		gl.glDisable( GL10.GL_DEPTH_TEST );
+		gl.glEnable( GL10.GL_BLEND );
+		gl.glBlendFunc( GL10.GL_SRC_ALPHA, GL10.GL_ONE_MINUS_DST_ALPHA );
+		
+		gl.glColor4f( 1, 1, 1, 0.5f );
+		
+		gl.glEnableClientState( GL10.GL_VERTEX_ARRAY );
+		gl.glVertexPointer( 3, GL10.GL_FLOAT, 0, FloatBuffer.wrap( vertices ) );
+		
+		gl.glDrawElements( GL10.GL_TRIANGLES, 6, GL10.GL_UNSIGNED_BYTE, ByteBuffer.wrap( indices ) );
+
+		gl.glDisableClientState( GL10.GL_VERTEX_ARRAY );
+		
+		gl.glDisable( GL10.GL_BLEND );
+		gl.glEnable( GL10.GL_DEPTH_TEST );
+	}
 	
 	private void renderCubeMap( GL10 gl, float time )
 	{

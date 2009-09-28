@@ -1,8 +1,18 @@
 package se.combitech.strokesformartians;
 
+import java.util.Calendar;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.util.Log;
+import android.view.Menu;
+import android.widget.FrameLayout;
+import android.widget.Gallery;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.FrameLayout.LayoutParams;
 import android.view.Window;
 import android.view.WindowManager;
 
@@ -23,7 +33,10 @@ public class StrokesForMartians extends Activity {
     
     public static final int EXIT_RESULT_CODE = 0;
 	
+	long startTime;
 	
+	FrameLayout frame;
+	ImageView image;
 	
 	private void init()
 	{
@@ -43,13 +56,103 @@ public class StrokesForMartians extends Activity {
     }
     
     
+    
     /** Called when the activity is first created. */
     @Override
     public void onCreate( Bundle savedInstanceState ) {
         super.onCreate(savedInstanceState);
-
-        init();
         
+        init();
+
+        startTime = Calendar.getInstance().getTimeInMillis();
+        
+        
+        frame = new FrameLayout( this );
+        image = new ImageView( this );
+        image.setImageResource( R.drawable.splash01 );
+        image.setAdjustViewBounds( true ); // set the ImageView bounds to match the Drawable's dimensions
+//        image.setLayoutParams( new Gallery.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+        frame.addView( image, 0 );
+        
+        setContentView( frame );
+        
+     
+    	final long timeStep = 1000;
+    	final long flashStep = 200;
+
+		new Handler().postDelayed( 
+			new Runnable()
+			{
+        		public void run() {
+					image.setImageResource( R.drawable.splash02 );
+				}
+			}, 
+			timeStep * 2 );
+			
+		new Handler().postDelayed( 
+			new Runnable()
+			{
+        		public void run() {
+					image.setImageResource( R.drawable.splash03 );
+				}
+			}, 
+			timeStep * 3 ); 
+			
+		new Handler().postDelayed( 
+			new Runnable()
+			{
+        		public void run() {
+					image.setImageResource( R.drawable.splash04 );
+				}
+			}, 
+			timeStep * 4 ); 
+			
+		new Handler().postDelayed( 
+			new Runnable()
+			{
+        		public void run() {
+					image.setImageResource( R.drawable.splash03 );
+				}
+			}, 
+			timeStep * 5 + flashStep );
+
+		new Handler().postDelayed( 
+			new Runnable()
+			{
+        		public void run() {
+					image.setImageResource( R.drawable.splash04 );
+				}
+			}, 
+			timeStep * 5 + flashStep * 2 ); 			
+      
+		new Handler().postDelayed( 
+			new Runnable()
+			{
+        		public void run() {
+					image.setImageResource( R.drawable.splash03 );
+				}
+			}, 
+			timeStep * 5 + flashStep * 3 );       
+      
+		new Handler().postDelayed( 
+			new Runnable()
+			{
+        		public void run() {
+					image.setImageResource( R.drawable.splash04 );
+				}
+			}, 
+			timeStep * 5 + flashStep * 4 );         
+      
+		new Handler().postDelayed( 
+			new Runnable()
+			{
+        		public void run() {
+					startActivityForResult( danceIntent, DANCE_REQUEST );
+					finish();
+				}
+			}, 
+			timeStep * 7 );       
+      
         // Removes the grey title bar
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         // Removes Androids status bar
