@@ -19,8 +19,6 @@ package se.combitech.strokesformartians.drawing;
 //package com.example.android.apis.graphics;
 
 import se.combitech.strokesformartians.SFMIntentFactory;
-import se.combitech.strokesformartians.StrokesForMartians;
-import se.combitech.strokesformartians.dancing.Dancer;
 import se.combitech.strokesformartians.dancing.MartianAnimator;
 import se.combitech.strokesformartians.drawing.BrushSizeDialog.SizePickerView;
 import android.content.Context;
@@ -42,10 +40,7 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.SeekBar;
-import android.widget.LinearLayout.LayoutParams;
 
 public class FingerPaint extends GraphicsActivity
         implements ColorPickerDialog.OnColorChangedListener, OnClickListener {    
@@ -271,10 +266,6 @@ public class FingerPaint extends GraphicsActivity
         		intent.putExtra( "newBitmap", flippedBitmap );
         		
             	startActivity( intent );
-            	
-//            	MartianProperty property = new MartianProperty();
-//            	property.setBitmap(flippedBitmap);            	
-//            	setResult(StrokesForMartians.RESULT_OK, property);
                 return true;
             case EMBOSS_MENU_ID:
                 if (mPaint.getMaskFilter() != mEmboss) {
