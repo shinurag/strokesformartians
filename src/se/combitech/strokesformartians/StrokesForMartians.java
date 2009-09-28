@@ -125,23 +125,23 @@ public class StrokesForMartians extends Activity {
 			}, 
 			timeStep * 5 + flashStep * 2 ); 			
       
-		new Handler().postDelayed( 
-			new Runnable()
-			{
-        		public void run() {
-					image.setImageResource( R.drawable.splash03 );
-				}
-			}, 
-			timeStep * 5 + flashStep * 3 );       
-      
-		new Handler().postDelayed( 
-			new Runnable()
-			{
-        		public void run() {
-					image.setImageResource( R.drawable.splash04 );
-				}
-			}, 
-			timeStep * 5 + flashStep * 4 );         
+//		new Handler().postDelayed( 
+//			new Runnable()
+//			{
+//        		public void run() {
+//					image.setImageResource( R.drawable.splash03 );
+//				}
+//			}, 
+//			timeStep * 5 + flashStep * 3 );       
+//      
+//		new Handler().postDelayed( 
+//			new Runnable()
+//			{
+//        		public void run() {
+//					image.setImageResource( R.drawable.splash04 );
+//				}
+//			}, 
+//			timeStep * 5 + flashStep * 4 );         
       
 		new Handler().postDelayed( 
 			new Runnable()
@@ -154,9 +154,9 @@ public class StrokesForMartians extends Activity {
 			timeStep * 7 );       
       
         // Removes the grey title bar
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        // Removes Androids status bar
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN); 
-        startActivityForResult( danceIntent, DANCE_REQUEST );
+//        requestWindowFeature(Window.FEATURE_NO_TITLE);
+//        // Removes Androids status bar
+//        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN); 
+//        startActivityForResult( danceIntent, DANCE_REQUEST );
     }
 }
