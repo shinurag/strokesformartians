@@ -92,23 +92,7 @@ public class Dancer extends Activity {
         mGLSurfaceView.onPause();
     }
     
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
-    	if(requestCode == StrokesForMartians.DANCE_REQUEST) 
-    	{
-    		if (requestCode == StrokesForMartians.RESULT_OK)
-    		{
-    			/* TODO: Draw property */
-    			if (data instanceof MartianProperty)
-    			{    		
-    				MartianProperty propery = (MartianProperty) data;
-    				mTextureBitmap = propery.getBitmap();
-    				renderer.setTextureBitmap(mTextureBitmap);    				
-    			}
-    		}
-    	}
-    }
     
     /* Creates the menu items */
     @Override
