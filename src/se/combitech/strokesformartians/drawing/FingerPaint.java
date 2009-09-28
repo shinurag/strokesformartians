@@ -21,9 +21,8 @@ package se.combitech.strokesformartians.drawing;
 import se.combitech.strokesformartians.SFMIntentFactory;
 import se.combitech.strokesformartians.StrokesForMartians;
 import se.combitech.strokesformartians.dancing.Dancer;
-import se.combitech.strokesformartians.drawing.BrushSizeDialog.OnBrushSizeChangeListener;
-import se.combitech.strokesformartians.dancing.*;
-import android.app.AlertDialog;
+import se.combitech.strokesformartians.dancing.MartianAnimator;
+import se.combitech.strokesformartians.drawing.BrushSizeDialog.SizePickerView;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -37,17 +36,19 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
-import android.graphics.RectF;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.shapes.OvalShape;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.SeekBar;
+import android.widget.LinearLayout.LayoutParams;
 
 public class FingerPaint extends GraphicsActivity
-        implements ColorPickerDialog.OnColorChangedListener, OnBrushSizeChangeListener {    
+        implements ColorPickerDialog.OnColorChangedListener, OnClickListener {    
 
 	private float mBrushSize = 12.0f;
     private Paint       mPaint;
@@ -304,8 +305,15 @@ public class FingerPaint extends GraphicsActivity
         return super.onOptionsItemSelected(item);
     }
 
-	public void onBrushSizeChange(float size) {
-		mBrushSize = size;
+	public void onClick(View v) {
+		int banan = 3;
+		// TODO Auto-generated method stub
+		LinearLayout mL = (LinearLayout)v.getParent();
+		SizePickerView mView = (SizePickerView)mL.getChildAt(2);
+//		SizePickerView mView = (SizePickerView)v.getParent();
+		banan = 5;
+		mBrushSize = mView.getSize();
+		
 		mPaint.setStrokeWidth(mBrushSize);
 	}
 	
