@@ -12,8 +12,9 @@
             </intent-filter>
         </activity>
 
-
-        <activity android:name=".drawing.FingerPaint" />
+        <activity android:name=".drawing.FingerPaint"
+				  android:label="fingerpaint">
+		</activity>
         
         <activity android:name=".Paint"
                   android:label="paintstuff">
