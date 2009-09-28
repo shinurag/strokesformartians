@@ -56,7 +56,10 @@ public class BrushSizeDialog extends Dialog{
     	public float getSize() {
     		return mSize;
     	}
-        
+
+    	public BrushSizeDialog getCallback() {
+    		return mCallback;
+    	}
     	@Override
     	protected void onDraw(Canvas canvas) {
     	    super.onDraw(canvas);
@@ -174,12 +177,9 @@ public class BrushSizeDialog extends Dialog{
 		okButton.setText("Ok");
 		okButton.setOnClickListener(mClickListener);
 		
-		/** Uncomment this line when the button works..
-		 * 
-		 * 
+
 		myLayout.addView(okButton);		
-		 *
-		**/
+
 		myLayout.addView(mySizePickerView);
 		setContentView(myLayout);
 		
