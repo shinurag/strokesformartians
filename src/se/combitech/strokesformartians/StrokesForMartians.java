@@ -3,6 +3,8 @@ package se.combitech.strokesformartians;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Window;
+import android.view.WindowManager;
 
 
 public class StrokesForMartians extends Activity {
@@ -48,6 +50,10 @@ public class StrokesForMartians extends Activity {
 
         init();
         
+        // Removes the grey title bar
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        // Removes Androids status bar
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN); 
         startActivityForResult( danceIntent, DANCE_REQUEST );
     }
 }
