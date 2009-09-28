@@ -296,15 +296,12 @@ public class FingerPaint extends GraphicsActivity
         return super.onOptionsItemSelected(item);
     }
 
+    
 	public void onClick(View v) {
-		int banan = 3;
-		// TODO Auto-generated method stub
 		LinearLayout mL = (LinearLayout)v.getParent();
 		SizePickerView mView = (SizePickerView)mL.getChildAt(2);
-//		SizePickerView mView = (SizePickerView)v.getParent();
-		banan = 5;
 		mBrushSize = mView.getSize();
-		
+		(mView.getCallback()).dismiss();
 		mPaint.setStrokeWidth(mBrushSize);
 	}
 	
