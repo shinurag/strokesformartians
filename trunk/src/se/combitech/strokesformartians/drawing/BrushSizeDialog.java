@@ -2,6 +2,7 @@ package se.combitech.strokesformartians.drawing;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -15,10 +16,11 @@ import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 
 public class BrushSizeDialog extends Dialog{
-	final float MAX_SIZE = 200.0f;
+	final float MAX_SIZE = 50.0f;
 	final float MIN_SIZE = 12.0f;	
 	float currentSize = 20.0f;
 	private android.view.View.OnClickListener mClickListener;
+//	private OnClickListener mClickListener;
 	private OnSeekBarChangeListener mListener;
 	private View mySizePickerView;
 	
@@ -30,8 +32,13 @@ public class BrushSizeDialog extends Dialog{
         void onBrushSizeChange(float size);
     }
     
+    public interface mClickListener {
+    	void onClick();
+    }
+
 	public static class SizePickerView extends View {
     	
+		private BrushSizeDialog dialogParent = (BrushSizeDialog)this.getParent();
     	private OnSeekBarChangeListener mListener;
     	private Paint mPaint;
     	private float mSize = 20.0f;
@@ -40,8 +47,6 @@ public class BrushSizeDialog extends Dialog{
     	SizePickerView(Context c, OnSeekBarChangeListener listener, float s) {
     		super(c);
     		mListener = listener;
-
-
     	}    	
     	
     	public void updateSize(float size) {	
@@ -55,21 +60,24 @@ public class BrushSizeDialog extends Dialog{
     	@Override
     	protected void onDraw(Canvas canvas) {
     	    super.onDraw(canvas);
-//    	    canvas.setViewport(50, 70);
-//    	    canvas.drawColor(Color.RED);
     	    
     	    // Draw the circle
         	mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         	mPaint.setStyle(Paint.Style.FILL);
-//            mPaint.setStrokeWidth(32);
+        	mPaint.setColor(Color.YELLOW);
+        	mPaint.setColor(0xFFFFB90F);
             
-    	    int centerX = canvas.getWidth() / 2;
-    	    int centerY = canvas.getHeight() / 2;
-    	    canvas.drawCircle(centerX, centerY, mSize, mPaint);
+    	    canvas.drawCircle(100, 50, mSize/2, mPaint);
     	    
     	}
     	
-    	@Override
+        @Override
+        protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+            setMeasuredDimension(200, 100);
+        }
+        
+        /**       
+    	@Override    	
         public boolean onTouchEvent(MotionEvent event) {
 
             switch (event.getAction()) {
@@ -81,20 +89,21 @@ public class BrushSizeDialog extends Dialog{
 //                    invalidate();
                     
                     break;
-                case MotionEvent.ACTION_UP:
-                    
+                case MotionEvent.ACTION_UP:                    
                     break;
             }
             return true;
         }
-    	
+    	**/
+        
     	public void setCallback(BrushSizeDialog c)
     	{
     		mCallback = c;
     	}
+    	
     }
-//	
-	public BrushSizeDialog(Context context, android.view.View.OnClickListener clickListener, float size) {
+
+	public BrushSizeDialog(Context context, android.view.View.OnClickListener clickListener, float size) {	
 		super(context);
 		mClickListener = clickListener;
 		mInitialSize = size;
@@ -129,6 +138,16 @@ public class BrushSizeDialog extends Dialog{
 			}
         	
         };
+        
+        OnClickListener mButtonListener = new OnClickListener() {
+        	
+        	// This does not work.
+        	public void onClick(DialogInterface dialog, int which) {
+				dialog.dismiss();				
+			}
+        	
+        };
+        
 		seekBar.setOnSeekBarChangeListener(mListener);
 		
         mySizePickerView = new SizePickerView(getContext(), mListener, currentSize);
@@ -138,15 +157,11 @@ public class BrushSizeDialog extends Dialog{
 		myLayout.setMinimumWidth(200);      
 		
 		myLayout.setPadding(20, 0, 20, 20);
-		//myLayout.setGravity(Gravity.FILL_VERTICAL);
-		//myLayout.setLayoutParams(new LinearLayout.LayoutParams(300,36));
 		myLayout.setOrientation(LinearLayout.VERTICAL);
 		myLayout.setLayoutParams(new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT));
 		
 		
-		
-		
-        seekBar.setMax(32);
+        seekBar.setMax((int)MAX_SIZE);
         seekBar.setLayoutParams(new
         		ViewGroup.LayoutParams(ViewGroup.LayoutParams.FILL_PARENT,
         		ViewGroup.LayoutParams.WRAP_CONTENT));
@@ -155,15 +170,20 @@ public class BrushSizeDialog extends Dialog{
         myLayout.addView(seekBar);
 		myLayout.bringChildToFront(seekBar);
 		
-		Button helloButton = new Button(getContext());
-		helloButton.setText("Ok");
-		helloButton.setOnClickListener(mClickListener);
-		myLayout.addView(helloButton);		
+		Button okButton = new Button(getContext());
+		okButton.setText("Ok");
+		okButton.setOnClickListener(mClickListener);
 		
+		/** Uncomment this line when the button works..
+		 * 
+		 * 
+		myLayout.addView(okButton);		
+		 *
+		**/
 		myLayout.addView(mySizePickerView);
 		setContentView(myLayout);
 		
-		setTitle("Pick a brush size");        
+//		setTitle("Pick a brush size");        
     }
 
 }
