@@ -12,6 +12,8 @@ import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.Window;
+import android.view.WindowManager;
 
 /**
  * Wrapper activity demonstrating the use of {@link GLSurfaceView}, a view
@@ -66,6 +68,11 @@ public class Dancer extends Activity {
 //	    		}
 //	        }
 //		);
+        
+        // Removes the grey title bar
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        // Removes Androids status bar
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN); 
         setContentView( mGLSurfaceView );
     }
 
