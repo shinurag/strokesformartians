@@ -75,15 +75,15 @@ class MartianRenderer implements GLSurfaceView.Renderer {
         gl.glMatrixMode( GL10.GL_MODELVIEW );
         gl.glLoadIdentity();
         //gl.glTranslatef( 0, 0, -5.0f );
-        gl.glTranslatef( 0, -1f, -35.0f );
+        gl.glTranslatef( 0, -1f, -30.0f );
 //        gl.glRotatef( 30, 1, 0, 0 );
-//        gl.glRotatef( time*0.025f,  0, 1, 0);
+        //gl.glRotatef( time*0.025f,  0, 1, 0);
 
         renderCubeMap( gl, time );
     	gl.glClear(GL10.GL_DEPTH_BUFFER_BIT);
 
+    	gl.glRotatef( time * 0.025f,  0, 1, 0);
         renderMartianAnimator( gl , time);
-        
     }
 
 	private void initTextures( GL10 gl )

@@ -104,7 +104,7 @@ public class MartianAnimator
 		vertexWeights[9] = new VertexWeight("lower_arm_right", "", 1.0f, 0.0f);
 		vertexWeights[10] = new VertexWeight("lower_arm_right", "", 1.0f, 0.0f);
 		vertexWeights[11] = new VertexWeight("lower_arm_right", "upper_arm_right", 0.5f, 0.5f);
-		vertexWeights[12] = new VertexWeight("collar_right", "upper_arm_right", 0.5f, 0.5f);
+		vertexWeights[12] = new VertexWeight("collar_right", "upper_arm_right", 0.1f, 0.9f);
 		vertexWeights[13] = new VertexWeight("collar_right", "spine", 0.2f, 0.8f);
 		vertexWeights[14] = new VertexWeight("neck", "", 1.0f, 0.0f);
 
@@ -120,7 +120,7 @@ public class MartianAnimator
 		vertexWeights[20] = new VertexWeight("lower_arm_left", "", 1.0f, 0.0f);
 		vertexWeights[19] = new VertexWeight("lower_arm_left", "", 1.0f, 0.0f);
 		vertexWeights[18] = new VertexWeight("lower_arm_left", "upper_arm_left", 0.5f, 0.5f);
-		vertexWeights[17] = new VertexWeight("collar_left", "upper_arm_left", 0.5f, 0.5f);
+		vertexWeights[17] = new VertexWeight("collar_left", "upper_arm_left", 0.1f, 0.9f);
 		vertexWeights[16] = new VertexWeight("collar_left", "spine", 0.2f, 0.8f);
 		vertexWeights[15] = new VertexWeight("neck", "", 1.0f, 0.0f);
 	
@@ -668,7 +668,8 @@ public class MartianAnimator
         /** @TODO optimize */
 		System.arraycopy(vertexBuffer, vertexNum * 3, tmpdata3, 0, 3);
 		tmpdata3[3] = 1;
-		Matrix.multiplyMV(tmpdata, 0, bone.restPoseInverse, 0, tmpdata3, 0);
+		/* This is really weird, it should be bone.restPoseInverse NOT bone.restPose, but it works this way. */ 
+		Matrix.multiplyMV(tmpdata, 0, bone.restPose, 0, tmpdata3, 0);
 		
 		// transform using bone transformation
 		Matrix.multiplyMV(tmpdata2, 0, bone.frames, (frame << 4), tmpdata, 0);
@@ -681,6 +682,9 @@ public class MartianAnimator
 		
 		// copy the first three values
 		System.arraycopy(tmpdata2, 0, output, outputOffset, 3);
+		
+		// testcode
+		//System.arraycopy(vertexBuffer, vertexNum * 3, output, outputOffset, 3);
 	}
 	
 	public int getVertexBufferLength()
