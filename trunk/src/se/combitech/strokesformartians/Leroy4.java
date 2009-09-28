@@ -3,7 +3,7 @@ package se.combitech.strokesformartians;
 
 import java.util.HashMap;
 
-public class Leroy3
+public class Leroy4
 {
 public class Bone
     {
@@ -31,7 +31,7 @@ public class Bone
 public HashMap<String, Bone> bones;
         public int numFrames;
 
-        public Leroy3()
+        public Leroy4()
         {
 numFrames = 30;
 bones = new HashMap<String, Bone>();
